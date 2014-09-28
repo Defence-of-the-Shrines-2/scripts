@@ -4,7 +4,6 @@ function OnCollectionPower(keys)
 	local vecCaster = caster:GetOrigin()
 	local targets = keys.target_entities
 	for _,v in pairs(targets) do
-		print(v:GetUnitName())
 		if((v:GetUnitName()=="npc_coin_up_unit") or (v:GetUnitName()== "npc_power_up_unit"))then
 			if(v:GetContext("ability_collection_power")==nil)then
 				v:SetThink(

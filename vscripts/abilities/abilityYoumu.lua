@@ -221,7 +221,6 @@ function AbilityYoumu:OnYoumu04Think(keys)
 		Youmu04Rad = Youmu04Rad + 210*math.pi/180
 		caster:SetContextNum("ability_Youmu04_Rad",Youmu04Rad,0)
 		local deal_damage = keys.ability:GetAbilityDamage() + keys.AbilityMulti * caster:GetPrimaryStatValue()
-		print(tostring(deal_damage))
 		local damage_table = {
 				victim = keys.target,
 				attacker = caster,
@@ -241,7 +240,6 @@ function AbilityYoumu:OnYoumu04Think(keys)
 	caster:SetOrigin(vec)
 	count = count +1
 	caster:SetContextNum("ability_Youmu04_Count",count,0)
-	print(tostring(count))
 	if(count>=10)then
 		caster:SetOrigin(vecTarget)
 		caster:SetContextNum("ability_Youmu04_Count",0,0)

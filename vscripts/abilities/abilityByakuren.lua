@@ -134,8 +134,8 @@ function OnByakuren04SpellThink(keys)
 	local increaseHealth = caster:GetMaxMana() * keys.BounsHealth * ability:GetLevel()
 	local newRealBaseHealth = caster:GetBaseMaxHealth() + increaseHealth
 	local intNewRealBaseHealth = newRealBaseHealth - newRealBaseHealth%1
-	
-	if(caster:GetMaxHealth() == intNewRealBaseHealth)then
+	local changeHealth = caster:GetMaxHealth() - intNewRealBaseHealth
+	if(math.abs(changeHealth)<=2)then
 		caster:SetContextNum("ability_byakuren04_health_old",caster:GetHealth(),0)
 		return
 	end
