@@ -16,8 +16,8 @@ function OnYuyukoExSpellStart(keys)
 		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 		ParticleManager:ReleaseParticleIndex(effectIndex) 
 		effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/yuyuko/ability_yuyuko_04_effect_a.vpcf", PATTACH_CUSTOMORIGIN, caster)
-		ParticleManager:SetParticleControl(effectIndex, 0, v:GetOrigin())
-		ParticleManager:SetParticleControl(effectIndex, 5, v:GetOrigin())
+		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
+		ParticleManager:SetParticleControl(effectIndex, 5, caster:GetOrigin())
 		ParticleManager:ReleaseParticleIndex(effectIndex) 
 		caster:SetHealth(caster:GetMaxHealth())
 		UnitDisarmedTarget(caster,caster,keys.LifeDuration)
@@ -130,7 +130,7 @@ function OnYuyuko04SpellThink(keys)
 				    )
 					for _,v in pairs(DamageTargets) do
 					    local damage_table_death = {
-							victim = u,
+							victim = v,
 							attacker = caster,
 							damage = keys.ability:GetAbilityDamage(),
 							damage_type = keys.ability:GetAbilityDamageType(), 

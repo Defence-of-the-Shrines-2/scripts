@@ -294,6 +294,9 @@ end
 function SetTargetToTraversable(target)
     local vecTarget = target:GetOrigin() 
     local vecGround = GetGroundPosition(vecTarget, nil)
+
+    UnitNoCollision(target,target,0.1)
+
     for i=1,10 do
         if(GridNav:IsTraversable(vecGround)==false)then
             vecGround = vecGround + target:GetForwardVector() * 50
@@ -301,5 +304,6 @@ function SetTargetToTraversable(target)
             target:SetOrigin(vecGround)
             return
         end
+        vecGround = GetGroundPosition(vecGround, nil)
     end
 end

@@ -2,6 +2,7 @@
 {
 	"consumables"
 	{
+		"item"		"item_juice"		
 		"item"		"item_cake"
 		"item"		"item_bread"
 		"item"		"item_drink"
@@ -13,7 +14,6 @@
 		"item"		"item_candle"
 		"item"		"item_clarity"
 		"item"		"item_flask"
-		"item"		"item_gem"
 	}
 
 	"attributes"
@@ -126,7 +126,9 @@
 		"item"		"item_card_good_man"							
 		"item"		"item_card_bad_man"								
 		"item"		"item_card_worse_man"								
-		"item"		"item_card_love_man"		
+		"item"		"item_card_love_man"	
+		"item"		"item_gem"	
+		"item"      "item_broom"
 	}
 	
 	"weapons"

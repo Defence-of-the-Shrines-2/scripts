@@ -200,7 +200,39 @@ function ItemAbility_9ball_OnSpellStart(keys)
 	local vecCaster = Caster:GetOrigin()
 	local radian = RandomFloat(0,6.28)
 	local range = RandomFloat(keys.BlinkRangeMin,keys.BlinkRangeMax)
-	Caster:SetOrigin(Vector(vecCaster.x+math.cos(radian)*range,vecCaster.y+math.sin(radian)*range,vecCaster.z))
+	Caster:SetOrigin(vecCaster.x+math.cos(radian)*range,vecCaster.y+math.sin(radian)*range,vecCaster.z)
+end
+
+function ItemAbility_GiveGold(keys)
+	local ItemAbility = keys.ability
+	local Targer = keys.Targer
+	local TargerPlayerID = Targer:GetPlayerOwnerID()
+	PlayerResource:SetGold(TargerPlayerID,PlayerResource:GetGold(TargerPlayerID) + keys.GiveGoldAmount,false)
+end
+
+function ItemAbility_SetModifierStackCount(keys)
+	PrintKeys(keys)
+	local ItemAbility = keys.ability
+	local Targer = keys.Targer
+	
+	if (keys.ModifierCount>0) then
+		if (Target:HasModifier(keys.ModifierName)) then
+			Target:SetModifierStackCount(keys.ModifierName,ItemAbility,keys.ModifierCount)
+		end
+	elseif(Target:HasModifier(keys.ModifierName)) then
+		Target:RemoveModifierByName(keys.ModifierName)
+	end
+end
+
+function ItemAbility_ModifyModifierStackCount(keys)
+	local ItemAbility = keys.ability
+	local Targer = keys.Targer
+	local ModifierStackCount = 0
+	if (Target:HasModifier(keys.ModifierName)) then
+		ModifierStackCount=Target:GetModifierStackCount(keys.ModifierName,ItemAbility)
+	end
+	keys.ModifierCount=ModifierStackCount+keys.CountChange
+	ItemAbility_SetModifierStackCount(keys)
 end
 
 function PrintKeys(keys)

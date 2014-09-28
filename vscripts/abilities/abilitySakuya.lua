@@ -7,6 +7,16 @@ function OnSakuyaExSpellStart(keys)
 	caster:SetContextNum("ability_sakuya_01_stun", TRUE, 0) 
 end
 
+function OnSakuya01SpellReset(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	if(caster:GetContext("sakuya04_cooldown_reset")==TRUE)then
+		keys.ability:EndCooldown()
+		local usedCount = caster:GetContext("sakuya04_ability_01_used_count") + 1
+		caster:SetMana(caster:GetMana() - usedCount * 0.25 * keys.ability:GetManaCost(keys.ability:GetLevel()))
+		caster:SetContextNum("sakuya04_ability_01_used_count", usedCount , 0)
+	end
+end
+
 function OnSakuya01SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
@@ -32,13 +42,6 @@ function OnSakuya01SpellStart(keys)
 			caster:SetContextNum("ability_sakuya_01_stun", FALSE, 0) 
 		end
 	)	
-
-	if(caster:GetContext("sakuya04_cooldown_reset")==TRUE)then
-		keys.ability:EndCooldown()
-		local usedCount = caster:GetContext("sakuya04_ability_01_used_count") + 1
-		caster:SetMana(caster:GetMana() - usedCount * 0.25 * keys.ability:GetManaCost(keys.ability:GetLevel()))
-		caster:SetContextNum("sakuya04_ability_01_used_count", usedCount , 0)
-	end
 end
 
 function OnSakuya02SpellStart(keys)

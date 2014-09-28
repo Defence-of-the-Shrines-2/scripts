@@ -66,6 +66,7 @@ loadModule ( 'util/util' )
 loadModule ( 'util/disarmed' )
 loadModule ( 'util/invulnerable' )
 loadModule ( 'util/graveunit' )
+loadModule ( 'util/collision' )
 
 
 
