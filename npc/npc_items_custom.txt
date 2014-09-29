@@ -6379,21 +6379,19 @@
 			
 			"aura_item_good_lunchbox_charge"
 			{
-				//"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
 				//"IsHidden"				"1"
 				"Passive"				"1"
 				
-				"Aura"					"modifier_good_item_lunchbox_charge"
+				"Aura"					"modifier_item_good_lunchbox_charge"
 				"Aura_Radius"			"%charge_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-				"Aura_ApplyToCaster"	"1"
+				"Aura_ApplyToCaster"	"0"
 			}
 			
 			"modifier_item_good_lunchbox_charge"
 			{
-				//"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsHidden"				"1"
+				"IsHidden"					"1"
 				"OnAbilityExecuted"
 				{
 					"RunScript"
@@ -6541,7 +6539,7 @@
 				"Aura_Radius"			"%charge_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-				"Aura_ApplyToCaster"	"1"
+				"Aura_ApplyToCaster"	"0"
 			}
 			
 			"modifier_item_better_lunchbox_charge"
@@ -6688,7 +6686,7 @@
 				"Aura_Radius"			"%charge_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-				"Aura_ApplyToCaster"	"1"
+				"Aura_ApplyToCaster"	"0"
 			}
 			
 			"modifier_item_best_lunchbox_charge"
