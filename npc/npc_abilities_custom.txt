@@ -317,6 +317,66 @@
 			}
 		}
 	}
+
+	"ability_collection_find_master"
+    {
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+    	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"find_radius"			"500.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_interval"			"0.02"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_movespeed"			"25"
+			}
+		}
+		
+		
+        "Modifiers"
+	    {
+			"aura_ability_collection_find_master"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					"modifier_ability_collection_move"
+				"Aura_Radius"			"%find_radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_NO_INVIS|DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+				"Aura_ApplyToCaster"	"0"
+			}
+			
+			"modifier_ability_collection_move"
+			{
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"			"1"
+				"ThinkInterval"		"%move_interval"
+				
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "scripts/vscripts/abilities/abilityCollection.lua"
+						"Function"      "OnCollectionMoveToMaster"
+						"FindRadius"	"%find_radius"
+						"MaxMovespeed"	"%max_movespeed"
+					}
+				}
+			}
+		}
+    }
 	
 	"ability_dummy_unit"
     {

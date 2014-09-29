@@ -27,7 +27,7 @@ function ItemAbility_Verity_OnAttack(keys)
 	local RemoveMana = Target:GetMaxMana()*keys.PenetrateRemoveManaPercent*0.01
 	RemoveMana=min(RemoveMana,Target:GetMana())
 	--Target:SetMana(Target:GetMana()-RemoveMana)
-	Target:GiveMana(-1*RemoveMana)
+	Target:ReduceMana(RemoveMana)
 	local damage_to_deal = RemoveMana*keys.PenetrateDamageFactor
 	if (damage_to_deal>0) then
 		local damage_table = {
@@ -85,7 +85,6 @@ function ItemAbility_Frock_Poison(keys)
 end
 
 function ItemAbility_DoctorDoll_DeclineHealth(keys)
-	PrintTable(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	local Health = Caster:GetHealth()
@@ -100,7 +99,6 @@ function ItemAbility_DoctorDoll_DeclineHealth(keys)
 			damage_flags = 1
 		}
 		--PrintTable(damage_table)
-		print("ItemAbility_Frock_Poison| Damage:"..damage_to_deal)
 		ApplyDamage(damage_table)
 	end
 end
@@ -109,7 +107,7 @@ function ItemAbility_Lunchbox_Charge(keys)
 	PrintTable(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
-	local Target = keys.Target
+	local Target = keys.target
 	if (ItemAbility:IsItem()) then
 		local Charge = ItemAbility:GetCurrentCharges()
 		if (Charge<keys.MaxCharges) then
@@ -163,13 +161,26 @@ function ItemAbility_mushroom_soup_OnSpellStart(keys)
 	end
 end
 
+function ItemAbility_HorseKing_OnOpen_SpentMana(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	if (Caster:GetMaxMana()>keys.NeedSpentMana) then
+		if (Caster:GetManaPercent()<keys.SpentManaPercent) then
+			ItemAbility:ToggleAbility()
+		else
+			local SpentMana = Caster:GetMaxMana()*keys.SpentManaPercent*0.01
+			Caster:ReduceMana(SpentMana)
+		end
+	end
+end
+
 function ItemAbility_AbsorbMana(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	local Target = keys.target
 	local AbsorbMana = min(Target:GetMana(),keys.AbsorbManaAmount)
 	--Target:SetMana(Target:GetMana()-RemoveMana)
-	Target:GiveMana(-1*AbsorbMana)
+	Target:ReduceMana(AbsorbMana)
 	Caster:GiveMana(AbsorbMana)
 end
 
@@ -179,18 +190,18 @@ function ItemAbility_DonationBox_OnSpellStart(keys)
 	local Target = keys.target
 	Target:Kill(ItemAbility,Caster)
 	local CasterPlayerID = Caster:GetPlayerOwnerID()
-	PlayerResource:SetGold(CasterPlayerID,PlayerResource:GetGold(CasterPlayerID) + keys.BonusGold,false)
+	PlayerResource:SetGold(CasterPlayerID,PlayerResource:GetUnreliableGold(CasterPlayerID) + keys.BonusGold,false)
 end
 
-function ItemAbility_DonationGem_OnAttack(keys)
+function ItemAbility_DonationGem_GiveGold(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
-	local Target = keys.target
-	local CasterPlayerID = Caster:GetPlayerOwnerID()
+	local Attacker = keys.attacker
+	local AttackerPlayerID = Attacker:GetPlayerOwnerID()
 	local GameTime=GameRules:GetGameTime()
-	if ( Target:IsAlive()==false and GameTime-DonationGem_TriggerTime[CasterPlayerID]>=1.0) then
-		DonationGem_TriggerTime[CasterPlayerID]=GameTime
-		PlayerResource:SetGold(CasterPlayerID,PlayerResource:GetGold(CasterPlayerID) + keys.BonusGold,false)
+	if (GameTime-DonationGem_TriggerTime[AttackerPlayerID]>=1.0 and Attacker:HasModifier(keys.AttackerModifierName)) then
+		DonationGem_TriggerTime[AttackerPlayerID]=GameTime
+		PlayerResource:SetGold(AttackerPlayerID,PlayerResource:GetUnreliableGold(AttackerPlayerID) + keys.BonusGold,false)
 	end
 end
 
@@ -200,20 +211,23 @@ function ItemAbility_9ball_OnSpellStart(keys)
 	local vecCaster = Caster:GetOrigin()
 	local radian = RandomFloat(0,6.28)
 	local range = RandomFloat(keys.BlinkRangeMin,keys.BlinkRangeMax)
-	Caster:SetOrigin(vecCaster.x+math.cos(radian)*range,vecCaster.y+math.sin(radian)*range,vecCaster.z)
+	vecCaster.x = vecCaster.x+math.cos(radian)*range
+	vecCaster.y = vecCaster.y+math.sin(radian)*range
+	Caster:SetOrigin(vecCaster)
 end
 
-function ItemAbility_GiveGold(keys)
+function ItemAbility_PresentBox_OnInterval(keys)
 	local ItemAbility = keys.ability
-	local Targer = keys.Targer
-	local TargerPlayerID = Targer:GetPlayerOwnerID()
-	PlayerResource:SetGold(TargerPlayerID,PlayerResource:GetGold(TargerPlayerID) + keys.GiveGoldAmount,false)
+	local Caster = keys.caster
+	local CasterPlayerID = Caster:GetPlayerOwnerID()
+	--print("now:"..PlayerResource:GetUnreliableGold(CasterPlayerID).."+"..keys.GiveGoldAmount)
+	PlayerResource:SetGold(CasterPlayerID,PlayerResource:GetUnreliableGold(CasterPlayerID) + keys.GiveGoldAmount,false)
 end
 
 function ItemAbility_SetModifierStackCount(keys)
 	PrintKeys(keys)
 	local ItemAbility = keys.ability
-	local Targer = keys.Targer
+	local Target = keys.target
 	
 	if (keys.ModifierCount>0) then
 		if (Target:HasModifier(keys.ModifierName)) then
@@ -226,7 +240,7 @@ end
 
 function ItemAbility_ModifyModifierStackCount(keys)
 	local ItemAbility = keys.ability
-	local Targer = keys.Targer
+	local Target = keys.target
 	local ModifierStackCount = 0
 	if (Target:HasModifier(keys.ModifierName)) then
 		ModifierStackCount=Target:GetModifierStackCount(keys.ModifierName,ItemAbility)
@@ -235,10 +249,72 @@ function ItemAbility_ModifyModifierStackCount(keys)
 	ItemAbility_SetModifierStackCount(keys)
 end
 
-function PrintKeys(keys)
-	PrintTable(keys)
+function ItemAbility_Peach_OnTakeDamage(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local TakeDamageCount = Caster:GetContext("ItemAbility_Peach_TakeDamageCount")
+	local SpeedupDuration = keys.SpeedupDuration
+	
+	if (TakeDamageCount==nil) then
+		TakeDamageCount = keys.Damage
+	else
+		TakeDamageCount = TakeDamageCount + keys.Damage
+	end
+	Caster:SetContextNum("ItemAbility_Peach_TakeDamageCount",TakeDamageCount,keys.SpeedupDuration)
+	
+	if (TakeDamageCount>keys.TakeDamageTrigger) then
+		local ModifierCount = round(TakeDamageCount/keys.TakeDamageTrigger)+keys.SpeedupExtraModifierStackCount
+		ModifierCount = min(ModifierCount,keys.SpeedupMaxModifierStackCount)
+		
+		if (Caster:HasModifier(keys.SpeedupModifierName) == false) then
+			ItemAbility:ApplyDataDrivenModifier(Caster,Caster,keys.SpeedupModifierName,{duration = SpeedupDuration})
+		end
+		Caster:SetModifierStackCount(keys.SpeedupModifierName,ItemAbility,ModifierCount)
+	end
 end
 
+function ItemAbility_Yuri_OnSpell(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Target = keys.target
+	local ContractOverRange = keys.ContractOverRange
+	local ContractionFactor = keys.ContractionFactor
+	local BuffModifierName = keys.BuffModifierName
+	Caster:SetThink(function ()
+		if (Caster:HasModifier(BuffModifierName)==false or Target:IsAlive()==false) then
+			return nil
+		end
+		local CasterPos = Caster:GetOrigin()
+		local TargetPos = Target:GetOrigin()
+		local Distance = distance(CasterPos,TargetPos)
+		if (Distance>ContractOverRange) then
+			local vec = TargetPos - CasterPos
+			local MoveDistance = (Distance-ContractOverRange)*ContractionFactor
+			Caster:SetOrigin(CasterPos + vec:Normalized()*MoveDistance)
+		end
+		return 0.02
+	end)
+end
+
+function ItemAbility_ItemSpent(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	
+	if (ItemAbility:IsItem()) then
+		local Charge = ItemAbility:GetCurrentCharges()
+		if (Charge>1) then
+			ItemAbility:SetCurrentCharges(Charge-1)
+		else
+			Caster:RemoveItem(ItemAbility)
+		end
+	end
+end
+
+
+function round (num)
+	return math.floor(num + 0.5)
+end
+ 
 function distance(a, b)
     local xx = (a.x-b.x)
     local yy = (a.y-b.y)
@@ -249,6 +325,10 @@ function GetAngleBetweenTwoVec(a,b)
 	local y = b.y - a.y
 	local x = b.x - a.x
 	return math.atan2(y,x)
+end
+
+function PrintKeys(keys)
+	PrintTable(keys)
 end
 
 function PrintTable(t, indent, done)

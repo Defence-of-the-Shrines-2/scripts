@@ -4,6 +4,7 @@ function OnCollectionPower(keys)
 	local vecCaster = caster:GetOrigin()
 	local targets = keys.target_entities
 	for _,v in pairs(targets) do
+		print(v:GetUnitName())
 		if((v:GetUnitName()=="npc_coin_up_unit") or (v:GetUnitName()== "npc_power_up_unit"))then
 			if(v:GetContext("ability_collection_power")==nil)then
 				v:SetThink(
@@ -18,6 +19,41 @@ function OnCollectionPower(keys)
 	end
 end
 
+function OnGetCollection(Collection,Hero)
+	local vecHero = Hero:GetOrigin()
+	if((Collection:GetUnitName()=="npc_coin_up_unit"))then
+		local effectIndex = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_CUSTOMORIGIN, caster)
+		ParticleManager:SetParticleControl(effectIndex, 0, vecHero)
+		ParticleManager:SetParticleControl(effectIndex, 1, vecHero)
+		ParticleManager:ReleaseParticleIndex(effectIndex)
+		local ply = Hero:GetOwner()
+		local playerId = ply:GetPlayerID()
+		local modifyGold = PlayerResource:GetReliableGold(playerId) + 35
+		PlayerResource:SetGold(playerId, modifyGold, true)
+	elseif(Collection:GetUnitName()=="npc_power_up_unit")then
+		local powerCount = Hero:GetContext("hero_bouns_stat_power_count")
+		if(powerCount==nil)then
+			Hero:SetContextNum("hero_bouns_stat_power_count",0,0)
+			powerCount = 0
+		end
+		if(powerCount<30)then
+			local effectIndex = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_spotlight.vpcf", PATTACH_CUSTOMORIGIN, Hero)
+			ParticleManager:SetParticleControl(effectIndex, 0, vecHero)
+			ParticleManager:ReleaseParticleIndex(effectIndex)
+			powerCount = powerCount + 1
+			Hero:SetContextNum("hero_bouns_stat_power_count",powerCount,0)
+			if(Hero:GetPrimaryAttribute()==0)then
+				Hero:SetBaseStrength(Hero:GetBaseStrength()+1)
+			elseif(Hero:GetPrimaryAttribute()==1)then
+				Hero:SetBaseAgility(Hero:GetBaseAgility()+1)
+			elseif(Hero:GetPrimaryAttribute()==2)then
+				Hero:SetBaseIntellect(Hero:GetBaseIntellect()+1)
+			end
+		end
+	end
+	Collection:RemoveSelf()
+end
+
 function OnCollectionPowerMove(target,caster)
 	local vecTarget = target:GetOrigin()
 	local vecCaster = caster:GetOrigin()
@@ -29,36 +65,25 @@ function OnCollectionPowerMove(target,caster)
 	target:SetOrigin(vecTarget)
 	caster:SetContextNum("ability_collection_power_speed",speed,0)
 	if(GetDistanceBetweenTwoVec2D(vecTarget,vecCaster)<50)then
-		if((target:GetUnitName()=="npc_coin_up_unit"))then
-			local effectIndex = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_CUSTOMORIGIN, caster)
-			ParticleManager:SetParticleControl(effectIndex, 0, vecCaster)
-			ParticleManager:SetParticleControl(effectIndex, 1, vecCaster)
-			ParticleManager:ReleaseParticleIndex(effectIndex)
-			local ply = caster:GetOwner()
-			local playerId = ply:GetPlayerID()
-			local modifyGold = PlayerResource:GetReliableGold(playerId) + 35
-			PlayerResource:SetGold(playerId, modifyGold, true)
-		elseif(target:GetUnitName()=="npc_power_up_unit")then
-		    local powerCount = caster:GetContext("hero_bouns_stat_power_count")
-			if(powerCount==nil)then
-				caster:SetContextNum("hero_bouns_stat_power_count",0,0)
-				powerCount = 0
-			end
-			if(powerCount<30)then
-				local effectIndex = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_spotlight.vpcf", PATTACH_CUSTOMORIGIN, caster)
-				ParticleManager:SetParticleControl(effectIndex, 0, vecCaster)
-				ParticleManager:ReleaseParticleIndex(effectIndex)
-				powerCount = powerCount + 1
-				caster:SetContextNum("hero_bouns_stat_power_count",powerCount,0)
-				if(caster:GetPrimaryAttribute()==0)then
-					caster:SetBaseStrength(caster:GetBaseStrength()+1)
-				elseif(caster:GetPrimaryAttribute()==1)then
-					caster:SetBaseAgility(caster:GetBaseAgility()+1)
-				elseif(caster:GetPrimaryAttribute()==2)then
-					caster:SetBaseIntellect(caster:GetBaseIntellect()+1)
-				end
+		OnGetCollection(target,caster)
+	end
+end
+
+function OnCollectionMoveToMaster(keys)
+	local Collection = keys.caster
+	local Hero = keys.target
+	if (Collection ~= nil) then
+		local vecCollection = Collection:GetAbsOrigin()
+		local vecHero = Hero:GetAbsOrigin()
+		local Vec = vecHero - vecCollection
+		local Distance = GetDistanceBetweenTwoVec2D(vecHero,vecCollection)
+		if (Distance<keys.FindRadius) then
+			local MoveDistance = (keys.FindRadius-Distance)/keys.FindRadius*keys.MaxMovespeed
+			local ts=keys.FindRadius/GetDistanceBetweenTwoVec2D(vecHero,vecCollection)
+			Collection:SetAbsOrigin(vecCollection + Vec:Normalized()*MoveDistance)
+			if(GetDistanceBetweenTwoVec2D(vecCollection,vecHero)<25)then
+				OnGetCollection(Collection,Hero)
 			end
 		end
-		target:RemoveSelf()
 	end
 end

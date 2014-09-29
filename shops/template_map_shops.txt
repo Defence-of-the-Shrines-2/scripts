@@ -1,154 +1,179 @@
 "dota_shops"
 {
-	"consumables"
+	"consumables"	//消耗品
 	{
-		"item"		"item_juice"		
-		"item"		"item_cake"
-		"item"		"item_bread"
-		"item"		"item_drink"
-		"item"		"item_wine"
-		"item"		"item_talisman_of_tengu"
-		"item"		"item_zun_hat"
-		"item"		"item_bird"
-		"item"		"item_glue"
-		"item"		"item_candle"
-		"item"		"item_clarity"
 		"item"		"item_flask"
-	}
-
-	"attributes"
-	{
+		"item"		"item_clarity"
 		"item"		"item_tpscroll"
-		"item"		"item_cucumber"
-		"item"		"item_mushroom"
-		"item"		"item_ice_block"
-		"item"		"item_cherry_branch"
-		"item"		"item_cherry_leaf"
-		"item"		"item_paper_mask"
-		"item"		"item_catnip"
-		"item"		"item_cat_ear"
-		"item"		"item_cat_foot"
-		"item"		"item_cookbook"
-		"item"		"item_magic_guide_book"
+		"item"		"item_card_good_man"
+		"item"		"item_card_bad_man"
+		"item"		"item_card_worse_man"
+		"item"		"item_card_love_man"
+		"item"		"item_jinkela"
+		"item"		"item_gem"
 	}
 
-	"weapons_armor"
+	"attributes"	//属性
 	{
+		"item"		"item_cucumber"
+		"item"		"item_cherry_branch"
+		"item"		"item_catnip"
+		"item"		"item_cookbook"
+		"item"		"item_mushroom"
+		"item"		"item_cherry_leaf"
+		"item"		"item_cat_ear"
+		"item"		"item_magic_guide_book"
+		"item"		"item_paper_mask"
+		"item"		"item_cat_foot"
 		"item"		"item_rocket_diagram"
+		"item"		"item_ice_block"
+	}
+
+	"weapons_armor"	//军备
+	{
 		"item"		"item_knife"
 		"item"		"item_scissors"
 		"item"		"item_hammer"
 		"item"		"item_screw_driver"
-		"item"		"item_stool"
+		"item"		"item_item_wrench"
 		"item"		"item_silver_knife"
 		"item"		"item_aunt_clothes"
 		"item"		"item_sailor_suit"
 		"item"		"item_swimming_suit"
 		"item"		"item_pant"
 		"item"		"item_hunting_cap"
+		"item"		"item_bra"
 	}
 	
-	"misc"
+	"misc"		//杂项
 	{
-		"item"		"item_bra"
-		"item"		"item_god_hand"
-		"item"		"item_tengu_fan"
-		"item"		"item_gran_grimoire"
-		"item"		"item_rapier"
-		"item"		"item_camera"
+		"item"		"item_cake"
+		"item"		"item_baozi"
+		"item"		"item_juice"
+		"item"		"item_sake"
+		"item"		"item_broom"
+		"item"		"item_wind_amulet"
+		"item"		"item_zun_hat"
+		"item"		"item_wing"
+		"item"		"item_glue"
+		"item"		"item_bird"
+		"item"		"item_candle"
+		"item"		"item_frog"
+	}	
+	
+	// Level 1 - Green Recipes	//绿色道具
+	"basics"	//基础
+	{
 		"item"		"item_mushroom_kebab"
 		"item"		"item_mushroom_pie"
 		"item"		"item_mushroom_soup"
-		"item"		"item_wind_gun"
-		"item"		"item_luna_chip"
-		"item"		"item_frog"
-		"item"		"item_donation_box"
-	}	
-	
-	// Level 1 - Green Recipes
-	"basics"
-	{
-		"item"		"item_donation_gem"
-		"item"		"item_watermelon"
-		"item"		"item_cirno_claymore"
-		"item"		"item_smash_stick"
-		"item"		"item_rocket"
-		"item"		"item_teeth"
+		"item"		"item_banana"
+		"item"		"item_good_lunchbox"
+		"item"		"item_better_lunchbox"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_picnic_basket"
 		"item"		"item_horse_red"
 		"item"		"item_horse_green"
 		"item"		"item_horse_blue"
 		"item"		"item_horse_king"
-		"item"		"item_9ball"
+		"item"		"item_best_lunchbox"
 	}
 
-	// Level 2 - Blue Recipes
-	"support"
+	// Level 2 - Blue Recipes	//蓝色道具
+	"support"	//辅助
 	{
-
-		"item"		"item_travel_boots"
-		"item"	    "item_ghost_balloon"
-		"item"		"item_fox_mask"											
-		"item"		"item_cyclone"										
-		"item"		"item_sphere"						
-		"item"		"item_sheepstick"							
-		"item"		"item_wing"											
-		"item"		"item_frozen_frog"									
-		"item"		"item_guilty_mask"									
-		"item"		"item_zun_glasses"								
-		"item"		"item_hj_bug"									
-		"item"		"item_brother_sharp"											
+		"item"		"item_bone_flute"
+		"item"	    "item_fox_mask"
+		"item"		"item_hakurei_ticket"											
+		"item"		"item_yatagarasu"										
+		"item"		"item_darkred_umbrella"						
+		"item"		"item_nuclear_stick"							
+		"item"		"item_donation_box"											
+		"item"		"item_green_dam"									
+		"item"		"item_travel_boots"									
+		"item"		"item_9ball"										
 	}
 	
-	"magics"
+	"magics"	//法器
 	{
-		"item"		"item_loneliness"								
+		"item"		"item_sheepstick"								
+		"item"		"item_cyclone"									
+		"item"		"item_mr_yang"									
+		"item"		"item_three_dimension"										
+		"item"		"item_doctor_doll"							
+		"item"		"item_dummy_doll"							
+	}
+	
+	// Level 3 - Purple Recipes	//紫色道具
+	"weapons"	//武器
+	{
+		"item"		"item_wind_gun"								
+		"item"		"item_teeth"									
+		"item"		"item_smash_stick"							
+		"item"		"item_donation_gem"								
+		"item"		"item_luna_chip"							
+		"item"		"item_jiao_shou"							
+		"item"		"item_brother_sharp"								
+		"item"		"item_rapier"
+	}
+	
+	"defense"	//防具
+	{
+　　　	"item"		"item_flask"								
+		"item"		"item_flask"									
+		"item"		"item_flask"							
+		"item"		"item_flask"								
+		"item"		"item_flask"							
+		"item"		"item_flask"							
+		"item"		"item_flask"								
+		"item"		"item_flask"								
+　　　	"item"		"item_tsundere"	
+		"item"		"item_sphere"								
 		"item"		"item_phoenix_wing"									
-		"item"		"item_kafziel"									
-		"item"		"item_verity"										
-		"item"		"item_darkred_umbrella"							
-		"item"		"item_nuclear_stick"								
-		"item"		"item_frock"									
-		"item"		"item_good_lunchbox"						
-		"item"		"item_better_lunchbox"							
-		"item"		"item_best_lunchbox"							
-		"item"		"item_hakurei_ticket"							
-		"item"		"item_yatagarasu"							
-	}
-	
-	// Level 3 - Purple Recipes
-	"defense"
-	{
-		"item"		"item_doctor_doll"								
-		"item"		"item_dummy_doll"									
-		"item"		"item_bone_flute"							
-		"item"		"item_jiao_shou"								
-		"item"		"item_green_dam"							
-		"item"		"item_card_good_man"							
-		"item"		"item_card_bad_man"								
-		"item"		"item_card_worse_man"								
-		"item"		"item_card_love_man"	
-		"item"		"item_gem"	
-		"item"      "item_broom"
-	}
-	
-	"weapons"
-	{
+		"item"		"item_frock"							
+		"item"		"item_peach"								
+		"item"		"item_ghost_balloon"							
+		"item"		"item_zun_glasses"							
+		"item"		"item_guilty_mask"								
+		"item"		"item_hj_bug"		
 	}
 	
 	// Level 4 - Orange / Orb / Artifacts
-	"artifacts"
+	"artifacts"	//圣器
+	{
+　　　	"item"		"item_flask"
+　　　	"item"		"item_frozen_frog"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_tentacle"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_kafziel"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_loneliness"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_watermelon"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_cirno_claymore"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_god_hand"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_tengu_fan"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_gran_grimoire"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_camera"
+　　　	"item"		"item_flask"
+　　　	"item"		"item_verity"
+	}
+
+	"sideshop1"	//边路商店1
 	{
 	}
 
-	"sideshop1"
-	{
-	}
-
-	"sideshop2"
+	"sideshop2"	//边路商店2
 	{
 	}
 	
-	"secretshop"
+	"secretshop"	//野外商店
 	{
 
 	}

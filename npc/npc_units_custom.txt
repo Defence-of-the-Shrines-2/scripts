@@ -287,6 +287,7 @@
 		"ModelScale" 			    "0.1"
 		
 		"Ability1"					"ability_dummy_unit"
+		"Ability2"					"ability_collection_find_master"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 	}	
@@ -302,7 +303,8 @@
 		
 		
 		"Ability1"					"ability_dummy_unit"
+		"Ability2"					"ability_collection_find_master"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	}	
+	}
 }

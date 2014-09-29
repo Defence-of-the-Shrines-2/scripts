@@ -141,8 +141,8 @@ function PrecacheHeroResource(hero)
 	local heroName = hero:GetClassname()
 	local context
 
-	local abilityCollection = hero:FindAbilityByName("ability_collection_power")
-  abilityCollection:SetLevel(1)
+	--local abilityCollection = hero:FindAbilityByName("ability_collection_power")
+  --abilityCollection:SetLevel(1)
   local abilityEx
 
 	if(heroName == "npc_dota_hero_slark")then
