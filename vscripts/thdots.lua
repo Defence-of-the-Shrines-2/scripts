@@ -144,7 +144,8 @@ function PrecacheHeroResource(hero)
 	--local abilityCollection = hero:FindAbilityByName("ability_collection_power")
   --abilityCollection:SetLevel(1)
   local abilityEx
-
+	--local PlyID=hero:GetPlayerOwnerID()
+	--PlayerResource:SetGold(PlyID,999999,true)
 	if(heroName == "npc_dota_hero_slark")then
 		require( 'abilities/abilityAya' )
 		--[[PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_windwalk_dust.vpcf", context )--文文D

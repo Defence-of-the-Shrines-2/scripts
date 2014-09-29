@@ -3,43 +3,128 @@ for i=0,32 do
 	DonationGem_TriggerTime[i]=0.0
 end
 
+function ItemAbility_ModifierTarget_NotTower(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Target = keys.target
+	if (ItemAbility:IsItem()) then
+		if (Target:IsTower()==false) then
+			ItemAbility:ApplyDataDrivenModifier(Caster,Target,keys.ModifierName,{})
+		end
+	end
+end
+function ItemAbility_MrYang_OnSpellStart(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Target = keys.target
+	
+	for i=0.0,keys.SlowdownDuration,keys.SlowdownInterval do
+		ItemAbility:ApplyDataDrivenModifier(Caster,Target,keys.ModifierName,{duration=i})
+	end
+end
+
+function ItemAbility_SetModifierStackCount(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Target = keys.target
+	
+	if (keys.ModifierCount>0) then
+		if (Target:HasModifier(keys.ModifierName)==false) then
+			ItemAbility:ApplyDataDrivenModifier(Caster,Target,keys.ModifierName,{})
+		end
+		Target:SetModifierStackCount(keys.ModifierName,ItemAbility,keys.ModifierCount)
+	elseif(Target:HasModifier(keys.ModifierName)) then
+		Target:RemoveModifierByName(keys.ModifierName)
+	end
+end
+
+function ItemAbility_ModifyModifierStackCount(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Target = keys.target
+	local ModifierStackCount = 0
+	if (Target:HasModifier(keys.ModifierName)) then
+		ModifierStackCount=Target:GetModifierStackCount(keys.ModifierName,Caster)
+	end
+	keys.ModifierCount=ModifierStackCount+keys.CountChange
+	ItemAbility_SetModifierStackCount(keys)
+end
+
+function ItemAbility_SmashStick_OnAttack(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Target = keys.target
+	if (Target:IsTower()==false) then
+		g_UnitStunTarget(Caster,Target,keys.StunDuration)
+	end
+end
+
+function ItemAbility_GhostBallon_OnAttacked(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Attacker = keys.attacker	
+	if (Attacker:IsTower()==false) then
+		ItemAbility:ApplyDataDrivenModifier(Caster,Attacker,keys.ModifierName,{})
+	end
+end
+
+function ItemAbility_WindGun_OnAttack(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Target = keys.target
+	if (Target:IsRealHero()==false and Target:IsTower()==false) then
+		local damage_table = {
+			victim = Target,
+			attacker = Caster,
+			damage = damage_to_deal,
+			damage_type = DAMAGE_TYPE_PHYSICAL,
+			--damage_flags = 1
+		}
+		ApplyDamage(damage_table)
+	end
+end
+
 function ItemAbility_Camera_OnAttack(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	local Target = keys.target
-	local damage_to_deal =Target:GetMaxHealth()*keys.DamageHealthPercent
-	local damage_table = {
-		victim = Target,
-		attacker = Caster,
-		damage = damage_to_deal,
-		damage_type = DAMAGE_TYPE_MAGICAL,
-		damage_flags = 1
-	}
-	--PrintTable(damage_table)
-	print("ItemAbility_Camera_OnAttack| Damage:"..damage_to_deal)
-	ApplyDamage(damage_table)
+	if (Target:IsMechanical()==false and Target:IsTower()==false) then
+		local damage_to_deal =Target:GetMaxHealth()*keys.DamageHealthPercent
+		local damage_table = {
+			victim = Target,
+			attacker = Caster,
+			damage = damage_to_deal,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			--damage_flags = 1
+		}
+		--PrintTable(damage_table)
+		print("ItemAbility_Camera_OnAttack| Damage:"..damage_to_deal)
+		ApplyDamage(damage_table)
+	end
 end
 
 function ItemAbility_Verity_OnAttack(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	local Target = keys.target
-	local RemoveMana = Target:GetMaxMana()*keys.PenetrateRemoveManaPercent*0.01
-	RemoveMana=min(RemoveMana,Target:GetMana())
-	--Target:SetMana(Target:GetMana()-RemoveMana)
-	Target:ReduceMana(RemoveMana)
-	local damage_to_deal = RemoveMana*keys.PenetrateDamageFactor
-	if (damage_to_deal>0) then
-		local damage_table = {
-			victim = Target,
-			attacker = Caster,
-			damage = damage_to_deal,
-			damage_type = DAMAGE_TYPE_PHYSICAL,
-			damage_flags = 1
-		}
-		--PrintTable(damage_table)
-		print("ItemAbility_Verity_OnAttack| Damage:"..damage_to_deal)
-		ApplyDamage(damage_table)
+	if (Target:IsMechanical()==false and Target:IsTower()==false) then
+		local RemoveMana = Target:GetMaxMana()*keys.PenetrateRemoveManaPercent*0.01
+		RemoveMana=min(RemoveMana,Target:GetMana())
+		--Target:SetMana(Target:GetMana()-RemoveMana)
+		Target:ReduceMana(RemoveMana)
+		local damage_to_deal = RemoveMana*keys.PenetrateDamageFactor
+		if (damage_to_deal>0) then
+			local damage_table = {
+				victim = Target,
+				attacker = Caster,
+				damage = damage_to_deal,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+				--damage_flags = 1
+			}
+			--PrintTable(damage_table)
+			print("ItemAbility_Verity_OnAttack| Damage:"..damage_to_deal)
+			ApplyDamage(damage_table)
+		end
 	end
 end
 
@@ -47,41 +132,57 @@ function ItemAbility_Kafziel_OnAttack(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	local Target = keys.target
-	local damage_to_deal = (Caster:GetHealth()-Target:GetHealth())*keys.HarvestDamageFactor
-	if (damage_to_deal>0) then
-		local damage_table = {
-			victim = Target,
-			attacker = Caster,
-			damage = damage_to_deal,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			damage_flags = 1
-		}
-		--PrintTable(damage_table)
-		print("ItemAbility_Kafziel_OnAttack| Damage:"..damage_to_deal)
-		ApplyDamage(damage_table)
+	if (Target:IsMechanical()==false and Target:IsTower()==false) then
+		local damage_to_deal = (Caster:GetHealth()-Target:GetHealth())*keys.HarvestDamageFactor
+		if (damage_to_deal>0) then
+			local damage_table = {
+				victim = Target,
+				attacker = Caster,
+				damage = damage_to_deal,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				--damage_flags = 1
+			}
+			--PrintTable(damage_table)
+			print("ItemAbility_Kafziel_OnAttack| Damage:"..damage_to_deal)
+			ApplyDamage(damage_table)
+		end
 	end
 end
 
 function ItemAbility_Frock_Poison(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
-	local Target = keys.attacker
-	local MaxAttribute = max(max(Caster:GetStrength(),Caster:GetAgility()),Caster:GetIntellect())
-	
-	local damage_to_deal = keys.PoisonDamageBase + MaxAttribute*keys.PoisonDamageFactor
-	damage_to_deal = max(damage_to_deal,keys.PoisonMinDamage)
-	if (damage_to_deal>0) then
-		local damage_table = {
-			victim = Target,
-			attacker = Caster,
-			damage = damage_to_deal,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			damage_flags = 1
-		}
-		--PrintTable(damage_table)
-		print("ItemAbility_Frock_Poison| Damage:"..damage_to_deal)
-		ApplyDamage(damage_table)
+	local Attacker = keys.attacker
+	if (Attacker:IsMechanical()==false and Attacker:IsTower()==false) then
+		local damage_to_deal = 0
+		if (Attacker:IsHero()) then
+			local MaxAttribute = max(max(Attacker:GetStrength(),Attacker:GetAgility()),Attacker:GetIntellect())
+			damage_to_deal = keys.PoisonDamageBase + MaxAttribute*keys.PoisonDamageFactor
+		end
+		damage_to_deal = max(damage_to_deal,keys.PoisonMinDamage)
+		if (damage_to_deal>0) then
+			local damage_table = {
+				victim = Attacker,
+				attacker = Caster,
+				damage = damage_to_deal,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				--damage_flags = 1
+			}
+			--PrintTable(damage_table)
+			print("ItemAbility_Frock_Poison| Damage:"..damage_to_deal)
+			ApplyDamage(damage_table)
+		end
 	end
+end
+
+function ItemAbility_LoneLiness_RegenHealth(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	local Health = Caster:GetHealth()
+	local MaxHealth = Caster:GetMaxHealth()
+	local HealthRegen = Caster:GetHealthRegen()
+	local HealAmount = (MaxHealth-Health)*keys.PercentHealthRegenBonus*0.01 + HealthRegen*keys.HealthRegenMultiplier*0.01
+	Caster:Heal(HealAmount,Caster)
 end
 
 function ItemAbility_DoctorDoll_DeclineHealth(keys)
@@ -96,11 +197,17 @@ function ItemAbility_DoctorDoll_DeclineHealth(keys)
 			attacker = Caster,
 			damage = damage_to_deal,
 			damage_type = DAMAGE_TYPE_PURE,
-			damage_flags = 1
+			--damage_flags = 1
 		}
 		--PrintTable(damage_table)
 		ApplyDamage(damage_table)
 	end
+end
+
+function ItemAbility_DummyDoll_OnSpellStart(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	Caster:MakeIllusion()
 end
 
 function ItemAbility_Lunchbox_Charge(keys)
@@ -117,7 +224,6 @@ function ItemAbility_Lunchbox_Charge(keys)
 end
 
 function ItemAbility_Lunchbox_OnSpellStart(keys)
-	PrintTable(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	if (ItemAbility:IsItem()) then
@@ -222,31 +328,6 @@ function ItemAbility_PresentBox_OnInterval(keys)
 	local CasterPlayerID = Caster:GetPlayerOwnerID()
 	--print("now:"..PlayerResource:GetUnreliableGold(CasterPlayerID).."+"..keys.GiveGoldAmount)
 	PlayerResource:SetGold(CasterPlayerID,PlayerResource:GetUnreliableGold(CasterPlayerID) + keys.GiveGoldAmount,false)
-end
-
-function ItemAbility_SetModifierStackCount(keys)
-	PrintKeys(keys)
-	local ItemAbility = keys.ability
-	local Target = keys.target
-	
-	if (keys.ModifierCount>0) then
-		if (Target:HasModifier(keys.ModifierName)) then
-			Target:SetModifierStackCount(keys.ModifierName,ItemAbility,keys.ModifierCount)
-		end
-	elseif(Target:HasModifier(keys.ModifierName)) then
-		Target:RemoveModifierByName(keys.ModifierName)
-	end
-end
-
-function ItemAbility_ModifyModifierStackCount(keys)
-	local ItemAbility = keys.ability
-	local Target = keys.target
-	local ModifierStackCount = 0
-	if (Target:HasModifier(keys.ModifierName)) then
-		ModifierStackCount=Target:GetModifierStackCount(keys.ModifierName,ItemAbility)
-	end
-	keys.ModifierCount=ModifierStackCount+keys.CountChange
-	ItemAbility_SetModifierStackCount(keys)
 end
 
 function ItemAbility_Peach_OnTakeDamage(keys)
@@ -367,4 +448,8 @@ function PrintTable(t, indent, done)
             end
         end
     end
+end
+
+function g_UnitStunTarget(caster,target,stuntime)
+    UtilStun:UnitStunTarget(caster,target,stuntime)
 end

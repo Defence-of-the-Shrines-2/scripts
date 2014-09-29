@@ -72,7 +72,7 @@ end
 function OnCollectionMoveToMaster(keys)
 	local Collection = keys.caster
 	local Hero = keys.target
-	if (Collection ~= nil) then
+	if (Collection~=nil and Hero:IsRealHero()) then
 		local vecCollection = Collection:GetAbsOrigin()
 		local vecHero = Hero:GetAbsOrigin()
 		local Vec = vecHero - vecCollection

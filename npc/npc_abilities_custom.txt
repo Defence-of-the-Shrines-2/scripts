@@ -354,7 +354,7 @@
 				"Aura_Radius"			"%find_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_NO_INVIS|DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
 				"Aura_ApplyToCaster"	"0"
 			}
 			

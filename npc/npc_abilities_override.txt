@@ -1147,16 +1147,141 @@
 	"item_radiance"			"REMOVE"
 	"item_recipe_butterfly"			"REMOVE"
 	"item_butterfly"			"REMOVE"
-	"item_recipe_greater_crit"			"REMOVE"
-	"item_greater_crit"			"REMOVE"
+	//"item_recipe_greater_crit"			"REMOVE"
+	//"item_greater_crit"			"REMOVE"
+	//=================================================================================================================
+	// Recipe: Greater Crit
+	//=================================================================================================================
+	"item_recipe_greater_crit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_greater_crit"
+		"ItemRequirements"
+		{
+			"01"						"item_lesser_crit;item_wrench"
+		}
+	}
+	
+	//=================================================================================================================
+	// Greater Crit
+	//=================================================================================================================
+	"item_greater_crit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"141"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6000"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"85"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"300"
+			}
+		}
+	}
 	"item_recipe_basher"			"REMOVE"
 	"item_basher"			"REMOVE"
 	"item_recipe_bfury"			"REMOVE"
 	"item_bfury"			"REMOVE"
 	"item_recipe_manta"			"REMOVE"
 	"item_manta"			"REMOVE"
-	"item_recipe_lesser_crit"			"REMOVE"
-	"item_lesser_crit"			"REMOVE"
+	//"item_recipe_lesser_crit"			"REMOVE"
+	//"item_lesser_crit"			"REMOVE"
+	//=================================================================================================================
+	// Recipe: Lesser Crit
+	//=================================================================================================================
+	"item_recipe_lesser_crit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"148"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_lesser_crit"
+		"ItemRequirements"
+		{
+			"01"						"item_knife;item_scissors"
+		}
+	}
+	
+	//=================================================================================================================
+	// Lesser Crit
+	//=================================================================================================================
+	"item_lesser_crit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"149"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"150"
+			}
+		}
+	}
 	"item_recipe_armlet"			"REMOVE"
 	"item_armlet"			"REMOVE"
 	"item_recipe_invis_sword"			"REMOVE"
