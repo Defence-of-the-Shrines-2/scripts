@@ -50,7 +50,21 @@ function Precache( context )
 	PrecacheResource( "model", "models/thd2/firewing.vmdl", context )--妹红W	
 
 	PrecacheResource( "particle", "particles/thd2/heroes/flandre/ability_flandre_04_buff.vpcf", context )--芙兰朵露	
-	PrecacheResource( "particle", "particles/thd2/heroes/flandre/ability_flandre_04_effect.vpcf", context )--芙兰朵露	
+	PrecacheResource( "particle", "particles/thd2/heroes/flandre/ability_flandre_04_effect.vpcf", context )--芙兰朵露
+
+	PrecacheResource( "particle", "particles/units/heroes/hero_lich/lich_frost_armor.vpcf", context )--幽灵气球
+	PrecacheResource( "particle", "particles/thd2/items/item_bad_man_card.vpcf", context )--坏人卡
+	PrecacheResource( "particle", "particles/thd2/items/item_good_man_card.vpcf", context )--好人卡
+	PrecacheResource( "particle", "particles/thd2/items/item_love_man_card.vpcf", context )--爱人卡
+	PrecacheResource( "particle", "particles/thd2/items/item_unlucky_man_card.vpcf", context )--衰人卡
+	PrecacheResource( "particle", "particles/units/heroes/hero_lich/lich_ambient_frost_legs.vpcf", context )--冰青蛙减速
+	PrecacheResource( "particle", "particles/units/heroes/hero_abaddon/abaddon_death_coil_explosion_e.vpcf", context )--镰刀
+	PrecacheResource( "particle", "particles/base_attacks/ranged_tower_good_launch.vpcf", context )--绿刀
+	PrecacheResource( "particle", "particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf", context )--绿坝
+	PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf", context )--碎骨笛
+
+	
+
 
 end
 

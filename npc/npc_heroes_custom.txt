@@ -115,11 +115,10 @@
 	"npc_dota_hero_reimu"
 	{
 		"override_hero"			"npc_dota_hero_lina"
-		"AbilityLayout" 		"5"
+		"AbilityLayout" 		"4"
 		"Ability1"				"ability_dota2x_reimu01" 
 		"Ability2"				"ability_dota2x_reimu02"
 		"Ability3"				"ability_dota2x_reimu03"
-		"Ability4"				"ability_collection_power"
 		"Ability5"				"ability_dota2x_reimu04"
 		"Ability6"				"attribute_bonus"
 		
@@ -170,11 +169,10 @@
 	"npc_dota_hero_marisa"
 	{
 		"override_hero"			"npc_dota_hero_crystal_maiden"
-		"AbilityLayout" 		"5"
+		"AbilityLayout" 		"4"
 		"Ability1"				"ability_thdots_marisa01" 
 		"Ability2"				"ability_thdots_marisa02" 
 		"Ability3"				"ability_thdots_marisa03" 
-		"Ability4"				"ability_collection_power"
 		"Ability5"				"ability_thdots_marisa04" 
 		"Ability6"				"attribute_bonus"
 		
@@ -221,11 +219,10 @@
 	"npc_dota_hero_youmu"
 	{
 		"override_hero"			"npc_dota_hero_juggernaut"
-		"AbilityLayout" 		"5"
+		"AbilityLayout" 		"4"
 		"Ability1"				"ability_thdots_youmu01" 
 		"Ability2"				"ability_thdots_youmu02" 
 		"Ability3"				"ability_thdots_youmu03" 
-		"Ability4"				"ability_collection_power"
 		"Ability5"				"ability_thdots_youmu04" 
 		"Ability6"				"attribute_bonus"
 		
@@ -272,11 +269,10 @@
 	"npc_dota_hero_Aya"
 	{
 		"override_hero"			"npc_dota_hero_slark"
-		"AbilityLayout" 		"5"
+		"AbilityLayout" 		"4"
 		"Ability1"				"ability_thdots_aya01" 
 		"Ability2"				"ability_thdots_aya02" 
 		"Ability3"				"ability_thdots_aya03" 
-		"Ability4"				"ability_collection_power"
 		"Ability5"				"ability_thdots_aya04" 
 		"Ability6"				"attribute_bonus"
 		
@@ -323,10 +319,9 @@
 	"npc_dota_hero_Tensi"
 	{
 		"override_hero"				"npc_dota_hero_earthshaker"
-		"AbilityLayout" 			"5"
+		"AbilityLayout" 			"4"
 		"Ability2"					"ability_thdots_tensi02" 
 		"Ability3"					"ability_thdots_tensi03" 
-		"Ability4"					"ability_collection_power"
 		"Ability5"             	 	"zuus_thundergods_wrath"
 		"Ability6"					"attribute_bonus"
 
@@ -374,11 +369,10 @@
 	"npc_dota_hero_Byakuren"
 	{
 		"override_hero"				"npc_dota_hero_dark_seer"
-		"AbilityLayout" 			"5"
+		"AbilityLayout" 			"4"
 		"Ability1"					"ability_thdots_byakuren01" 
 		"Ability2"					"ability_thdots_byakuren02"
 		"Ability3"					"ability_thdots_byakuren03"
-		"Ability4"					"ability_collection_power"
 		"Ability5"					"ability_thdots_byakuren04"
 		"Ability6"					"attribute_bonus"
 		
@@ -433,11 +427,10 @@
 	"npc_dota_hero_yuyuko"
 	{
 		"override_hero"			"npc_dota_hero_necrolyte"
-		"AbilityLayout" 		"6"
+		"AbilityLayout" 		"5"
 		"Ability1"				"death_prophet_carrion_swarm" 
 		"Ability2"				"bane_nightmare"
 		"Ability3"				"necrolyte_heartstopper_aura"
-		"Ability4"				"ability_collection_power"
 		"Ability5"				"ability_thdots_yuyukoEx"
 		"Ability6"				"ability_thdots_yuyuko04"
 		"Ability7"				"attribute_bonus"
@@ -490,11 +483,10 @@
     "npc_dota_hero_sakuya"
 	{
 		"override_hero"			"npc_dota_hero_templar_assassin"
-		"AbilityLayout" 		"6"
+		"AbilityLayout" 		"5"
 		"Ability1"				"ability_thdots_sakuya01" 
 		"Ability2"				"ability_thdots_sakuya02" 
 		"Ability3"				"ability_thdots_sakuya03"
-		"Ability4"				"ability_collection_power"
 		"Ability5"				"ability_thdots_sakuyaEx" 
 		"Ability6"				"ability_thdots_sakuya04" 
 		"Ability7"				"attribute_bonus"
@@ -549,10 +541,9 @@
     "npc_dota_hero_flandre"
 	{
 		"override_hero"			"npc_dota_hero_naga_siren"
-		"AbilityLayout" 		"6"
+		"AbilityLayout" 		"5"
 		"Ability2"				"ability_thdots_flandre02"
 		"Ability3"				"skeleton_king_vampiric_aura"
-		"Ability4"				"ability_collection_power"
 		"Ability5"				""
 		"Ability6"				"ability_thdots_flandre04"
 		"Ability7"				"attribute_bonus"
@@ -604,11 +595,10 @@
 	"npc_dota_hero_Mokou"
 	{
 		"override_hero"				"npc_dota_hero_chaos_knight"
-		"AbilityLayout" 			"5"
+		"AbilityLayout" 			"4"
 		"Ability1"					"ability_thdots_mokou01" 
 		"Ability2"					"ability_thdots_mokou02" 
 		"Ability3"					"phoenix_supernova" 
-		"Ability4"					"ability_collection_power"
 		"Ability5"             	 	"ability_thdots_mokou04"
 		"Ability6"					"attribute_bonus"
 			
