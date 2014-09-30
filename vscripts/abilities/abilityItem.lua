@@ -211,11 +211,10 @@ function ItemAbility_DummyDoll_OnSpellStart(keys)
 end
 
 function ItemAbility_Lunchbox_Charge(keys)
-	PrintTable(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
-	local Target = keys.target
-	if (ItemAbility:IsItem()) then
+	local CurrentActiveAbility= Caster:GetCurrentActiveAbility()
+	if (ItemAbility:IsItem() and CurrentActiveAbility:IsItem()==false) then
 		local Charge = ItemAbility:GetCurrentCharges()
 		if (Charge<keys.MaxCharges) then
 			ItemAbility:SetCurrentCharges(Charge+1)
@@ -294,21 +293,41 @@ function ItemAbility_DonationBox_OnSpellStart(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	local Target = keys.target
+	local GoldBounty = Target:GetGoldBounty()
+	Target:SetMaximumGoldBounty(GoldBounty+keys.BonusGold)
+	Target:SetMinimumGoldBounty(GoldBounty+keys.BonusGold)
 	Target:Kill(ItemAbility,Caster)
-	local CasterPlayerID = Caster:GetPlayerOwnerID()
-	PlayerResource:SetGold(CasterPlayerID,PlayerResource:GetUnreliableGold(CasterPlayerID) + keys.BonusGold,false)
 end
 
-function ItemAbility_DonationGem_GiveGold(keys)
+function ItemAbility_DonationGem_AddTargetGoldBounty(keys)
 	local ItemAbility = keys.ability
+	local Target = keys.target
 	local Caster = keys.caster
-	local Attacker = keys.attacker
-	local AttackerPlayerID = Attacker:GetPlayerOwnerID()
-	local GameTime=GameRules:GetGameTime()
-	if (GameTime-DonationGem_TriggerTime[AttackerPlayerID]>=1.0 and Attacker:HasModifier(keys.AttackerModifierName)) then
-		DonationGem_TriggerTime[AttackerPlayerID]=GameTime
-		PlayerResource:SetGold(AttackerPlayerID,PlayerResource:GetUnreliableGold(AttackerPlayerID) + keys.BonusGold,false)
+	local CasterPlayerID = Caster:GetPlayerOwnerID()
+	local GoldBounty = Target:GetGoldBounty()
+	Target:SetMaximumGoldBounty(GoldBounty+keys.GoldBounty)
+	Target:SetMinimumGoldBounty(GoldBounty+keys.GoldBounty)
+	if (GameRules:GetGameTime()-DonationGem_TriggerTime[CasterPlayerID]<1.0) then
+		Target:RemoveModifierByName(keys.ModifierName)
 	end
+end
+
+function ItemAbility_DonationGem_ReduceTargetGoldBounty(keys)
+	local ItemAbility = keys.ability
+	local Target = keys.target
+	local Caster = keys.caster
+	local CasterPlayerID = Caster:GetPlayerOwnerID()
+	local GoldBounty = Target:GetGoldBounty()
+	Target:SetMaximumGoldBounty(GoldBounty-keys.GoldBounty)
+	Target:SetMinimumGoldBounty(GoldBounty-keys.GoldBounty)
+end
+
+function ItemAbility_DonationGem_UpdateTiggerTime(keys)
+	local ItemAbility = keys.ability
+	local Target = keys.target
+	local Caster = keys.caster
+	local CasterPlayerID = Caster:GetPlayerOwnerID()
+	DonationGem_TriggerTime[CasterPlayerID]=GameRules:GetGameTime()
 end
 
 function ItemAbility_9ball_OnSpellStart(keys)

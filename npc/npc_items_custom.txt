@@ -2875,29 +2875,53 @@
 				"Passive" 	"1"
 				"IsHidden"	"1"
 				
-				"OnAttackStart"
+				"OnAttackLanded"
 				{
-					"ApplyModifier"
+					"Random"
 					{
-						"Target"		"TARGET"
-						"ModifierName"	"modifier_item_donation_gem_check_death"
+						"Chance" "%bonus_gold_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target"		"TARGET"
+								"ModifierName"	"modifier_item_donation_gem_add_gold_bounty"
+							}
+						}
 					}
 				}
 			}
-			"modifier_item_donation_gem_check_death"
+			"modifier_item_donation_gem_add_gold_bounty"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsHidden"		"1"
-				"Duration"		"1.0"
+				"Duration"		"0.01"
 				
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"          "ItemAbility_DonationGem_AddTargetGoldBounty"
+						"GoldBounty"		"%bonus_gold"
+						"ModifierName"		"modifier_item_donation_gem_add_gold_bounty"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"          "ItemAbility_DonationGem_ReduceTargetGoldBounty"
+						"GoldBounty"		"%bonus_gold"
+					}
+				}
 				"OnDeath"
 				{
 					"RunScript"
 					{
 						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
-						"Function"          "ItemAbility_DonationGem_GiveGold"
-						"BonusGold"			"%bonus_gold"
-						"AttackerModifierName"	"modifier_item_donation_gem_attack"
+						"Function"          "ItemAbility_DonationGem_UpdateTiggerTime"
 					}
 				}
 			}
@@ -3971,8 +3995,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
-				{}
+				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%bonus_attack_speed"
@@ -3983,7 +4006,6 @@
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsBuff"	"1"
-				"Passive" 	"1"
 				"Duration" 		"%berserk_duration"
 				"Properties"
 				{
@@ -3996,7 +4018,6 @@
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsBuff"	"1"
-				"Passive" 	"1"
 				"Duration" 		"%berserk_duration"
 				"Properties"
 				{
@@ -6120,7 +6141,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reduction_cooldown"	"5"
+				"reduction_cooldown"	"25"
 			}
 		}
 	
@@ -7906,7 +7927,7 @@
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%speedup_duration"
-				"IsDebuff"		"1"
+				"IsBuff"		"1"
 				"EffectName" 				"particles/thd2/items/item_bad_man_card.vpcf"
 				"EffectAttachType" 			"follow_origin"
 				
