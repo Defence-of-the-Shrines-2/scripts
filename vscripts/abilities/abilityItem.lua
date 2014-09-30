@@ -328,6 +328,11 @@ function ItemAbility_DonationGem_UpdateTiggerTime(keys)
 	local Caster = keys.caster
 	local CasterPlayerID = Caster:GetPlayerOwnerID()
 	DonationGem_TriggerTime[CasterPlayerID]=GameRules:GetGameTime()
+	
+	local effectIndex = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_CUSTOMORIGIN, Caster)
+	ParticleManager:SetParticleControl(effectIndex, 0, Caster:GetOrigin())
+	ParticleManager:SetParticleControl(effectIndex, 1, Caster:GetOrigin())
+	ParticleManager:ReleaseParticleIndex(effectIndex)
 end
 
 function ItemAbility_9ball_OnSpellStart(keys)

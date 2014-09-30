@@ -3437,7 +3437,7 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"3"
 			}
-			"01"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_agility"			"3 5 7 9 11"
@@ -3521,7 +3521,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2200"
+		"ItemCost"						"3000"
 		"ItemShopTags"					"str;agi;int;damage"
 		"ItemQuality"					""
 		"ItemSellable"					"1"
@@ -3538,15 +3538,15 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"3"
 			}
-			"01"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"3 5 7 9 11"
+				"bonus_agility"			"5"//"3 5 7 9 11"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"3 6 9 12 15"
+				"bonus_intellect"		"6"//"3 6 9 12 15"
 			}
 			"04"
 			{
@@ -3583,7 +3583,7 @@
 	
 		"Modifiers"
 		{
-			"modifier_item_rocket"
+			"modifier_item_rocket_2"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
@@ -3622,7 +3622,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2200"
+		"ItemCost"						"3800"
 		"ItemShopTags"					"str;agi;int;damage"
 		"ItemQuality"					""
 		"ItemSellable"					"1"
@@ -3639,15 +3639,15 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"3"
 			}
-			"01"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"3 5 7 9 11"
+				"bonus_agility"			"7"//"3 5 7 9 11"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"3 6 9 12 15"
+				"bonus_intellect"		"9"//"3 6 9 12 15"
 			}
 			"04"
 			{
@@ -3684,7 +3684,7 @@
 	
 		"Modifiers"
 		{
-			"modifier_item_rocket"
+			"modifier_item_rocket_3"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
@@ -3723,7 +3723,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2200"
+		"ItemCost"						"4600"
 		"ItemShopTags"					"str;agi;int;damage"
 		"ItemQuality"					""
 		"ItemSellable"					"1"
@@ -3740,15 +3740,15 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"3"
 			}
-			"01"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"3 5 7 9 11"
+				"bonus_agility"			"9"//"3 5 7 9 11"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"3 6 9 12 15"
+				"bonus_intellect"		"12"//"3 6 9 12 15"
 			}
 			"04"
 			{
@@ -3785,7 +3785,7 @@
 	
 		"Modifiers"
 		{
-			"modifier_item_rocket"
+			"modifier_item_rocket_4"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
@@ -3824,7 +3824,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2200"
+		"ItemCost"						"5400"
 		"ItemShopTags"					"str;agi;int;damage"
 		"ItemQuality"					""
 		"ItemSellable"					"1"
@@ -3839,15 +3839,15 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"3"
 			}
-			"01"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"3 5 7 9 11"
+				"bonus_agility"			"11"//"3 5 7 9 11"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"3 6 9 12 15"
+				"bonus_intellect"		"15"//"3 6 9 12 15"
 			}
 			"04"
 			{
@@ -3884,7 +3884,7 @@
 	
 		"Modifiers"
 		{
-			"modifier_item_rocket"
+			"modifier_item_rocket_5"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
@@ -6152,8 +6152,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
-				{}
+				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MANA_BONUS" "%bonus_mana"
@@ -7350,7 +7349,7 @@
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVISIBLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_INVISIBLE"			"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -8118,9 +8117,9 @@
 		"ItemPermanent"					"0"
 		"ItemStackable"					"1"
 		"ItemInitialCharges"			"2"
-		"ItemStockMax"					"2"
-		"ItemStockInitial"				"2"
-		"ItemStockTime"					"120.0"
+		//"ItemStockMax"					"2"
+		//"ItemStockInitial"				"2"
+		//"ItemStockTime"					"120"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------

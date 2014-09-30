@@ -89,7 +89,7 @@
 		"item"		"item_hakurei_ticket"											
 		"item"		"item_yatagarasu"										
 		"item"		"item_darkred_umbrella"		
-		//"item"		"item_nuclear_stick"							
+		"item"		"item_nuclear_stick"							
 		"item"		"item_donation_box"											
 		"item"		"item_green_dam"									
 		"item"		"item_travel_boots"									
