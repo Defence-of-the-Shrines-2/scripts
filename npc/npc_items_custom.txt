@@ -4690,10 +4690,11 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				"IsBuff"	"1"
-				"EffectName" 				"particles/units/heroes/hero_lich/lich_frost_armor.vpcf"
+				"EffectName" 				"particles/thd2/items/item_ballon.vpcf"
 				"EffectAttachType" 			"follow_origin"
 				"Duration"					"%shield_duration"
 				//"IsHidden"	"1"
+
 				"Properties"
 				{
 
@@ -5786,13 +5787,12 @@
 						"Chance" 	"%harvest_chance_melee"
 						"OnSuccess" 
 						{
-							"FireEffect"
+							"AttachEffect"
 							{
-								"EffectName" 				"particles/units/heroes/hero_abaddon/abaddon_death_coil_explosion_e.vpcf"
-								"EffectAttachType" 			"follow_origin"
-								"Target"					"TARGET"
+								"EffectName"		"particles/thd2/items/item_kafziel.vpcf"
+								"EffectAttachType"  "follow_origin"
+								"Target"            "TARGET"
 							}
-							
 							"Damage"
 							{
 								"Target"	"TARGET"
@@ -5920,9 +5920,9 @@
 				{}
 				"OnAttackLanded"
 				{
-					"FireEffect"
+					"AttachEffect"
 					{
-						"EffectName" 				"particles/units/heroes/hero_abaddon/abaddon_death_coil_explosion_e.vpcf"
+						"EffectName" 				"particles/base_attacks/ranged_tower_good_launch.vpcf"
 						"EffectAttachType" 			"follow_origin"
 						"Target"					"TARGET"
 					}
@@ -7835,18 +7835,11 @@
 		{
 			"modifier_item_card_good_man_slowdown"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"Duration"		"%slowdown_duration"
-				"IsDebuff"		"1"
-				"EffectName" 				"particles/thd2/items/item_good_man_card.vpcf"
-				"EffectAttachType" 			"follow_origin"
-
-				"FireEffect"
-				{
-					"EffectName"		"particles/thd2/items/item_bad_man_card.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "TARGET"
-				}
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"				"%slowdown_duration"
+				"IsDebuff"				"1"
+				"EffectName" 			"particles/thd2/items/item_good_man_card.vpcf"
+				"EffectAttachType" 		"follow_origin"
 				
 				"Properties"
 				{
@@ -7925,12 +7918,21 @@
 		{
 			"modifier_item_card_bad_man_speedup"
 			{
+<<<<<<< HEAD
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%speedup_duration"
 				"IsBuff"		"1"
 				"EffectName" 				"particles/thd2/items/item_bad_man_card.vpcf"
 				"EffectAttachType" 			"follow_origin"
 				
+=======
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"				"%speedup_duration"
+				"EffectName" 			"particles/thd2/items/item_bad_man_card.vpcf"
+				"EffectAttachType" 		"follow_origin"
+				"IsDebuff"		"1"
+
+>>>>>>> origin/master
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%speedup_movespeed_percent"
@@ -7996,9 +7998,9 @@
 		{
 			"FireEffect"
 			{
-				"EffectName"		"particles/thd2/items/item_unlucky_man_card.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"            "TARGET"
+				"EffectName" 			"particles/thd2/items/item_unlucky_man_card.vpcf"
+				"EffectAttachType" 		"follow_origin"
+				"Target" 				"TARGET"
 			}
 
 			"Damage"
@@ -8077,16 +8079,17 @@
 		{
 			"FireEffect"
 			{
-				"EffectName" 				"particles/thd2/items/item_love_man_card.vpcf"
-				"EffectAttachType" 			"follow_origin"
-				"Target" 					"TARGET"
+				"EffectName" 			"particles/thd2/items/item_love_man_card.vpcf"
+				"EffectAttachType" 		"follow_origin"
+				"Target" 				"TARGET"
 			}
 
 			"Heal"
 			{
-				"Target" 	"TARGET"
-				"Damage"	"%heal_amount"
+				"Target" 				"TARGET"
+				"HealAmount"  			"%heal_amount"
 			}
+
 			"RunScript"
 			{
 				"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
@@ -9114,6 +9117,8 @@
 				//"IsHidden"		"1"
 				"Duration"		"%decline_intellect_duration"
 				"IsDebuff"		"1"
+				"EffectName"			"particles/thd2/items/item_mr_yang.vpcf"
+				"EffectAttachType"		"follow_origin"
 				
 				"Properties"
 				{

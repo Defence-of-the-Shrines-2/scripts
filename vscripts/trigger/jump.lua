@@ -13,6 +13,12 @@ function ThdotsJumpTrigger( data )
 	local fallG = 10
 	
     UnitPauseTarget(target,target,2)
+    local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/reimu/reimu_01_effect.vpcf", PATTACH_CUSTOMORIGIN, target)
+	ParticleManager:SetParticleControl(effectIndex, 0, vecTarget)
+	ParticleManager:SetParticleControl(effectIndex, 2, vecTarget)
+	ParticleManager:ReleaseParticleIndex(effectIndex)
+	target:EmitSound("Visage_Familar.StoneForm.Cast")
+
 	local vecMove
 	if target ~= nil then
 		Timer.Loop 'hero_jump_trigger_to_location' (0.02, 250,
@@ -59,6 +65,11 @@ function ThdotsJumpTrigger_bl_top( data )
 				if(vecMove.z<=vecGround.z)then
 					SetTargetToTraversable(target)
 					target:RemoveModifierByName("modifier_stunsystem_pause")
+					local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/reimu/reimu_01_effect.vpcf", PATTACH_CUSTOMORIGIN, target)
+					ParticleManager:SetParticleControl(effectIndex, 0, vecTarget)
+					ParticleManager:SetParticleControl(effectIndex, 2, vecTarget)
+					ParticleManager:ReleaseParticleIndex(effectIndex)
+					target:EmitSound("Visage_Familar.StoneForm.Cast")
 					return true
 				end
 				target:SetOrigin(vecMove)

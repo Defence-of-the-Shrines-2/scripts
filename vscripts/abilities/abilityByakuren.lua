@@ -141,9 +141,10 @@ function OnByakuren04SpellThink(keys)
 	end
 	
 	local hp = caster:GetContext("ability_byakuren04_health_old")
+	local nowhp = caster:GetHealth()
 	
 	caster:SetMaxHealth(intNewRealBaseHealth)
-	if(hp~=0)then
+	if(hp>0 and nowhp>0)then
 		caster:SetHealth(hp)
 	end
 end
