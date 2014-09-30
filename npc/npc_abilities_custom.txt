@@ -686,7 +686,6 @@
 		{
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
 			"particle_folder"			"particles/thd2/heroes/reimu"
-			
 		}
 		
         "OnSpellStart"
