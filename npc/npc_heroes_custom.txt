@@ -119,8 +119,8 @@
 		"Ability1"				"ability_dota2x_reimu01" 
 		"Ability2"				"ability_dota2x_reimu02"
 		"Ability3"				"ability_dota2x_reimu03"
-		"Ability5"				"ability_dota2x_reimu04"
-		"Ability6"				"attribute_bonus"
+		"Ability4"				"ability_dota2x_reimu04"
+		"Ability5"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/reimu/reimu.vmdl"
 			
@@ -173,8 +173,8 @@
 		"Ability1"				"ability_thdots_marisa01" 
 		"Ability2"				"ability_thdots_marisa02" 
 		"Ability3"				"ability_thdots_marisa03" 
-		"Ability5"				"ability_thdots_marisa04" 
-		"Ability6"				"attribute_bonus"
+		"Ability4"				"ability_thdots_marisa04" 
+		"Ability5"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/marisa/marisa.vmdl"
 			
@@ -223,8 +223,8 @@
 		"Ability1"				"ability_thdots_youmu01" 
 		"Ability2"				"ability_thdots_youmu02" 
 		"Ability3"				"ability_thdots_youmu03" 
-		"Ability5"				"ability_thdots_youmu04" 
-		"Ability6"				"attribute_bonus"
+		"Ability4"				"ability_thdots_youmu04" 
+		"Ability5"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/youmu/youmu.vmdl"
 			
@@ -273,8 +273,8 @@
 		"Ability1"				"ability_thdots_aya01" 
 		"Ability2"				"ability_thdots_aya02" 
 		"Ability3"				"ability_thdots_aya03" 
-		"Ability5"				"ability_thdots_aya04" 
-		"Ability6"				"attribute_bonus"
+		"Ability4"				"ability_thdots_aya04" 
+		"Ability5"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/aya/aya.vmdl"
 			
@@ -322,8 +322,8 @@
 		"AbilityLayout" 			"4"
 		"Ability2"					"ability_thdots_tensi02" 
 		"Ability3"					"ability_thdots_tensi03" 
-		"Ability5"             	 	"zuus_thundergods_wrath"
-		"Ability6"					"attribute_bonus"
+		"Ability4"             	 	"zuus_thundergods_wrath"
+		"Ability5"					"attribute_bonus"
 
 		"Model"                     "models/thd2/tenshi/tenshi.vmdl"
 			
@@ -373,8 +373,8 @@
 		"Ability1"					"ability_thdots_byakuren01" 
 		"Ability2"					"ability_thdots_byakuren02"
 		"Ability3"					"ability_thdots_byakuren03"
-		"Ability5"					"ability_thdots_byakuren04"
-		"Ability6"					"attribute_bonus"
+		"Ability4"					"ability_thdots_byakuren04"
+		"Ability5"					"attribute_bonus"
 		
 		"Model"                 	"models/thd2/byakuren/byakuren.vmdl"
 
@@ -431,9 +431,9 @@
 		"Ability1"				"death_prophet_carrion_swarm" 
 		"Ability2"				"bane_nightmare"
 		"Ability3"				"necrolyte_heartstopper_aura"
-		"Ability5"				"ability_thdots_yuyukoEx"
-		"Ability6"				"ability_thdots_yuyuko04"
-		"Ability7"				"attribute_bonus"
+		"Ability4"				"ability_thdots_yuyukoEx"
+		"Ability5"				"ability_thdots_yuyuko04"
+		"Ability6"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/yuyuko/yuyuko.vmdl"
 			
@@ -487,9 +487,9 @@
 		"Ability1"				"ability_thdots_sakuya01" 
 		"Ability2"				"ability_thdots_sakuya02" 
 		"Ability3"				"ability_thdots_sakuya03"
-		"Ability5"				"ability_thdots_sakuyaEx" 
-		"Ability6"				"ability_thdots_sakuya04" 
-		"Ability7"				"attribute_bonus"
+		"Ability4"				"ability_thdots_sakuyaEx" 
+		"Ability5"				"ability_thdots_sakuya04" 
+		"Ability6"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/sakuya/sakuya.vmdl"
 			
@@ -544,9 +544,9 @@
 		"AbilityLayout" 		"5"
 		"Ability2"				"ability_thdots_flandre02"
 		"Ability3"				"skeleton_king_vampiric_aura"
-		"Ability5"				""
-		"Ability6"				"ability_thdots_flandre04"
-		"Ability7"				"attribute_bonus"
+		"Ability4"				""
+		"Ability5"				"ability_thdots_flandre04"
+		"Ability6"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/flandre/flandre.vmdl"
 				
@@ -599,8 +599,8 @@
 		"Ability1"					"ability_thdots_mokou01" 
 		"Ability2"					"ability_thdots_mokou02" 
 		"Ability3"					"phoenix_supernova" 
-		"Ability5"             	 	"ability_thdots_mokou04"
-		"Ability6"					"attribute_bonus"
+		"Ability4"             	 	"ability_thdots_mokou04"
+		"Ability5"					"attribute_bonus"
 			
 		"Model"                 	"models/thd2/mokou/mokou.vmdl"
 

@@ -11,6 +11,8 @@
 		"item"		"item_card_love_man"
 		"item"		"item_jinkela"
 		"item"		"item_gem"
+		"item"      "item_courier"
+		"item"      "item_flying_courier"	
 	}
 
 	"attributes"	//属性
@@ -86,22 +88,25 @@
 		"item"	    "item_fox_mask"
 		"item"		"item_hakurei_ticket"											
 		"item"		"item_yatagarasu"										
-		"item"		"item_darkred_umbrella"						
+		"item"		"item_darkred_umbrella"		
 		//"item"		"item_nuclear_stick"							
 		"item"		"item_donation_box"											
 		"item"		"item_green_dam"									
 		"item"		"item_travel_boots"									
-		"item"		"item_9ball"										
+		"item"		"item_9ball"	
+		"item"      "item_ward_observer"
+		"item"      "item_ward_sentry"								
 	}
 	
 	"magics"	//法器
-	{
-		"item"		"item_sheepstick"								
-		"item"		"item_cyclone"									
+	{			
+		"item"		"item_pocket_watch"
+		//"item"		"item_sheepstick"				
+		"item"		"item_cyclone"			
 		"item"		"item_mr_yang"									
-		"item"		"item_three_dimension"										
+		"item"		"item_three_dimension"											
 		"item"		"item_doctor_doll"							
-		"item"		"item_dummy_doll"							
+		//"item"		"item_dummy_doll"						
 	}
 	
 	// Level 3 - Purple Recipes	//紫色道具
@@ -113,7 +118,9 @@
 		"item"		"item_donation_gem"								
 		"item"		"item_luna_chip"							
 		"item"		"item_jiao_shou"							
-		"item"		"item_brother_sharp"								
+		"item"		"item_brother_sharp"
+		"item"		"item_lesser_crit"	
+		"item"		"item_greater_crit"								
 		"item"		"item_rapier"
 	}
 	
@@ -130,7 +137,7 @@
 　　　	"item"		"item_tsundere"	
 		"item"		"item_sphere"								
 		"item"		"item_phoenix_wing"									
-		"item"		"item_frock"							
+		"item"		"item_frock"					
 		//"item"		"item_peach"								
 		"item"		"item_ghost_balloon"							
 		"item"		"item_zun_glasses"							
@@ -167,10 +174,25 @@
 
 	"sideshop1"	//边路商店1
 	{
+		"item"		"item_tpscroll"
+		"item"		"item_cake"
+		"item"		"item_baozi"
+		"item"		"item_juice"
+		"item"		"item_sake"
+		"item"		"item_broom"
+		"item"		"item_sailor_suit"
+		"item"		"item_cherry_leaf"
+		"item"		"item_cat_ear"
+		"item"		"item_magic_guide_book"
+		"item"		"item_wind_amulet"
+		"item"		"item_horse_red"
+
 	}
 
 	"sideshop2"	//边路商店2
 	{
+		"item"		"item_horse_green"
+		"item"		"item_horse_blue"
 	}
 	
 	"secretshop"	//野外商店

@@ -633,11 +633,11 @@
 
 	"item_dust"			"REMOVE"
 	"item_bottle"			"REMOVE"
-	"item_ward_observer"			"REMOVE"
-	"item_ward_sentry"			"REMOVE"
+	//"item_ward_observer"			"REMOVE"
+	//"item_ward_sentry"			"REMOVE"
 	"item_tango"			"REMOVE"
 	"item_tango_single"			"REMOVE"
-	"item_courier"			"REMOVE"
+	//"item_courier"			"REMOVE"
 	//"item_tpscroll"			"REMOVE"
 	//=================================================================================================================
 	// Teleport Scroll
@@ -793,7 +793,7 @@
 	"item_mekansm"			"REMOVE"
 	"item_recipe_vladmir"			"REMOVE"
 	"item_vladmir"			"REMOVE"
-	"item_flying_courier"			"REMOVE"
+	//"item_flying_courier"			"REMOVE"
 	"item_recipe_buckler"			"REMOVE"
 	"item_buckler"			"REMOVE"
 	"item_recipe_ring_of_basilius"			"REMOVE"
@@ -804,7 +804,6 @@
 	"item_urn_of_shadows"			"REMOVE"
 	"item_recipe_headdress"			"REMOVE"
 	"item_headdress"			"REMOVE"
-	//"item_recipe_sheepstick"			"REMOVE"
 	//=================================================================================================================
 	// Recipe: Sheepstick
 	//=================================================================================================================
@@ -829,8 +828,8 @@
 			"01"						"item_sake;item_magic_guide_book;item_gran_grimoire"
 		}
 	}
-	//"item_sheepstick"			"REMOVE"
-		//=================================================================================================================
+	"item_recipe_sheepstick"			"REMOVE"
+	//=================================================================================================================
 	// Sheepstick
 	//=================================================================================================================
 	"item_sheepstick"
@@ -896,6 +895,7 @@
 			}
 		}
 	}
+	"item_sheepstick"			"REMOVE"
 	"item_recipe_orchid"			"REMOVE"
 	"item_orchid"			"REMOVE"
 	//"item_recipe_cyclone"			"REMOVE"
@@ -1337,7 +1337,7 @@
 	"item_shadow_amulet"			"REMOVE"
 	
   
-  "item_halloween_candy_corn"			"REMOVE"
+    "item_halloween_candy_corn"			"REMOVE"
 	"item_mystery_hook"			"REMOVE"
 	"item_mystery_arrow"			"REMOVE"
 	"item_mystery_missile"			"REMOVE"
@@ -1358,5 +1358,7 @@
 	"item_winter_greevil_treat"			"REMOVE"
 	"item_winter_greevil_garbage"			"REMOVE"
 	"item_winter_greevil_chewy"			"REMOVE"
+
+	"item_dummy_doll"     "REMOVE"
 	
 }

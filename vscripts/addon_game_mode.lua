@@ -26,6 +26,8 @@ function Precache( context )
 	PrecacheResource( "model", "models/development/invisiblebox.vmdl", context )
 	PrecacheResource( "particle", "particles/items_fx/aegis_respawn_spotlight.vpcf",context )--真のP点
 	PrecacheResource( "particle", "particles/items2_fx/hand_of_midas.vpcf",context )--真の点数
+	PrecacheResource( "particle_folder", "particles/thd2/heroes/reimu", context )--灵梦and跳台
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context )--灵梦and跳台
 
 	PrecacheResource( "model", "models/thd2/yyy.vmdl", context )--灵梦D
 	PrecacheResource( "model", "models/thd2/fantasy_seal.vmdl", context )--灵梦F
@@ -52,20 +54,17 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/thd2/heroes/flandre/ability_flandre_04_buff.vpcf", context )--芙兰朵露	
 	PrecacheResource( "particle", "particles/thd2/heroes/flandre/ability_flandre_04_effect.vpcf", context )--芙兰朵露
 
-	PrecacheResource( "particle", "particles/units/heroes/hero_lich/lich_frost_armor.vpcf", context )--幽灵气球
+	PrecacheResource( "particle", "particles/thd2/items/item_ballon.vpcf", context )--幽灵气球
 	PrecacheResource( "particle", "particles/thd2/items/item_bad_man_card.vpcf", context )--坏人卡
 	PrecacheResource( "particle", "particles/thd2/items/item_good_man_card.vpcf", context )--好人卡
 	PrecacheResource( "particle", "particles/thd2/items/item_love_man_card.vpcf", context )--爱人卡
 	PrecacheResource( "particle", "particles/thd2/items/item_unlucky_man_card.vpcf", context )--衰人卡
 	PrecacheResource( "particle", "particles/units/heroes/hero_lich/lich_ambient_frost_legs.vpcf", context )--冰青蛙减速
-	PrecacheResource( "particle", "particles/units/heroes/hero_abaddon/abaddon_death_coil_explosion_e.vpcf", context )--镰刀
+	PrecacheResource( "particle", "particles/thd2/items/item_kafziel.vpcf", context )--镰刀
 	PrecacheResource( "particle", "particles/base_attacks/ranged_tower_good_launch.vpcf", context )--绿刀
 	PrecacheResource( "particle", "particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf", context )--绿坝
 	PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf", context )--碎骨笛
-
 	
-
-
 end
 
 -- 载入项目所有文件

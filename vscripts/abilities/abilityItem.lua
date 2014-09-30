@@ -305,7 +305,12 @@ function ItemAbility_DonationGem_GiveGold(keys)
 	local Attacker = keys.attacker
 	local AttackerPlayerID = Attacker:GetPlayerOwnerID()
 	local GameTime=GameRules:GetGameTime()
+
 	if (GameTime-DonationGem_TriggerTime[AttackerPlayerID]>=1.0 and Attacker:HasModifier(keys.AttackerModifierName)) then
+		local effectIndex = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_CUSTOMORIGIN, Caster)
+		ParticleManager:SetParticleControl(effectIndex, 0, Caster:GetOrigin())
+		ParticleManager:SetParticleControl(effectIndex, 1, Caster:GetOrigin())
+		ParticleManager:ReleaseParticleIndex(effectIndex)
 		DonationGem_TriggerTime[AttackerPlayerID]=GameTime
 		PlayerResource:SetGold(AttackerPlayerID,PlayerResource:GetUnreliableGold(AttackerPlayerID) + keys.BonusGold,false)
 	end
