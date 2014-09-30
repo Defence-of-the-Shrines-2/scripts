@@ -7918,21 +7918,12 @@
 		{
 			"modifier_item_card_bad_man_speedup"
 			{
-<<<<<<< HEAD
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"Duration"		"%speedup_duration"
-				"IsBuff"		"1"
-				"EffectName" 				"particles/thd2/items/item_bad_man_card.vpcf"
-				"EffectAttachType" 			"follow_origin"
-				
-=======
 				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"				"%speedup_duration"
 				"EffectName" 			"particles/thd2/items/item_bad_man_card.vpcf"
 				"EffectAttachType" 		"follow_origin"
 				"IsDebuff"		"1"
 
->>>>>>> origin/master
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%speedup_movespeed_percent"
