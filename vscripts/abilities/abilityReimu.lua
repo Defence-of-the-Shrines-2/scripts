@@ -36,15 +36,14 @@ function OnReimu04SpellStart(keys)
 end
 
 function OnReimu04SpellThink(keys)
-	print("04spellstart")
 	AbilityReimu:OnReimu04Think(keys)
 end
 
 
--- 初始化灵梦的阴阳玉和物理常量
---    t=运动时间
---    g=重力加速度
---    v=当前速度
+-- 鲁玫脢录禄炉脕茅脙脦碌脛脪玫脩么脫帽潞脥脦茂脌铆鲁拢脕驴
+--    t=脭脣露炉脢卤录盲
+--    g=脰脴脕娄录脫脣脵露脠
+--    v=碌卤脟掳脣脵露脠
 function AbilityReimu:initBallData()
 	self.tReimu01Elements = {}
 	for i = 0,9 do
@@ -58,23 +57,23 @@ function AbilityReimu:initBallData()
 end
 
 function AbilityReimu:OnReimu01Start(keys)
-	-- 初始化常量
+	-- 鲁玫脢录禄炉鲁拢脕驴
 	self:initBallData()
 	
 	
-	-- 基础数据获取
+	-- 禄霉麓隆脢媒戮脻禄帽脠隆
 	local targetPoint = keys.target_points[1]
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local nPlayerID = keys.unit:GetPlayerID()
 	local FireIndex = ParticleManager:CreateParticle("particles/thd2/heroes/reimu/reimu_01_effect_fire.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	caster:SetContextNum("Reimu01_Effect_Fire_Index" , FireIndex, 0)
 	
-	-- 如果球存在则return
+	-- 脠莽鹿没脟貌麓忙脭脷脭貌return
 	if self.tReimu01Elements[nPlayerID].Ball.unit ~= nil then 
 		return 
 	end
 	
-	-- 创建球特效
+	-- 麓麓陆篓脟貌脤脴脨搂
 	local unit = CreateUnitByName(
 		"npc_dota2x_unit_reimu01_ball"
 		,caster:GetOrigin()
@@ -84,7 +83,7 @@ function AbilityReimu:OnReimu01Start(keys)
 		,caster:GetTeam()
 		)
 		
-	--获取地面Z轴坐标
+	--禄帽脠隆碌脴脙忙Z脰谩脳酶卤锚
 	self.tReimu01Elements[nPlayerID].OriginZ = GetGroundPosition(targetPoint,nil).z
 	if unit then
 		self.tReimu01Elements[nPlayerID].Ball.unit = unit
@@ -168,7 +167,7 @@ end
 function AbilityReimu:initLightData(level)
 	self.tReimu02Light = self.tReimu02Light or {}
 	zincrease = REIMU02_LIGHTSPEED
-	for i = 0,level+4 do
+	for i = 0,level+2 do
 		self.tReimu02Light[i] = {
 			Ball = {unit = nil , t = 0 },
 			Target = nil,
@@ -185,7 +184,7 @@ function AbilityReimu:OnReimu02Start(keys)
 	
 	AbilityReimu:initLightData(abilitylevel)
 
-	for i = 0,abilitylevel+4 do
+	for i = 0,abilitylevel+2 do
 		local veccre = Vector(vec0.x + math.cos(0.628 * i) * 60 ,vec0.y + math.sin(0.628 * i) * 60 ,300)
 		self.tReimu02Light[i].Ball.unit = CreateUnitByName(
 			"npc_dota2x_unit_reimu02_light"
@@ -211,7 +210,7 @@ function AbilityReimu:OnReimu02OnLight (keys)
 	self.tReimu02Light[i].Ball.t = self.tReimu02Light[i].Ball.t + 0.1
 	
 	if (self.tReimu02Light[i].Ball.t >= 2.9) then
-		for i = 0,level+4 do
+		for i = 0,level+2 do
 			if(self.tReimu02Light[i].Ball.unit ~= nil)then
 		        self.tReimu02Light[i].Ball.unit:RemoveSelf()
 		        self.tReimu02Light[i].Ball.unit = nil
@@ -219,8 +218,8 @@ function AbilityReimu:OnReimu02OnLight (keys)
 		end
 		return
 	end
-	--上下跳动
-	for i = 0,level+4 do
+	--脡脧脧脗脤酶露炉
+	for i = 0,level+2 do
 		if (self.tReimu02Light[i].Ball.unit ~= nil) then
 		
 		    local vec = self.tReimu02Light[i].Ball.unit:GetOrigin()
@@ -325,7 +324,6 @@ function AbilityReimu:OnReimu03Start(keys)
 end
 
 function AbilityReimu:OnReimu04Start(keys)
-	print("04start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local unit = CreateUnitByName(
 		"npc_reimu_04_dummy_unit"

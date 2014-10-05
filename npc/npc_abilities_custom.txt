@@ -505,6 +505,35 @@
 		}
 	}	
 
+	"ability_system_nodamage"
+	{
+		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_TURN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"BaseClass"         "ability_datadriven"
+		"AbilityCooldown"   "0"
+		"OnSpellStart"
+		{
+	       "ApplyModifier"
+            {
+			    "ModifierName"    "modifier_system_nodamage"
+                "Target"          "TARGET"
+            }
+	     
+		}
+		
+		"Modifiers"
+		{
+            "modifier_system_nodamage"
+            {
+			    "Properties"
+				{
+				    "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"		"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"     "1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"         "1"
+			    }
+            }
+		}
+	}	
+
 	"ability_stunsystem_pause"
 	{
 		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_TURN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -1289,7 +1318,7 @@
 			"02"
 	  	    {
 	    		"var_type"					"FIELD_FLOAT"
-	    		"damage_radius"			    "410"  
+	    		"damage_radius"			    "610"  
 		    }
 	    }
     }
@@ -1399,7 +1428,7 @@
 		//"AbilityCooldown"           "0"
         "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL"
 	    "AbilityDamage"				"360 540 720"
-		"AbilityChannelTime"		"1.4"
+		"AbilityChannelTime"		"2.0"
 
 		"precache"
 		{
@@ -1450,7 +1479,7 @@
         {
 			"modifier_thdots_marisa04_think_interval"
 			{
-				"Duration"          "1.4"
+				"Duration"          "2.0"
 				"ThinkInterval"     "0.1"
 
 				"OnCreated"
@@ -1483,7 +1512,7 @@
 			"01"
 	  	    {
 	    		"var_type"					"FIELD_FLOAT"
-	    		"damage_width"			    "150"  
+	    		"damage_width"			    "300"  
 		    }
 			"02"
 	  	    {
@@ -3867,6 +3896,610 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"costhp"				"0.25"
+			}
+		}	
+	}
+
+	"ability_thdots_yugi01"
+	{
+		"ID"						"2033"
+		"BaseClass"				 	"ability_datadriven"
+		"AbilityTextureName"		"ability_thdots_yugi01"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel"				  	"4"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityUnitDamageType"   	"DAMAGE_TYPE_PHYSICAL"
+
+		"Modifiers"
+	    {	
+	    	"passive_yugi01_bouns"
+            {
+            	"Passive"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bouns_strength"
+				}
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bouns_strength"		"10 20 30 40"
+			}
+		}
+	}
+
+	"ability_thdots_yugi03"
+	{
+		"ID"						"2034"
+		"BaseClass"				 	"ability_datadriven"
+		"AbilityTextureName"		"ability_thdots_yugi03"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	   	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel"				  	"4"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
+	    "AbilityDamage"				"300 350 400 450"
+		
+		"Modifiers"
+	    {
+			"passive_yugi03_attack"
+            {
+			    "Passive"              	"1"
+                "OnAttackLanded"
+		        {
+		        	 "Random"
+			        {
+			            "Chance"        "%ability_chance_base"
+				        "OnSuccess"
+				        {	
+				        	"OverrideAnimation"		"Act_DOTA_CAST_ABILITY_3"
+				        	"Knockback"
+							{
+								"Center" 	"CASTER"
+								"Target"	"TARGET"
+								"Duration"	"1.0"
+								"Distance"	"%distance"
+								"Height"	"200"
+							}
+							"RunScript"
+							{
+								"ScriptFile" 	"scripts/vscripts/abilities/abilityYugi.lua"
+								"Target"		"TARGET"
+								"Function"		"OnYugi03Damage"
+								"BounsDamage"	"%bouns_damage"
+							}
+				        }
+		            }
+				}
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bouns_damage"			"300 350 400 450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_chance_base"	"5 8 11 14"
+			}
+			"03"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"distance"			    "500"
+			}
+		}
+	}
+
+	"ability_thdots_yugi04"
+    {
+        "ID"                       "2035"
+        "AbilityBehavior"          "DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET "
+		"AbilityUnitTargetType"	   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"   "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityType"			   "DOTA_ABILITY_TYPE_ULTIMATE"
+        "BaseClass"                "ability_datadriven"
+        "AbilityTextureName"       "ability_thdots_yugi04"
+    	"AbilityCastAnimation"     "Act_DOTA_CAST_ABILITY_4"
+
+        // Stats 
+        //----------------------------------------------------------------
+        "AbilityCastRange"          "200"
+        "AbilityManaCost"           "100 150 200"
+        "AbilityCastPoint"          "1.0"
+        "AbilityCooldown"           "115 100 85"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_PURE"
+
+		"precache"
+		{
+		 	"particle_folder"			"particles/thd2/heroes/yugi"
+		}
+
+        "OnSpellStart"
+		{
+			"AttachEffect"
+			{
+				"EffectName"		"particles/thd2/heroes/yugi/yugi_slam.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"            "TARGET"
+			}
+
+			"ApplyModifier"
+			{
+				"Target"			"TARGET"
+				"ModifierName"		"modifier_thdots_yugi04_think_interval"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_thdots_yugi04_think_interval"
+			{
+				"Duration"				"%ability_duration"
+				"IsDebuff"				"1"
+				"ThinkInterval"			"0.1"
+				"OnCreated"
+				{
+					"RunScript"					
+					{
+					  	"Target"         		"TARGET"
+					  	"ScriptFile"			"scripts/vscripts/abilities/abilityYugi.lua"
+					  	"Function"		  		"OnYugi04SpellStart"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"					
+					{
+					  	"Target"         		"TARGET"
+					  	"AbilityRadius"			"%ability_radius"			
+					  	"AbilityDuration"		"%ability_duration"
+					  	"ScriptFile"			"scripts/vscripts/abilities/abilityYugi.lua"
+					  	"Function"		  		"OnYugi04SpellThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"					
+					{
+					  	"Target"         		"TARGET"
+					  	"DamagePercent"			"%damage_percent"	
+					  	"ScriptFile"			"scripts/vscripts/abilities/abilityYugi.lua"
+					  	"Function"		  		"OnYugi04SpellEnd"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_duration"		"3.0 4.0 5.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_radius"		"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_percent"		"25"
+			}
+		}
+	}
+
+	"ability_thdots_suika02"
+	{
+		"ID"						"2036"
+		"BaseClass"				 	"ability_datadriven"
+		"AbilityTextureName"		"ability_thdots_suika02"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"				  	"4"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
+	    "AbilityDamage"				"60 90 120 150"
+
+	 	// "precache"
+		// {
+		// 	    "soundfile"					""
+		// }
+		
+		"Modifiers"
+	    {
+			"passive_suika02_attack"
+            {
+			    "Passive"              	"1"
+                "OnAttackLanded"
+		        {
+		            "Random"
+			        {
+			            "Chance"        "%ability_chance_base"
+				        "OnSuccess"
+				        {
+				        	// "FireSound"
+				        	// {
+				        	// 	"EffectName"		"Brewmaster_Storm.DispelMagic"
+				        	// 	"Target" 			"CASTER"
+				        	// }
+		                	"RunScript"					
+	    	            	{
+			                	"Target"
+								{
+									"Center"		    "TARGET"
+									"Radius"		    "%move_slow_radius"
+									"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+								}
+		    	            	"ScriptFile"			"scripts/vscripts/abilities/abilitySuika.lua"
+			                	"Function"		  		"OnSuika02Start"
+		                 	}
+							
+							"FireEffect"
+							{
+								"EffectName"		"particles/units/heroes/hero_brewmaster/brewmaster_pulverize.vpcf"
+								"EffectAttachType"	"world_origin"
+								"Target"			"TARGET"
+							}
+							
+							"ApplyModifier"
+							{
+								"ModifierName" 			"modifier_suika02_slow"
+								"Target"
+								{
+									"Center"		    "TARGET"
+									"Radius"		    "%move_slow_radius"
+									"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+								}
+							}
+				        }
+			        }
+	        	}
+            }
+			
+			"modifier_suika02_slow"
+			{
+				"Duration" 						"%move_slow_duration"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 		"%move_slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 		"%attackspeed_slow"
+				}
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_chance_base"	"30"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bouns_damage"			"60 90 120 150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_slow"				"-40"
+			}
+			"04"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"move_slow_duration"	"1.7"
+			}
+			"05"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"move_slow_radius"		"300"
+			}
+			"06"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"attackspeed_slow"		"-40"
+			}
+		}
+	}
+
+	"ability_thdots_suika02_ult"
+	{
+		"ID"						"2037"
+		"BaseClass"				 	"ability_datadriven"
+		"AbilityTextureName"		"ability_thdots_suika02"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"				  	"3"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
+
+	 	// "precache"
+		// {
+		// 	    "soundfile"					""
+		// }
+		
+		"Modifiers"
+	    {
+			"passive_suika02_ult_attack"
+            {
+			    "Passive"              	"1"
+                "OnAttackLanded"
+		        {
+		            "Random"
+			        {
+			            "Chance"        "%ability_chance_base"
+				        "OnSuccess"
+				        {
+				        	// "FireSound"
+				        	// {
+				        	// 	"EffectName"		"Brewmaster_Storm.DispelMagic"
+				        	// 	"Target" 			"CASTER"
+				        	// }
+		                	"RunScript"					
+	    	            	{
+			                	"Target"
+								{
+									"Center"		    "TARGET"
+									"Radius"		    "%move_slow_radius"
+									"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+								}
+		    	            	"ScriptFile"			"scripts/vscripts/abilities/abilitySuika.lua"
+			                	"Function"		  		"OnSuika02ULTStart"
+		                 	}
+							
+							"FireEffect"
+							{
+								"EffectName"		"particles/units/heroes/hero_brewmaster/brewmaster_pulverize.vpcf"
+								"EffectAttachType"	"world_origin"
+								"Target"			"TARGET"
+							}
+							
+							"ApplyModifier"
+							{
+								"ModifierName" 			"modifier_suika02_ult_slow"
+								"Target"
+								{
+									"Center"		    "TARGET"
+									"Radius"		    "%move_slow_radius"
+									"Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+								}
+							}
+				        }
+			        }
+	        	}
+            }
+			
+			"modifier_suika02_ult_slow"
+			{
+				"Duration" 						"%move_slow_duration"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 		"%move_slow"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 		"%attackspeed_slow"
+				}
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_chance_base"	"50 75 100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_slow"				"-40"
+			}
+			"03"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"move_slow_duration"	"1.7"
+			}
+			"04"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"move_slow_radius"		"300"
+			}
+			"05"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"attackspeed_slow"		"-40"
+			}
+		}
+	}
+
+	"ability_thdots_suika03"
+    {
+	    "ID"    				    "2038"
+		"AbilityBehavior"   	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"BaseClass"           	    "ability_datadriven"
+		"AbilityTextureName"	    "ability_thdots_suika03"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_3"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityManaCost"           "60 80 100 120"
+		"AbilityCastPoint"          "0.0"
+		"AbilityCooldown"           "30 25 20 15"
+
+		"precache"
+		{
+			"particle_folder"			"particles/thd2/heroes/suika"
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"          "CASTER"
+				"ModifierName"    "modifier_thdots_suika03_think_interval"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_thdots_suika03_think_interval"
+			{
+				"RemoveOnDeath"     "0"
+				"IsHidden"          "0"
+				"Duration"          "%ability_duration"
+				"ThinkInterval"     "0.5"
+				"EffectName"		"particles/thd2/heroes/suika/ability_suika_03_effect.vpcf"
+				"EffectAttachType"  "follow_origin"
+
+				"OnIntervalThink"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"			"npc_dota_suika_03_smallsuika"
+						"UnitCount"			"1"
+						"UnitLimit"			"32"
+						"SpawnRadius"		"50"
+						"Target"			"CASTER"
+					}
+				}
+					
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		    "MODIFIER_STATE_VALUE_ENABLED"
+				    "MODIFIER_STATE_DISARMED"		    "MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 		"%move_speed"
+				}
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_duration"		"2 3 4 5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spawn_duration"		"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"			"-40"
+			}
+		}	
+    }
+
+    "ability_thdots_suika04"
+	{
+		"ID"    				    "2039"
+		"AbilityBehavior"   	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
+		"BaseClass"           	    "ability_datadriven"
+		"AbilityTextureName"	    "ability_thdots_suika04"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_4"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityManaCost"           "150 250 350"
+		"AbilityCastPoint"          "0.2"
+		"AbilityCooldown"           "100"
+		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
+		
+		// "precache"
+		// {
+		// 	"particle_folder"			"particles/thd2/heroes/mokou"
+		// 	"soundfile"					"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
+		// }
+
+		"OnSpellStart"
+		{
+			// "FireSound"
+			// {
+			// 	"EffectName"		"Hero_DoomBringer.ScorchedEarthAura"
+			// 	"Target"            "CASTER"
+			// }
+
+			"RunScript"
+			{
+				"ScriptFile"        "scripts/vscripts/abilities/abilitySuika.lua"
+				"Function"          "OnSuika04SpellStart"
+				"Caster"            "CASTER"
+				"Duration"			"%duration"
+			}	
+			"ApplyModifier"
+			{
+				"ModifierName" 		"modifier_thdots_Suika_04"
+				"Target"	   		"CASTER"	
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_thdots_Suika_04"
+			{
+				"Duration"         	 "%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 		"%move_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"   	"%attackspeed_bouns"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"     "1"
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"			"15 30 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_speed"			"10 20 30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attackspeed_bouns"		"75 100 125"
 			}
 		}	
 	}

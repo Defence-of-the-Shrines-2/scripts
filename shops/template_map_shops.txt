@@ -44,7 +44,7 @@
 		"item"		"item_swimming_suit"
 		"item"		"item_pant"
 		"item"		"item_hunting_cap"
-		"item"		"item_bra"
+		//"item"		"item_bra"
 	}
 	
 	"misc"		//ÔÓÏî

@@ -54,6 +54,12 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/thd2/heroes/flandre/ability_flandre_04_buff.vpcf", context )--芙兰朵露	
 	PrecacheResource( "particle", "particles/thd2/heroes/flandre/ability_flandre_04_effect.vpcf", context )--芙兰朵露
 
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_brewmaster", context )--红三
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts", context )--红三
+
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_tiny", context )--西瓜
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts", context )--西瓜
+
 	PrecacheResource( "particle", "particles/thd2/items/item_ballon.vpcf", context )--幽灵气球
 	PrecacheResource( "particle", "particles/thd2/items/item_bad_man_card.vpcf", context )--坏人卡
 	PrecacheResource( "particle", "particles/thd2/items/item_good_man_card.vpcf", context )--好人卡
@@ -64,6 +70,9 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/base_attacks/ranged_tower_good_launch.vpcf", context )--绿刀
 	PrecacheResource( "particle", "particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf", context )--绿坝
 	PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf", context )--碎骨笛
+	PrecacheResource( "particle", "particles/thd2/items/item_camera.vpcf", context )--相机
+	PrecacheResource( "particle", "particles/thd2/items/item_tsundere.vpcf", context )--无敌
+	
 	
 end
 
@@ -80,6 +89,7 @@ loadModule ( 'util/disarmed' )
 loadModule ( 'util/invulnerable' )
 loadModule ( 'util/graveunit' )
 loadModule ( 'util/collision' )
+loadModule ( 'util/nodamage' )
 
 
 

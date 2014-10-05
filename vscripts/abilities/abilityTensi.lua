@@ -41,7 +41,6 @@ function OnTensi02SpellStart(keys)
 end
 
 function OnTensi03SpellStart(keys)
-	print("[AbilityTensi03]start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	caster:SetHealth(caster:GetHealth()+keys.BounsHealth)
 	caster:SetMana(caster:GetMana()+keys.BounsMana)

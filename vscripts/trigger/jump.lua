@@ -1,6 +1,5 @@
 
 function ThdotsJumpTrigger( data )
-	print("trigger!")
 	local target = data.activator
 	local caller = data.caller
 	local vecLocation = thisEntity:GetOrigin()
@@ -40,7 +39,6 @@ function ThdotsJumpTrigger( data )
 end
 
 function ThdotsJumpTrigger_bl_top( data )
-	print("trigger!")
 	local target = data.activator
 	local caller = data.caller
 	local vecLocation = thisEntity:GetOrigin()

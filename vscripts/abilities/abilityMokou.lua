@@ -3,7 +3,6 @@ if AbilityMokou == nil then
 end
 
 function OnMokou01SpellStart(keys)
-	print("[AbilityMokou01]Start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targetPoint = keys.target_points[1]
 	local Mokou01rad = GetRadBetweenTwoVec2D(caster:GetOrigin(),targetPoint)

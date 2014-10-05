@@ -214,7 +214,6 @@ end
 -- 就可以获取这个施法者相对应的hScript了
 
 function THDOTSGameMode:AbilityUsed(keys)
-  print('[DOTA2X] AbilityUsed')
   local ply = EntIndexToHScript(keys.PlayerID)
   local caster = ply:GetAssignedHero()
   local ability = caster:FindAbilityByName(keys.abilityname)
@@ -557,16 +556,6 @@ function THDOTSGameMode:OnEntityKilled( keys )
 		end
 	end
 	
-	if(killerEntity:IsHero()==true)then
-		local abilityNecAura = killerEntity:FindAbilityByName("necrolyte_heartstopper_aura")
-    if(abilityNecAura~=nil)then
-      local abilityLevel = abilityNecAura:GetLevel()
-      if(abilityLevel~=nil)then
-       killerEntity:SetMana(killerEntity:GetMana()+(abilityLevel*5+5))
-      end
-    end
-	end
-	
 	if(killedUnit:IsHero()==true)then
 		local powerStatValue = killedUnit:GetContext("hero_bouns_stat_power_count")
 		if(powerStatValue==nil)then
@@ -600,4 +589,14 @@ function THDOTSGameMode:OnEntityKilled( keys )
 			30.0)
 		end
 	end
+  
+  if(killerEntity:IsHero()==true)then
+    local abilityNecAura = killerEntity:FindAbilityByName("necrolyte_heartstopper_aura")
+    if(abilityNecAura~=nil)then
+      local abilityLevel = abilityNecAura:GetLevel()
+      if(abilityLevel~=nil)then
+       killerEntity:SetMana(killerEntity:GetMana()+(abilityLevel*5+5))
+      end
+    end
+  end
 end

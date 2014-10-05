@@ -77,7 +77,6 @@ function OnMarisa04SpellRemove(keys)
 end
 
 function AbilityMarisa:OnMarisa01Start(keys)
-	print("[AbilityMarisa01]Start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targetPoint = keys.target_points[1]
 	local marisa01rad = GetRadBetweenTwoVec2D(caster:GetOrigin(),targetPoint)
@@ -91,13 +90,12 @@ function AbilityMarisa:OnMarisa01Move(keys)
 	local vecCaster = caster:GetOrigin()
 	local targets = keys.target_entities
 	
-	-- ѭ������Ŀ�굥λ
+	-- Ñ­»µ¸÷¸öÄ¿±êµ¥Î»
 	for _,v in pairs(targets) do
 		if(v:GetContext("ability_marisa01_damage")==nil)then
 			v:SetContextNum("ability_marisa01_damage",TRUE,0)
 		end
 		if(v:GetContext("ability_marisa01_damage")==TRUE)then
-			PrintTable(keys)
 			local damage_table = {
 			    victim = v,
 			    attacker = caster,
@@ -105,7 +103,6 @@ function AbilityMarisa:OnMarisa01Move(keys)
 			    damage_type = keys.ability:GetAbilityDamageType(), 
 	    	    damage_flags = 0
 		    }
-			PrintTable(damage_table)
 		    UnitDamageTarget(damage_table)
 			v:SetContextNum("ability_marisa01_damage",FALSE,0)
 			Timer.Wait 'ability_marisa01_damage_timer' (0.7,
@@ -130,7 +127,6 @@ function AbilityMarisa:OnMarisa01Move(keys)
 end
 
 function AbilityMarisa:OnMarisa02Start(keys)
-	print("[AbilityMarisa02]Start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targetPoint = keys.target_points[1]
 	caster:SetContextNum("ability_marisa02_point_x",targetPoint.x,0)
@@ -165,7 +161,7 @@ function AbilityMarisa:OnMarisa02Damage(keys)
 	ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 	ParticleManager:SetParticleControl(effectIndex, 3, vecForward)
 	
-	-- ѭ������Ŀ�굥λ
+	-- Ñ­»µ¸÷¸öÄ¿±êµ¥Î»
 	for _,v in pairs(targets) do
 		local vVec = v:GetOrigin()
 		local vRad = GetRadBetweenTwoVec2D(vecCaster,vVec)
@@ -175,7 +171,6 @@ function AbilityMarisa:OnMarisa02Damage(keys)
 			if(vDistance<260)then
 				deal_damage = deal_damage *2
 			end
-			print(tostring(deal_damage))
 			local damage_table = {
 				victim = v,
 				attacker = caster,
@@ -191,7 +186,7 @@ end
 function AbilityMarisa:OnMarisa03Start(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	self.Marisa03Stars = {}
-	-- ��������
+	-- ´´½¨ÐÇÐÇ
 	for i = 0,3 do
 		local vec = Vector(caster:GetOrigin().x + math.cos(i*math.pi/2) * 150,caster:GetOrigin().y + math.sin(i*math.pi/2) * 150,caster:GetOrigin().z + 300)
 		local unit = CreateUnitByName(
@@ -218,7 +213,6 @@ function AbilityMarisa:OnMarisa03Think(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local vCaster = caster:GetOrigin()
 	local stars = self.Marisa03Stars
-	PrintTable(stars)
 	for _,v in pairs(stars) do
 		local vVec = v:GetOrigin()
 		local turnRad = v:GetContext("ability_marisa03_unit_rad") + math.pi/30
@@ -233,10 +227,8 @@ function AbilityMarisa:OnMarisa04Think(keys)
 	local targetPoint = keys.target_points[1]
 	local vecCaster = caster:GetOrigin()
 	local sparkRad = GetRadBetweenTwoVec2D(vecCaster,targetPoint)
-	print(tostring(sparkRad))
 	local findVec = Vector(vecCaster.x + math.cos(sparkRad) * keys.DamageLenth/2,vecCaster.y + math.sin(sparkRad) * keys.DamageLenth/2,vecCaster.z)
 	local findRadius = math.sqrt(((keys.DamageLenth/2)*(keys.DamageLenth/2) + (keys.DamageWidth/2)*(keys.DamageWidth/2)))
-	print(tostring(findRadius))
 	local DamageTargets = FindUnitsInRadius(
 		   caster:GetTeam(),		--caster team
 		   findVec,		            --find position
@@ -250,11 +242,10 @@ function AbilityMarisa:OnMarisa04Think(keys)
 	for _,v in pairs(DamageTargets) do
 		local vecV = v:GetOrigin()
 		if(IsRadInRect(vecV,vecCaster,keys.DamageWidth,keys.DamageLenth,sparkRad))then
-			local deal_damage = keys.ability:GetAbilityDamage()/14
-			if(IsRadInRect(vecV,vecCaster,90,keys.DamageLenth,sparkRad))then
+			local deal_damage = keys.ability:GetAbilityDamage()/20
+			if(IsRadInRect(vecV,vecCaster,150,keys.DamageLenth,sparkRad))then
 				deal_damage = deal_damage * 1.2
 			end
-			print(tostring(deal_damage))
 			local damage_table = {
 				victim = v,
 				attacker = caster,

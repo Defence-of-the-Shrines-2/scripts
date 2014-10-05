@@ -41,7 +41,6 @@ end
 
 
 function AbilityAya:OnAya01Start(keys)
-	print("[AbilityAya01]Start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targetPoint = keys.target_points[1]
 	local Aya01rad = GetRadBetweenTwoVec2D(caster:GetOrigin(),targetPoint)
@@ -55,13 +54,12 @@ function AbilityAya:OnAya01Move(keys)
 	local vecCaster = caster:GetOrigin()
 	local targets = keys.target_entities
 	
-	-- ѭ������Ŀ�굥λ
+	-- Ñ­»µ¸÷¸öÄ¿±êµ¥Î»
 	for _,v in pairs(targets) do
 		if(v:GetContext("ability_Aya01_damage")==nil)then
 			v:SetContextNum("ability_Aya01_damage",TRUE,0)
 		end
 		if(v:GetContext("ability_Aya01_damage")==TRUE)then
-			PrintTable(keys)
 			local damage_table = {
 			    victim = v,
 			    attacker = caster,
@@ -69,7 +67,6 @@ function AbilityAya:OnAya01Move(keys)
 			    damage_type = keys.ability:GetAbilityDamageType(), 
 	    	    damage_flags = 0
 		    }
-			PrintTable(damage_table)
 		    UnitDamageTarget(damage_table)
 			v:SetContextNum("ability_Aya01_damage",FALSE,0)
 			Timer.Wait 'ability_Aya01_damage_timer' (1.4,

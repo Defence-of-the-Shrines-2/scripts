@@ -48,7 +48,6 @@ function OnYoumu04SpellThink(keys)
 end
 
 function AbilityYoumu:OnYoumu01Start(keys)
-	print("[AbilityYoumu01]Start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targetPoint = keys.target_points[1]
 	local Youmu01rad = GetRadBetweenTwoVec2D(caster:GetOrigin(),targetPoint)
@@ -208,15 +207,12 @@ function AbilityYoumu:OnYoumu04Think(keys)
 	    caster:SetContextNum("ability_Youmu04_Count",0,0)
 	end
 	if(caster:GetContext("ability_Youmu04_Rad") == nil or caster:GetContext("ability_Youmu04_Rad") == 0) then
+		UnitPauseTarget(caster,target,1.0)
 		Youmu04Rad = GetRadBetweenTwoVec2D(vecTarget,vecCaster)
 		caster:SetContextNum("ability_Youmu04_Rad",Youmu04Rad,0)
 	end
 	Youmu04Rad = caster:GetContext("ability_Youmu04_Rad")
 	count = caster:GetContext("ability_Youmu04_Count")
-	if(count == 0)then
-	    UnitPauseTarget(caster,keys.target,1.0)
-		UnitPauseTarget(caster,keys.target,1.0)
-	end
 	
 	if(count%2 == 0)then
 		Youmu04Rad = Youmu04Rad + 210*math.pi/180
@@ -243,8 +239,12 @@ function AbilityYoumu:OnYoumu04Think(keys)
 	caster:SetContextNum("ability_Youmu04_Count",count,0)
 	if(count>=10)then
 		caster:SetOrigin(vecTarget)
+		local spellCard = ParticleManager:CreateParticle("particles/thd2/heroes/youmu/youmu_04_word.vpcf", PATTACH_CUSTOMORIGIN, caster)
+		ParticleManager:SetParticleControl(spellCard, 0, caster:GetOrigin())
+		ParticleManager:ReleaseParticleIndex(spellCard)
 		caster:SetContextNum("ability_Youmu04_Count",0,0)
 		caster:SetContextNum("ability_Youmu04_Rad",0,0)
+		SetTargetToTraversable(caster)
 		return
 	end
 end

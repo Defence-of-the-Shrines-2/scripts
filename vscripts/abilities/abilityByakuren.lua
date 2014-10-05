@@ -70,6 +70,7 @@ function OnByakuren03SpellStart(keys)
 		ParticleManager:SetParticleControl(effectIndex, 1, vecTarget)
 		ParticleManager:SetParticleControl(effectIndex, 2, vecTarget)
 		ParticleManager:ReleaseParticleIndex(effectIndex)
+		SetTargetToTraversable(target)
 		target:EmitSound("Hero_Weaver.TimeLapse")
 	else
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/byakuren/ability_byakuren_03.vpcf", PATTACH_CUSTOMORIGIN, caster)
@@ -78,6 +79,7 @@ function OnByakuren03SpellStart(keys)
 				function()
 					target:SetOrigin(vecTarget)
 					target:EmitSound("Hero_Weaver.TimeLapse")
+					SetTargetToTraversable(target)
 					return nil
 				end, 
 		"ability_byakuren_03_return",
@@ -116,8 +118,6 @@ function OnByakuren04SpellThinkStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	if(caster:GetContext("ability_byakuren04_health_old")==nil)then
 		caster:SetContextNum("ability_byakuren04_health_old",0,0)
-	end
-	if(caster:GetContext("ability_byakuren04_think")==nil)then
 		caster:SetContextThink("ability_byakuren04_think", 
 		function()
 			OnByakuren04SpellThink(keys)
@@ -129,6 +129,16 @@ end
 
 
 function OnByakuren04SpellThink(keys)
+	--[[local caster = EntIndexToHScript(keys.caster_entindex)
+	local ability = keys.ability
+	local increaseHealth = caster:GetMaxMana() * keys.BounsHealth * ability:GetLevel()
+	local oldIncreaseHealth = caster:GetContext("ability_byakuren04_health_old")
+	local changeHealth = increaseHealth - oldIncreaseHealth
+
+	caster:SetBaseMaxHealth(caster:GetBaseMaxHealth() + changeHealth)
+	caster:SetMaxHealth(caster:GetMaxHealth())
+	caster:SetContextNum("ability_byakuren04_health_old",changeHealth,0)]]--
+		
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local ability = keys.ability
 	local increaseHealth = caster:GetMaxMana() * keys.BounsHealth * ability:GetLevel()
@@ -142,9 +152,12 @@ function OnByakuren04SpellThink(keys)
 	
 	local hp = caster:GetContext("ability_byakuren04_health_old")
 	local nowhp = caster:GetHealth()
-	
+
 	caster:SetMaxHealth(intNewRealBaseHealth)
 	if(hp>0 and nowhp>0)then
+		caster:SetContextNum("ability_byakuren04_health_old",hp,0)
 		caster:SetHealth(hp)
+	else
+		caster:SetContextNum("ability_byakuren04_health_old",intNewRealBaseHealth,0)
 	end
 end

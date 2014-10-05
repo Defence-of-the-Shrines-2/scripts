@@ -1928,6 +1928,12 @@
 						"Chance" "%damage_chance"
 						"OnSuccess"
 						{
+							"AttachEffect"
+							{
+								"EffectName"		"particles/thd2/items/item_camera.vpcf"
+								"EffectAttachType"  "follow_origin"
+								"Target"            "TARGET"
+							}
 							"RunScript"
 							{
 								"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
@@ -5168,7 +5174,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"1000"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5177,7 +5183,7 @@
 		"ItemResult"					"item_zun_glasses"
 		"ItemRequirements"
 		{
-			"01"						"item_frog;item_ice_block;item_ice_block"
+			"01"						"item_guilty_mask;item_hunting_cap"
 		}
 	}
 	
@@ -5195,7 +5201,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1650"
+		"ItemCost"						"2600"
 		"ItemShopTags"					"str;magic_resist;armor;regen_health"
 		"ItemQuality"					"component"
 		"ItemSellable"					"1"
@@ -8311,7 +8317,10 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%invulnerable_duration"
 				"IsBuff"	"1"
+				"EffectName"		"particles/thd2/items/item_tsundere.vpcf"
+				"EffectAttachType"  "follow_origin"
 				//"IsHidden"	"1"
+
 				"States"
 				{
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"

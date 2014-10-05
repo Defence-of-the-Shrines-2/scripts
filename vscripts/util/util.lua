@@ -256,17 +256,10 @@ function IsRadInRect(aVec,rectOrigin,rectWidth,rectLenth,rectRad)
 	local aRadius = GetDistanceBetweenTwoVec2D(rectOrigin,aVec)
 	local turnX = aRadius*math.cos(turnRad)
 	local turnY = aRadius*math.sin(turnRad)
-	print("rect")
-	print(tostring(turnX))
-	print(tostring(turnY))
 	local maxX = rectWidth/2
 	local minX = -rectWidth/2
 	local maxY = rectLenth
 	local minY = 0
-	print(tostring(maxX))
-	print(tostring(minX))
-	print(tostring(maxY))
-	print(tostring(minY))
 	if(turnX<maxX and turnX>minX and turnY>minY and turnY<maxY)then
 		return true
 	else
@@ -285,9 +278,6 @@ function IsRadBetweenTwoRad2D(a,rada,radb)
 	if(a<maxrad and a>minrad)then
 		return true
 	end
-	print("maxrad="..tostring(maxrad))
-	print("minrad="..tostring(minrad))
-	print("a="..tostring(a))
 	return false
 end
 

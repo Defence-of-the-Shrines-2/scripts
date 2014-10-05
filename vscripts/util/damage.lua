@@ -99,5 +99,8 @@
     end
 	
 	function UnitDamageTarget(DamageTable)
-		    ApplyDamage(DamageTable)
+		if(DamageTable.victim:IsNightmared())then
+			DamageTable.victim:RemoveModifierByName("modifier_bane_nightmare")
+		end
+		ApplyDamage(DamageTable)
 	end

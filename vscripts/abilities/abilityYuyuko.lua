@@ -6,12 +6,13 @@ function OnYuyukoExSpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local vecCaster = caster:GetOrigin() 
 	local attacker = keys.attacker
+	local damage_table
 	
 	if(caster:GetContext("abilityyuyuko_Ex_grave")==FALSE or caster:GetContext("abilityyuyuko_Ex_grave")==nil)then
 		UnitGraveTarget(caster,caster)
 		caster:SetContextNum("abilityyuyuko_Ex_grave", TRUE, 0) 
 	end
-	if(caster:GetHealth()==1)then
+	if(caster:GetHealth()<=5)then
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/yuyuko/ability_yuyuko_04_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 		ParticleManager:ReleaseParticleIndex(effectIndex) 
@@ -21,16 +22,29 @@ function OnYuyukoExSpellStart(keys)
 		ParticleManager:ReleaseParticleIndex(effectIndex) 
 		caster:SetHealth(caster:GetMaxHealth())
 		UnitDisarmedTarget(caster,caster,keys.LifeDuration)
-		UnitInvulnerableTarget(caster,caster,keys.LifeDuration)
+		UnitNoDamageTarget(caster,caster,keys.LifeDuration)
 		caster:SetContextThink("abilityyuyuko_Ex_grave_timer", 
 			function()
 				caster:RemoveModifierByName("modifier_dazzle_shallow_grave")
 				caster:SetContextNum("abilityyuyuko_Ex_grave", FALSE, 0) 
 				if(attacker~=nil)then
-			    	caster:Kill(keys.ability,attacker)
+			    	damage_table = {
+						victim = caster,
+						attacker = attacker,
+						damage = 99999,
+						damage_type = DAMAGE_TYPE_PURE,
+	    				damage_flags = DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+					}
 			    else
-			    	caster:Kill(keys.ability,attacker)
+			    	damage_table = {
+						victim = caster,
+						attacker = attacker,
+						damage = 99999,
+						damage_type = DAMAGE_TYPE_PURE,
+	    				damage_flags = DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+					}
 			    end
+			    UnitDamageTarget(damage_table)
 			end, 
 			keys.LifeDuration) 
 		Timer.Loop 'abilityyuyuko_Ex_unablemove_timer' (0.1, 100,
@@ -40,7 +54,6 @@ function OnYuyukoExSpellStart(keys)
 				end
 			end
 		)
-		PrintTable(keys)
 	end
 end
 
@@ -58,11 +71,9 @@ function OnYuyuko04SpellStart(keys)
 	local forwardRad = GetRadBetweenTwoVec2D(caster:GetOrigin(),unit:GetOrigin())
 	unit:SetForwardVector(Vector(math.cos(forwardRad+math.pi/2),math.sin(forwardRad+math.pi/2),0))
 
-	print("start_create")
 	unit:SetContextThink("ability_yuyuko_04_unit_remove", 
 		function () 
 			unit:RemoveSelf()
-			print("start_remove")
 			return nil
 		end, 
 		2.0)
@@ -82,8 +93,8 @@ function OnYuyuko04SpellThink(keys)
 	if(timecount>=0)then
 		timecount = timecount - 1
 		caster:SetContextNum("ability_yuyuko_04_time_count", timecount, 0) 
-		for _,v in pairs(targets) do
-			if((v:GetTeam()~=caster:GetTeam()) and (v:IsInvulnerable() == false) and (v:IsTower() == false) and (v:IsAlive() == true))then
+		for _,v in pairs(targets) do    
+			if((v:GetTeam()~=caster:GetTeam()) and (v:IsInvulnerable() == false) and (v:IsTower() == false) and (v:IsAlive() == true) and (v:GetClassname()~="npc_dota_roshan"))then
 				local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/yuyuko/ability_yuyuko_04_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
 				ParticleManager:SetParticleControl(effectIndex, 0, v:GetOrigin())
 				ParticleManager:ReleaseParticleIndex(effectIndex) 
@@ -104,7 +115,6 @@ function OnYuyuko04SpellThink(keys)
 
 				if(v:IsHero()==false)then
 					v:Kill(keys.ability,caster)
-					print("killunit")
 				else
 					local damage_table = {
 						victim = v,
@@ -117,7 +127,6 @@ function OnYuyuko04SpellThink(keys)
 				end
 
 				if(boolDamage)then
-					print("DamageUnit")
 					local DamageTargets = FindUnitsInRadius(
 					   caster:GetTeam(),		--caster team
 					   vecV,					--find position
@@ -136,7 +145,6 @@ function OnYuyuko04SpellThink(keys)
 							damage_type = keys.ability:GetAbilityDamageType(), 
 							damage_flags = 0
 						}
-						PrintTable(damage_table_death)
 					    UnitDamageTarget(damage_table_death)
 					end
 				end
