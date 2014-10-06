@@ -1993,7 +1993,7 @@
 				"RemoveOnDeath"     "0"
 				"IsHidden"          "0"
 				"Duration"          "%move_duration"
-				"OverrideAnimation"	"Act_DOTA_CAST_ABILITY_1"
+				"OverrideAnimation"	"ACT_DOTA_CAST_ABILITY_1_END"
 				"ThinkInterval"     "0.02"
 				
 				"OnCreated"
@@ -3948,6 +3948,12 @@
 		//----------------------------------------------------------------
 		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
 	    "AbilityDamage"				"300 350 400 450"
+
+	    "precache"
+		{
+			"particle_folder"			"particles/thd2/heroes/mokou"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+		}
 		
 		"Modifiers"
 	    {
@@ -3961,7 +3967,16 @@
 			            "Chance"        "%ability_chance_base"
 				        "OnSuccess"
 				        {	
-				        	"OverrideAnimation"		"Act_DOTA_CAST_ABILITY_3"
+				        	"FireSound"
+				        	{
+				        		"EffectName"		"Hero_Spirit_Breaker.GreaterBash"
+				        		"Target"            "TARGET"
+				        	}
+				        	"ApplyModifier"
+				        	{
+				        		"Target" 			"CASTER"
+				        		"ModifierName"		"ability_yugi03_animation"
+				        	}
 				        	"Knockback"
 							{
 								"Center" 	"CASTER"
@@ -3980,6 +3995,12 @@
 				        }
 		            }
 				}
+			}
+
+			"ability_yugi03_animation"
+			{
+				"Duration" 			"1.0"
+				"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_2"
 			}
 		}
 		
@@ -4026,13 +4047,29 @@
 		"precache"
 		{
 		 	"particle_folder"			"particles/thd2/heroes/yugi"
+		 	"particle_folder"			"particles/units/heroes/hero_earthshaker"
+			"soundfile"					"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
 		}
 
         "OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_DoomBringer.Doom"
+				"Target"            "TARGET"
+			}
+
 			"AttachEffect"
 			{
 				"EffectName"		"particles/thd2/heroes/yugi/yugi_slam.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"            "TARGET"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Target"            "TARGET"
 			}
@@ -4132,11 +4169,12 @@
 			            "Chance"        "%ability_chance_base"
 				        "OnSuccess"
 				        {
-				        	// "FireSound"
-				        	// {
-				        	// 	"EffectName"		"Brewmaster_Storm.DispelMagic"
-				        	// 	"Target" 			"CASTER"
-				        	// }
+				        	"FireSound"
+				        	{
+				        		"EffectName"		"Hero_Brewmaster.ThunderClap"
+				        		"Target" 			"TARGET"
+				        	}
+
 		                	"RunScript"					
 	    	            	{
 			                	"Target"
@@ -4233,10 +4271,10 @@
 		//----------------------------------------------------------------
 		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
 
-	 	// "precache"
-		// {
-		// 	    "soundfile"					""
-		// }
+	 	"precache"
+		{
+		 	"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
+		}
 		
 		"Modifiers"
 	    {
@@ -4250,11 +4288,12 @@
 			            "Chance"        "%ability_chance_base"
 				        "OnSuccess"
 				        {
-				        	// "FireSound"
-				        	// {
-				        	// 	"EffectName"		"Brewmaster_Storm.DispelMagic"
-				        	// 	"Target" 			"CASTER"
-				        	// }
+				        	"FireSound"
+				        	{
+				        	 	"EffectName"		"Hero_LoneDruid.BattleCry"
+				        		"Target" 			"CASTER"
+				        	}
+
 		                	"RunScript"					
 	    	            	{
 			                	"Target"
@@ -4436,11 +4475,11 @@
 		"AbilityCooldown"           "100"
 		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
 		
-		// "precache"
-		// {
-		// 	"particle_folder"			"particles/thd2/heroes/mokou"
-		// 	"soundfile"					"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
-		// }
+		"precache"
+		{
+			"particle_folder"			"particles/thd2/heroes/suika"
+		 	//"soundfile"					"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
+		}
 
 		"OnSpellStart"
 		{
@@ -4449,6 +4488,13 @@
 			// 	"EffectName"		"Hero_DoomBringer.ScorchedEarthAura"
 			// 	"Target"            "CASTER"
 			// }
+
+			"FireEffect"
+			{
+				"EffectName"		"particles/thd2/heroes/suika/ability_suika_04_effect.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target" 			"CASTER"
+			}
 
 			"RunScript"
 			{
@@ -4503,5 +4549,333 @@
 			}
 		}	
 	}
+		//---------------------------------------------------------------------------------------first ok
+	"ability_thdots_rumia01"
+	{
+		"ID"						"2040"
+		"BaseClass"				 	"ability_datadriven"
+		"AbilityTextureName"		"ability_thdots_rumia01"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel"  				"4"
+		"AbilityCooldown"			"15"
+		"AbilityManaCost"       	"65"
+
+		"precache"
+		{
+			"particlefile"				"particles/thd2/heroes/rumia"
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"Rumia_Buff00"
+			}
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"Rumia_Effect01"
+			}
+			//"FireSound"
+			//{
+			//	"EffectName"		"Hero_Gyrocopter.CallDown.Fire"
+			//	"Target"			"CASTER"
+			//}
+		}
+		"Modifiers"
+		{
+			"Rumia_Buff00"
+			{
+				"Isbuff"	"1"
+				"IsPassive"	"1"
+				"IsHidden" 		"1"
+				"Duration"		"%duration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"36"
+				}
+				"States"
+			    {
+			        "MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
+			    }
+
+			}
+		    "Rumia_Effect01"
+	        {
+	        	"IsPassive"		"1"
+				"IsHidden" 		"1"
+				"Duration"		"%duration"
+	            "OnCreated"
+	            {
+	            	"AttachEffect"
+		            {
+		                "Target" 			"CASTER"
+		                "EffectName" 		"particles/thd2/heroes/rumia/ability_rumia01_effect.vpcf"
+		                "EffectAttachType"	"follow_origin"
+		                "ControlPoints"
+		                {
+							"00"		"0 0 0"
+							"01"		"0 0 0"
+		                }
+		            }
+	            }
+	        }
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5"
+			}
+		}
+	}
+	//----------------------------------------------------------second OK---------------------
+	"ability_thdots_rumia02"
+	{
+		"ID"						"2041"
+		"BaseClass"				 	"ability_datadriven"
+		"AbilityTextureName"		"ability_thdots_rumia02"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"MaxLevel"  				"4"
+		"AbilityUnitDamageType"   	"DAMAGE_TYPE_PURE"
+		"AbilityDamage"				"10 15 20 25"
+
+		"precache"
+		{
+			"particlefile"				"particles/thd2/heroes/rumia/ability_rumia02_effect.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"ability_rumia02_criticalstrike"
+			{
+				"Passive"	 "1"
+				"IsHidden"	 "1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance" 		"%RandomchanceValue"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" "ability_rumia02_grace_crit"
+								"Target"	   "CASTER"	
+							}	
+								
+						}
+					}
+				}
+			}
+
+			"ability_rumia02_grace_crit"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "%damage_Up"
+				}
+				
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"		"ability_rumia02_grace_crit"
+						"Target"			"CASTER"	
+					}
+				}
+			}
+
+			"Rumia_Effect"
+			{
+				"Passive"		"1"
+				"OnAttackLanded"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/rumia/ability_rumia02_effect.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile" 	"scripts/vscripts/abilities/abilityRumia.lua"
+						"Function"		"OnRumia02Blood"
+						"Target"		"TARGET"
+						"dv"	"%damage_Value"
+						"dt"	"%duration_Time"
+						"dc"	"%damage_count"
+						"ti"	"%thinkInterval"
+					}
+				}
+			}
+			"Rumia_KaMi"
+			{
+				"RemoveOnDeath"	"0"
+				"IsHidden" 		"0"
+				"Duration"      "%duration_Time"
+	            "ThinkInterval"	"%thinkInterval"
+	            "OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile" 	"scripts/vscripts/abilities/abilityRumia.lua"
+						"Target"		"TARGET"
+						"Function"		"OnRumia02BloodDamage"
+						"dt"	"%duration_Time"
+						"dv"	"%damage_Value"
+					}
+				}
+				"Properties"
+			    {
+			        "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%moveSpeedDown"
+			    }
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"duration_Time"	"1"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_Up"	"120 140 160 200"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_count"	"2"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"thinkInterval"	"0.5"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"moveSpeedDown"	"-25 -30 -35 -40"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"RandomchanceValue"	"8"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_Value"	"10 15 20 25"
+			}
+		}
+	}
+	//--------------------------------------------------------------------------------------------lasting ok
+	"ability_thdots_rumia04"
+	{
+		"ID"						"2042"
+		"BaseClass"				 	"ability_datadriven"
+		"AbilityTextureName"	    "ability_thdots_rumia04"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_4"
+
+		"AbilityBehavior"          "DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"   "DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityType"			   "DOTA_ABILITY_TYPE_ULTIMATE"
+
+        "AbilityCastPoint"          "0.3"
+		"MaxLevel"				  	"3"
+		"AbilityCooldown"			"36"
+		// Stats---------------------------------------------------------------
+		"AbilityUnitDamageType"   	"DAMAGE_TYPE_PURE"
+		"AbilityCastRange"			"128"
+	    "AbilityDamage"				"300 450 600"
+		"AbilityManaCost"			"80"
+
+		"precache"
+		{
+			"particlefile"		"particles/blood_impact/blood_advisor_pierce_spray.vpcf"
+		}
+
+		"OnSpellStart"//当施法目标接近成功时
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"TARGET"
+				"ModifierName"		"Rumia_Eat_Effect"
+			}
+			"RunScript"
+			{
+				"ScriptFile" 	"scripts/vscripts/abilities/abilityRumia.lua"
+				"Function"		"OnRumia04Start"
+				"Caster"        "CASTER"	
+				"Target"        "TARGET"
+				"StealHealth"	"%stealHealthPercentage"
+			}
+			//"FireSound"
+			//{
+			//	"EffectName"		"Hero_Dazzle.Shallow_Grave"
+			//	"Target" 			"CASTER"
+			//}
+		}
+		//--------------------------------当自己死去时扣去部分力量值
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile" 	"scripts/vscripts/abilities/abilityRumia.lua"
+				"Caster"        "CASTER"	
+				"Function"		"OnRumiaDead"
+				"LostStrength"	"%lostStrengthPercentage"
+			}
+		}
+		"Modifiers"
+		{
+			//----------------------------给予伤害和自己加血
+			"Rumia_Eat_Effect"
+			{
+				"Duration"	"1"
+				"IsPassive"	"1"
+				"EffectName" 	   "particles/blood_impact/blood_advisor_pierce_spray.vpcf"
+		        "EffectAttachType" "follow_origin"
+			}
+			//--------------------------------当自己死去时扣去部分力量值
+			//"Rumia_Lost_Strength"
+			//{
+			//	"Passive"	"1"
+			//	"OnDeath"
+			//	{
+			//		"RunScript"
+			//		{
+			//			"ScriptFile" 	"scripts/vscripts/abilities/abilityRumia.lua"
+			//			"Caster"        "CASTER"	
+			//			"Function"		"OnRumiaDead"
+			//			"LostStrength"	"%lostStrengthPercentage"
+			//		}
+			//	}
+			//}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"lostStrengthPercentage"	"0.2"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"stealHealthPercentage"	"0.3 0.5 0.8"
+			}
+		}
+	}
+
 }
   

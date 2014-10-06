@@ -38,7 +38,7 @@ function OnYuyukoExSpellStart(keys)
 			    else
 			    	damage_table = {
 						victim = caster,
-						attacker = attacker,
+						attacker = caster,
 						damage = 99999,
 						damage_type = DAMAGE_TYPE_PURE,
 	    				damage_flags = DOTA_UNIT_TARGET_FLAG_INVULNERABLE
@@ -46,7 +46,7 @@ function OnYuyukoExSpellStart(keys)
 			    end
 			    UnitDamageTarget(damage_table)
 			end, 
-			keys.LifeDuration) 
+			keys.LifeDuration+0.5) 
 		Timer.Loop 'abilityyuyuko_Ex_unablemove_timer' (0.1, 100,
 			function(i)
 				if(GetDistanceBetweenTwoVec2D(caster:GetOrigin(),vecCaster)>300)then

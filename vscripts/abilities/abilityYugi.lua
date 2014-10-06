@@ -40,11 +40,14 @@ function OnYugi04SpellThink(keys)
 	    	damage_flags = DOTA_UNIT_TARGET_FLAG_INVULNERABLE
 		}
 		UnitDamageTarget(damage_table)
+		target:EmitSound("Ability.SandKing_CausticFinale")
+		local effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf", PATTACH_CUSTOMORIGIN, caster)
+		ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
+		ParticleManager:ReleaseParticleIndex(effectIndex) 
 	end
 end
 
 function OnYugi04SpellEnd(keys)
-	print("end")
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
 
@@ -57,4 +60,8 @@ function OnYugi04SpellEnd(keys)
 	    damage_flags = DOTA_UNIT_TARGET_FLAG_INVULNERABLE
 	}
 	UnitDamageTarget(damage_table)
+	target:EmitSound("Ability.SandKing_CausticFinale")
+	local effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf", PATTACH_CUSTOMORIGIN, caster)
+	ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
+	ParticleManager:ReleaseParticleIndex(effectIndex) 
 end

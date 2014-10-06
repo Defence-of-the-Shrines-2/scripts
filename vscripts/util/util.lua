@@ -249,7 +249,11 @@ function GetRadBetweenTwoVec2D(a,b)
 	local x = b.x - a.x
 	return math.atan2(y,x)
 end
-
+--aVec:原点向量
+--rectOrigin：单位原点向量
+--rectWidth：矩形宽度
+--rectLenth：矩形长度
+--rectRad：矩形相对Y轴旋转角度
 function IsRadInRect(aVec,rectOrigin,rectWidth,rectLenth,rectRad)
 	local aRad = GetRadBetweenTwoVec2D(rectOrigin,aVec)
 	local turnRad = aRad + (math.pi/2 - rectRad)

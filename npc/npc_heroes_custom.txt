@@ -379,7 +379,7 @@
 		"Ability4"					"ability_thdots_byakuren04"
 		"Ability5"					"attribute_bonus"
 		
-		"Model"                 	"models/thd2/byakuren/byakuren.vmdl"
+		"Model"                 	"models/thd2/hiziri_byakuren/hiziri_byakuren.vmdl"
 
 		"AbilityDraftDisabled"		"0"
 		
@@ -754,6 +754,57 @@
 		"VisionDaytimeRange"		"1050"
 			//白天视野大小
 		"VisionNighttimeRange"		"700"
+			//晚上视野大小
+	}
+
+	"npc_dota_hero_Rumia"
+	{
+		"override_hero"			"npc_dota_hero_life_stealer"
+		"AbilityLayout" 		"4"
+		"Ability1"				"ability_thdots_rumia01" 
+		"Ability2"				"ability_thdots_rumia02"
+		"Ability3"				"night_stalker_hunter_in_the_night"
+		"Ability4"				"ability_thdots_rumia04"
+		"Ability5"				"attribute_bonus"
+		
+		"Model"                 "models/thd2/rumia_ex/rumia_ex.vmdl"
+
+		"ArmorPhysical"				"1"
+			//物理护甲
+		"AttackDamageMin"			"38"
+			//最大攻击力
+		"AttackDamageMax"			"32"
+			//最小攻击力
+			
+		"AttributeBaseStrength"		"30"
+			//基础力量
+		"AttributeStrengthGain"		"3"
+			//每级增加的力量，力量成长
+		"AttributeBaseAgility"		"17"
+			//基础敏捷
+		"AttributeAgilityGain"		"1.0"
+			//每级增加的敏捷，敏捷成长
+		"AttributeBaseIntelligence"	"17"
+			//基础智力
+		"AttributeIntelligenceGain"	"1.0"
+			//每级增加的智力，智力成长
+			
+		"MovementSpeed"				"340"
+			//基础移动速度
+		"MovementTurnRate"			"2.0"
+			//转身速度
+		"StatusHealth"				"200"
+			//基础生命值
+		"StatusHealthRegen"			"2.0"
+			//基础生命恢复
+		"StatusMana"				"30"
+			//基础魔法值
+		"StatusManaRegen"			"1.0"
+			//基础魔法恢复
+
+		"VisionDaytimeRange"		"1050"
+			//白天视野大小
+		"VisionNighttimeRange"		"1200"
 			//晚上视野大小
 	}
 

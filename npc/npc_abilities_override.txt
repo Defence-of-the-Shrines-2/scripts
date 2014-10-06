@@ -583,6 +583,30 @@
 		}
 	}
 
+	"night_stalker_hunter_in_the_night"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5277"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_movement_speed_pct_night"	"5 10 15 20"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_attack_speed_night"			"10 20 30 40"
+			}
+		}
+	}
+
 
 
 	//下面这些是用来给商店中移除物品的，如果你想从商店中移除某个物品，就把他前面的//去掉，
