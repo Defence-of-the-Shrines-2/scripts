@@ -808,4 +808,12 @@
 			//晚上视野大小
 	}
 
+	"npc_dota_hero_razor"
+	{
+		"override_hero"				"npc_dota_hero_razor"
+		"Ability1"					"ability_thdots_iku01"
+		"Ability2"					"ability_thdots_iku02"
+		"Ability3"					"ability_thdots_iku03"
+		"Ability4"					"ability_thdots_iku04"
+	}
 }

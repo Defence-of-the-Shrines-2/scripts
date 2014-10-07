@@ -4877,5 +4877,451 @@
 		}
 	}
 
+	"ability_thdots_iku01"  //羽衣若空
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+
+		"AbilityCastPoint"          "0.0 0.0 0.0 0.0"
+		"AbilityManaCost"			"19 21 23 25"
+		"AbilityCooldown"           "0"
+
+		"precache" //缓存特效
+        {
+            "particle_folder"       "particles/thd2/heroes/iku"
+        }
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile" 	"scripts/vscripts/abilities/abilityIku.lua"
+				"Target"		"CASTER"
+				"Function"		"OnIku01Toggle"
+			}
+
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"modifier_ability_thdots_iku01"
+			}
+		}
+
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile" 	"scripts/vscripts/abilities/abilityIku.lua"
+				"Target"		"CASTER"
+				"Function"		"OffIku01Toggle"
+			}
+
+			"RemoveModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"modifier_ability_thdots_iku01"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ability_thdots_iku01"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed" //攻击速度
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed"  //移动速度
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/iku/iku_light_hand.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"Target"  			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_static"
+							"CASTER"		"attach_static"
+							"CASTER"		"attach_static"
+						}
+					}
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/iku/iku_light_hand.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"Target"  			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_whip"
+							"CASTER"		"attach_whip"
+							"CASTER"		"attach_whip"
+						}
+					}
+				}	
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"  //攻击速度
+			{
+				"var_type"		"FIELD_INTEGER"
+				"attack_speed"	"20 30 40 50"
+			}
+			"02"  //移动速度
+			{
+				"var_type"		"FIELD_INTEGER"
+				"move_speed"	"0 4 7 10"
+			}
+			"03"  //电击伤害
+			{
+				"var_type"		"FIELD_INTEGER"
+				"light_damage"	"10 20 30 40"
+			}
+		}
+	}
+
+	"ability_thdots_iku02"  //雷云棘鱼
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"          "0.0 0.0 0.0 0.0"
+		"AbilityManaCost"			"150"
+		"AbilityCooldown"           "15"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"modifier_ability_thdots_iku02"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ability_thdots_iku02"
+			{
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor" //护甲
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%mag" //魔抗
+					"MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE"	"%move_speed" //基础移动速度
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles\units\heroes\hero_razor\razor_static_link_projectile_e.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"Target"  			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_hitloc"
+							"CASTER"		"attach_hitloc"
+							"CASTER"		"attach_hitloc"
+						}
+					}
+
+					"RunScript"
+		        	{
+		        		"ScriptFile" 	"scripts/vscripts/abilities/abilityIku.lua"
+		        		"Function"		"OnIku02SpellStart"
+		        		"Target"
+		        		{
+				            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				            "Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				            "Center"    "CASTER"
+				            "Radius"    "%radius"
+				        }
+		        	}
+		        	"ActOnTargets"
+		        	{
+		        		"Target"
+		        		{
+				            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				            "Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				            "Center"    "CASTER"
+				            "Radius"    "%radius"
+				        }
+				        "Action"
+				        {
+				        	"AttachEffect"
+							{
+								"EffectName"		"particles\units\heroes\hero_razor\razor_storm_lightning_strike.vpcf"
+								"EffectAttachType"  "start_at_customorigin"
+								"Target"			"CASTER"
+								"ControlPointEntities"
+								{
+									"CASTER"		"attach_hitloc"
+									"TARGET"		"attach_hitloc"
+								}
+							}
+				        }
+		        	}
+				}	
+
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+		        	{
+		        		"ScriptFile" 	"scripts/vscripts/abilities/abilityIku.lua"
+		        		"Function"		"OnIku02SpellStart"
+		        		"Target"
+		        		{
+				            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				            "Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				            "Center"    "CASTER"
+				            "Radius"    "%radius"
+				        }
+		        	}
+		        	"ActOnTargets"
+		        	{
+		        		"Target"
+		        		{
+				            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				            "Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				            "Center"    "CASTER"
+				            "Radius"    "%radius"
+				        }
+				        "Action"
+				        {
+				        	"AttachEffect"
+							{
+								"EffectName"		"particles\units\heroes\hero_razor\razor_storm_lightning_strike.vpcf"
+								"EffectAttachType"  "start_at_customorigin"
+								"Target"			"CASTER"
+								"ControlPointEntities"
+								{
+									"CASTER"		"attach_hitloc"
+									"TARGET"		"attach_hitloc"
+								}
+							}
+				        }
+		        	}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"04"  //持续时间
+			{
+				"var_type"		"FIELD_FLOAT"
+				"duration"		"4.5"
+			}
+			"05"  //作用范围
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"500"
+			}
+			"01"  //护甲
+			{
+				"var_type"		"FIELD_INTEGER"
+				"armor"			"24 32 40 48"
+			}
+			"02"  //魔抗
+			{
+				"var_type"		"FIELD_INTEGER"
+				"mag"			"10 13 16 19"
+			}
+			"03"  //闪电伤害
+			{
+				"var_type"		"FIELD_INTEGER"
+				"light_damage"	"40 55 70 85"
+			}
+			"02"  //移动速度降低
+			{
+				"var_type"		"FIELD_INTEGER"
+				"move_speed"	"220"
+			}
+			"06"  //击退距离
+			{
+				"var_type"		"FIELD_INTEGER"
+				"distance"		"300"
+			}
+		}
+	}
+
+	"ability_thdots_iku03"  //光龙的吐息
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+
+		"precache" //缓存特效
+        {
+            "particle_folder"       "particles/units/heroes/hero_zuus"
+        }
+
+		"Modifiers"
+		{
+			"modifier_ability_thdots_iku03"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+
+				"OnAttack"
+				{
+					"Random"
+					{
+						"Chance"			"%chance"
+						"PseudeoRandom"		"DOTA_PSEUDO_RANDOM_JUGG_CRIT" 
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile" 	"scripts/vscripts/abilities/abilityIku.lua"
+								"Target"		"UNIT"
+								"Function"		"OnIku03Attack"
+							}
+						}
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"  //触发概率
+			{
+				"var_type"		"FIELD_INTEGER"
+				"chance"		"100 12 14 16"
+			}
+			"02"  //闪电伤害
+			{
+				"var_type"		"FIELD_INTEGER"
+				"light_damage"	"40 55 70 85"
+			}
+			"03"  //闪电链搜索范围
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"300"
+			}
+			"03"  //传递数量
+			{
+				"var_type"		"FIELD_INTEGER"
+				"num"		 	"2"
+			}
+			"06"  //牵引距离
+			{
+				"var_type"		"FIELD_INTEGER"
+				"distance"		"200"
+			}
+		}
+	}
+
+	"ability_thdots_iku04"  //冲破天际的钻头
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"          "0.0 0.0 0.0 0.0"
+		"AbilityCastRange"			"700"
+		"AbilityManaCost"			"150 250 350"
+		"AbilityCooldown"           "100 90 80"
+
+		"precache" //缓存特效
+        {
+            "particle"              "particles/econ/courier/courier_greevil_white/courier_greevil_white_ambient_3.vpcf"
+        }
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" 	"scripts/vscripts/abilities/abilityIku.lua"
+				"Target"		"POINT"
+				"Function"		"OnIku04SpellStart"
+			}
+
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"modifier_ability_thdots_iku04_attack"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ability_thdots_iku04"
+			{
+				"IsHidden"		"1"
+				"Duration"		"%duration"
+
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_ability_thdots_iku04_attack"
+			{
+				"IsHidden"		"1"
+				"Duration"		"%duration"
+
+				"OnAttack"
+				{
+					"Random"
+					{
+						"Chance"			"%chance"
+						"PseudeoRandom"		"DOTA_PSEUDO_RANDOM_JUGG_CRIT" 
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile" 	"scripts/vscripts/abilities/abilityIku.lua"
+								"Target"		"UNIT"
+								"Function"		"OnIku04Attack"
+							}
+						}
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"  //持续时间
+			{
+				"var_type"		"FIELD_INTEGER"
+				"duration"		"30 4 5"
+			}
+			"02"  //触发概率
+			{
+				"var_type"		"FIELD_INTEGER"
+				"chance"		"10"
+			}
+			"03"  //伤害
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"300 375 450"
+			}
+			"04"  //半径
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"700"
+			}
+		}
+	}
 }
   
