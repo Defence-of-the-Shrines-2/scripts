@@ -767,7 +767,7 @@
 		"Ability4"				"ability_thdots_rumia04"
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/rumia_ex/rumia_ex.vmdl"
+		"Model"                 "models/thd2/rumia/rumia.vmdl"
 
 		"ArmorPhysical"				"1"
 			//物理护甲

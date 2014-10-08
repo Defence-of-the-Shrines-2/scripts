@@ -81,7 +81,7 @@ function OnRumia04Start(keys)
 								damage = keys.ability:GetAbilityDamage(),
 								damage_type = DAMAGE_TYPE_PURE,
 							}
-		if target:IsHero() ==false then
+		if target:IsHero() ==false and (target:GetClassname()~="npc_dota_roshan") then
 			DamageTable.damage = 99999
 		end
 

@@ -4270,11 +4270,6 @@
 		// Stats
 		//----------------------------------------------------------------
 		"AbilityUnitDamageType"   	"DAMAGE_TYPE_MAGICAL"
-
-	 	"precache"
-		{
-		 	"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
-		}
 		
 		"Modifiers"
 	    {
@@ -4290,8 +4285,8 @@
 				        {
 				        	"FireSound"
 				        	{
-				        	 	"EffectName"		"Hero_LoneDruid.BattleCry"
-				        		"Target" 			"CASTER"
+				        		"EffectName"		"Hero_Brewmaster.ThunderClap"
+				        		"Target" 			"TARGET"
 				        	}
 
 		                	"RunScript"					
@@ -4595,7 +4590,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"36"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"	"36"
 				}
 				"States"
 			    {
