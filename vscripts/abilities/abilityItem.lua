@@ -270,12 +270,20 @@ function ItemAbility_HorseKing_OnOpen_SpentMana(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	if (Caster:GetMaxMana()>keys.NeedSpentMana) then
-		if (Caster:GetManaPercent()<keys.SpentManaPercent) then
+		if (Caster:GetManaPercent()<keys.SpentManaPercent and ItemAbility:GetToggleState()) then
 			ItemAbility:ToggleAbility()
 		else
 			local SpentMana = Caster:GetMaxMana()*keys.SpentManaPercent*0.01
 			Caster:ReduceMana(SpentMana)
 		end
+	end
+end
+
+function ItemAbility_HorseKing_ToggleOff(keys)
+	local ItemAbility = keys.ability
+	local Caster = keys.caster
+	if (ItemAbility:GetToggleState()) then
+		ItemAbility:ToggleAbility()
 	end
 end
 
@@ -344,6 +352,17 @@ function ItemAbility_9ball_OnSpellStart(keys)
 	vecCaster.x = vecCaster.x+math.cos(radian)*range
 	vecCaster.y = vecCaster.y+math.sin(radian)*range
 	Caster:SetOrigin(vecCaster)
+end
+
+function ItemAbility_PresentBox_RestoreGold(keys)
+	local ItemAbility = keys.ability
+	if (ItemAbility:IsItem())then
+		local Caster = keys.caster
+		local CasterPlayerID = Caster:GetPlayerOwnerID()
+		local RestoreGold = ItemAbility:GetCost()*keys.RestoreGoldPercent*0.01
+		PlayerResource:SetGold(CasterPlayerID,PlayerResource:GetUnreliableGold(CasterPlayerID) + RestoreGold,false)
+		Caster:RemoveItem(ItemAbility)
+	end
 end
 
 function ItemAbility_PresentBox_OnInterval(keys)
