@@ -163,7 +163,7 @@ function AbilityReimu:OnReimu01Release( keys )
 end
 -- Reimu01End
 
--- Reimu02
+--Reimu02
 function AbilityReimu:initLightData(level)
 	self.tReimu02Light = self.tReimu02Light or {}
 	zincrease = REIMU02_LIGHTSPEED
@@ -193,6 +193,13 @@ function AbilityReimu:OnReimu02Start(keys)
 			,caster
 			,caster
 			,caster:GetTeam()
+		)
+		local removeUnit = self.tReimu02Light[i].Ball.unit
+		removeUnit:SetContextThink("ability_reimu02_unit_remove",
+			function()
+				removeUnit:RemoveSelf()
+				return nil
+			end,5
 		)
 		
 		if self.tReimu02Light[i].Ball.unit then
@@ -285,19 +292,22 @@ function AbilityReimu:OnReimu02OnLight (keys)
 		            vec.x = math.cos(radian) * REIMU02_LIGHTSPEED + vec.x
 		            vec.y = math.sin(radian) * REIMU02_LIGHTSPEED + vec.y
 		
-		            if vec.z>=300 then
-			           zincrease = -(50)
-		            end
-		
-	    	        if vec.z<=200 then
-		    	       zincrease = 50
-	    	        end
-		
-	        	    vec = Vector(vec.x,vec.y,vec.z + zincrease)
-		
-	        	    self.tReimu02Light[i].Ball.unit:SetOrigin(vec) 
 			   end 
 		   end
+		   if vec.z>=300 then
+				local ranInt = RandomInt(-20,-50)
+				self.zincrease = ranInt
+			end
+			
+		    if vec.z<=200 then
+		    	local ranInt = RandomInt(20,50)
+			    self.zincrease = ranInt
+		    end
+			
+		    vec = Vector(vec.x + self.zincrease,vec.y + self.zincrease,vec.z + self.zincrease)
+			if (self.tReimu02Light[i].Ball.unit~=nil)then
+		    	self.tReimu02Light[i].Ball.unit:SetOrigin(vec) 
+		    end
 		end
 	end
 end
@@ -365,12 +375,12 @@ function AbilityReimu:OnReimu04Think(keys)
 	for k,v in pairs(Targets) do
 		if(v:GetTeam() == caster:GetTeam())then
 			if(v:GetContext("Reimu04_Effect_MAGIC_IMMUNE")~=0) then
-			    v:SetContextNum("Reimu04_Effect_MAGIC_IMMUNE" , 1, 0)
+			    v:SetContextNum("Reimu04_Effect_MAGIC_IMMUNE" , 0, 0)
 			    UnitMagicImmune(caster,v,keys.Ability_Duration)
 				v:SetContextThink(DoUniqueString('ability_reimu04_magic_immune'),
 				function ()
 				    if (v~=nil) then
-		                v:SetContextNum("Reimu04_Effect_MAGIC_IMMUNE" , 0, 0)
+		                v:SetContextNum("Reimu04_Effect_MAGIC_IMMUNE" , 1, 0)
 					    return nil
 				    end
 		        end,keys.Ability_Duration)
@@ -378,7 +388,7 @@ function AbilityReimu:OnReimu04Think(keys)
 		else
 			if(v:GetContext("Reimu04_Effect_Damage")==nil)then
 			    v:SetContextNum("Reimu04_Effect_Damage" , 1, 0)
-				v:SetContextNum("Reimu04_Effect_Damage_Count" , 4, 0)
+				v:SetContextNum("Reimu04_Effect_Damage_Count" , keys.Damage_Count, 0)
 			end
 			
 			if(v:GetContext("Reimu04_Effect_Damage")==1)then
@@ -386,13 +396,13 @@ function AbilityReimu:OnReimu04Think(keys)
 				v:SetContextThink(DoUniqueString('ability_reimu04_damage'),
     	        function ()
 				    v:SetContextNum("Reimu04_Effect_Damage" , 1, 0)
-					v:SetContextNum("Reimu04_Effect_Damage_Count" , 4, 0)
+					v:SetContextNum("Reimu04_Effect_Damage_Count" , keys.Damage_Count, 0)
 				end,keys.Ability_Duration)
 				
 				local DamageTable = {
 	                victim = v, 
 	                attacker = caster, 
-	                damage = keys.ability:GetAbilityDamage()/4, 
+	                damage = keys.ability:GetAbilityDamage()/keys.Damage_Count, 
 	                damage_type = keys.ability:GetAbilityDamageType(), 
 	                damage_flags = 1
                 }
@@ -403,7 +413,7 @@ function AbilityReimu:OnReimu04Think(keys)
 		            local DamageTable = {
 	                    victim = v, 
 	                    attacker = caster, 
-	                    damage = keys.ability:GetAbilityDamage()/4, 
+	                    damage = keys.ability:GetAbilityDamage()/keys.Damage_Count, 
 	                    damage_type = keys.ability:GetAbilityDamageType(), 
 	                    damage_flags = 1
                     }

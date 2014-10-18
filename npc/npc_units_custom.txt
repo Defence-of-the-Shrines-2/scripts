@@ -59,13 +59,14 @@
   	{
 		"model"					"models/thd2/fantasy_seal.vmdl"
   		"BaseClass"				"npc_dota_creep_neutral"
-		"Ability1"				"ability_dummy_unit"
+		"Ability1"				"ability_reimu02_dummy_unit"
   		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
   		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
   		"VisionDaytimeRange"	"100"
   		"VisionNighttimeRange"	"100"
   		"HasInventory"			"0"
   		"WakesNeutrals"			"0"
+		"StatusHealth"			"100000"		// Base health.
   	}
 	
 	"npc_thdots_unit_marisa03_star"
@@ -162,6 +163,20 @@
 		"Level"						"0"
 		"UnitLabel"					"healing_ward"
 		
+		
+		"Ability1"					"ability_dummy_unit"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	}	
+
+	"npc_iku_04_dummy_unit"
+	{
+		"BaseClass"					"npc_dota_creep_neutral"
+		"Model"						"models/thd2/iku/iku_lightning_drill.vmdl"
+		"SoundSet"					"Creep_Good_Range"
+		"Level"						"0"
+		"UnitLabel"					"healing_ward"
+		"ModelScale" 			    "2.0"
 		
 		"Ability1"					"ability_dummy_unit"
 

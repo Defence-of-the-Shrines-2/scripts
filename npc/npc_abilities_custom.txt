@@ -401,6 +401,49 @@
 		}
     }
 
+    "ability_reimu02_dummy_unit"
+    {
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+
+		"precache"
+		{
+			"particle"					"particles/items2_fx/skadi_projectile_copy.vpcf"
+		}
+    
+        "Modifiers"
+	    {
+	    	"reimu02_dummy_unit"
+            {
+                "Passive"                         "1"
+                "IsHidden"                        "1"    
+                "OnCreated"
+                {
+                	"AttachEffect"
+					{
+						"EffectName"		"particles/items2_fx/skadi_projectile_copy.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"Target"			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_origin"
+							"CASTER"		"attach_origin"
+							"CASTER"		"attach_origin"
+							"CASTER"		"attach_origin"
+						}
+					}
+                }
+                "States"
+                {
+                    "MODIFIER_STATE_UNSELECTABLE"         "MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NOT_ON_MINIMAP"       "MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_HEALTH_BAR"        "MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_UNIT_COLLISION"    "MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+		}
+    }
+
     "ability_reimu04_dummy_unit"
     {
 		"BaseClass" 					"ability_datadriven"
@@ -639,17 +682,11 @@
 		}
 		"Modifiers"
 		{
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"EffectName"		"particles/thd2/heroes/reimu/reimu_04_effect_buff.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"			"TARGET"
-				}
-			}
             "modifier_system_magicImmune"
             {
+            	"EffectName"		"particles/thd2/heroes/reimu/reimu_04_effect_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+
 			    "States"
 			    {
 				    "MODIFIER_STATE_MAGIC_IMMUNE"		    "MODIFIER_STATE_VALUE_ENABLED"
@@ -852,7 +889,8 @@
 			}
 		}	
 	}
-	
+
+
 	"ability_dota2x_reimu03"
 	{
 		"ID"						"2001"
@@ -1030,7 +1068,7 @@
 						"Target"
 						{
 							"Center"			"TARGET"
-							"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Teams"				"DOTA_UNIT_TARGET_TEAM_BOTH"
 							"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 					        "Radius"			"%radius"
 
@@ -1059,7 +1097,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"		    "0.3"
+				"stun_duration"		    "0.1"
 			}
 			"04"
 			{
@@ -1995,14 +2033,32 @@
 				"Duration"          "%move_duration"
 				"OverrideAnimation"	"ACT_DOTA_CAST_ABILITY_1_END"
 				"ThinkInterval"     "0.02"
-				
 				"OnCreated"
 				{
 					"AttachEffect"
 					{
+						"EffectName"		"particles/econ/courier/courier_eye_glow_02/courier_eye_glow_02.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00"		"0 0 0"
+							"01"		"0 0 0"
+							"02"		"0 0 0"
+							"03"		"0 0 0"
+							"15"		"235 65 35"
+							"16"		"255 255 255"
+						}
+					}
+					"AttachEffect"
+					{
 						"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_spell_powershot_trail_e.vpcf"
 						"EffectAttachType"	"follow_origin"
-						"Target"			"CASTER"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"03"		"0 0 0"						
+						}
 					}
 				}
 				
@@ -2021,21 +2077,6 @@
 					        "Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
 						}
 						"MoveSpeed"	       "%move_speed"
-					}
-					"AttachEffect"
-					{
-						"EffectName"		"particles/econ/courier/courier_eye_glow_02/courier_eye_glow_02.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"0 0 0"
-							"02"		"0 0 0"
-							"03"		"0 0 0"
-							"15"		"235 65 35"
-							"16"		"255 255 255"
-						}
 					}
 				}
 				
@@ -2747,6 +2788,16 @@
 					}
 				}
             }
+
+            "passive_byakuren04_bonus_health"
+			{
+				"Passive"              	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 		"%health_bonus"
+				}
+			}
 		}
 		
 		"AbilitySpecial"
@@ -2765,6 +2816,11 @@
 			{
 				"var_type"		  		"FIELD_FLOAT"
 				"health_increase"		"0.3 0.45 0.6"
+			}
+			"04"
+			{
+				"var_type"		  		"FIELD_FLOAT"
+				"health_bonus"			"1"
 			}
 			
 		}
@@ -2797,6 +2853,19 @@
 						"ScriptFile"			"scripts/vscripts/abilities/abilityYuyuko.lua"
 			            "Function"		  		"OnYuyukoExSpellStart"
 			            "LifeDuration"			"10"
+		            }	
+				}
+			}
+			"passive_yuyukoEx_damaged"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"OnTakeDamage"
+				{
+					"RunScript"					
+	    	        {
+						"ScriptFile"			"scripts/vscripts/abilities/abilityYuyuko.lua"
+			            "Function"		  		"OnYuyukoExSpellOnDamage"
 		            }	
 				}
 			}
@@ -3481,7 +3550,6 @@
 		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 		"BaseClass"           	    "ability_datadriven"
 		"AbilityTextureName"	    "ability_thdots_flandre04"
-		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_4"
 		
 		// Stats
 		//----------------------------------------------------------------
@@ -3812,7 +3880,6 @@
 		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 		"BaseClass"           	    "ability_datadriven"
 		"AbilityTextureName"	    "ability_thdots_mokou04"
-		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_4"
 		
 		// Stats
 		//----------------------------------------------------------------
@@ -4374,7 +4441,6 @@
 		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"BaseClass"           	    "ability_datadriven"
 		"AbilityTextureName"	    "ability_thdots_suika03"
-		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_3"
 		
 		// Stats
 		//----------------------------------------------------------------
@@ -4394,13 +4460,17 @@
 				"Target"          "CASTER"
 				"ModifierName"    "modifier_thdots_suika03_think_interval"
 			}
+			"ApplyModifier"
+			{
+				"Target"          "CASTER"
+				"ModifierName"    "modifier_thdots_suika03_states"
+			}
 		}
 		
 		"Modifiers"
 		{
 			"modifier_thdots_suika03_think_interval"
 			{
-				"RemoveOnDeath"     "0"
 				"IsHidden"          "0"
 				"Duration"          "%ability_duration"
 				"ThinkInterval"     "0.5"
@@ -4409,20 +4479,22 @@
 
 				"OnIntervalThink"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"			"npc_dota_suika_03_smallsuika"
-						"UnitCount"			"1"
-						"UnitLimit"			"32"
-						"SpawnRadius"		"50"
-						"Target"			"CASTER"
+						"ScriptFile"			"scripts/vscripts/abilities/abilitySuika.lua"
+			             "Function"		  		"OnSuika03Spawn"
 					}
 				}
+			}
+			"modifier_thdots_suika03_states"
+			{
+				"IsHidden"          "1"
+				"Duration"          "%ability_duration"
 					
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_SILENCED"		    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"   	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
 				    "MODIFIER_STATE_DISARMED"		    "MODIFIER_STATE_VALUE_ENABLED"
 				}
 
@@ -4461,7 +4533,7 @@
 		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 		"BaseClass"           	    "ability_datadriven"
 		"AbilityTextureName"	    "ability_thdots_suika04"
-		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_4"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_1"
 		
 		// Stats
 		//----------------------------------------------------------------
@@ -4558,7 +4630,7 @@
 
 		"precache"
 		{
-			"particlefile"				"particles/thd2/heroes/rumia"
+			"particle_folder"		"particles/thd2/heroes/rumia"
 		}
 
 		"OnSpellStart"
@@ -4603,19 +4675,26 @@
 	        	"IsPassive"		"1"
 				"IsHidden" 		"1"
 				"Duration"		"%duration"
+				"ThinkInterval" "0.02"
+
 	            "OnCreated"
 	            {
-	            	"AttachEffect"
-		            {
-		                "Target" 			"CASTER"
-		                "EffectName" 		"particles/thd2/heroes/rumia/ability_rumia01_effect.vpcf"
-		                "EffectAttachType"	"follow_origin"
-		                "ControlPoints"
-		                {
-							"00"		"0 0 0"
-							"01"		"0 0 0"
-		                }
-		            }
+	            	"RunScript"
+	            	{
+	            		"ScriptFile" 	"scripts/vscripts/abilities/abilityRumia.lua"
+	            		"Target"		"TARGET"
+	            		"Function"		"OnRumia01SpellEffectStart"
+	            		"Duration"		"%duration"
+	            	}
+	            }
+	            "OnIntervalThink"
+	            {
+	            	"RunScript"
+	            	{
+	            		"ScriptFile" 	"scripts/vscripts/abilities/abilityRumia.lua"
+	            		"Target"		"TARGET"
+	            		"Function"		"OnRumia01SpellEffectThink"
+	            	}
 	            }
 	        }
 		}
@@ -4642,7 +4721,7 @@
 
 		"precache"
 		{
-			"particlefile"				"particles/thd2/heroes/rumia/ability_rumia02_effect.vpcf"
+			"particle_folder"		"particles/thd2/heroes/rumia"
 		}
 
 		"Modifiers"
@@ -4796,7 +4875,7 @@
 
 		"precache"
 		{
-			"particlefile"		"particles/blood_impact/blood_advisor_pierce_spray.vpcf"
+			"particle_folder"		"particles/blood_impact"
 		}
 
 		"OnSpellStart"//当施法目标接近成功时
@@ -4876,6 +4955,7 @@
 	{
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"	    "ability_thdots_iku01"
 
 		"AbilityCastPoint"          "0.0 0.0 0.0 0.0"
 		"AbilityManaCost"			"19 21 23 25"
@@ -4986,10 +5066,16 @@
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"	    "ability_thdots_iku02"
 
 		"AbilityCastPoint"          "0.0 0.0 0.0 0.0"
 		"AbilityManaCost"			"150"
 		"AbilityCooldown"           "15"
+
+		"precache" //缓存特效
+        {
+            "particle_folder"       "particles/thd2/heroes/iku"
+        }
 
 		"OnSpellStart"
 		{
@@ -5018,7 +5104,7 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles\units\heroes\hero_razor\razor_static_link_projectile_e.vpcf"
+						"EffectName"		"particles/thd2/heroes/iku/iku_02.vpcf"
 						"EffectAttachType"  "start_at_customorigin"
 						"Target"  			"CASTER"
 						"ControlPointEntities"
@@ -5062,14 +5148,14 @@
 								"ControlPointEntities"
 								{
 									"CASTER"		"attach_hitloc"
-									"TARGET"		"attach_hitloc"
+									"CASTER"		"attach_hitloc"
 								}
 							}
 				        }
 		        	}
 				}	
 
-				"ThinkInterval"		"1"
+				"ThinkInterval"		"0.3"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -5124,7 +5210,7 @@
 			"05"  //作用范围
 			{
 				"var_type"		"FIELD_INTEGER"
-				"radius"		"500"
+				"radius"		"250"
 			}
 			"01"  //护甲
 			{
@@ -5158,6 +5244,7 @@
 	{
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	    "ability_thdots_iku03"
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
 
 		"precache" //缓存特效
@@ -5198,7 +5285,7 @@
 			"01"  //触发概率
 			{
 				"var_type"		"FIELD_INTEGER"
-				"chance"		"100 12 14 16"
+				"chance"		"10 12 14 16"
 			}
 			"02"  //闪电伤害
 			{
@@ -5227,8 +5314,10 @@
 	{
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"	    "ability_thdots_iku04"
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
-
+		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastAnimation"      "ACT_DOTA_ATTACK"
 		"AbilityCastPoint"          "0.0 0.0 0.0 0.0"
 		"AbilityCastRange"			"700"
 		"AbilityManaCost"			"150 250 350"
@@ -5236,7 +5325,7 @@
 
 		"precache" //缓存特效
         {
-            "particle"              "particles/econ/courier/courier_greevil_white/courier_greevil_white_ambient_3.vpcf"
+            "particle"              "particles/thd2/heroes/iku/ability_iku_04_light_b.vpcf"
         }
 		
 
@@ -5299,12 +5388,12 @@
 			"01"  //持续时间
 			{
 				"var_type"		"FIELD_INTEGER"
-				"duration"		"30 4 5"
+				"duration"		"3 4 5"
 			}
 			"02"  //触发概率
 			{
 				"var_type"		"FIELD_INTEGER"
-				"chance"		"10"
+				"chance"		"100"
 			}
 			"03"  //伤害
 			{

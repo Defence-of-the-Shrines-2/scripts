@@ -88,6 +88,21 @@ function OnIku02SpellStart( keys )
 	local group = keys.target_entities
 	local caster_abs = caster:GetAbsOrigin()
 
+	if(caster:GetContext("Ability_Iku02_SpellStart_lock")==nil)then
+		caster:SetContextNum("Ability_Iku02_SpellStart_lock",TRUE,0)
+	end
+	if(caster:GetContext("Ability_Iku02_SpellStart_lock")==TRUE)then
+		caster:SetContextNum("Ability_Iku02_SpellStart_lock",FALSE,0)
+		EmitSoundOn("Ability.static.loop", caster)
+
+		caster:SetContextThink("Ability_Iku02_SpellStart", 
+		function()
+				StopSoundEvent("Ability.static.loop", caster)
+				caster:SetContextNum("Ability_Iku02_SpellStart_lock",TRUE,0)
+				return nil
+		end, 4.5)
+	end
+
 	--获取技能等级
 	local i = keys.ability:GetLevel() - 1
 
@@ -241,6 +256,12 @@ function OnIku04SpellStart( keys )
 	--获取技能等级
 	local i = keys.ability:GetLevel() - 1
 
+	Timer.Loop 'Ability_Iku04_SpellStart' (0.1, 15,
+		function(i)
+			EmitSoundOn("Hero_Zuus.ArcLightning.Cast", caster)
+		end
+	)
+
 	--获取半径
 	local radius = keys.ability:GetLevelSpecialValueFor("radius", i)
 
@@ -251,15 +272,34 @@ function OnIku04SpellStart( keys )
 	local light_damage = keys.ability:GetLevelSpecialValueFor("damage", i)
 
 	--设置特效创建点
-	local vec = caster_abs + radius*caster_face
+	local vec = caster_abs + radius*caster_face + Vector(0,0,128)
+
+	local effectUnit = CreateUnitByName(
+		"npc_iku_04_dummy_unit"
+		,vec
+		,false
+		,caster
+		,caster
+		,caster:GetTeam()
+	)
+	local effectRad = GetRadBetweenTwoVec2D(caster:GetOrigin(),point)
+	effectUnit:SetForwardVector(Vector(math.cos(effectRad-math.pi/2),math.sin(effectRad-math.pi/2),0))
+	effectUnit:SetOrigin(vec - caster_face * 350)
 
 	--创建特效
-	local particle = ParticleManager:CreateParticle("particles/econ/courier/courier_greevil_white/courier_greevil_white_ambient_3.vpcf",PATTACH_CUSTOMORIGIN,caster)
+	local particle = ParticleManager:CreateParticle("particles/thd2/heroes/iku/ability_iku_04_light_b.vpcf",PATTACH_CUSTOMORIGIN,effectUnit)
 	ParticleManager:SetParticleControl(particle,0,vec)
-	ParticleManager:SetParticleControl(particle,1,vec)
-	ParticleManager:SetParticleControl(particle,2,Vector(255,255,255))
+	ParticleManager:SetParticleControl(particle,2,vec)
 	ParticleManager:SetParticleControl(particle,3,vec)
-	ParticleManager:SetParticleControl(particle,4,caster_face)
+	ParticleManager:SetParticleControl(particle,4,-caster_face)
+	ParticleManager:SetParticleControl(particle,5,-caster_face)
+	effectUnit:SetContextThink(DoUniqueString('ability_iku04_effect_remove'),
+    	function ()
+		    if (effectUnit~=nil) then
+		        effectUnit:RemoveSelf()
+		    	return nil
+			end
+	    end,1.5)
 
 	local teams = DOTA_UNIT_TARGET_TEAM_ENEMY
     local types = DOTA_UNIT_TARGET_BASIC+DOTA_UNIT_TARGET_HERO

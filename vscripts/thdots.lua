@@ -146,6 +146,20 @@ function PrecacheHeroResource(hero)
   local abilityEx
 	--local PlyID=hero:GetPlayerOwnerID()
 	--PlayerResource:SetGold(PlyID,999999,true)
+  --[[local ply = EntIndexToHScript(1)
+  local ent = ply:GetAssignedHero()
+  if(ent~=nil)then
+    print("ok")
+  end
+  for i=1,1000 do
+    if(ent~=nil)then
+      local enti = ent:GetSceneByIndex(i)
+      if(enti~=nil)then
+        print(tostring(i))
+        print(enti:GetName())
+      end
+    end
+  end]]--
 	if(heroName == "npc_dota_hero_slark")then
 		require( 'abilities/abilityAya' )
 		--[[PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_windwalk_dust.vpcf", context )--文文D
@@ -218,14 +232,27 @@ function THDOTSGameMode:AbilityUsed(keys)
   local caster = ply:GetAssignedHero()
   local ability = caster:FindAbilityByName(keys.abilityname)
   if(keys.abilityname == 'phoenix_supernova')then
+    local mokouAbility1 = caster:FindAbilityByName("ability_thdots_mokou01")
     local mokouAbility = caster:FindAbilityByName("ability_thdots_mokou04")
     if(mokouAbility:GetLevel()>0)then
-      local mokouCooldown = mokouAbility:GetCooldownTimeRemaining()
-      Timer.Wait 'ability_thdots_mokou04_cooldown' (8.1-ability:GetLevel(),
+      local mokouCooldown = mokouAbility:GetCooldownTimeRemaining()-ability:GetLevel()
+      if(mokouCooldown>=0)then
+        Timer.Wait 'ability_thdots_mokou04_cooldown' (8.1-ability:GetLevel(),
+          function()
+            mokouAbility:StartCooldown(mokouCooldown-ability:GetLevel())
+          end
+        )
+      end
+    end 
+    if(mokouAbility1:GetLevel()>0)then
+      local mokouCooldown1 = mokouAbility1:GetCooldownTimeRemaining()
+      if(mokouCooldown1>=0)then
+        Timer.Wait 'ability_thdots_mokou04_cooldown' (8.1-ability:GetLevel(),
         function()
-          mokouAbility:StartCooldown(mokouCooldown)
+          mokouAbility1:StartCooldown(mokouCooldown1-ability:GetLevel())
         end
-      )
+        )
+      end
     end 
   end
   --PrintTable(keys)

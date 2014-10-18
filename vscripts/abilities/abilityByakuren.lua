@@ -129,17 +129,12 @@ end
 
 
 function OnByakuren04SpellThink(keys)
-	--[[local caster = EntIndexToHScript(keys.caster_entindex)
+	local caster = EntIndexToHScript(keys.caster_entindex)
 	local ability = keys.ability
 	local increaseHealth = caster:GetMaxMana() * keys.BounsHealth * ability:GetLevel()
-	local oldIncreaseHealth = caster:GetContext("ability_byakuren04_health_old")
-	local changeHealth = increaseHealth - oldIncreaseHealth
+	caster:SetModifierStackCount("passive_byakuren04_bonus_health", ability, increaseHealth)
 
-	caster:SetBaseMaxHealth(caster:GetBaseMaxHealth() + changeHealth)
-	caster:SetMaxHealth(caster:GetMaxHealth())
-	caster:SetContextNum("ability_byakuren04_health_old",changeHealth,0)]]--
-		
-	local caster = EntIndexToHScript(keys.caster_entindex)
+	--[[local caster = EntIndexToHScript(keys.caster_entindex)
 	local ability = keys.ability
 	local increaseHealth = caster:GetMaxMana() * keys.BounsHealth * ability:GetLevel()
 	local newRealBaseHealth = caster:GetBaseMaxHealth() + increaseHealth
@@ -159,5 +154,5 @@ function OnByakuren04SpellThink(keys)
 		caster:SetHealth(hp)
 	else
 		caster:SetContextNum("ability_byakuren04_health_old",intNewRealBaseHealth,0)
-	end
+	end]]--
 end

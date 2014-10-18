@@ -8,7 +8,7 @@
 			target:SetContextNum("ability_sliencesystem_Silence_duration",0,0)
 		end
 		local old_stun_duration = target:GetContext("ability_sliencesystem_Silence_duration")
-		local stun_duration = old_stun_duration + sliencetime
+		local stun_duration = math.max(old_stun_duration,sliencetime)
 		target:SetContextNum("ability_sliencesystem_Silence_duration",stun_duration,0)
 		if(old_stun_duration==0)then
 			--创建马甲单位

@@ -38,6 +38,23 @@ function OnSuika02ULTStart(keys)
 	end
 end
 
+function OnSuika03Spawn(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local unit = CreateUnitByName(
+		"npc_dota_suika_03_smallsuika"
+		,caster:GetOrigin() - caster:GetForwardVector() * 100
+		,false
+		,caster
+		,caster
+		,caster:GetTeam()
+		)
+	unit:SetContextThink("npc_dota_suika_03_smallsuika_timer",
+		function ()
+			unit:RemoveSelf() 
+			return nil
+		end, 5.0) 
+end
+
 function OnSuika04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	caster:SetModelScale(3.0)

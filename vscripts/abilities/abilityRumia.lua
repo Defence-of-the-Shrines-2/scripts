@@ -1,6 +1,37 @@
 --keys.caster --施法者
 --keys.target_entities -- 目标表
 --keys.ability --技能
+
+function OnRumia01SpellEffectStart(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local unit = CreateUnitByName(
+		"npc_dummy_unit"
+		,caster:GetOrigin()
+		,false
+		,caster
+		,caster
+		,caster:GetTeam()
+	)
+	local nEffectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/rumia/ability_rumia01_effect.vpcf",PATTACH_CUSTOMORIGIN,unit)
+	ParticleManager:SetParticleControl( nEffectIndex, 0, caster:GetOrigin())
+	ParticleManager:SetParticleControl( nEffectIndex, 1, caster:GetOrigin())
+	caster:SetContextNum("ability_rumia01_effect",nEffectIndex,0)
+	unit:SetContextThink("ability_rumia01_effect_timer", 
+		function ()
+			unit:RemoveSelf()
+			return nil
+		end, 
+		keys.Duration+0.1)
+end
+
+function OnRumia01SpellEffectThink(keys)
+	print("start")
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local nEffectIndex = caster:GetContext("ability_rumia01_effect")
+	ParticleManager:SetParticleControl( nEffectIndex, 0, caster:GetOrigin())
+	ParticleManager:SetParticleControl( nEffectIndex, 1, caster:GetOrigin())
+end
+
 function OnRumia02BloodDamage( keys )
 	if keys.target ~= nil then
 		local caster = EntIndexToHScript(keys.caster_entindex)

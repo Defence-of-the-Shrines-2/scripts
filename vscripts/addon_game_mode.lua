@@ -24,6 +24,7 @@ function Precache( context )
 	PrecacheResource( "model", "models/thd2/point.vmdl", context )--真の点数
 	PrecacheResource( "model", "models/thd2/power.vmdl", context )--真のP点
 	PrecacheResource( "model", "models/development/invisiblebox.vmdl", context )
+	PrecacheResource( "model", "models/thd2/iku/iku_lightning_drill.vmdl", context )
 	PrecacheResource( "particle", "particles/items_fx/aegis_respawn_spotlight.vpcf",context )--真のP点
 	PrecacheResource( "particle", "particles/items2_fx/hand_of_midas.vpcf",context )--真の点数
 	PrecacheResource( "particle_folder", "particles/thd2/heroes/reimu", context )--灵梦and跳台

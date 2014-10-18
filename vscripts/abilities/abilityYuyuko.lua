@@ -5,7 +5,6 @@ end
 function OnYuyukoExSpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local vecCaster = caster:GetOrigin() 
-	local attacker = keys.attacker
 	local damage_table
 	
 	if(caster:GetContext("abilityyuyuko_Ex_grave")==FALSE or caster:GetContext("abilityyuyuko_Ex_grave")==nil)then
@@ -13,6 +12,7 @@ function OnYuyukoExSpellStart(keys)
 		caster:SetContextNum("abilityyuyuko_Ex_grave", TRUE, 0) 
 	end
 	if(caster:GetHealth()<=5)then
+		local attacker = EntIndexToHScript(caster:GetContext("ability_yuyuko_Ex_attacker"))
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/yuyuko/ability_yuyuko_04_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 		ParticleManager:ReleaseParticleIndex(effectIndex) 
@@ -36,17 +36,11 @@ function OnYuyukoExSpellStart(keys)
 	    				damage_flags = DOTA_UNIT_TARGET_FLAG_INVULNERABLE
 					}
 			    else
-			    	damage_table = {
-						victim = caster,
-						attacker = caster,
-						damage = 99999,
-						damage_type = DAMAGE_TYPE_PURE,
-	    				damage_flags = DOTA_UNIT_TARGET_FLAG_INVULNERABLE
-					}
+			    	caster:Kill(keys.ability, nil)
 			    end
 			    UnitDamageTarget(damage_table)
 			end, 
-			keys.LifeDuration+0.5) 
+			keys.LifeDuration+0.1) 
 		Timer.Loop 'abilityyuyuko_Ex_unablemove_timer' (0.1, 100,
 			function(i)
 				if(GetDistanceBetweenTwoVec2D(caster:GetOrigin(),vecCaster)>300)then
@@ -56,6 +50,13 @@ function OnYuyukoExSpellStart(keys)
 		)
 	end
 end
+
+function OnYuyukoExSpellOnDamage(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local attacker = keys.attacker
+	caster:SetContextNum("ability_yuyuko_Ex_attacker",attacker:GetEntityIndex(),0)
+end
+
 
 function OnYuyuko04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)

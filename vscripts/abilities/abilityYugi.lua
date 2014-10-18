@@ -5,6 +5,9 @@ end
 function OnYugi03Damage(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
+	if(target:IsTower())then
+		return
+	end
 
 	local dealdamage = keys.BounsDamage
 	local damage_table = {
@@ -28,6 +31,9 @@ end
 function OnYugi04SpellThink(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
+	if(target:GetClassname()=="npc_dota_roshan")then
+		return
+	end
 	local vecPoint = Vector(target:GetContext("ability_yugi04_point_x"),target:GetContext("ability_yugi04_point_y"),0)
 	local dis = GetDistanceBetweenTwoVec2D(target:GetOrigin(),vecPoint)
 
