@@ -146,18 +146,11 @@ function PrecacheHeroResource(hero)
   local abilityEx
 	--local PlyID=hero:GetPlayerOwnerID()
 	--PlayerResource:SetGold(PlyID,999999,true)
-  --[[local ply = EntIndexToHScript(1)
-  local ent = ply:GetAssignedHero()
-  if(ent~=nil)then
-    print("ok")
-  end
-  for i=1,1000 do
+  --[[for i=1,1000 do
+    local ent = EntIndexToHScript(i)
     if(ent~=nil)then
-      local enti = ent:GetSceneByIndex(i)
-      if(enti~=nil)then
         print(tostring(i))
-        print(enti:GetName())
-      end
+        print(ent:GetName())
     end
   end]]--
 	if(heroName == "npc_dota_hero_slark")then

@@ -4953,6 +4953,7 @@
 
 	"ability_thdots_iku01"  //羽衣若空
 	{
+		"ID"						"2043"
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityTextureName"	    "ability_thdots_iku01"
@@ -5063,6 +5064,7 @@
 
 	"ability_thdots_iku02"  //雷云棘鱼
 	{
+		"ID"						"2044"
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
@@ -5242,6 +5244,7 @@
 
 	"ability_thdots_iku03"  //光龙的吐息
 	{
+		"ID"						"2045"
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"	    "ability_thdots_iku03"
@@ -5312,6 +5315,7 @@
 
 	"ability_thdots_iku04"  //冲破天际的钻头
 	{
+		"ID"						"2046"
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"	    "ability_thdots_iku04"
@@ -5407,5 +5411,223 @@
 			}
 		}
 	}
+
+	"ability_thdots_Utsuho01"
+    {
+        "ID"                       "2047"
+        "AbilityBehavior"          "DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET "
+		"AbilityUnitTargetType"	   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "BaseClass"                "ability_datadriven"
+        "AbilityTextureName"       "ability_thdots_Utsuho01"
+    	"AbilityCastAnimation"     "Act_DOTA_CAST_ABILITY_1"
+
+        // Stats 
+        //----------------------------------------------------------------
+        "AbilityCastRange"          "700"
+        "AbilityManaCost"           "75 90 105 120"
+        "AbilityCastPoint"          "0.3"
+        "AbilityCooldown"           "10 9.5 8 7.0"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL"
+	    "AbilityDamage"				"75 150 225 300"
+
+	    "precache"
+		{
+			//"particle_folder"			"particles/units/heroes/hero_abaddon"
+			//"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+		}
+
+        "OnSpellStart"
+		{
+			// "FireSound"
+			// {
+			// 	"EffectName"		"Hero_Luna.LucentBeam.Target"
+			// 	"Target" 			"TARGET"
+			// }
+
+			"RunScript"					
+			{
+				"Target"  				"TARGET"
+				"Duration"         		"%duration"
+				"Damage"            	"%damage"
+				"ScriptFile"			"scripts/vscripts/abilities/abilityUtsuho.lua"
+				"Function"		  		"OnUtsuho01SpellStart"
+			}	
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"40 80 120 160"
+			}
+		}
+	}
+
+	"ability_thdots_Utsuho02"
+    {
+	    "ID"    				    "2048"
+		"AbilityBehavior"   	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"BaseClass"           	    "ability_datadriven"
+		"AbilityTextureName"	    "ability_thdots_Utsuho02"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_2"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityManaCost"           "100"
+		"AbilityCastPoint"          "0.2"
+		"AbilityCooldown"           "10"
+
+		"precache"
+		{
+			//"particle_folder"			"particles/thd2/heroes/youmu"
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"          		"CASTER"
+				"ModifierName"   		"modifier_thdots_Utsuho02_mana_regen"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_thdots_Utsuho02_mana_regen"
+			{
+				"ThinkInterval"					"1.0"
+				"Duration"            			"%ability_duration"
+				
+				"OnIntervalThink"
+				{
+					"RunScript"					
+			    	{
+					    "Target"
+				        {
+						  	"Types"     		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						    "Teams"     		"DOTA_UNIT_TARGET_TEAM_BOTH"
+						    "Flags"    			"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+						    "Center"    		"CASTER"
+						    "Radius"   			"%radius"
+						}
+				    	"ScriptFile"			"scripts/vscripts/abilities/abilityUtsuho.lua"
+					    "Function"		  		"OnUtsuho02SpellStart"
+						"Damage"         		"%damage"
+				    }
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"				"%mana_regen"
+			    }
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_duration"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"		  		"5 10 20 40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"	 		"5 10 20 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"	 			"450"
+			}
+		}	
+    }
+    
+    "ability_thdots_Utsuho03"
+    {
+	    "ID"    				    "2049"
+		"AbilityBehavior"   	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"BaseClass"           	    "ability_datadriven"
+		"AbilityTextureName"	    "ability_thdots_Utsuho03"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_3"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityManaCost"           "200"
+		"AbilityCastPoint"          "0.2"
+		"AbilityCooldown"           "20.5 17 13.5 10"
+
+		"precache"
+		{
+			//"particle_folder"			"particles/thd2/heroes/youmu"
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"          		"CASTER"
+				"ModifierName"   		"modifier_thdots_Utsuho03_damage"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_thdots_Utsuho03_damage"
+			{
+				"Duration"            			"%ability_duration"
+				
+				"OnDestroy"
+				{
+					"RunScript"					
+			    	{
+					    "Target"
+				        {
+						  	"Types"     		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						    "Teams"     		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						    "Flags"    			"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+						    "Center"    		"CASTER"
+						    "Radius"   			"%radius"
+						}
+				    	"ScriptFile"			"scripts/vscripts/abilities/abilityUtsuho.lua"
+					    "Function"		  		"OnUtsuho03SpellStart"
+						"Damage"         		"%damage"
+				    }
+				}
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_duration"		"20 15 10 5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"		  		"460"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"	 			"450"
+			}
+		}	
+    }
 }
   

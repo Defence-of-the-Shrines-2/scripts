@@ -134,6 +134,7 @@ function OnByakuren04SpellThink(keys)
 	local increaseHealth = caster:GetMaxMana() * keys.BounsHealth * ability:GetLevel()
 	caster:SetModifierStackCount("passive_byakuren04_bonus_health", ability, increaseHealth)
 
+
 	--[[local caster = EntIndexToHScript(keys.caster_entindex)
 	local ability = keys.ability
 	local increaseHealth = caster:GetMaxMana() * keys.BounsHealth * ability:GetLevel()
