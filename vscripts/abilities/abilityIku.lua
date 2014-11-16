@@ -67,6 +67,10 @@ end
 function OnIku02Knockback( unit,caster_face,unit_abs,distance,speed )
 	local len = 0
 	EmitSoundOn("Hero_Zuus.ArcLightning.Cast", unit)
+
+	if(unit:GetClassname()=="npc_dota_roshan")then
+		return
+	end
 	
 	GameRules:GetGameModeEntity():SetContextThink(DoUniqueString("OnIku02Knockback"), 
 		function( )

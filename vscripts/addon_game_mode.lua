@@ -6,6 +6,7 @@ print ( '[[THDOTS]] ADDON INIT EXECUTED' )
 
 -- 这个函数其实就是一个pcall，通过这个函数载入lua文件，就可以在载入的时候通过报错发现程序哪里错误了
 -- 避免游戏直接崩溃的情况
+
 local function loadModule(name)
     local status, err = pcall(function()
         -- Load the module
@@ -26,6 +27,7 @@ function Precache( context )
 	PrecacheResource( "model", "models/development/invisiblebox.vmdl", context )
 	PrecacheResource( "model", "models/thd2/iku/iku_lightning_drill.vmdl", context )
 	PrecacheResource( "particle", "particles/items_fx/aegis_respawn_spotlight.vpcf",context )--真のP点
+	PrecacheResource( "particle", "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf",context )--永琳弹道
 	PrecacheResource( "particle", "particles/items2_fx/hand_of_midas.vpcf",context )--真の点数
 	PrecacheResource( "particle_folder", "particles/thd2/heroes/reimu", context )--灵梦and跳台
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context )--灵梦and跳台
@@ -62,6 +64,9 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts", context )--西瓜
 
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_night_stalker", context )--露米娅
+	
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_disruptor", context )--永琳
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts", context )--永琳
 
 	PrecacheResource( "particle", "particles/thd2/items/item_ballon.vpcf", context )--幽灵气球
 	PrecacheResource( "particle", "particles/thd2/items/item_bad_man_card.vpcf", context )--坏人卡

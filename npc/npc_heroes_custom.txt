@@ -860,4 +860,171 @@
 		"VisionNighttimeRange"		"700"
 			//晚上视野大小
 	}
+
+	"npc_dota_hero_utsuho"
+	{
+		"override_hero"				"npc_dota_hero_sniper"
+		"AbilityLayout" 			"4"
+		"Ability1"					"ability_thdots_Utsuho01"
+		"Ability2"					"ability_thdots_Utsuho02"
+		"Ability3"					"ability_thdots_Utsuho03"
+		"Ability4"					"ability_thdots_Utsuho04"
+		"Ability5"					"attribute_bonus"
+		"Model"                 	"models/thd2/utsuho/utsuho.vmdl"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+
+		"ArmorPhysical"				"0"
+			//物理护甲
+		"AttackDamageMin"			"25"
+			//最大攻击力
+		"AttackDamageMax"			"35"
+			//最小攻击力
+		"AttackAnimationPoint"		"0.3"	
+			//攻击前摇
+		"AttackRate"				"1.75"			
+			//攻击速度
+		"AttributeBaseStrength"		"27"
+			//基础力量
+		"AttributeStrengthGain"		"2.80"
+			//每级增加的力量，力量成长
+		"AttributeBaseAgility"		"21"
+			//基础敏捷
+		"AttributeAgilityGain"		"2.10"
+			//每级增加的敏捷，敏捷成长
+		"AttributeBaseIntelligence"	"12"
+			//基础智力
+		"AttributeIntelligenceGain"	"1.1"
+			//每级增加的智力，智力成长
+			
+		"MovementSpeed"				"290"
+			//基础移动速度
+		"MovementTurnRate"			"0.8"
+			//转身速度
+		"StatusHealth"				"35"
+			//基础生命值
+		"StatusHealthRegen"			"0.5"
+			//基础生命恢复
+		"StatusMana"				"90"
+			//基础魔法值
+		"StatusManaRegen"			"0.0"
+			//基础魔法恢复
+
+		"VisionDaytimeRange"		"1050"
+			//白天视野大小
+		"VisionNighttimeRange"		"700"
+			//晚上视野大小
+	}
+
+	"npc_dota_hero_eirin"
+	{
+		"override_hero"			"npc_dota_hero_silencer"
+		"AbilityLayout" 		"4"
+		"Ability1"				"disruptor_kinetic_field" 
+		"Ability2"				"ability_thdots_eirin02"
+		"Ability3"				"ability_thdots_eirin03"
+		"Ability4"				"ability_thdots_eirin04"
+		"Ability5"				"attribute_bonus"
+		
+		"Model"                 "models/thd2/eirin/eirin.vmdl"
+		"ProjectileModel"		"particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
+			
+		"AttackAnimationPoint"		"0.25"	
+			//攻击前摇
+		"AttackRate"				"1.75"			
+			//攻击速度
+		"ArmorPhysical"				"0"
+			//物理护甲
+		"AttackDamageMin"			"20"
+			//最大攻击力
+		"AttackDamageMax"			"37"
+			//最小攻击力
+			
+		"AttributeBaseStrength"		"15"
+			//基础力量
+		"AttributeStrengthGain"		"1.45"
+			//每级增加的力量，力量成长
+		"AttributeBaseAgility"		"15"
+			//基础敏捷
+		"AttributeAgilityGain"		"2.0"
+			//每级增加的敏捷，敏捷成长
+		"AttributeBaseIntelligence"	"30"
+			//基础智力
+		"AttributeIntelligenceGain"	"3.0"
+			//每级增加的智力，智力成长
+			
+		"MovementSpeed"				"320"
+			//基础移动速度
+		"MovementTurnRate"			"0.8"
+			//转身速度
+		"StatusHealth"				"135"
+			//基础生命值
+		"StatusHealthRegen"			"0.5"
+			//基础生命恢复
+		"StatusMana"				"60"
+			//基础魔法值
+		"StatusManaRegen"			"0.0"
+			//基础魔法恢复
+
+		"VisionDaytimeRange"		"1050"
+			//白天视野大小
+		"VisionNighttimeRange"		"700"
+			//晚上视野大小
+    }
+
+    "npc_dota_hero_kaguya"
+	{
+		"override_hero"			"npc_dota_hero_furion"
+		"AbilityLayout" 		"4"
+		"Ability1"				"ability_thdots_kaguya01" 
+		"Ability2"				""
+		"Ability3"				""
+		"Ability4"				""
+		"Ability5"				"attribute_bonus"
+		
+		"Model"                 "models/thd2/kaguya/kaguya.vmdl"
+			
+		"AttackAnimationPoint"		"0.55"	
+			//攻击前摇
+		"AttackRate"				"1.75"			
+			//攻击速度
+		"AttackRange"				"465"
+			//攻击范围
+		"ArmorPhysical"				"0"
+			//物理护甲
+		"AttackDamageMin"			"21"
+			//最大攻击力
+		"AttackDamageMax"			"29"
+			//最小攻击力
+			
+		"AttributeBaseStrength"		"16"
+			//基础力量
+		"AttributeStrengthGain"		"1.6"
+			//每级增加的力量，力量成长
+		"AttributeBaseAgility"		"14"
+			//基础敏捷
+		"AttributeAgilityGain"		"1.4"
+			//每级增加的敏捷，敏捷成长
+		"AttributeBaseIntelligence"	"30"
+			//基础智力
+		"AttributeIntelligenceGain"	"3.0"
+			//每级增加的智力，智力成长
+			
+		"MovementSpeed"				"250"
+			//基础移动速度
+		"MovementTurnRate"			"1.3"
+			//转身速度
+		"StatusHealth"				"145"
+			//基础生命值
+		"StatusHealthRegen"			"0.5"
+			//基础生命恢复
+		"StatusMana"				"60"
+			//基础魔法值
+		"StatusManaRegen"			"0.0"
+			//基础魔法恢复
+
+		"VisionDaytimeRange"		"1050"
+			//白天视野大小
+		"VisionNighttimeRange"		"700"
+			//晚上视野大小
+    }
 }

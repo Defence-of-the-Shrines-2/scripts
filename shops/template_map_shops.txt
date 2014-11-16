@@ -37,7 +37,7 @@
 		"item"		"item_scissors"
 		"item"		"item_hammer"
 		"item"		"item_screw_driver"
-		"item"		"item_item_wrench"
+		"item"		"item_wrench"
 		"item"		"item_silver_knife"
 		"item"		"item_aunt_clothes"
 		"item"		"item_sailor_suit"

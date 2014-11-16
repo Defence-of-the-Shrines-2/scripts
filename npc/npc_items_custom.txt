@@ -64,7 +64,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1002"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitembaozi"
+		//"AbilityTextureName"			"item_btnitembaozi"
+		"AbilityTextureName"			"item_baozi"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info

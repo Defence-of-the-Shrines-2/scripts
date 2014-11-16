@@ -185,7 +185,7 @@ function AbilityReimu:OnReimu02Start(keys)
 	AbilityReimu:initLightData(abilitylevel)
 
 	for i = 0,abilitylevel+2 do
-		local veccre = Vector(vec0.x + math.cos(0.628 * i) * 60 ,vec0.y + math.sin(0.628 * i) * 60 ,300)
+		local veccre = Vector(vec0.x + math.cos(0.628 * i) * 60 ,vec0.y + math.sin(0.628 * i) * 60 ,500)
 		self.tReimu02Light[i].Ball.unit = CreateUnitByName(
 			"npc_dota2x_unit_reimu02_light"
 			,vec0
@@ -294,12 +294,12 @@ function AbilityReimu:OnReimu02OnLight (keys)
 		
 			   end 
 		   end
-		   if vec.z>=300 then
+		   if vec.z>=500 then
 				local ranInt = RandomInt(-20,-50)
 				self.zincrease = ranInt
 			end
 			
-		    if vec.z<=200 then
+		    if vec.z<=400 then
 		    	local ranInt = RandomInt(20,50)
 			    self.zincrease = ranInt
 		    end

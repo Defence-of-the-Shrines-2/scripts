@@ -12,12 +12,19 @@ if THDOTSGameMode == nil then
 	THDOTSGameMode = class({})
 end
 
+-- Load Stat collection (statcollection should be available from any script scope)
+require('lib.statcollection')
+require('lib.loadhelper')
+
+statcollection.addStats({
+  modID = '18a7102085aa084ebcb112a1093c9e02' --GET THIS FROM http://getdotastats.com/#d2mods__my_mods
+})
+
 -- setmetatable是lua面向对象的编程方法~
 
 -- 这个函数是addon_game_mode里面所写的，会在vlua.cpp执行的时候所执行的内容
 function THDOTSGameMode:InitGameMode()
   print('[THDOTS] Starting to load THDots gamemode...')
-
 
   InitLogFile( "log/dota2x.txt","")
   -- 初始化记录文件
@@ -134,6 +141,9 @@ function THDOTSGameMode:CaptureGameMode()
     -- Entity:SetContextThink(名字，循环函数，循环时间)
     -- 和ListenToGameEvent一样，这里也使用了Dynamic_Wrap
     GameMode:SetContextThink("Dota2xThink", Dynamic_Wrap( THDOTSGameMode, 'Think' ), 0.1 )
+
+    -- Register Think
+    --GameMode:SetContextThink( "THDOTSGameMode:GameThink", function() return self:GameThink() end, 0.25 )
   end 
 end
 
@@ -620,3 +630,17 @@ function THDOTSGameMode:OnEntityKilled( keys )
     end
   end
 end
+
+-- function THDOTSGameMode:GameThink()
+--     -- Check to see if the game has finished
+--     if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
+--         -- Send stats
+--         statcollection.sendStats()
+
+--         -- Delete the thinker
+--         return
+--     else
+--         -- Check again in 1 second
+--         return 1
+--     end
+-- end
