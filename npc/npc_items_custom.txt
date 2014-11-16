@@ -2879,7 +2879,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold_chance"		"100"
+				"bonus_gold_chance"		"20"
 			}
 			"04"
 			{
