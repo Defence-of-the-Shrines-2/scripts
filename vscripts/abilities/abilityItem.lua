@@ -72,15 +72,21 @@ function ItemAbility_WindGun_OnAttack(keys)
 	local ItemAbility = keys.ability
 	local Caster = keys.caster
 	local Target = keys.target
+	local damage_to_deal = keys.PhysicalDamage
 	if (Target:IsRealHero()==false and Target:IsTower()==false) then
 		local damage_table = {
+			ability = ItemAbility,
 			victim = Target,
 			attacker = Caster,
 			damage = damage_to_deal,
 			damage_type = DAMAGE_TYPE_PHYSICAL,
-			--damage_flags = 1
+			damage_flags = 1
 		}
 		ApplyDamage(damage_table)
+		local effectIndex = ParticleManager:CreateParticle("particles/thd2/items/item_wind_gun.vpcf", PATTACH_ABSORIGIN_FOLLOW, Target)
+		ParticleManager:SetParticleControl(effectIndex, 0, Target:GetAbsOrigin())
+		ParticleManager:SetParticleControl(effectIndex, 1, Caster:GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(effectIndex)
 	end
 end
 
@@ -91,11 +97,12 @@ function ItemAbility_Camera_OnAttack(keys)
 	if (Target:IsMechanical()==false and Target:IsTower()==false) then
 		local damage_to_deal =Target:GetMaxHealth()*keys.DamageHealthPercent
 		local damage_table = {
+			ability = ItemAbility,
 			victim = Target,
 			attacker = Caster,
 			damage = damage_to_deal,
 			damage_type = DAMAGE_TYPE_MAGICAL,
-			--damage_flags = 1
+			damage_flags = 1
 		}
 		--PrintTable(damage_table)
 		print("ItemAbility_Camera_OnAttack| Damage:"..damage_to_deal)
@@ -110,16 +117,16 @@ function ItemAbility_Verity_OnAttack(keys)
 	if (Target:IsMechanical()==false and Target:IsTower()==false) then
 		local RemoveMana = Target:GetMaxMana()*keys.PenetrateRemoveManaPercent*0.01
 		RemoveMana=min(RemoveMana,Target:GetMana())
-		--Target:SetMana(Target:GetMana()-RemoveMana)
 		Target:ReduceMana(RemoveMana)
 		local damage_to_deal = RemoveMana*keys.PenetrateDamageFactor
 		if (damage_to_deal>0) then
 			local damage_table = {
+				ability = ItemAbility,
 				victim = Target,
 				attacker = Caster,
 				damage = damage_to_deal,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
-				--damage_flags = 1
+				damage_flags = 1
 			}
 			--PrintTable(damage_table)
 			print("ItemAbility_Verity_OnAttack| Damage:"..damage_to_deal)
@@ -136,11 +143,12 @@ function ItemAbility_Kafziel_OnAttack(keys)
 		local damage_to_deal = (Caster:GetHealth()-Target:GetHealth())*keys.HarvestDamageFactor
 		if (damage_to_deal>0) then
 			local damage_table = {
+				ability = ItemAbility,
 				victim = Target,
 				attacker = Caster,
 				damage = damage_to_deal,
 				damage_type = DAMAGE_TYPE_MAGICAL,
-				--damage_flags = 1
+				damage_flags = 1
 			}
 			--PrintTable(damage_table)
 			print("ItemAbility_Kafziel_OnAttack| Damage:"..damage_to_deal)
@@ -162,11 +170,12 @@ function ItemAbility_Frock_Poison(keys)
 		damage_to_deal = max(damage_to_deal,keys.PoisonMinDamage)
 		if (damage_to_deal>0) then
 			local damage_table = {
+				ability = ItemAbility,
 				victim = Attacker,
 				attacker = Caster,
 				damage = damage_to_deal,
 				damage_type = DAMAGE_TYPE_MAGICAL,
-				--damage_flags = 1
+				damage_flags = 1
 			}
 			--PrintTable(damage_table)
 			print("ItemAbility_Frock_Poison| Damage:"..damage_to_deal)
@@ -197,7 +206,7 @@ function ItemAbility_DoctorDoll_DeclineHealth(keys)
 			attacker = Caster,
 			damage = damage_to_deal,
 			damage_type = DAMAGE_TYPE_PURE,
-			--damage_flags = 1
+			damage_flags = 1
 		}
 		--PrintTable(damage_table)
 		ApplyDamage(damage_table)
@@ -305,6 +314,22 @@ function ItemAbility_DonationBox_OnSpellStart(keys)
 	Target:SetMaximumGoldBounty(GoldBounty+keys.BonusGold)
 	Target:SetMinimumGoldBounty(GoldBounty+keys.BonusGold)
 	Target:Kill(ItemAbility,Caster)
+	
+	local effectIndex = ParticleManager:CreateParticle("particles/thd2/items/item_donation_box.vpcf", PATTACH_CUSTOMORIGIN, Caster)
+	ParticleManager:SetParticleControl(effectIndex, 0, Caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(effectIndex, 1, Target:GetAbsOrigin())
+	
+	local Duration=0.0
+	Caster:SetThink(function ()
+		if (Duration>1.0) then 
+			ParticleManager:ReleaseParticleIndex(effectIndex)
+			return nil 
+		end
+		
+		Duration = Duration+0.02
+		ParticleManager:SetParticleControl(effectIndex, 0, Caster:GetAbsOrigin())
+		return 0.02
+	end)
 end
 
 function ItemAbility_DonationGem_AddTargetGoldBounty(keys)
@@ -337,9 +362,7 @@ function ItemAbility_DonationGem_UpdateTiggerTime(keys)
 	local CasterPlayerID = Caster:GetPlayerOwnerID()
 	DonationGem_TriggerTime[CasterPlayerID]=GameRules:GetGameTime()
 	
-	local effectIndex = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_CUSTOMORIGIN, Caster)
-	ParticleManager:SetParticleControl(effectIndex, 0, Caster:GetOrigin())
-	ParticleManager:SetParticleControl(effectIndex, 1, Caster:GetOrigin())
+	local effectIndex = ParticleManager:CreateParticle("particles/thd2/items/item_donation_gem.vpcf", PATTACH_ABSORIGIN_FOLLOW, Caster)
 	ParticleManager:ReleaseParticleIndex(effectIndex)
 end
 
@@ -402,20 +425,28 @@ function ItemAbility_Yuri_OnSpell(keys)
 	local Caster = keys.caster
 	local Target = keys.target
 	local ContractOverRange = keys.ContractOverRange
+	local MaxRange = ContractOverRange*3
 	local ContractionFactor = keys.ContractionFactor
 	local BuffModifierName = keys.BuffModifierName
+	local FirstDistance = ContractOverRange --min(ContractOverRange,distance(Caster:GetOrigin(),Target:GetOrigin()))
+	local LastDistance = FirstDistance
+	--ContractionFactor = (FirstDistance/ContractOverRange)*ContractionFactor
 	Caster:SetThink(function ()
-		if (Caster:HasModifier(BuffModifierName)==false or Target:IsAlive()==false) then
+		local CasterPos = Caster:GetAbsOrigin()
+		local TargetPos = Target:GetAbsOrigin()
+		local Distance = distance(CasterPos,TargetPos)
+		if (Caster:HasModifier(BuffModifierName)==false or Target:IsAlive()==false or Distance>MaxRange) then
+			Caster:RemoveModifierByName(BuffModifierName)
 			return nil
 		end
-		local CasterPos = Caster:GetOrigin()
-		local TargetPos = Target:GetOrigin()
-		local Distance = distance(CasterPos,TargetPos)
-		if (Distance>ContractOverRange) then
+		if (Distance>FirstDistance) then -- and Distance>LastDistance) then
 			local vec = TargetPos - CasterPos
-			local MoveDistance = (Distance-ContractOverRange)*ContractionFactor
-			Caster:SetOrigin(CasterPos + vec:Normalized()*MoveDistance)
+			local MoveDistance = (Distance-FirstDistance)
+			MoveDistance=MoveDistance*MoveDistance*0.001*ContractionFactor
+			MoveDistance=max(MoveDistance,0.1)
+			Caster:SetAbsOrigin(CasterPos + vec:Normalized()*MoveDistance)
 		end
+		LastDistance = Distance
 		return 0.02
 	end)
 end
@@ -434,6 +465,12 @@ function ItemAbility_ItemSpent(keys)
 	end
 end
 
+function clamp (Num, Min, Max)
+	if (Num>Max) then return Max
+	elseif (Num<Min) then return Min
+	else return Num
+	end
+end
 
 function round (num)
 	return math.floor(num + 0.5)

@@ -80,6 +80,16 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf", context )--碎骨笛
 	PrecacheResource( "particle", "particles/thd2/items/item_camera.vpcf", context )--相机
 	PrecacheResource( "particle", "particles/thd2/items/item_tsundere.vpcf", context )--无敌
+	PrecacheResource( "particle", "particles/thd2/items/item_rocket.vpcf",context )--火箭
+	PrecacheResource( "particle", "particles/thd2/items/item_donation_gem.vpcf",context )--钱玉
+	PrecacheResource( "particle", "particles/thd2/items/item_donation_box.vpcf",context )--钱箱
+	PrecacheResource( "particle", "particles/thd2/items/item_phoenix_wing.vpcf",context )--火凤凰之翼
+	PrecacheResource( "particle", "particles/thd2/items/item_darkred_umbrella_fog_attach.vpcf",context )--深红的雨伞 单位依附
+	PrecacheResource( "particle", "particles/thd2/items/item_wind_gun.vpcf",context )--风枪
+	PrecacheResource( "particle", "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf",context )--马王
+	PrecacheResource( "particle", "particles/thd2/items/item_yatagarasu.vpcf",context )--八尺乌
+	PrecacheResource( "particle", "particles/items2_fx/phase_boots.vpcf",context )--狐狸面具
+	PrecacheResource( "particle", "particles/thd2/items/item_pocket_watch.vpcf",context )--秒表
 	
 	
 end
