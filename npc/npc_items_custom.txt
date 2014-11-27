@@ -9,7 +9,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcake"
+		"AbilityTextureName"			"item_cake"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -65,7 +65,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1002"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		//"AbilityTextureName"			"item_btnitembaozi"
 		"AbilityTextureName"			"item_baozi"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
@@ -123,7 +122,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1003"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemjuice"
+		"AbilityTextureName"			"item_juice"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -173,7 +172,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1004"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemsake"
+		"AbilityTextureName"			"item_sake"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -223,7 +222,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1005"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitembroom"
+		"AbilityTextureName"			"item_broom"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/boots_of_speed.mdl"
 		
@@ -273,7 +272,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1006"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemwindamulet"
+		"AbilityTextureName"			"item_wind_amulet"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -322,7 +321,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1007"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemzunhat"
+		"AbilityTextureName"			"item_zun_hat"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -376,7 +375,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1008"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitembird"
+		"AbilityTextureName"			"item_bird"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -424,7 +423,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1009"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemglue"
+		"AbilityTextureName"			"item_glue"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -473,7 +472,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1010"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcandle"
+		"AbilityTextureName"			"item_candle"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -521,7 +520,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1016"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcucumber"
+		"AbilityTextureName"			"item_cucumber"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/branch.mdl"
 		
@@ -572,7 +571,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1017"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemmushroom"
+		"AbilityTextureName"			"item_mushroom"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/branch.mdl"
 		
@@ -623,7 +622,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1018"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemice"
+		"AbilityTextureName"			"item_ice_block"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/branch.mdl"
 		
@@ -674,7 +673,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1019"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcherrybranch"
+		"AbilityTextureName"			"item_cherry_branch"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -723,7 +722,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1020"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcherryleaf"
+		"AbilityTextureName"			"item_cherry_leaf"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -772,7 +771,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1021"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemmask"
+		"AbilityTextureName"			"item_paper_mask"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -820,7 +819,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1022"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemmint"
+		"AbilityTextureName"			"item_catnip"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -868,7 +867,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1023"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcatear"
+		"AbilityTextureName"			"item_cat_ear"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -917,7 +916,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1024"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcatfoot"
+		"AbilityTextureName"			"item_cat_foot"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -965,7 +964,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1025"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemrecipe"
+		"AbilityTextureName"			"item_cookbook"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -1013,7 +1012,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1026"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemmagicguidebook"
+		"AbilityTextureName"			"item_magic_guide_book"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -1062,7 +1061,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1027"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemrocketdiagram"
+		"AbilityTextureName"			"item_rocket_diagram"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -1110,7 +1109,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1028"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemknife"
+		"AbilityTextureName"			"item_knife"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1158,7 +1157,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1029"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemscissors"
+		"AbilityTextureName"			"item_scissors"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1206,7 +1205,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1030"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhammer"
+		"AbilityTextureName"			"item_hammer"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1254,7 +1253,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1031"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemscrewdriver"
+		"AbilityTextureName"			"item_screw_driver"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1301,7 +1300,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1032"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitembanzi"
+		"AbilityTextureName"			"item_wrench"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1349,7 +1348,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1033"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemsilverknife"
+		"AbilityTextureName"			"item_silver_knife"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1397,7 +1396,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1034"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_ring_of_protection"
+		"AbilityTextureName"			"item_aunt_clothes"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1457,7 +1456,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1035"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemsailorsuit"
+		"AbilityTextureName"			"item_sailor_suit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1512,7 +1511,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1036"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemswimmingsuit"
+		"AbilityTextureName"			"item_swimming_suit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1566,7 +1565,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1037"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitempant"
+		"AbilityTextureName"			"item_pant"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -1619,7 +1618,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1038"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhuntingcap"
+		"AbilityTextureName"			"item_hunting_cap"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Item Info
@@ -1715,7 +1714,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1040"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemgodrighthand"
+		"AbilityTextureName"			"item_god_hand"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -1763,7 +1762,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1041"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemtengufan"
+		"AbilityTextureName"			"item_tengu_fan"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -1811,7 +1810,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1042"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemgrangrimoire"
+		"AbilityTextureName"			"item_gran_grimoire"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -1884,7 +1883,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1045"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcamara"
+		"AbilityTextureName"			"item_camara"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
@@ -2009,7 +2008,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1047"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemmushroomkebab"
+		"AbilityTextureName"			"item_mushroom_kebab"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"Model"							"models/props_gameplay/salve.mdl"
 		
@@ -2114,7 +2113,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1049"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemmushroompie"
+		"AbilityTextureName"			"item_mushroom_pie"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"Model"							"models/props_gameplay/salve.mdl"
 		
@@ -2220,7 +2219,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemmushroomsoup"
+		"AbilityTextureName"			"item_mushroom_soup"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"Model"							"models/props_gameplay/salve.mdl"
 		
@@ -2326,7 +2325,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1094"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitembanana"
+		"AbilityTextureName"			"item_banana"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/salve.mdl"
 		
@@ -2421,7 +2420,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1096"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitempicnicbasket"
+		"AbilityTextureName"			"item_picnic_basket"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -2507,7 +2506,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1053"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemwindgun"
+		"AbilityTextureName"			"item_wind_gun"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
@@ -2612,7 +2611,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1055"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemlunachip"
+		"AbilityTextureName"			"item_luna_chip"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -2666,7 +2665,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1056"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemfrog"
+		"AbilityTextureName"			"item_frog"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -2745,7 +2744,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1058"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemdonationbox"
+		"AbilityTextureName"			"item_donation_box"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE "
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
@@ -2851,7 +2850,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1060"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemdonationgem"
+		"AbilityTextureName"			"item_donation_gem"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -3002,7 +3001,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1062"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemwatermelon"
+		"AbilityTextureName"			"item_watermelon"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -3114,7 +3113,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1064"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcirnoclaymore"
+		"AbilityTextureName"			"item_cirno_claymore"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -3226,7 +3225,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1066"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemsmashstick"
+		"AbilityTextureName"			"item_smash_stick"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -3443,7 +3442,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1072"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemrocket"
+		"AbilityTextureName"			"item_rocket"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -3560,7 +3559,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1172"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemrocket"
+		"AbilityTextureName"			"item_rocket_2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -3676,7 +3675,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1173"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemrocket"
+		"AbilityTextureName"			"item_rocket_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -3792,7 +3791,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1174"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemrocket"
+		"AbilityTextureName"			"item_rocket_4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -3908,7 +3907,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1175"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemrocket"
+		"AbilityTextureName"			"item_rocket_5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -4054,7 +4053,7 @@
 		"ID"							"1074"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"item_btnitemteeth"
+		"AbilityTextureName"			"item_teeth"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4206,7 +4205,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1076"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhorsered"
+		"AbilityTextureName"			"item_horse_red"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/boots_of_speed.mdl"
 		
@@ -4296,7 +4295,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1078"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhorsegreen"
+		"AbilityTextureName"			"item_horse_green"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/boots_of_speed.mdl"
 		
@@ -4386,7 +4385,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1080"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhorseblue"
+		"AbilityTextureName"			"item_horse_blue"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/boots_of_speed.mdl"
 		
@@ -4476,7 +4475,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1082"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhorseking"
+		"AbilityTextureName"			"item_horse_king"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"Model"							"models/props_gameplay/boots_of_speed.mdl"
 		
@@ -4658,7 +4657,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1084"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitem9ball"
+		"AbilityTextureName"			"item_9ball"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"Model"							"models/props_gameplay/boots_of_speed.mdl"
 
@@ -4761,7 +4760,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1088"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemghostballoon"
+		"AbilityTextureName"			"item_ghost_balloon"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -4921,7 +4920,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1090"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemfoxmask"
+		"AbilityTextureName"			"item_fox_mask"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -5029,7 +5028,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1101"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemwing"
+		"AbilityTextureName"			"item_wing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -5104,7 +5103,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1103"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemfrozenfrog"
+		"AbilityTextureName"			"item_frozen_frog"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -5246,7 +5245,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1106"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemguiltymask"
+		"AbilityTextureName"			"item_guilty_mask"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -5343,7 +5342,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1108"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemzunglasses"
+		"AbilityTextureName"			"item_zun_glasses"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -5452,7 +5451,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1110"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnhj"
+		"AbilityTextureName"			"item_hj_bug"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -5543,7 +5542,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1112"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitembrothersharp"
+		"AbilityTextureName"			"item_brother_sharp"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/salve.mdl"
 		
@@ -5644,7 +5643,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1114"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnjimo"
+		"AbilityTextureName"			"item_loneliness"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -5746,7 +5745,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1116"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemphoenixwing"
+		"AbilityTextureName"			"item_phoenix_wing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -5873,7 +5872,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1118"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemkafziel"
+		"AbilityTextureName"			"item_kafziel"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6023,7 +6022,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1120"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemverity"
+		"AbilityTextureName"			"item_verity"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6151,7 +6150,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1122"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemdarkredumbrella"
+		"AbilityTextureName"			"item_darkred_umbrella"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -6277,7 +6276,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1124"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemnuclearstick"
+		"AbilityTextureName"			"item_nuclear_stick"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -6371,7 +6370,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1126"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemfrock"
+		"AbilityTextureName"			"item_frock"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6506,7 +6505,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1128"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemlunchbox"
+		"AbilityTextureName"			"item_good_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
 		// Stats
@@ -6651,7 +6650,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1130"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemlunchbox"
+		"AbilityTextureName"			"item_better_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
 		// Stats
@@ -6804,7 +6803,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1132"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemlunchbox"
+		"AbilityTextureName"			"item_best_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
 		// Stats
@@ -6953,7 +6952,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1134"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhakureiticket"
+		"AbilityTextureName"			"item_hakurei_ticket"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -7130,7 +7129,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1136"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemyatagarasu"
+		"AbilityTextureName"			"item_yatagarasu"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -7271,7 +7270,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1138"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemdoctordoll"
+		"AbilityTextureName"			"item_doctor_doll"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -7434,7 +7433,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1140"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemdummydoll"
+		"AbilityTextureName"			"item_dummy_doll"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -7566,7 +7565,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1142"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitembone"
+		"AbilityTextureName"			"item_bone_flute"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -7708,7 +7707,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1144"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnjiaoshou"
+		"AbilityTextureName"			"item_jiao_shou"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -7846,7 +7845,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1146"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemgreendam"
+		"AbilityTextureName"			"item_green_dam"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -7942,7 +7941,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1147"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcardgoodman"
+		"AbilityTextureName"			"item_card_good_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -8037,7 +8036,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1148"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcardbadman"
+		"AbilityTextureName"			"item_card_bad_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
 		// Stats
@@ -8123,7 +8122,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1149"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcardworseman"
+		"AbilityTextureName"			"item_card_worse_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -8213,7 +8212,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemcardloveman"
+		"AbilityTextureName"			"item_card_love_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -8288,7 +8287,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1151"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemhakureiticket"
+		"AbilityTextureName"			"item_jinkela"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
 		// Stats
@@ -8425,7 +8424,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1153"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemtsundere"
+		"AbilityTextureName"			"item_tsundere"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -8548,7 +8547,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1155"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemnoproblem"
+		"AbilityTextureName"			"item_god_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
 		// Stats
@@ -8695,7 +8694,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1157"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemdragonstar"
+		"AbilityTextureName"			"item_dragon_star"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Stats
@@ -8819,7 +8818,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1159"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitempresentbox"
+		"AbilityTextureName"			"item_present_box"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		
 		// Item Info
@@ -8944,7 +8943,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1161"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitempadclock"
+		"AbilityTextureName"			"item_pocket_watch"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -9074,7 +9073,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1163"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnchushou"
+		"AbilityTextureName"			"item_tentacle"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -9213,7 +9212,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1165"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnmryang"
+		"AbilityTextureName"			"item_mr_yang"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -9386,7 +9385,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1167"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitemthreedimension"
+		"AbilityTextureName"			"item_three_dimension"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -9522,7 +9521,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1169"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnitempeach"
+		"AbilityTextureName"			"item_peach"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		// Item Info
@@ -9674,7 +9673,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1171"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_btnyuri"
+		"AbilityTextureName"			"item_yuri"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"//"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"

@@ -291,3 +291,49 @@ function SetTargetToTraversable(target)
 
     UnitNoCollision(target,target,0.1)
 end
+
+function RemoveWearables( hero )
+    --print("RemoveWearables")
+    -- 储存英雄的所有饰品的表
+    local wearables = {}
+    -- 获取英雄的第一个子模型
+    local model = hero:FirstMoveChild()
+    -- 循环所有模型
+    while model ~= nil do
+        -- 确保获取到的是 dota_item_wearable 的模型
+        if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
+            --print(model:GetModelName())
+            -- 这里是因为要去掉的是weapon，所以有了这么一个判断
+            -- 如果你是要去掉所有的饰品，就不用这个if
+            -- 具体你可以根据获取的GetModelName()
+            -- 来判定是否需要去掉
+            --if string.find(model:GetModelName(), "weapon") ~= nil then --or string.find(model:GetModelName(), "horns") ~= nil then
+                table.insert(wearables, model)
+            --end
+        end
+        -- 获取下一个模型
+        model = model:NextMovePeer()
+    end
+
+    if #wearables >=1 then
+        -- 循环所有的模型，并移除
+        for i = 1, #wearables do
+            --print("removed 1 wearable")
+            wearables[i]:RemoveSelf()
+        end
+        hero:RespawnHero( false, false, false)
+    else
+        return
+    end
+end
+ 
+function AttachWearables( hero )
+    -- 要添加的饰品模型
+    weaponModel = "models/heroes/terrorblade/weapon.vmdl"
+    -- 创建模型实体
+    local weapon = Entities:CreateByClassname("dota_item_wearable")
+    -- 更改实体模型
+    weapon:SetModel(weaponModel)
+    -- 绑定到单位
+    weapon:SetParent(hero, "attach_weapon_r")
+end

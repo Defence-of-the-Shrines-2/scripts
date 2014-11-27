@@ -64,3 +64,68 @@ function OnKaguya01SpellThink(keys)
 	}
 	UnitDamageTarget(damage_table_caster)
 end
+
+function OnKaguyaSwapAbility(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	if(caster:GetContext("ability_kaguya02_swap_ability")==nil)then
+		caster:SetContextNum("ability_kaguya02_swap_ability",0,0)
+	end
+	local abilityNumber = caster:GetContext("ability_kaguya02_swap_ability")
+	if(abilityNumber==0)then
+		keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_thdots_kaguya02_Brilliant_Dragon_Bullet", nil)
+		caster:RemoveModifierByName("modifier_thdots_kaguya02_Life_Spring_Infinity") 
+		caster:SetContextNum("ability_kaguya02_swap_ability",1,0)
+	elseif(abilityNumber==1)then
+		keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_thdots_kaguya02_Buddhist_Diamond", nil)
+		caster:RemoveModifierByName("modifier_thdots_kaguya02_Brilliant_Dragon_Bullet") 
+		caster:SetContextNum("ability_kaguya02_swap_ability",2,0)
+	elseif(abilityNumber==2)then
+		keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_thdots_kaguya02_Salamander_Shield", nil)
+		caster:RemoveModifierByName("modifier_thdots_kaguya02_Buddhist_Diamond") 
+		caster:SetContextNum("ability_kaguya02_swap_ability",3,0)
+	elseif(abilityNumber==3)then
+		keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_thdots_kaguya02_Life_Spring_Infinity", nil)
+		caster:RemoveModifierByName("modifier_thdots_kaguya02_Salamander_Shield") 
+		caster:SetContextNum("ability_kaguya02_swap_ability",0,0)
+	end
+end
+
+function OnKaguya02SpellDamage(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local targets = keys.target_entities
+	for _,v in pairs(targets) do
+		local damage_table = {
+			    victim = v,
+			    attacker = caster,
+			    damage = keys.AbilityDamage/5,
+			    damage_type = keys.ability:GetAbilityDamageType(), 
+	    	    damage_flags = 0
+		}
+		UnitDamageTarget(damage_table)
+	end
+end
+
+function OnKaguya03SpellStart(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local dummy = CreateUnitByName(
+		"npc_dummy_unit"
+		,caster:GetOrigin()
+		,false
+		,caster
+		,caster
+		,caster:GetTeam()
+	)
+	dummy:AddAbility("night_stalker_darkness") 
+	local darkness = dummy:FindAbilityByName("night_stalker_darkness")
+	darkness:SetLevel(1)
+	dummy:CastAbilityImmediately(darkness, caster:GetPlayerOwnerID())
+	dummy:RemoveSelf()
+end
+
+function OnKaguya03ManaRegen(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	if(GameRules:IsDaytime()==false)then
+		local bonusMana = (keys.ManaRegen + keys.BonusRegen * GameRules:GetGameTime()/keys.increaseTime)/10
+		caster:SetMana(caster:GetMana()+bonusMana)
+	end
+end

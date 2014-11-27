@@ -68,6 +68,8 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_disruptor", context )--永琳
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts", context )--永琳
 
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_night_stalker", context )--NEET
+
 	PrecacheResource( "particle", "particles/thd2/items/item_ballon.vpcf", context )--幽灵气球
 	PrecacheResource( "particle", "particles/thd2/items/item_bad_man_card.vpcf", context )--坏人卡
 	PrecacheResource( "particle", "particles/thd2/items/item_good_man_card.vpcf", context )--好人卡

@@ -6317,9 +6317,298 @@
 				"damage_radius"			"250"
 			}
 		}	
-        
     }
-	
 
+    "ability_thdots_kaguya02"
+    {
+	    "ID"    				    "2055"
+		"AbilityBehavior"   	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"           	    "ability_datadriven"
+		"AbilityTextureName"	    "ability_thdots_kaguya02"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_2"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityManaCost"           "0"
+		"AbilityCastPoint"          "0.2"
+		"AbilityCooldown"           "0"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL"
+
+		"precache"
+		{
+			"particle"				"particles/thd2/heroes/kaguya/ability_kaguya02_brilliant_dragon_bullet.vpcf"
+			"particle"				"particles/thd2/heroes/kaguya/ability_kaguya02_buddhist_diamond.vpcf"
+			"particle"				"particles/thd2/heroes/kaguya/ability_kaguya02_buddhist_diamond_d.vpcf"
+			"particle"				"particles/thd2/heroes/kaguya/ability_kaguya02_salamander_shield.vpcf"
+			"particle"				"particles/thd2/heroes/kaguya/ability_kaguya02_life_spring_infinity.vpcf"
+			//"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"					
+			 {
+				"ScriptFile"			"scripts/vscripts/abilities/abilityKaguya.lua"
+				"Function"		  		"OnKaguyaSwapAbility"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_thdots_kaguya02_Brilliant_Dragon_Bullet"
+			{
+				"IsHidden" "1"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/kaguya/ability_kaguya02_brilliant_dragon_bullet.vpcf"
+						"EffectAttachType" 	"start_at_customorigin"
+						"Target" 			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_origin_stop"
+							"CASTER"		"attach_origin_stop"
+							"CASTER"		"attach_origin_stop"
+						}
+					}
+				}
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_BONUS_DAY_VISION" 				"%day_vision"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION" 				"%night_vision"
+			
+			    }
+			}
+
+			"modifier_thdots_kaguya02_Buddhist_Diamond"
+			{
+				"IsHidden" "1"
+				"OnCreated"
+				{
+					"FireSound"
+					{
+					 	//"EffectName"		"Hero_Huskar.Inner_Vitality"
+					 	//"Target" 			"TARGET"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/kaguya/ability_kaguya02_buddhist_diamond.vpcf"
+						"EffectAttachType" 	"start_at_customorigin"
+						"Target" 			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_origin"
+						}
+					}
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/kaguya/ability_kaguya02_buddhist_diamond_d.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"Target" 			"CASTER"
+					}
+				}
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE" 			"%armor"
+			    }
+			}
+
+			"modifier_thdots_kaguya02_Salamander_Shield"
+			{
+				"IsHidden" "1"
+				"ThinkInterval"					"0.2"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/kaguya/ability_kaguya02_salamander_shield.vpcf"
+						"EffectAttachType" 	"start_at_customorigin"
+						"Target" 			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_origin"
+						}
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"					
+			    	{
+					    "Target"
+				        {
+				        	"Center"    		"CASTER"
+				        	"Radius"   			"%shield_radius"
+						  	"Types"     		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						    "Teams"     		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						    "Flags"    			"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"	
+						}
+				    	"ScriptFile"			"scripts/vscripts/abilities/abilityKaguya.lua"
+					    "Function"		  		"OnKaguya02SpellDamage"
+						"AbilityDamage"         "%damage"
+				    }
+				}
+			}
+
+			"modifier_thdots_kaguya02_Life_Spring_Infinity"
+			{
+				"IsHidden" 				"1"
+				"Aura"					"modifier_thdots_kaguya02_Life_Spring_Infinity_aura"
+				"Aura_Radius"			"%infinity_radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+				"Aura_ApplyToCaster"	"1"
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+					 	//"EffectName"		"Hero_Huskar.Inner_Vitality"
+					 	//"Target" 			"TARGET"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/kaguya/ability_kaguya02_life_spring_infinity.vpcf"
+						"EffectAttachType" 	"start_at_customorigin"
+						"Target" 			"CASTER"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_origin"
+						}
+					}
+				}
+			}
+
+			"modifier_thdots_kaguya02_Life_Spring_Infinity_aura"
+			{
+				"IsHidden" 				"1"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 			"%health_regen"
+			
+			    }
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+
+		    "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"day_vision"			"1000 1200 1400 1600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"night_vision"		  	"1000 1200 1400 1600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"					"3 5 7 9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shield_radius"			"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"10 20 30 40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"infinity_radius"		"500"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"			"3 5 7 9"
+			}
+		}	
+    }
+
+    "ability_thdots_kaguya03"
+    {
+	    "ID"    				    "2056"
+		"AbilityBehavior"   	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"           	    "ability_datadriven"
+		"AbilityTextureName"	    "ability_thdots_kaguya03"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_3"
+		
+		// Stats
+		//----------------------------------------------------------------
+		"AbilityManaCost"           "0"
+		"AbilityCastPoint"          "0.2"
+		"AbilityCooldown"           "120 100 80 60"
+
+		"precache"
+		{
+			//"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_ambient.vpcf"
+			//"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"					
+			 {
+				"Target"				"CASTER"
+				"ScriptFile"			"scripts/vscripts/abilities/abilityKaguya.lua"
+				"Function"		  		"OnKaguya03SpellStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_thdots_kaguya03_mana_regen"
+			{
+				"Passive"						"1"
+				"ThinkInterval"					"0.1"
+
+				"OnIntervalThink"
+				{
+					"RunScript"					
+			    	{
+					    "Target"				"TARGET"
+				    	"ScriptFile"			"scripts/vscripts/abilities/abilityKaguya.lua"
+					    "Function"		  		"OnKaguya03ManaRegen"
+						"ManaRegen"  	        "%mana_regen"
+						"BonusRegen"			"%bonus_regen"
+						"increaseTime"			"%increase_time"
+				    }
+				}
+			}
+
+			
+		}
+		
+		"AbilitySpecial"
+		{
+
+		    "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"3 5 7 9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_regen"		  	"1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"increase_time"		  	"180"
+			}
+		}	
+    }
 }
   

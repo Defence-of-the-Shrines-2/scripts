@@ -151,58 +151,20 @@ function PrecacheHeroResource(hero)
 	local heroName = hero:GetClassname()
 	local context
 
-	--local abilityCollection = hero:FindAbilityByName("ability_collection_power")
-  --abilityCollection:SetLevel(1)
   local abilityEx
-	--local PlyID=hero:GetPlayerOwnerID()
-	--PlayerResource:SetGold(PlyID,999999,true)
-  --[[for i=1,1000 do
-    local ent = EntIndexToHScript(i)
-    if(ent~=nil)then
-        print(tostring(i))
-        print(ent:GetName())
-    end
-  end]]--
+
 	if(heroName == "npc_dota_hero_slark")then
 		require( 'abilities/abilityAya' )
-		--[[PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_windwalk_dust.vpcf", context )--文文D
-		PrecacheResource( "particle", "particles/units/heroes/hero_windrunner/windrunner_spell_powershot_trail_e.vpcf", context )--文文D
-		PrecacheResource( "particle", "particles/units/heroes/hero_beastmaster/beastmaster_wildaxe_glow.vpcf", context )--文文F
-		PrecacheResource( "particle", "particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_cascade.vpcf", context )--文文R
-		PrecacheResource( "particle", "particles/units/heroes/hero_windrunner/windrunner_poof.vpcf", context )--文文W]]--
 	elseif(heroName == "npc_dota_hero_lina")then
 		require( 'abilities/abilityReimu' )
-		--[[PrecacheResource( "model", "models/thd2/yyy.vmdl", context )--灵梦D
-		PrecacheResource( "particle", "particles/thd2/heroes/reimu/reimu_01_effect_fire.vpcf", context )--灵梦D
-		PrecacheResource( "particle", "particles/thd2/heroes/reimu/reimu_01_effect.vpcf", context )--灵梦D
-		PrecacheResource( "particle", "particles/dire_fx/tower_bad_face.vpcf", context )--灵梦R
-		PrecacheResource( "particle", "particles/thd2/heroes/reimu/reimu_03_effect.vpcf", context )--灵梦R
-		PrecacheResource( "particle", "particles/thd2/heroes/reimu/reimu_04_effect.vpcf", context )--灵梦W]]--
 	elseif(heroName == "npc_dota_hero_juggernaut")then
 		require( 'abilities/abilityYoumu' )
-		--[[PrecacheResource( "particle", "particles/thd2/heroes/youmu/youmu_01_blink_effect.vpcf", context )--妖梦D
-		PrecacheResource( "model", "models/heroes/juggernaut/juggernaut.vmdl", context )--妖梦R
-		PrecacheResource( "particle", "particles/items2_fx/teleport_end_i.vpcf", context )--像妖梦樱花
-		PrecacheResource( "particle", "particles/thd2/heroes/youmu/youmu_04_sword_effect.vpcf", context )--妖梦大
-		PrecacheResource( "particle", "particles/thd2/heroes/youmu/youmu_04_blossoms_effect.vpcf", context )--妖梦大]]--
 	elseif(heroName == "npc_dota_hero_earthshaker")then
 		require( 'abilities/abilityTensi' )
-		--[[PrecacheResource( "particle", "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_low_egset.vpcf", 
-	context )--天子F
-		PrecacheResource( "particle", "particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start.vpcf", context )--天子大
-		PrecacheResource( "particle", "particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf", context )--天子大]]--
 	elseif(heroName == "npc_dota_hero_dark_seer")then
 		require( 'abilities/abilityByakuren' )
-		--[[PrecacheResource( "particle", "particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf",context)--白莲D
-		PrecacheResource( "particle", "particles/units/heroes/hero_leshrac/leshrac_pulse_nova_h.vpcf",context)--白莲F
-		PrecacheResource( "particle", "particles/econ/events/ti4/teleport_start_counter_ti4.vpcf",context)--白莲R]]--
 	elseif(heroName == "npc_dota_hero_crystal_maiden")then
 		require( 'abilities/abilityMarisa' )
-		--[[PrecacheResource( "particle", "particles/thd2/heroes/marisa/marisa_01_rocket.vpcf", context )--魔理沙D
-		PrecacheResource( "particle", "particles/thd2/heroes/marisa/marisa_02_stars.vpcf", context )--魔理沙F
-		PrecacheResource( "model", "models/props_gameplay/rune_haste01.vmdl", context )--魔理沙R
-		PrecacheResource( "model", "models/thd2/masterspark.vmdl", context )--魔理沙 魔炮
-		PrecacheResource( "particle", "particles/thd2/heroes/marisa/marisa_04_spark.vpcf", context )--魔理沙 魔炮特效]]--
   elseif(heroName == "npc_dota_hero_necrolyte")then
     require( 'abilities/abilityYuyuko' )
     abilityEx = hero:FindAbilityByName("ability_thdots_yuyukoEx")
@@ -331,13 +293,18 @@ function THDOTSGameMode:AutoAssignPlayer(keys)
 				-- 确认已经获取到这个英雄
 				if (hero ~= nil) then
 					PrecacheHeroResource(hero)
+          hero:SetContextThink(DoUniqueString("thdots_remove_items_for_hero"),
+              function()
+                  RemoveWearables(hero)
+                  return 0.5
+              end
+          ,0.5)
 					return nil
 				end
 				return 0.1
 			end
 		,0.1)
 	end
-	
   
   -- 获取玩家的ID
   local playerID = ply:GetPlayerID()
