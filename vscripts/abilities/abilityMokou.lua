@@ -117,7 +117,7 @@ function OnMokou04SpellStart(keys)
 	}
 	UnitDamageTarget(damage_table)
 
-	local unit = CreateUnitByName(
+	--[[local unit = CreateUnitByName(
 		"npc_dota2x_unit_mokou_04"
 		,caster:GetOrigin() - caster:GetForwardVector() * 15 + Vector(0,0,170)
 		,false
@@ -125,7 +125,7 @@ function OnMokou04SpellStart(keys)
 		,caster
 		,caster:GetTeam()
 	)
-	unit:SetForwardVector(caster:GetForwardVector())
+	unit:SetForwardVector(caster:GetForwardVector())]]
 
 	caster:SetContextNum("ability_Mokou02_damage_bouns",keys.BounsDamage,0)
 	Timer.Wait 'ability_Mokou02_damage_bouns_timer' (20,
@@ -134,7 +134,7 @@ function OnMokou04SpellStart(keys)
 		end
 	)
 
-	Timer.Loop 'ability_Mokou04_wing_timer' (0.1, 200,
+	--[[Timer.Loop 'ability_Mokou04_wing_timer' (0.1, 200,
 		function(i)
 			unit:SetOrigin(caster:GetOrigin() - caster:GetForwardVector() * 15 + Vector(0,0,170))
 			unit:SetForwardVector(caster:GetForwardVector())
@@ -149,5 +149,5 @@ function OnMokou04SpellStart(keys)
 			unit:RemoveSelf()
 			return nil
 		end, 
-	20.5)
+	20.5)]]
 end

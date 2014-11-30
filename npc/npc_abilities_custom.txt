@@ -3890,7 +3890,7 @@
 		
 		"precache"
 		{
-			"particle_folder"			"particles/thd2/heroes/mokou"
+			"particle_folder"			"particles/thd2/heroes/mouko"
 			"soundfile"					"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
 		}
 
@@ -3915,6 +3915,11 @@
 				"ModifierName" 		"modifier_thdots_Mokou_04"
 				"Target"	   		"CASTER"	
 			}	
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"Mokou_Effect04"
+			}
 		}
 
 		"Modifiers"
@@ -3928,6 +3933,23 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 		"%move_speed"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%health_regen"
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"   "%attack_bouns"
+				}
+			}
+			"Mokou_Effect04"
+			{
+				"Duration"         	 "%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/thd2/heroes/mouko/ability_mokou_04_wing.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						"ControlPoints"
+						{
+							"00"		"0 0 0"
+						}
+					}
 				}
 			}
 		}
