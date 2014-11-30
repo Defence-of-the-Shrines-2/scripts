@@ -3937,7 +3937,8 @@
 			}
 			"Mokou_Effect04"
 			{
-				"Duration"         	 "%duration"
+				"Duration"         	 	"%duration"
+				"IsHidden"				"1"
 				"OnCreated"
 				{
 					"AttachEffect"
