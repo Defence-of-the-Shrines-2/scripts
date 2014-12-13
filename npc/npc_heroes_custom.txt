@@ -122,7 +122,8 @@
 		"Ability4"				"ability_dota2x_reimu04"
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/reimu/reimu.vmdl"
+		"Model"                 "models/thd2/hakurei_reimu/hakurei_reimu.vmdl"
+		//"Model"                   "models/thd2/alice/alice_mmd.vmdl"
 			
 		"AttackAnimationPoint"		"0.6"	
 			//攻击前摇
@@ -495,6 +496,7 @@
 		"Ability6"				"attribute_bonus"
 		
 		"Model"                 "models/thd2/sakuya/sakuya.vmdl"
+		"ProjectileModel"		"particles/units/heroes/hero_queenofpain/queen_base_attack.vpcf"
 			
 		"AttackAnimationPoint"		"0.54"	
 			//攻击前摇

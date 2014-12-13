@@ -321,7 +321,7 @@ function RemoveWearables( hero )
             --print("removed 1 wearable")
             wearables[i]:RemoveSelf()
         end
-        hero:RespawnHero( false, false, false)
+        --hero:RespawnHero( false, false, false)
     else
         return
     end
@@ -336,4 +336,18 @@ function AttachWearables( hero )
     weapon:SetModel(weaponModel)
     -- 绑定到单位
     weapon:SetParent(hero, "attach_weapon_r")
+end
+
+function ParticleManager:DestroyParticleSystem(effectIndex,bool)
+    if(bool)then
+        ParticleManager:DestroyParticle(effectIndex,true)
+        ParticleManager:ReleaseParticleIndex(effectIndex) 
+    else
+        Timer.Wait 'Effect_Destroy_Particle' (5,
+            function()
+                ParticleManager:DestroyParticle(effectIndex,true)
+                ParticleManager:ReleaseParticleIndex(effectIndex) 
+            end
+        )
+    end
 end

@@ -86,7 +86,7 @@ function ItemAbility_WindGun_OnAttack(keys)
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/items/item_wind_gun.vpcf", PATTACH_ABSORIGIN_FOLLOW, Target)
 		ParticleManager:SetParticleControl(effectIndex, 0, Target:GetAbsOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 1, Caster:GetAbsOrigin())
-		ParticleManager:ReleaseParticleIndex(effectIndex)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 	end
 end
 
@@ -322,7 +322,7 @@ function ItemAbility_DonationBox_OnSpellStart(keys)
 	local Duration=0.0
 	Caster:SetThink(function ()
 		if (Duration>1.0) then 
-			ParticleManager:ReleaseParticleIndex(effectIndex)
+			ParticleManager:DestroyParticleSystem(effectIndex,false)
 			return nil 
 		end
 		
@@ -363,7 +363,7 @@ function ItemAbility_DonationGem_UpdateTiggerTime(keys)
 	DonationGem_TriggerTime[CasterPlayerID]=GameRules:GetGameTime()
 	
 	local effectIndex = ParticleManager:CreateParticle("particles/thd2/items/item_donation_gem.vpcf", PATTACH_ABSORIGIN_FOLLOW, Caster)
-	ParticleManager:ReleaseParticleIndex(effectIndex)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 end
 
 function ItemAbility_9ball_OnSpellStart(keys)

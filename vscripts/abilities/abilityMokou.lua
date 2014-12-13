@@ -39,7 +39,7 @@ function OnMokou01SpellMove(keys)
 		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin() + Vector(0,0,256))
 		ParticleManager:SetParticleControl(effectIndex, 1, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 3, caster:GetOrigin())
-		ParticleManager:ReleaseParticleIndex(effectIndex)
+		ParticleManager:DestroyParticleSystem(effectIndex,true)
 		
 		SetTargetToTraversable(caster)
 		vecCaster = caster:GetOrigin()
@@ -133,6 +133,16 @@ function OnMokou04SpellStart(keys)
 			caster:SetContextNum("ability_Mokou02_damage_bouns",0,0)
 		end
 	)
+
+	local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/mouko/ability_mokou_04_wing.vpcf", PATTACH_CUSTOMORIGIN, caster) 
+	ParticleManager:SetParticleControlEnt(effectIndex , 0, caster, 5, "follow_origin", Vector(0,0,0), true)
+
+	Timer.Wait 'ability_mokou_04_wing_destory' (20,
+			function()
+				ParticleManager:DestroyParticle(effectIndex,true)
+			end
+		)
+
 
 	--[[Timer.Loop 'ability_Mokou04_wing_timer' (0.1, 200,
 		function(i)

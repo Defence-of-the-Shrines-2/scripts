@@ -49,7 +49,7 @@ function OnYugi04SpellThink(keys)
 		target:EmitSound("Ability.SandKing_CausticFinale")
 		local effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
-		ParticleManager:ReleaseParticleIndex(effectIndex) 
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 	end
 end
 
@@ -69,5 +69,5 @@ function OnYugi04SpellEnd(keys)
 	target:EmitSound("Ability.SandKing_CausticFinale")
 	local effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
-	ParticleManager:ReleaseParticleIndex(effectIndex) 
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 end

@@ -33,7 +33,7 @@ function OnKaguya01SpellThink(keys)
 	
 	ParticleManager:SetParticleControl(effectIndex, 0, damageVector)
 	ParticleManager:SetParticleControl(effectIndex, 1, damageVector)
-	ParticleManager:ReleaseParticleIndex(effectIndex) 
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 	
 	local targets = FindUnitsInRadius(
 				   caster:GetTeam(),						--caster team

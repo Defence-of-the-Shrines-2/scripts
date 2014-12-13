@@ -25,7 +25,7 @@ function OnByakuren01SpellStart(keys)
 	local effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, keys.target:GetOrigin())
 	ParticleManager:SetParticleControl(effectIndex, 5, keys.target:GetOrigin())
-	ParticleManager:ReleaseParticleIndex(effectIndex)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 end
 
 function OnByakuren02SpellStart(keys)
@@ -53,6 +53,7 @@ function OnByakuren02SpellStart(keys)
 	ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
 	ParticleManager:SetParticleControl(effectIndex, 1, target:GetOrigin())
 	ParticleManager:SetParticleControl(effectIndex, 2, target:GetOrigin())
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 	ParticleManager:ReleaseParticleIndex(effectIndex)
 end
 
@@ -69,6 +70,7 @@ function OnByakuren03SpellStart(keys)
 		ParticleManager:SetParticleControl(effectIndex, 0, vecTarget)
 		ParticleManager:SetParticleControl(effectIndex, 1, vecTarget)
 		ParticleManager:SetParticleControl(effectIndex, 2, vecTarget)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 		ParticleManager:ReleaseParticleIndex(effectIndex)
 		SetTargetToTraversable(target)
 		target:EmitSound("Hero_Weaver.TimeLapse")
@@ -80,6 +82,7 @@ function OnByakuren03SpellStart(keys)
 					target:SetOrigin(vecTarget)
 					target:EmitSound("Hero_Weaver.TimeLapse")
 					SetTargetToTraversable(target)
+					ParticleManager:DestroyParticleSystem(effectIndex,true)
 					return nil
 				end, 
 		"ability_byakuren_03_return",

@@ -30,7 +30,13 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf",context )--永琳弹道
 	PrecacheResource( "particle", "particles/items2_fx/hand_of_midas.vpcf",context )--真の点数
 	PrecacheResource( "particle_folder", "particles/thd2/heroes/reimu", context )--灵梦and跳台
+	PrecacheResource( "particle", "particles/thd2/environment/death/act_hero_die.vpcf",context )--死亡
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context )--灵梦and跳台
+	PrecacheResource( "soundfile", "soundevents/game_sounds_custom.vsndevts", context )--背景音乐
+	
+	PrecacheResource( "model", "models/thd2/alice/alice_mmd.vmdl", context )
+	--PrecacheResource( "particle", "particles/thd2/chen_cast_4.vpcf", context )--激光
+	
 
 	PrecacheResource( "model", "models/thd2/yyy.vmdl", context )--灵梦D
 	PrecacheResource( "model", "models/thd2/fantasy_seal.vmdl", context )--灵梦F
@@ -69,6 +75,10 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts", context )--永琳
 
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_night_stalker", context )--NEET
+
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_doom_bringer", context )--flandre04
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_phantom_assassin", context )--flandre04
+
 
 	PrecacheResource( "particle", "particles/thd2/items/item_ballon.vpcf", context )--幽灵气球
 	PrecacheResource( "particle", "particles/thd2/items/item_bad_man_card.vpcf", context )--坏人卡

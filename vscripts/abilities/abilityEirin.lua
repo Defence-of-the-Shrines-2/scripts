@@ -78,7 +78,7 @@ function OnEirin02SpellHit(keys)
 						ParticleManager:SetParticleControl(healEffectIndex, 0, v:GetOrigin())
 				   		Timer.Wait 'ability_eirin02_remove_heal_effect' (1,
 							function()
-								ParticleManager:DestroyParticle(healEffectIndex,true)
+								ParticleManager:DestroyParticleSystem(healEffectIndex,true)
 							end
 						)
 				   	end
@@ -87,7 +87,7 @@ function OnEirin02SpellHit(keys)
 	)
 	Timer.Wait 'ability_eirin02_remove_effect' (4,
 			function()
-				ParticleManager:DestroyParticle(effectIndex,true)
+				ParticleManager:DestroyParticleSystem(effectIndex,true)
 			end
 		)
 end
@@ -102,17 +102,22 @@ function OnEirin04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
 	UnitGraveTarget(caster,target)
-	if(caster:GetHealth()<=5)then
-		caster:RemoveModifierByName("modifier_ability_thdots_eirin04_effect")
+end
+
+function OnEirin04SpellThink(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local target = keys.target
+	if(target:GetHealth()<=5)then
+		target:RemoveModifierByName("modifier_ability_thdots_eirin04_effect")
 		
 		local effectIndex = ParticleManager:CreateParticle(
 			"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", 
 			PATTACH_CUSTOMORIGIN, 
-			caster)
+			target)
 		ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 1, target:GetOrigin()/5)
 		ParticleManager:SetParticleControl(effectIndex, 2, target:GetOrigin())
-		ParticleManager:ReleaseParticleIndex(effectIndex) 
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 		target:SetHealth(target:GetMaxHealth())
 	end
 end

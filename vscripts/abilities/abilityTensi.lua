@@ -35,7 +35,7 @@ function OnTensi02SpellStart(keys)
 	local effectIndex = ParticleManager:CreateParticle("particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_low_egset.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, targets[1]:GetOrigin())
 	ParticleManager:SetParticleControl(effectIndex, 1, targets[1]:GetOrigin())
-	ParticleManager:ReleaseParticleIndex(effectIndex)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 	targets[1]:EmitSound("Hero_EarthShaker.Totem.Attack")
 	
 end

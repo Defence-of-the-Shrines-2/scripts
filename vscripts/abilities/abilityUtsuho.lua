@@ -124,12 +124,12 @@ function OnUtsuho04SpellRemove(keys)
 	local ty = caster:GetContext("ability_utsuho04_point_y")
 	local tz = caster:GetContext("ability_utsuho04_point_z")
 	local targetPoint = Vector(tx,ty,tz)
-	ParticleManager:DestroyParticle(effectIndex,true)
+	ParticleManager:DestroyParticleSystem(effectIndex,true)
 	effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, targetPoint)
 	ParticleManager:SetParticleControl(effectIndex, 1, targetPoint)
 	ParticleManager:SetParticleControl(effectIndex, 3, targetPoint)
-	ParticleManager:ReleaseParticleIndex(effectIndex)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 	for _,v in pairs(targets) do
 		local damage_table = {
 			    victim = v,

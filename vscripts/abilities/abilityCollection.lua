@@ -24,7 +24,7 @@ function OnGetCollection(Collection,Hero)
 		local effectIndex = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(effectIndex, 0, vecHero)
 		ParticleManager:SetParticleControl(effectIndex, 1, vecHero)
-		ParticleManager:ReleaseParticleIndex(effectIndex)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 		local ply = Hero:GetOwner()
 		local playerId = ply:GetPlayerID()
 		local modifyGold = PlayerResource:GetReliableGold(playerId) + 35

@@ -44,6 +44,7 @@
     "npc_dota2x_unit_reimu01_ball"
   	{
   		"model"					"models/thd2/yyy.vmdl"
+  		//"model"					"models/thd2/alice/alice_mmd.vmdl"
   		"BaseClass"				"npc_dota_creep_neutral"
 		"ModelScale" 			"2.0"
 		"Ability1"				"ability_dummy_unit"
@@ -192,6 +193,7 @@
 		"UnitLabel"					"healing_ward"
 		
 		"Ability1"					"ability_reimu04_dummy_unit"
+		"Ability2"					"ability_dota2x_reimu04_unit"
 
 		"StatusHealth"				"100000"		// Base health.
 

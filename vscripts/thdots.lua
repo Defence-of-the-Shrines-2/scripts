@@ -177,6 +177,8 @@ function PrecacheHeroResource(hero)
     require( 'abilities/abilityFlandre' )
   elseif(heroName == "npc_dota_hero_chaos_knight")then
     require( 'abilities/abilityMokou' )
+  elseif(heroName == "npc_dota_hero_sniper")then
+    --hero:EnableMotion()
 	end
 end
 -- 以下的这些函数，大多都是把传递的数值Print出来
@@ -293,6 +295,12 @@ function THDOTSGameMode:AutoAssignPlayer(keys)
 				-- 确认已经获取到这个英雄
 				if (hero ~= nil) then
 					PrecacheHeroResource(hero)
+          hero:SetContextThink(DoUniqueString("thdots_Music_Thdots_BackGround"),
+              function()
+                  StartSoundEvent("Music_Thdots.BackGround", ply)
+                  return 844.0
+              end
+          ,30.0)
           hero:SetContextThink(DoUniqueString("thdots_remove_items_for_hero"),
               function()
                   RemoveWearables(hero)
@@ -554,6 +562,10 @@ function THDOTSGameMode:OnEntityKilled( keys )
 	end
 	
 	if(killedUnit:IsHero()==true)then
+    local effectIndex = ParticleManager:CreateParticle("particles/thd2/environment/death/act_hero_die.vpcf", PATTACH_CUSTOMORIGIN, killedUnit)
+    ParticleManager:SetParticleControl(effectIndex, 0, killedUnit:GetOrigin())
+    ParticleManager:SetParticleControl(effectIndex, 1, killedUnit:GetOrigin())
+    ParticleManager:DestroyParticleSystem(effectIndex,false)
 		local powerStatValue = killedUnit:GetContext("hero_bouns_stat_power_count")
 		if(powerStatValue==nil)then
 			return

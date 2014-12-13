@@ -56,7 +56,12 @@ function OnFlandre04SpellStart(keys)
 			0.02)
 		end
 	end
+
+	local effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_doom_bringer/doom_bringer_ambient.vpcf", PATTACH_CUSTOMORIGIN, caster) 
+	ParticleManager:SetParticleControlEnt(effectIndex , 0, caster, 5, "attach_attack1", Vector(0,0,0), true)
+
 	caster:SetContextNum("ability_flandre04_multi_count",count,0)
+	caster:SetContextNum("ability_flandre04_effectIndex",effectIndex,0)
 end
 
 function OnFlandre04SpellRemove(keys)
@@ -67,6 +72,12 @@ function OnFlandre04SpellRemove(keys)
 	if(count<=0)then
 		caster:RemoveModifierByName("modifier_thdots_flandre_04_multi")
 	end
+end
+
+function OnFlandre04EffectRemove(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local effectIndex = caster:GetContext("ability_flandre04_effectIndex")
+	ParticleManager:DestroyParticle(effectIndex,true)
 end
 
 function OnFlandre04illusionsRemove(target,caster)
@@ -82,7 +93,7 @@ function OnFlandre04illusionsRemove(target,caster)
 	if(GetDistanceBetweenTwoVec2D(vecTarget,vecCaster)<50)then
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/flandre/ability_flandre_04_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(effectIndex, 0, vecCaster)
-		ParticleManager:ReleaseParticleIndex(effectIndex)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 		target:RemoveSelf()
 	end
 end

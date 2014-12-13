@@ -417,6 +417,7 @@
             {
                 "Passive"                         "1"
                 "IsHidden"                        "1"    
+                "Attributes"					  "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
                 "OnCreated"
                 {
                 	"AttachEffect"
@@ -435,6 +436,7 @@
                 }
                 "States"
                 {
+                	"MODIFIER_STATE_INVULNERABLE"         "MODIFIER_STATE_VALUE_ENABLED"
                     "MODIFIER_STATE_UNSELECTABLE"         "MODIFIER_STATE_VALUE_ENABLED"
                     "MODIFIER_STATE_NOT_ON_MINIMAP"       "MODIFIER_STATE_VALUE_ENABLED"
                     "MODIFIER_STATE_NO_HEALTH_BAR"        "MODIFIER_STATE_VALUE_ENABLED"
@@ -453,6 +455,7 @@
 	    {
 	    	"dummy_unit"
             {
+            	"Attributes"					  "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
                 "Passive"                         "1"
                 "IsHidden"                        "1"    
                 "States"
@@ -1058,6 +1061,8 @@
 				"IsHidden"          "0"
 				"Duration"          "%ability_duration"
 				"ThinkInterval"     "0.1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -1172,7 +1177,6 @@
         {
 			"modifier_thdots_marisa01_think_interval"
 			{
-				"RemoveOnDeath"     "0"
 				"IsHidden"          "0"
 				"Duration"          "%move_duration"
 				"ThinkInterval"     "0.02"	
@@ -1321,7 +1325,6 @@
         {
 			"modifier_thdots_marisa02_think_interval"
 			{
-				"RemoveOnDeath"     "0"
 				"IsHidden"          "0"
 				"Duration"          "%damage_duration"
 				"ThinkInterval"     "0.1"
@@ -1619,7 +1622,6 @@
         {
 			"modifier_thdots_youmu01_think_interval"
 			{
-				"RemoveOnDeath"     "0"
 				"IsHidden"          "0"
 				"Duration"          "%move_duration"
 				"ThinkInterval"     "0.2"
@@ -1947,6 +1949,18 @@
 				"Duration"				"1.0"
 				"IsDebuff"				"1"
 				"ThinkInterval"			"0.1"
+				"RemoveOnDeath"			"0"
+
+				"OnCreated"
+				{
+					"RunScript"					
+					{
+					  	"Target"         		"TARGET"
+					  	"ScriptFile"			"scripts/vscripts/abilities/abilityYoumu.lua"
+					  	"Function"		  		"OnYoumu04SpellStart"
+					}
+				}
+
 				"OnIntervalThink"
 				{
 					"RunScript"					
@@ -3083,6 +3097,7 @@
 				"MoveSpeed"				"%move_speed"
 				"StartRadius"			"%collision_radius"
 				"EndRadius"				"%collision_radius"
+				"StartPosition"			"attach_attack1"
 				"FixedDistance"			"%length"
 				"TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"TargetTypes"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -3559,9 +3574,7 @@
 
 		"precache"
 		{
-			"particle_folder"			"particles/units/heroes/hero_phantom_assassin"
 			"particle_folder"			"particles/thd2/heroes/flandre"
-			"particle"					"particles/units/heroes/hero_doom_bringer/doom_bringer_ambient.vpcf"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
 		}
 		
@@ -3587,20 +3600,13 @@
 				"Duration"         	 "%ability_duration"
 				"ThinkInterval"      "0.285"
 
-				"OnCreated"
+				"OnDestroy"
 				{
-					"AttachEffect"
+					"RunScript"
 					{
-						"EffectName"		"particles/units/heroes/hero_doom_bringer/doom_bringer_ambient.vpcf"
-						"EffectAttachType" 	"start_at_customorigin"
-						"Target" 			"CASTER"
-						"ControlPointEntities"
-						{
-							"CASTER"		"attach_attack1"
-							"CASTER"		"attach_attack1"
-							"CASTER"		"attach_attack1"
-							"CASTER"		"attach_attack1"
-						}
+						"ScriptFile"        "scripts/vscripts/abilities/abilityFlandre.lua"
+						"Function"          "OnFlandre04EffectRemove"
+						"Caster"            "CASTER"	
 					}
 				}
 
@@ -3934,11 +3940,6 @@
 				"ModifierName" 		"modifier_thdots_Mokou_04"
 				"Target"	   		"CASTER"	
 			}	
-			"ApplyModifier"
-			{
-				"Target" 			"CASTER"
-				"ModifierName"		"Mokou_Effect04"
-			}
 		}
 
 		"Modifiers"
@@ -3952,24 +3953,6 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 		"%move_speed"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%health_regen"
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"   "%attack_bouns"
-				}
-			}
-			"Mokou_Effect04"
-			{
-				"Duration"         	 	"%duration"
-				"IsHidden"				"1"
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"		"particles/thd2/heroes/mouko/ability_mokou_04_wing.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"CASTER"
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-						}
-					}
 				}
 			}
 		}
@@ -5119,6 +5102,7 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"	    "ability_thdots_iku02"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_2"
 
 		"AbilityCastPoint"          "0.0 0.0 0.0 0.0"
 		"AbilityManaCost"			"150"
@@ -5376,6 +5360,7 @@
 		"AbilityCastRange"			"700"
 		"AbilityManaCost"			"150 250 350"
 		"AbilityCooldown"           "100 90 80"
+		"AbilityCastAnimation"      "Act_DOTA_CAST_ABILITY_4"
 
 		"precache" //缓存特效
         {
@@ -6244,6 +6229,12 @@
 						"Target" 		"TARGET"
 						"HealAmount"	"%health_regen"
 					}
+					"RunScript"
+					{
+						"ScriptFile" 	"scripts/vscripts/abilities/abilityEirin.lua"
+						"Target"		"TARGET"
+						"Function"		"OnEirin04SpellStart"
+					}
 				}
 				"OnIntervalThink"
 				{
@@ -6251,7 +6242,7 @@
 					{
 						"ScriptFile" 	"scripts/vscripts/abilities/abilityEirin.lua"
 						"Target"		"TARGET"
-						"Function"		"OnEirin04SpellStart"
+						"Function"		"OnEirin04SpellThink"
 					}
 				}
 				"OnDestroy"

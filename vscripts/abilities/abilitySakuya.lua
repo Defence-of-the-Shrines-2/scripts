@@ -66,7 +66,7 @@ function OnSakuya02SpellDamage(keys)
 	local knifeTable = {
 	    Ability        	 	=   keys.ability,
 		EffectName			=	"particles/thd2/heroes/sakuya/ability_sakuya_01.vpcf",
-		vSpawnOrigin		=	vecCaster,
+		vSpawnOrigin		=	vecCaster + Vector(0,0,64),
 		fDistance			=	keys.DamageRadius,
 		fStartRadius		=	120,
 		fEndRadius			=	120,
@@ -142,8 +142,8 @@ function OnSakuya03SpellDamage(keys)
 	local knifeTable = {
 	    Ability        	 	=   keys.ability,
 		EffectName			=	"particles/thd2/heroes/sakuya/ability_sakuya_01.vpcf",
-		vSpawnOrigin		=	vecCaster,
-		fDistance			=	keys.DamageRadius,
+		vSpawnOrigin		=	vecCaster + Vector(0,0,64),
+		fDistance			=	keys.DamageRadius/2,
 		fStartRadius		=	120,
 		fEndRadius			=	120,
 		Source         	 	=   caster,
@@ -172,7 +172,7 @@ function OnSakuya03SpellDamage(keys)
 	local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/sakuya/ability_sakuya_03.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 	ParticleManager:SetParticleControl(effectIndex, 1, caster:GetOrigin())
-	ParticleManager:ReleaseParticleIndex(effectIndex)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 
 	caster:SetOrigin(targetPoint)
 	SetTargetToTraversable(caster)

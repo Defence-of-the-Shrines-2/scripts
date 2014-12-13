@@ -43,6 +43,12 @@ function OnYoumu03SpellOrderAttack(keys)
 	AbilityYoumu:OnYoumu03OrderAttack(keys)
 end
 
+function OnYoumu04SpellStart(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local target = keys.target
+	UnitPauseTarget(caster,target,1.0)
+end
+
 function OnYoumu04SpellThink(keys)
 	AbilityYoumu:OnYoumu04Think(keys)
 end
@@ -78,7 +84,7 @@ function AbilityYoumu:OnYoumu01Move(keys)
 		caster:SetContextNum("ability_Youmu01_Count",0,0)
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/youmu/youmu_01_blink_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(effectIndex, 3, caster:GetOrigin())
-		ParticleManager:ReleaseParticleIndex(effectIndex)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 	end
 	local Youmu01rad = caster:GetContext("ability_Youmu01_Rad")
 	local Youmu01MoveSpeed = caster:GetContext("ability_Youmu01_Move_Speed")
@@ -207,7 +213,6 @@ function AbilityYoumu:OnYoumu04Think(keys)
 	    caster:SetContextNum("ability_Youmu04_Count",0,0)
 	end
 	if(caster:GetContext("ability_Youmu04_Rad") == nil or caster:GetContext("ability_Youmu04_Rad") == 0) then
-		UnitPauseTarget(caster,target,1.0)
 		Youmu04Rad = GetRadBetweenTwoVec2D(vecTarget,vecCaster)
 		caster:SetContextNum("ability_Youmu04_Rad",Youmu04Rad,0)
 	end
@@ -229,7 +234,7 @@ function AbilityYoumu:OnYoumu04Think(keys)
 		local effect2VecForward = Vector(vecTarget.x+math.cos(Youmu04Rad)*500,vecTarget.y+math.sin(Youmu04Rad)*500,vecCaster.z)
 		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 1, effect2VecForward)
-		ParticleManager:ReleaseParticleIndex(effectIndex)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 	    target:EmitSound("Hero_Juggernaut.Attack")
 		UnitDamageTarget(damage_table)
 	end
@@ -241,7 +246,7 @@ function AbilityYoumu:OnYoumu04Think(keys)
 		caster:SetOrigin(vecTarget)
 		local spellCard = ParticleManager:CreateParticle("particles/thd2/heroes/youmu/youmu_04_word.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(spellCard, 0, caster:GetOrigin())
-		ParticleManager:ReleaseParticleIndex(spellCard)
+		ParticleManager:DestroyParticleSystem(spellCard,false)
 		caster:SetContextNum("ability_Youmu04_Count",0,0)
 		caster:SetContextNum("ability_Youmu04_Rad",0,0)
 		SetTargetToTraversable(caster)

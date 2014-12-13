@@ -40,6 +40,11 @@ end
 function OnMarisa04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targetPoint = keys.target_points[1]
+	--[[local forwardVector = caster:GetOrigin()+caster:GetForwardVector()*1000
+	local effectIndex = ParticleManager:CreateParticle("particles/thd2/chen_cast_4.vpcf", PATTACH_CUSTOMORIGIN, caster)
+	ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin()+Vector(0,0,64))
+	ParticleManager:SetParticleControl(effectIndex, 1, forwardVector)]]--
+
 	local unit = CreateUnitByName(
 		"npc_dota2x_unit_marisa04_spark"
 		,caster:GetOrigin()
@@ -158,8 +163,9 @@ function AbilityMarisa:OnMarisa02Damage(keys)
 	local unit = EntIndexToHScript(unitIndex)
 	local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/marisa/marisa_02_stars.vpcf", PATTACH_CUSTOMORIGIN, unit)
 	local vecForward = Vector(500 * caster:GetForwardVector().x,500 * caster:GetForwardVector().y,caster:GetForwardVector().z)
-	ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
+	ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin()+caster:GetForwardVector()*100)
 	ParticleManager:SetParticleControl(effectIndex, 3, vecForward)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 	
 	-- Ñ­»µ¸÷¸öÄ¿±êµ¥Î»
 	for _,v in pairs(targets) do
