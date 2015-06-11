@@ -350,7 +350,6 @@ function ParticleManager:DestroyParticleSystem(effectIndex,bool)
             end
         )
     end
-<<<<<<< HEAD
 end
 
 function ParticleManager:DestroyParticleSystemTime(effectIndex,time)
@@ -433,6 +432,3 @@ function ShowWearables( hero )
  end
 end
 
-=======
-end
->>>>>>> origin/master
