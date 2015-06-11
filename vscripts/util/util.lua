@@ -343,13 +343,18 @@ function ParticleManager:DestroyParticleSystem(effectIndex,bool)
         ParticleManager:DestroyParticle(effectIndex,true)
         ParticleManager:ReleaseParticleIndex(effectIndex) 
     else
+<<<<<<< HEAD
         Timer.Wait 'Effect_Destroy_Particle' (4,
+=======
+        Timer.Wait 'Effect_Destroy_Particle' (5,
+>>>>>>> origin/master
             function()
                 ParticleManager:DestroyParticle(effectIndex,true)
                 ParticleManager:ReleaseParticleIndex(effectIndex) 
             end
         )
     end
+<<<<<<< HEAD
 end
 
 function ParticleManager:DestroyParticleSystemTime(effectIndex,time)
@@ -432,3 +437,6 @@ function ShowWearables( hero )
  end
 end
 
+=======
+end
+>>>>>>> origin/master

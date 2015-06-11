@@ -47,9 +47,12 @@ function OnYoumu04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
 	UnitPauseTarget(caster,target,1.0)
+<<<<<<< HEAD
 	local effectIndex = ParticleManager:CreateParticle("particles/heroes/youmu/youmu_04_circle.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
 	ParticleManager:DestroyParticleSystem(effectIndex,false)
+=======
+>>>>>>> origin/master
 end
 
 function OnYoumu04SpellThink(keys)
@@ -86,10 +89,14 @@ function AbilityYoumu:OnYoumu01Move(keys)
 		end
 		keys.ability:SetContextNum("ability_Youmu01_Count",0,0)
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/youmu/youmu_01_blink_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
+<<<<<<< HEAD
 		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 1, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 2, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 5, caster:GetOrigin())
+=======
+		ParticleManager:SetParticleControl(effectIndex, 3, caster:GetOrigin())
+>>>>>>> origin/master
 		ParticleManager:DestroyParticleSystem(effectIndex,false)
 	end
 	local Youmu01rad = keys.ability:GetContext("ability_Youmu01_Rad")
@@ -312,7 +319,11 @@ function AbilityYoumu:OnYoumu04Think(keys)
 	if(keys.ability:GetContext("ability_Youmu04_Count") == nil)then
 	    keys.ability:SetContextNum("ability_Youmu04_Count",0,0)
 	end
+<<<<<<< HEAD
 	if(keys.ability:GetContext("ability_Youmu04_Rad") == nil or keys.ability:GetContext("ability_Youmu04_Rad") == 0) then
+=======
+	if(caster:GetContext("ability_Youmu04_Rad") == nil or caster:GetContext("ability_Youmu04_Rad") == 0) then
+>>>>>>> origin/master
 		Youmu04Rad = GetRadBetweenTwoVec2D(vecTarget,vecCaster)
 		keys.ability:SetContextNum("ability_Youmu04_Rad",Youmu04Rad,0)
 	end
@@ -347,8 +358,13 @@ function AbilityYoumu:OnYoumu04Think(keys)
 		local spellCard = ParticleManager:CreateParticle("particles/thd2/heroes/youmu/youmu_04_word.vpcf", PATTACH_CUSTOMORIGIN, caster)
 		ParticleManager:SetParticleControl(spellCard, 0, caster:GetOrigin())
 		ParticleManager:DestroyParticleSystem(spellCard,false)
+<<<<<<< HEAD
 		keys.ability:SetContextNum("ability_Youmu04_Count",0,0)
 		keys.ability:SetContextNum("ability_Youmu04_Rad",0,0)
+=======
+		caster:SetContextNum("ability_Youmu04_Count",0,0)
+		caster:SetContextNum("ability_Youmu04_Rad",0,0)
+>>>>>>> origin/master
 		SetTargetToTraversable(caster)
 		return
 	end

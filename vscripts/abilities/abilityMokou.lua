@@ -39,7 +39,11 @@ function OnMokou01SpellMove(keys)
 		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 1, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 3, caster:GetOrigin())
+<<<<<<< HEAD
 		ParticleManager:DestroyParticleSystem(effectIndex,false)
+=======
+		ParticleManager:DestroyParticleSystem(effectIndex,true)
+>>>>>>> origin/master
 		
 		SetTargetToTraversable(caster)
 		vecCaster = caster:GetOrigin()

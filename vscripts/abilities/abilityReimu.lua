@@ -70,6 +70,7 @@ function AbilityReimu:OnReimu01Start(keys)
 		ballunit:SetOrigin(vec3)
 	end
 
+<<<<<<< HEAD
 	ballunit:SetContextThink("OnReimu01Release",
 		function ()
 			if( ballunit == nil )then
@@ -139,6 +140,74 @@ function AbilityReimu:OnReimu01Start(keys)
 			return 0.1
 		end, 
 	0.1)
+=======
+function AbilityReimu:OnReimu01Release( keys )
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local nPlayerID = caster:GetPlayerID()
+	local uHead = self.tReimu01Elements[nPlayerID].Ball.unit
+	if( uHead == nil )then
+		return
+	end
+	local headOrigin = uHead:GetOrigin()
+	
+	self.tReimu01Elements[nPlayerID].Ball.t = self.tReimu01Elements[nPlayerID].Ball.t + 0.1
+	local ut = self.tReimu01Elements[nPlayerID].Ball.t
+	local ug = self.tReimu01Elements[nPlayerID].Ball.g
+	self.tReimu01Elements[nPlayerID].Ball.v = self.tReimu01Elements[nPlayerID].Ball.v + ug
+	local uv = self.tReimu01Elements[nPlayerID].Ball.v
+	local uz = headOrigin.z - uv
+	local vec = Vector(headOrigin.x,headOrigin.y,uz)
+	local locability = keys.ability
+	local abilitylevel = locability:GetLevel()
+		
+	local fireIndex = caster:GetContext("Reimu01_Effect_Fire_Index")
+	ParticleManager:SetParticleControl(fireIndex, 0, vec)
+	uHead:SetOrigin(vec)
+	if uz <= self.tReimu01Elements[nPlayerID].OriginZ+80 then
+		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/reimu/reimu_01_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
+		ParticleManager:SetParticleControl(effectIndex, 0, vec)
+		ParticleManager:SetParticleControl(effectIndex, 2, vec)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
+		self.tReimu01Elements[nPlayerID].Ball.v = self.tReimu01Elements[nPlayerID].Ball.v / math.sqrt(1.5) * -1
+		vec = Vector(headOrigin.x,headOrigin.y,self.tReimu01Elements[nPlayerID].OriginZ+80.1)
+		uHead:SetOrigin(vec)
+		local DamageTargets = FindUnitsInRadius(
+		   caster:GetTeam(),		--caster team
+		   uHead:GetOrigin(),		--find position
+		   nil,					--find entity
+		   keys.Radius,		--find radius
+		   DOTA_UNIT_TARGET_TEAM_ENEMY,
+		   keys.ability:GetAbilityTargetType(),
+		   0, FIND_CLOSEST,
+		   false
+	    )
+		local decrease = self.tReimu01Elements[nPlayerID].Decrease
+		for _,v in pairs(DamageTargets) do
+		   local DamageTable = {
+	                victim = v, 
+	                attacker = caster, 
+	                damage = keys.ability:GetAbilityDamage() * (1-decrease), 
+	                damage_type = keys.ability:GetAbilityDamageType(), 
+	                damage_flags = 1
+           }
+		   UnitDamageTarget(DamageTable)
+		   UtilStun:UnitStunTarget(caster,v,keys.StunDuration)
+		end
+		self.tReimu01Elements[nPlayerID].Decrease = self.tReimu01Elements[nPlayerID].Decrease + keys.DamageDecrease
+		uHead:EmitSound("Visage_Familar.StoneForm.Cast")
+	end
+	
+	if ut >= 2.6 then
+		self.tReimu01Elements[nPlayerID].Ball.g = REIMU01_GRAVITY
+		self.tReimu01Elements[nPlayerID].Ball.t = 0
+		self.tReimu01Elements[nPlayerID].Ball.v = 0
+		self.tReimu01Elements[nPlayerID].Decrease = 0
+		self.tReimu01Elements[nPlayerID].Ball.OriginZ = 0
+		uHead:RemoveSelf()
+		
+		self.tReimu01Elements[nPlayerID].Ball.unit = nil
+	end
+>>>>>>> origin/master
 end
 
 --Reimu02

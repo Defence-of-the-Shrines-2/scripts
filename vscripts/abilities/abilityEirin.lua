@@ -104,6 +104,7 @@ end
 
 function OnEirin04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
+<<<<<<< HEAD
 	keys.ability.target = keys.target
 	local effectIndex = ParticleManager:CreateParticle(
 			"particles/heroes/eirin/ability_eirin_04.vpcf", 
@@ -113,13 +114,22 @@ function OnEirin04SpellStart(keys)
 	ParticleManager:SetParticleControl(effectIndex, 1, keys.target:GetOrigin())
 	ParticleManager:DestroyParticleSystemTime(effectIndex,keys.Duration)
 	keys.ability.effectIndex = effectIndex
+=======
+	local target = keys.target
+	UnitGraveTarget(caster,target)
+>>>>>>> origin/master
 end
 
 function OnEirin04SpellThink(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
+<<<<<<< HEAD
 	local target = keys.ability.target
 
 	if(target:GetHealth()<=keys.DamageTaken)then
+=======
+	local target = keys.target
+	if(target:GetHealth()<=5)then
+>>>>>>> origin/master
 		target:RemoveModifierByName("modifier_ability_thdots_eirin04_effect")
 		
 		local effectIndex = ParticleManager:CreateParticle(
@@ -130,7 +140,10 @@ function OnEirin04SpellThink(keys)
 		ParticleManager:SetParticleControl(effectIndex, 1, target:GetOrigin()/5)
 		ParticleManager:SetParticleControl(effectIndex, 2, target:GetOrigin())
 		ParticleManager:DestroyParticleSystem(effectIndex,false)
+<<<<<<< HEAD
 		ParticleManager:DestroyParticleSystem(keys.ability.effectIndex,true)
+=======
+>>>>>>> origin/master
 		target:SetHealth(target:GetMaxHealth())
 	end
 end

@@ -127,9 +127,15 @@
 		//"Ability4"				"ability_thdots_reisen04"
 		//"Ability5"				"attribute_bonus"
 		
+<<<<<<< HEAD
 		"Model"                 "models/development/invisiblebox.vmdl"
 		//"Model"                   "models/thd2/alice/alice_mmd.vmdl"
 
+=======
+		"Model"                 "models/thd2/hakurei_reimu/hakurei_reimu.vmdl"
+		//"Model"                   "models/thd2/alice/alice_mmd.vmdl"
+			
+>>>>>>> origin/master
 		"AttackAnimationPoint"		"0.6"	
 			//攻击前摇
 		"AttackRate"				"1.6"			
@@ -501,9 +507,14 @@
 		"Ability5"				"ability_thdots_sakuya04" 
 		"Ability6"				"attribute_bonus"
 		
+<<<<<<< HEAD
 		"Model"                 "models/development/invisiblebox.vmdl"
 		"ProjectileModel"		"particles/units/heroes/hero_queenofpain/queen_base_attack.vpcf"
 		"ProjectileSpeed"		"1500"
+=======
+		"Model"                 "models/thd2/sakuya/sakuya.vmdl"
+		"ProjectileModel"		"particles/units/heroes/hero_queenofpain/queen_base_attack.vpcf"
+>>>>>>> origin/master
 			
 		"AttackAnimationPoint"		"0.54"	
 			//攻击前摇

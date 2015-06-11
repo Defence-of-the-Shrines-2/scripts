@@ -3197,7 +3197,11 @@
 				"MoveSpeed"				"%move_speed"
 				"StartRadius"			"%collision_radius"
 				"EndRadius"				"%collision_radius"
+<<<<<<< HEAD
 				"StartPosition"			"attach_hitloc"
+=======
+				"StartPosition"			"attach_attack1"
+>>>>>>> origin/master
 				"FixedDistance"			"%length"
 				"TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"TargetTypes"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -3690,8 +3694,12 @@
 
 		"precache"
 		{
+<<<<<<< HEAD
 			"particle"					"particles/heroes/flandre/ability_flandre_04_aura.vpcf"
 			"particle"					"particles/units/heroes/hero_doom_bringer/doom_bringer_ambient.vpcf"
+=======
+			"particle_folder"			"particles/thd2/heroes/flandre"
+>>>>>>> origin/master
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
 		}
 		
@@ -3717,9 +3725,13 @@
 			{
 				"Duration"         	 "%ability_duration"
 				"ThinkInterval"      "0.285"
+<<<<<<< HEAD
 				"EffectName"		"particles/heroes/flandre/ability_flandre_04_aura.vpcf"
 				"EffectAttachType"	"follow_origin"
 				
+=======
+
+>>>>>>> origin/master
 				"OnDestroy"
 				{
 					"RunScript"
@@ -6355,12 +6367,29 @@
 						"Target" 		"TARGET"
 						"HealAmount"	"%health_regen"
 					}
+<<<<<<< HEAD
 					"RunScript"
 					{
 						"ScriptFile" 	"scripts/vscripts/abilities/abilityEirin.lua"	
 						"Target" 		"TARGET"
 						"Duration"      "%buff_duration"
 						"Function"		"OnEirin04SpellStart"
+=======
+					"RunScript"
+					{
+						"ScriptFile" 	"scripts/vscripts/abilities/abilityEirin.lua"
+						"Target"		"TARGET"
+						"Function"		"OnEirin04SpellStart"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile" 	"scripts/vscripts/abilities/abilityEirin.lua"
+						"Target"		"TARGET"
+						"Function"		"OnEirin04SpellThink"
+>>>>>>> origin/master
 					}
 				}
 				"OnTakeDamage"
