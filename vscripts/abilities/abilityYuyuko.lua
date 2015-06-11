@@ -164,13 +164,11 @@ function OnYuyuko04SpellThink(keys)
 				ParticleManager:SetParticleControl(effectIndex, 0, v:GetOrigin())
 				ParticleManager:SetParticleControl(effectIndex, 5, v:GetOrigin())
 				ParticleManager:DestroyParticleSystem(effectIndex,false)
-<<<<<<< HEAD
 
 				local effectIndex2 = ParticleManager:CreateParticle("particles/heroes/yuyuko/ability_yuyuko_04_effect_d.vpcf", PATTACH_CUSTOMORIGIN, caster)
 				ParticleManager:SetParticleControl(effectIndex2, 0, v:GetOrigin())
 				ParticleManager:DestroyParticleSystem(effectIndex2,false)
-=======
->>>>>>> origin/master
+
 
 				local vecV = v:GetOrigin()
 				local deal_damage = (v:GetMaxHealth() - v:GetHealth())*keys.DamageMulti

@@ -59,16 +59,10 @@ function OnFlandre04SpellStart(keys)
 
 	local effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_doom_bringer/doom_bringer_ambient.vpcf", PATTACH_CUSTOMORIGIN, caster) 
 	ParticleManager:SetParticleControlEnt(effectIndex , 0, caster, 5, "attach_attack1", Vector(0,0,0), true)
-<<<<<<< HEAD
 	ParticleManager:DestroyParticleTime(effectIndex,keys.Duration)
 
 	keys.ability:SetContextNum("ability_flandre04_multi_count",count,0)
 	keys.ability:SetContextNum("ability_flandre04_effectIndex",effectIndex,0)
-=======
-
-	caster:SetContextNum("ability_flandre04_multi_count",count,0)
-	caster:SetContextNum("ability_flandre04_effectIndex",effectIndex,0)
->>>>>>> origin/master
 end
 
 function OnFlandre04SpellRemove(keys)
@@ -83,11 +77,7 @@ end
 
 function OnFlandre04EffectRemove(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
-<<<<<<< HEAD
 	local effectIndex = keys.ability:GetContext("ability_flandre04_effectIndex")
-=======
-	local effectIndex = caster:GetContext("ability_flandre04_effectIndex")
->>>>>>> origin/master
 	ParticleManager:DestroyParticle(effectIndex,true)
 end
 

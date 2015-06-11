@@ -47,12 +47,9 @@ function OnYoumu04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
 	UnitPauseTarget(caster,target,1.0)
-<<<<<<< HEAD
 	local effectIndex = ParticleManager:CreateParticle("particles/heroes/youmu/youmu_04_circle.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
 	ParticleManager:DestroyParticleSystem(effectIndex,false)
-=======
->>>>>>> origin/master
 end
 
 function OnYoumu04SpellThink(keys)

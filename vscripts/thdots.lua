@@ -229,13 +229,11 @@ function PrecacheHeroResource(hero)
     require( 'abilities/abilityMokou' )
   elseif(heroName == "npc_dota_hero_sniper")then
     --hero:EnableMotion()
-<<<<<<< HEAD
   elseif(heroName == "npc_dota_hero_mirana")then
     abilityEx = hero:FindAbilityByName("ability_thdots_reisenEx")
     abilityEx:SetLevel(1)
     --hero:EnableMotion()
-=======
->>>>>>> origin/master
+
 	end
 end
 -- 以下的这些函数，大多都是把传递的数值Print出来
@@ -440,24 +438,8 @@ function THDOTSGameMode:AutoAssignPlayer(keys)
 				-- 确认已经获取到这个英雄
 				if (hero ~= nil) then
 					PrecacheHeroResource(hero)
-<<<<<<< HEAD
           AddHeroesWearables(hero)
           return nil
-=======
-          hero:SetContextThink(DoUniqueString("thdots_Music_Thdots_BackGround"),
-              function()
-                  StartSoundEvent("Music_Thdots.BackGround", ply)
-                  return 844.0
-              end
-          ,30.0)
-          hero:SetContextThink(DoUniqueString("thdots_remove_items_for_hero"),
-              function()
-                  RemoveWearables(hero)
-                  return 0.5
-              end
-          ,0.5)
-					return nil
->>>>>>> origin/master
 				end
 				return 0.1
 			end

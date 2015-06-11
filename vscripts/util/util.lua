@@ -343,11 +343,7 @@ function ParticleManager:DestroyParticleSystem(effectIndex,bool)
         ParticleManager:DestroyParticle(effectIndex,true)
         ParticleManager:ReleaseParticleIndex(effectIndex) 
     else
-<<<<<<< HEAD
         Timer.Wait 'Effect_Destroy_Particle' (4,
-=======
-        Timer.Wait 'Effect_Destroy_Particle' (5,
->>>>>>> origin/master
             function()
                 ParticleManager:DestroyParticle(effectIndex,true)
                 ParticleManager:ReleaseParticleIndex(effectIndex) 
