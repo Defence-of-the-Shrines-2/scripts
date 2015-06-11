@@ -6,6 +6,8 @@ GameMode = nil
 
 TRUE = 1
 FALSE = 0
+ADD_HERO_WEARABLES_LOCK = 0
+ADD_HERO_WEARABLES_ILLUSION_LOCK = 0
 
 
 if THDOTSGameMode == nil then
@@ -21,6 +23,47 @@ statcollection.addStats({
 })
 
 -- setmetatable是lua面向对象的编程方法~
+
+model_lookup = {}
+model_lookup["npc_dota_hero_lina"] = "models/thd2/hakurei_reimu/hakurei_reimu_mmd.vmdl"
+model_lookup["npc_dota_hero_crystal_maiden"] = "models/thd2/marisa/marisa_mmd.vmdl"
+model_lookup["npc_dota_hero_juggernaut"] = "models/thd2/youmu/youmu_mmd.vmdl"
+model_lookup["npc_dota_hero_slark"] = "models/aya/aya_mmd.vmdl"
+model_lookup["npc_dota_hero_earthshaker"] = "models/thd2/tenshi/tenshi_mmd.vmdl"
+model_lookup["npc_dota_hero_dark_seer"] = "models/thd2/hiziri_byakuren/hiziri_byakuren_mmd.vmdl"
+model_lookup["npc_dota_hero_necrolyte"] = "models/thd2/yuyuko/yuyuko_mmd.vmdl"
+model_lookup["npc_dota_hero_templar_assassin"] = "models/thd2/sakuya/sakuya_mmd.vmdl"
+model_lookup["npc_dota_hero_naga_siren"] = "models/thd2/flandre/flandre_mmd.vmdl"
+model_lookup["npc_dota_hero_chaos_knight"] = "models/thd2/mokou/mokou_mmd.vmdl"
+model_lookup["npc_dota_hero_centaur"] = "models/thd2/yuugi/yuugi_mmd.vmdl"
+model_lookup["npc_dota_hero_tiny"] = "models/thd2/suika/suika_mmd.vmdl"
+model_lookup["npc_dota_hero_life_stealer"] = "models/thd2/rumia/rumia_mmd.vmdl"
+model_lookup["npc_dota_hero_razor"] = "models/thd2/iku/iku_mmd.vmdl"
+model_lookup["npc_dota_hero_sniper"] = "models/thd2/utsuho/utsuho_mmd.vmdl"
+model_lookup["npc_dota_hero_silencer"] = "models/thd2/eirin/eirin_mmd.vmdl"
+model_lookup["npc_dota_hero_furion"] = "models/thd2/kaguya/kaguya.vmdl"
+model_lookup["npc_dota_hero_mirana"] = "models/thd2/reisen/reisen.vmdl"
+
+--[[model_lookup["npc_dota_hero_lina"] = "models/heroes/lina/lina.vmdl"
+model_lookup["npc_dota_hero_crystal_maiden"] = "models/heroes/crystal_maiden/crystal_maiden.vmdl"
+model_lookup["npc_dota_hero_juggernaut"] = "models/heroes/juggernaut/juggernaut.vmdl"
+model_lookup["npc_dota_hero_slark"] = "models/heroes/slark/slark.vmdl"
+model_lookup["npc_dota_hero_earthshaker"] = "models/heroes/earthshaker/earthshaker.vmdl"
+model_lookup["npc_dota_hero_dark_seer"] = "models/heroes/dark_seer/dark_seer.vmdl"
+model_lookup["npc_dota_hero_necrolyte"] = "models/heroes/necrolyte/necrolyte.vmdl"
+model_lookup["npc_dota_hero_templar_assassin"] = "models/heroes/lanaya/lanaya.vmdl"
+model_lookup["npc_dota_hero_naga_siren"] = "models/heroes/siren/siren.vmdl"
+model_lookup["npc_dota_hero_chaos_knight"] = "models/heroes/chaos_knight/chaos_knight.vmdl"
+model_lookup["npc_dota_hero_centaur"] = "models/heroes/centaur/centaur.vmdl"
+model_lookup["npc_dota_hero_tiny"] = "models/heroes/tiny_01/tiny_01.vmdl"
+model_lookup["npc_dota_hero_life_stealer"] = "models/heroes/life_stealer/life_stealer.vmdl"
+model_lookup["npc_dota_hero_razor"] = "models/heroes/razor/razor.vmdl"
+model_lookup["npc_dota_hero_sniper"] = "models/heroes/sniper/sniper.vmdl"
+model_lookup["npc_dota_hero_silencer"] = "models/heroes/silencer/silencer.vmdl"
+model_lookup["npc_dota_hero_furion"] = "models/heroes/furion/furion.vmdl"
+model_lookup["npc_dota_hero_mirana"] = "models/heroes/mirana/mirana.vmdl"]]--
+
+
 
 -- 这个函数是addon_game_mode里面所写的，会在vlua.cpp执行的时候所执行的内容
 function THDOTSGameMode:InitGameMode()
@@ -59,7 +102,13 @@ function THDOTSGameMode:InitGameMode()
   ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(THDOTSGameMode, 'AbilityUsed'), self)
 
   ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(THDOTSGameMode, 'AbilityLearn'), self)
- 
+
+  ListenToGameEvent( 'npc_spawned', Dynamic_Wrap( THDOTSGameMode, 'OnHeroSpawned' ), self )
+
+  ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(THDOTSGameMode, 'OnGameRulesStateChange'), self)
+
+  --ListenToGameEvent('dota_rune_activated_server', Dynamic_Wrap(THDOTSGameMode, 'OnGameRunePickup'), self)
+
   -- 玩家使用了某个技能事件
 
   -- 注册控制台命令的参数
@@ -157,6 +206,7 @@ function PrecacheHeroResource(hero)
 		require( 'abilities/abilityAya' )
 	elseif(heroName == "npc_dota_hero_lina")then
 		require( 'abilities/abilityReimu' )
+    require( 'abilities/abilityReisen' )
 	elseif(heroName == "npc_dota_hero_juggernaut")then
 		require( 'abilities/abilityYoumu' )
 	elseif(heroName == "npc_dota_hero_earthshaker")then
@@ -177,6 +227,12 @@ function PrecacheHeroResource(hero)
     require( 'abilities/abilityFlandre' )
   elseif(heroName == "npc_dota_hero_chaos_knight")then
     require( 'abilities/abilityMokou' )
+  elseif(heroName == "npc_dota_hero_sniper")then
+    --hero:EnableMotion()
+  elseif(heroName == "npc_dota_hero_mirana")then
+    abilityEx = hero:FindAbilityByName("ability_thdots_reisenEx")
+    abilityEx:SetLevel(1)
+    --hero:EnableMotion()
 	end
 end
 -- 以下的这些函数，大多都是把传递的数值Print出来
@@ -196,6 +252,7 @@ function THDOTSGameMode:AbilityUsed(keys)
   local ply = EntIndexToHScript(keys.PlayerID)
   local caster = ply:GetAssignedHero()
   local ability = caster:FindAbilityByName(keys.abilityname)
+  --mokou
   if(keys.abilityname == 'phoenix_supernova')then
     local mokouAbility1 = caster:FindAbilityByName("ability_thdots_mokou01")
     local mokouAbility = caster:FindAbilityByName("ability_thdots_mokou04")
@@ -220,8 +277,83 @@ function THDOTSGameMode:AbilityUsed(keys)
       end
     end 
   end
+  --幻象
+  if(keys.abilityname == 'naga_siren_mirror_image')then
+    if(ADD_HERO_WEARABLES_ILLUSION_LOCK==TRUE)then
+      return
+    end
+    ADD_HERO_WEARABLES_ILLUSION_LOCK=TRUE
+    Timer.Wait 'ability_thdots_flandre_01' (0.5,
+        function()
+          local illusions = FindUnitsInRadius(
+             caster:GetTeam(),    
+             caster:GetOrigin(),    
+             nil,         
+             3000,    
+             DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+             DOTA_UNIT_TARGET_ALL,
+             DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, 
+             FIND_CLOSEST,
+             false
+          )
+
+          for _,v in pairs(illusions) do
+            if(v:IsIllusion())then
+              local model_name
+              model_name = model_lookup[ caster:GetName() ]
+              v:SetModel( model_name )
+              v:SetOriginalModel( model_name )   
+              v:MoveToPosition( v:GetAbsOrigin() )
+            end
+          end
+          ADD_HERO_WEARABLES_ILLUSION_LOCK=FALSE
+        end
+    )
+    
+  end 
   --PrintTable(keys)
 end
+function THDOTSGameMode:OnGameRunePickup(keys)
+  local ply = EntIndexToHScript(keys.PlayerID)
+  if(ply==nil)then
+    return
+  end
+  local caster = ply:GetAssignedHero()
+  local rune = keys.rune
+  if(rune == 2)then
+    if(ADD_HERO_WEARABLES_ILLUSION_LOCK==TRUE)then
+      return
+    end
+    ADD_HERO_WEARABLES_ILLUSION_LOCK=TRUE
+    Timer.Wait 'ability_thdots_illusion' (0.5,
+        function()
+          local illusions = FindUnitsInRadius(
+             caster:GetTeam(),    
+             caster:GetOrigin(),    
+             nil,         
+             3000,    
+             DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+             DOTA_UNIT_TARGET_ALL,
+             DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, 
+             FIND_CLOSEST,
+             false
+          )
+
+          for _,v in pairs(illusions) do
+            if(v:IsIllusion())then
+              local model_name
+              model_name = model_lookup[ caster:GetName() ]
+              v:SetModel( model_name )
+              v:SetOriginalModel( model_name )   
+              v:MoveToPosition( v:GetAbsOrigin() )
+            end
+          end
+          ADD_HERO_WEARABLES_ILLUSION_LOCK=FALSE
+        end
+    )
+  end 
+end
+
 function THDOTSGameMode:AbilityLearn(keys)
 	local ply = EntIndexToHScript(keys.player)
 	local caster = ply:GetAssignedHero()
@@ -274,6 +406,18 @@ function THDOTSGameMode:PlayerSay(keys)
   if matchA ~= nil and matchB ~= nil then
     -- 那么就，做点什么
   end
+
+    -- Turns BGM on and off
+  if text == "-bgmoff" then
+    print("Turning BGM off")
+    Timers:RemoveTimer("BGMTimer")
+    ply:StopSound("BGM." .. choice)
+  end
+
+  if text == "-bgmon" then
+    print("Turning BGM on")
+    PlayBGM(ply)
+  end
   
 end
 
@@ -293,18 +437,74 @@ function THDOTSGameMode:AutoAssignPlayer(keys)
 				-- 确认已经获取到这个英雄
 				if (hero ~= nil) then
 					PrecacheHeroResource(hero)
-          hero:SetContextThink(DoUniqueString("thdots_remove_items_for_hero"),
-              function()
-                  RemoveWearables(hero)
-                  return 0.5
-              end
-          ,0.5)
-					return nil
+          AddHeroesWearables(hero)
+          return nil
 				end
 				return 0.1
 			end
 		,0.1)
 	end
+
+function AddHeroesWearables(hero)
+  hero:SetContextThink(DoUniqueString("OnHeroSpawned"), 
+    function()
+      --print( "OnHeroSpawned in");
+      -- Setup variables
+      if(ADD_HERO_WEARABLES_LOCK == TRUE)then
+        return 0.1
+      end
+      ADD_HERO_WEARABLES_LOCK = TRUE
+      local model_name = ""
+      
+      -- Check if npc is hero
+      if not hero:IsHero() then 
+        ADD_HERO_WEARABLES_LOCK = FALSE 
+        return nil
+      end
+      
+      -- Getting model name
+      if model_lookup[ hero:GetName() ] ~= nil and hero:GetModelName() ~= model_lookup[ hero:GetName() ] then
+        model_name = model_lookup[ hero:GetName() ]
+        --print( "Swapping in: " .. model_name )
+      else
+        --print( "model_lookup: " .. model_lookup[ hero:GetName() ] )
+        --print( "GetModelName: " .. hero:GetModelName() )
+        ADD_HERO_WEARABLES_LOCK = FALSE
+        return 0.1
+      end
+      
+      -- Check if it's correct format
+      if hero:GetModelName() ~= "models/development/invisiblebox.vmdl" then 
+        --ADD_HERO_WEARABLES_LOCK = FALSE 
+        --return nil 
+      end
+      
+      -- Never got changed before
+      local toRemove = {}
+      local wearable = hero:FirstMoveChild()
+      while wearable ~= nil do
+        if wearable:GetClassname() == "dota_item_wearable" then
+          -- print( "Removing wearable: " .. wearable:GetModelName() )
+          table.insert( toRemove, wearable )
+        end
+        wearable = wearable:NextMovePeer()
+      end
+      
+      -- Remove wearables
+      for k, v in pairs( toRemove ) do
+        v:SetModel( "models/development/invisiblebox.vmdl" )
+        v:RemoveSelf()
+      end
+      
+      -- Set model
+      hero:SetModel( model_name )
+      hero:SetOriginalModel( model_name )     -- This is needed because when state changes, model will revert back
+      hero:MoveToPosition( hero:GetAbsOrigin() )  -- This is needed because when model is spawned, it will be in T-pose
+      ADD_HERO_WEARABLES_LOCK = FALSE
+      return 0.1
+    end,0.1
+  )
+end
   
   -- 获取玩家的ID
   local playerID = ply:GetPlayerID()
@@ -554,6 +754,10 @@ function THDOTSGameMode:OnEntityKilled( keys )
 	end
 	
 	if(killedUnit:IsHero()==true)then
+    local effectIndex = ParticleManager:CreateParticle("particles/thd2/environment/death/act_hero_die.vpcf", PATTACH_CUSTOMORIGIN, killedUnit)
+    ParticleManager:SetParticleControl(effectIndex, 0, killedUnit:GetOrigin())
+    ParticleManager:SetParticleControl(effectIndex, 1, killedUnit:GetOrigin())
+    ParticleManager:DestroyParticleSystem(effectIndex,false)
 		local powerStatValue = killedUnit:GetContext("hero_bouns_stat_power_count")
 		if(powerStatValue==nil)then
 			return
@@ -596,6 +800,52 @@ function THDOTSGameMode:OnEntityKilled( keys )
       end
     end
   end
+end
+
+function THDOTSGameMode:OnHeroSpawned( keys )
+  -- This is needed because model is somehow not yet rendered while this is called, so we need a little bit of delay
+end
+
+function THDOTSGameMode:OnGameRulesStateChange(keys)
+  local newState = GameRules:State_Get()
+  if newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+    THDOTSGameMode:OnGameInProgress()
+  end
+end
+
+function THDOTSGameMode:OnGameInProgress()
+  print("[FATE] The game has officially begun")
+  local lastChoice = 0
+  local delayInBetween = 2.0
+  for i=0, 10 do
+      local player = PlayerResource:GetPlayer(i)
+      if player ~= nil then
+        PlayBGM(player)
+      end
+  end
+end
+
+function PlayBGM(player)
+  local delayInBetween = 2.0
+
+  Timers:CreateTimer('BGMTimer', {
+    endTime = 0,
+    callback = function()
+    choice = RandomInt(1,1)
+    if choice == lastChoice then return 0.1 end
+    --EmitSoundOnClient(songName, player) 
+    --StartSoundEvent("Music_Thdots.BackGround", ply)
+    --return 844+delayInBetween
+
+    if choice == 1 then EmitSoundOnClient("Music_Thdots.BackGround", player) lastChoice = 1 return 844+delayInBetween
+    elseif choice == 2 then EmitSoundOnClient("Music_Thdots.BackGround2", player) lastChoice = 2 return 2692+delayInBetween end
+    --[[elseif choice == 3 then EmitSoundOnClient(songName, player)  lastChoice = 3 return 138+delayInBetween
+    elseif choice == 4 then  EmitSoundOnClient(songName, player) lastChoice = 4 return 149+delayInBetween
+    elseif choice == 5 then  EmitSoundOnClient(songName, player) lastChoice = 5 return 183+delayInBetween
+    elseif choice == 6 then  EmitSoundOnClient(songName, player) lastChoice = 6 return 143+delayInBetween
+    elseif choice == 7 then  EmitSoundOnClient(songName, player) lastChoice = 7 return 184+delayInBetween
+    else EmitSoundOnClient(songName, player) lastChoice = 8 return 181+delayInBetween end]]--
+    end})
 end
 
 -- function THDOTSGameMode:GameThink()

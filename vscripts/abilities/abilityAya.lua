@@ -45,8 +45,8 @@ function AbilityAya:OnAya01Start(keys)
 	local targetPoint = keys.target_points[1]
 	local Aya01rad = GetRadBetweenTwoVec2D(caster:GetOrigin(),targetPoint)
 	local Aya01dis = GetDistanceBetweenTwoVec2D(caster:GetOrigin(),targetPoint)
-	caster:SetContextNum("ability_Aya01_Rad",Aya01rad,0)
-	caster:SetContextNum("ability_Aya01_Dis",Aya01dis,0)
+	keys.ability:SetContextNum("ability_Aya01_Rad",Aya01rad,0)
+	keys.ability:SetContextNum("ability_Aya01_Dis",Aya01dis,0)
 end
 
 function AbilityAya:OnAya01Move(keys)
@@ -76,18 +76,18 @@ function AbilityAya:OnAya01Move(keys)
 	    	)
 		end
 	end
-	local Aya01rad = caster:GetContext("ability_Aya01_Rad")
+	local Aya01rad = keys.ability:GetContext("ability_Aya01_Rad")
 	local vec = Vector(vecCaster.x+math.cos(Aya01rad)*keys.MoveSpeed/50,vecCaster.y+math.sin(Aya01rad)*keys.MoveSpeed/50,vecCaster.z)
 	caster:SetOrigin(vec)
 	
-	local aya01dis = caster:GetContext("ability_Aya01_Dis")
+	local aya01dis = keys.ability:GetContext("ability_Aya01_Dis")
 	if(aya01dis<0)then
 		SetTargetToTraversable(caster)
-		caster:SetContextNum("ability_Aya01_Dis",0,0)
+		keys.ability:SetContextNum("ability_Aya01_Dis",0,0)
 		caster:RemoveModifierByName("modifier_thdots_aya01_think_interval")
 	else
 	    aya01dis = aya01dis - keys.MoveSpeed/50
-	    caster:SetContextNum("ability_Aya01_Dis",aya01dis,0)
+	    keys.ability:SetContextNum("ability_Aya01_Dis",aya01dis,0)
 	end
 end
 
@@ -110,16 +110,29 @@ end
 
 function AbilityAya:OnAya04OrderMoved(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	if(caster:GetContext("ability_Aya04_blink_lock")==FALSE)then
+	if(keys.ability:GetContext("ability_Aya04_blink_lock")==FALSE)then
 		return
 	end
+
+	keys.ability:ApplyDataDrivenModifier( caster, caster, "modifier_thdots_aya04_animation", {Duration=0.3} )
+	
+
 	local vecMove = caster:GetOrigin() + keys.BlinkRange * caster:GetForwardVector()
 	caster:SetOrigin(vecMove)
-	if(caster:GetContext("ability_Aya04_blink_lock")==TRUE or caster:GetContext("ability_Aya04_blink_lock")==nil)then
-		caster:SetContextNum("ability_Aya04_blink_lock",FALSE,0)
+
+	local effectIndex = ParticleManager:CreateParticle(
+		"particles/heroes/aya/ability_aya_04.vpcf", 
+		PATTACH_CUSTOMORIGIN, 
+		caster)
+	ParticleManager:SetParticleControl(effectIndex, 0, vecMove)
+	ParticleManager:SetParticleControl(effectIndex, 3, vecMove)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
+
+	if(keys.ability:GetContext("ability_Aya04_blink_lock")==TRUE or keys.ability:GetContext("ability_Aya04_blink_lock")==nil)then
+		keys.ability:SetContextNum("ability_Aya04_blink_lock",FALSE,0)
 		Timer.Wait 'ability_Aya04_blink_lock' (0.1,
 			function()
-				caster:SetContextNum("ability_Aya04_blink_lock",TRUE,0)
+				keys.ability:SetContextNum("ability_Aya04_blink_lock",TRUE,0)
 			end
 	    	)
 	end
@@ -127,16 +140,25 @@ end
 
 function AbilityAya:OnAya04OrderAttack(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	if(caster:GetContext("ability_Aya04_blink_lock")==FALSE)then
+	if(keys.ability:GetContext("ability_Aya04_blink_lock")==FALSE)then
 		return
 	end
 	local vectarget = keys.target:GetOrigin()
 	caster:SetOrigin(vectarget)
-	if(caster:GetContext("ability_Aya04_blink_lock")==TRUE or caster:GetContext("ability_Aya04_blink_lock")==nil)then
-		caster:SetContextNum("ability_Aya04_blink_lock",FALSE,0)
+
+	local effectIndex = ParticleManager:CreateParticle(
+		"particles/heroes/aya/ability_aya_04.vpcf", 
+		PATTACH_CUSTOMORIGIN, 
+		caster)
+	ParticleManager:SetParticleControl(effectIndex, 0, vectarget)
+	ParticleManager:SetParticleControl(effectIndex, 3, vectarget)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
+
+	if(keys.ability:GetContext("ability_Aya04_blink_lock")==TRUE or keys.ability:GetContext("ability_Aya04_blink_lock")==nil)then
+		keys.ability:SetContextNum("ability_Aya04_blink_lock",FALSE,0)
 		Timer.Wait 'ability_Aya04_blink_lock' (0.1,
 			function()
-				caster:SetContextNum("ability_Aya04_blink_lock",TRUE,0)
+				keys.ability:SetContextNum("ability_Aya04_blink_lock",TRUE,0)
 			end
 	    	)
 	end

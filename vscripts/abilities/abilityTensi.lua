@@ -4,15 +4,15 @@ end
 
 function OnTensi02SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	if(caster:GetContext("ability_tensi_02_reset")==nil)then
-		caster:SetContextNum("ability_tensi_02_reset",TRUE,0)
+	if(keys.ability:GetContext("ability_tensi_02_reset")==nil)then
+		keys.ability:SetContextNum("ability_tensi_02_reset",TRUE,0)
 	end
-	if(caster:GetContext("ability_tensi_02_reset")==TRUE)then
-		caster:SetContextNum("ability_tensi_02_reset",FALSE,0)
+	if(keys.ability:GetContext("ability_tensi_02_reset")==TRUE)then
+		keys.ability:SetContextNum("ability_tensi_02_reset",FALSE,0)
 		local resetTime = keys.AbilityMulti/(caster:GetPrimaryStatValue())
 		Timer.Wait 'ability_tensi_02_reset_timer' (resetTime,
 			function()
-				caster:SetContextNum("ability_tensi_02_reset",TRUE,0)
+				keys.ability:SetContextNum("ability_tensi_02_reset",TRUE,0)
 			end
 		)
 	else
@@ -35,7 +35,7 @@ function OnTensi02SpellStart(keys)
 	local effectIndex = ParticleManager:CreateParticle("particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_low_egset.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, targets[1]:GetOrigin())
 	ParticleManager:SetParticleControl(effectIndex, 1, targets[1]:GetOrigin())
-	ParticleManager:ReleaseParticleIndex(effectIndex)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 	targets[1]:EmitSound("Hero_EarthShaker.Totem.Attack")
 	
 end

@@ -5,9 +5,9 @@ end
 function OnEirin02SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local vecCaster = caster:GetOrigin()
-	caster:SetContextNum("ability_eirin02_spell_x", vecCaster.x, 0)
-	caster:SetContextNum("ability_eirin02_spell_y", vecCaster.y, 0)
-	caster:SetContextNum("ability_eirin02_spell_z", vecCaster.z, 0)
+	keys.ability:SetContextNum("ability_eirin02_spell_x", vecCaster.x, 0)
+	keys.ability:SetContextNum("ability_eirin02_spell_y", vecCaster.y, 0)
+	keys.ability:SetContextNum("ability_eirin02_spell_z", vecCaster.z, 0)
 end
 
 function OnEirin02SpellHit(keys)
@@ -24,7 +24,7 @@ function OnEirin02SpellHit(keys)
 	    	    damage_flags = 0
 		}
 		UnitDamageTarget(damage_table)	
-		local spellPoint = Vector(caster:GetContext("ability_eirin02_spell_x"),caster:GetContext("ability_eirin02_spell_y"),caster:GetContext("ability_eirin02_spell_z"))
+		local spellPoint = Vector(keys.ability:GetContext("ability_eirin02_spell_x"),keys.ability:GetContext("ability_eirin02_spell_y"),keys.ability:GetContext("ability_eirin02_spell_z"))
 		local dis = GetDistanceBetweenTwoVec2D(spellPoint,target:GetOrigin())
 		local duration = (dis-dis%150)/150*keys.StunDuration
 		if(duration>=2.0)then
@@ -42,6 +42,7 @@ function OnEirin02SpellHit(keys)
 	ParticleManager:SetParticleControl(effectIndex, 0, vecTarget)
 	ParticleManager:SetParticleControl(effectIndex, 1, vecTarget)
 	ParticleManager:SetParticleControl(effectIndex, 2, vecTarget)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 
 	EmitSoundOn("Hero_Puck.Dream_Coil", target)
 
@@ -54,10 +55,13 @@ function OnEirin02SpellHit(keys)
 				   nil,						--find entity
 				   keys.Radius,				--find radius
 				   DOTA_UNIT_TARGET_TEAM_BOTH,
-				   DAMAGE_TYPE_MAGICAL,
+				   keys.ability:GetAbilityTargetType(),
 				   0, FIND_CLOSEST,
 				   false
 			    )
+			    if(GetDistanceBetweenTwoVec2D(vecTarget,caster:GetOrigin()) <= keys.Radius)then
+			    	caster:SetHealth(caster:GetHealth() + keys.Damage/5)
+			    end
 				for k,v in pairs(targets) do
 					if(v:GetTeam()~=caster:GetTeam())then
 						local damage_table_heal = {
@@ -69,7 +73,7 @@ function OnEirin02SpellHit(keys)
 						}
 				   		UnitDamageTarget(damage_table_heal)
 				   	else
-				   		v:Heal(keys.Damage/5,caster)
+				   		v:SetHealth(v:GetHealth() + keys.Damage/5)
 				   		local healEffectIndex = ParticleManager:CreateParticle(
 							"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration_heal.vpcf", 
 							PATTACH_CUSTOMORIGIN, 
@@ -78,7 +82,7 @@ function OnEirin02SpellHit(keys)
 						ParticleManager:SetParticleControl(healEffectIndex, 0, v:GetOrigin())
 				   		Timer.Wait 'ability_eirin02_remove_heal_effect' (1,
 							function()
-								ParticleManager:DestroyParticle(healEffectIndex,true)
+								ParticleManager:DestroyParticleSystem(healEffectIndex,true)
 							end
 						)
 				   	end
@@ -87,7 +91,7 @@ function OnEirin02SpellHit(keys)
 	)
 	Timer.Wait 'ability_eirin02_remove_effect' (4,
 			function()
-				ParticleManager:DestroyParticle(effectIndex,true)
+				ParticleManager:DestroyParticleSystem(effectIndex,true)
 			end
 		)
 end
@@ -100,26 +104,33 @@ end
 
 function OnEirin04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	local target = keys.target
-	UnitGraveTarget(caster,target)
-	if(caster:GetHealth()<=5)then
-		caster:RemoveModifierByName("modifier_ability_thdots_eirin04_effect")
+	keys.ability.target = keys.target
+	local effectIndex = ParticleManager:CreateParticle(
+			"particles/heroes/eirin/ability_eirin_04.vpcf", 
+			PATTACH_CUSTOMORIGIN, 
+			keys.target)
+	ParticleManager:SetParticleControlEnt(effectIndex , 0, keys.target, 5, "follow_origin", Vector(0,0,0), true)
+	ParticleManager:SetParticleControl(effectIndex, 1, keys.target:GetOrigin())
+	ParticleManager:DestroyParticleSystemTime(effectIndex,keys.Duration)
+	keys.ability.effectIndex = effectIndex
+end
+
+function OnEirin04SpellThink(keys)
+	local caster = EntIndexToHScript(keys.caster_entindex)
+	local target = keys.ability.target
+
+	if(target:GetHealth()<=keys.DamageTaken)then
+		target:RemoveModifierByName("modifier_ability_thdots_eirin04_effect")
 		
 		local effectIndex = ParticleManager:CreateParticle(
 			"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", 
 			PATTACH_CUSTOMORIGIN, 
-			caster)
+			target)
 		ParticleManager:SetParticleControl(effectIndex, 0, target:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 1, target:GetOrigin()/5)
 		ParticleManager:SetParticleControl(effectIndex, 2, target:GetOrigin())
-		ParticleManager:ReleaseParticleIndex(effectIndex) 
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
+		ParticleManager:DestroyParticleSystem(keys.ability.effectIndex,true)
 		target:SetHealth(target:GetMaxHealth())
 	end
-end
-
-function OnEirin04SpellRemove(keys)
-	local caster = EntIndexToHScript(keys.caster_entindex)
-	local target = keys.target
-	target:RemoveModifierByName("modifier_dazzle_shallow_grave")
-	target:StopSound("Hero_Dazzle.Weave")
 end

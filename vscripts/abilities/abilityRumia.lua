@@ -15,7 +15,7 @@ function OnRumia01SpellEffectStart(keys)
 	local nEffectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/rumia/ability_rumia01_effect.vpcf",PATTACH_CUSTOMORIGIN,unit)
 	ParticleManager:SetParticleControl( nEffectIndex, 0, caster:GetOrigin())
 	ParticleManager:SetParticleControl( nEffectIndex, 1, caster:GetOrigin())
-	caster:SetContextNum("ability_rumia01_effect",nEffectIndex,0)
+	keys.ability:SetContextNum("ability_rumia01_effect",nEffectIndex,0)
 	unit:SetContextThink("ability_rumia01_effect_timer", 
 		function ()
 			unit:RemoveSelf()
@@ -25,9 +25,8 @@ function OnRumia01SpellEffectStart(keys)
 end
 
 function OnRumia01SpellEffectThink(keys)
-	print("start")
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	local nEffectIndex = caster:GetContext("ability_rumia01_effect")
+	local nEffectIndex = keys.ability:GetContext("ability_rumia01_effect")
 	ParticleManager:SetParticleControl( nEffectIndex, 0, caster:GetOrigin())
 	ParticleManager:SetParticleControl( nEffectIndex, 1, caster:GetOrigin())
 end
@@ -47,7 +46,6 @@ function OnRumia02BloodDamage( keys )
 							}
 	    UnitDamageTarget(DamageTable)
 	  end
-    print("----------------------------------OnRumia02BloodDamage-------------------------------------------------------")
 end
 
 function OnRumia02Blood(keys)
@@ -57,12 +55,6 @@ function OnRumia02Blood(keys)
 		if not target:IsMechanical() and not target:IsAncient() then
 			Timer.Loop 'Rumia_Blood' (keys.ti,keys.dc,
 								    function(i)
-								    	print(i)
-								    	print(target)
-								    	print("yes i m")
-								    	print(caster)
-								    	print(keys.dv)
-								    	print(keys.ability:GetAbilityDamageType())
 
 							            local DamageTable = {
 											                    victim = target, 
@@ -73,7 +65,6 @@ function OnRumia02Blood(keys)
 															}
 					    				UnitDamageTarget(DamageTable)
 					                    if i == keys.dc then
-					                    	print("i m out")
 					                    	--以下的语句为继续执行
 					                    	--return true
 										end
@@ -95,7 +86,6 @@ function OnRumia02Blood(keys)
 							        )
 		end
 	end
-	print("----------------------------------OnRumia02Blood-------------------------------------------------------")
 end
 function OnRumia04Start(keys)
 	if keys.target ~= nil then
@@ -118,23 +108,17 @@ function OnRumia04Start(keys)
 
 
 	    if (caster:GetTeam() ~= target:GetTeam())then
-	    	print("team trigger")
-	    	if target:GetHealth() <= keys.ability:GetAbilityDamage()  then
-	    		print("GetHealth trigger")
+	    	if target:GetHealth() <= DamageTable.damage  then
 	    		local strength = 0
 	    		if target:IsHero() then
-	    			print("IsHero")
 	    			if not target:IsIllusion()	then
-	    				print("not IsIllusion")
 	    				Rumia_Strength_Up = Rumia_Strength_Up + 5
 	    				strength = 5
 	    			end
 	    		else
-	    			print("else not IsHero")
 	    			Rumia_Strength_Up = Rumia_Strength_Up + 1
 	    			strength = 1
 	    		end
-	    		print(caster:GetHealth() + keys.ability:GetAbilityDamage()*keys.StealHealth)
 				caster:SetHealth(caster:GetHealth() + target:GetHealth()*keys.StealHealth)
 	    		caster:SetContextNum("Rumia04_Strength_Up",Rumia_Strength_Up,0)
 	    		caster:SetBaseStrength(caster:GetBaseStrength() + strength)
@@ -144,11 +128,9 @@ function OnRumia04Start(keys)
 	    	UnitDamageTarget(DamageTable)
 	    end
 	end
-    print("----------------------------------OnRumia04Start-------------------------------------------------------")
 end
 function OnRumiaDead(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	print(caster)
 	if caster ~= nil then
 		local Rumia_Strength_Up = caster:GetContext("Rumia04_Strength_Up")
 		if Rumia_Strength_Up <= 0 then return end	
@@ -157,5 +139,4 @@ function OnRumiaDead(keys)
 		caster:SetContextNum("Rumia04_Strength_Up",Rumia_Strength_Up,0)
 		caster:SetBaseStrength(caster:GetBaseStrength() - strengthDown)
 	end
-	print("----------------------------------OnRumiaDead-------------------------------------------------------")
 end

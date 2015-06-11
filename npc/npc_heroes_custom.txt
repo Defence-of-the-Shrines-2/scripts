@@ -121,9 +121,15 @@
 		"Ability3"				"ability_dota2x_reimu03"
 		"Ability4"				"ability_dota2x_reimu04"
 		"Ability5"				"attribute_bonus"
+		//"Ability1"				"ability_thdots_reisen01" 
+		//"Ability2"				"ability_thdots_reisen02" 
+		//"Ability3"				"ability_thdots_reisen03"
+		//"Ability4"				"ability_thdots_reisen04"
+		//"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/reimu/reimu.vmdl"
-			
+		"Model"                 "models/development/invisiblebox.vmdl"
+		//"Model"                   "models/thd2/alice/alice_mmd.vmdl"
+
 		"AttackAnimationPoint"		"0.6"	
 			//攻击前摇
 		"AttackRate"				"1.6"			
@@ -176,7 +182,7 @@
 		"Ability4"				"ability_thdots_marisa04" 
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/marisa/marisa.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 
 		"AttackAnimationPoint"		"0.6"	
 		//攻击前摇
@@ -229,7 +235,7 @@
 		"Ability4"				"ability_thdots_youmu04" 
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/youmu/youmu.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 			
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -279,7 +285,8 @@
 		"Ability4"				"ability_thdots_aya04" 
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/aya/aya.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
+		
 			
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -328,7 +335,7 @@
 		"Ability4"             	 	"zuus_thundergods_wrath"
 		"Ability5"					"attribute_bonus"
 
-		"Model"                     "models/thd2/tenshi/tenshi.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 			
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -379,7 +386,7 @@
 		"Ability4"					"ability_thdots_byakuren04"
 		"Ability5"					"attribute_bonus"
 		
-		"Model"                 	"models/thd2/hiziri_byakuren/hiziri_byakuren.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 
 		"AbilityDraftDisabled"		"0"
 		
@@ -438,7 +445,7 @@
 		"Ability5"				"ability_thdots_yuyuko04"
 		"Ability6"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/yuyuko/yuyuko.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 			
 		"AttackAnimationPoint"		"0.54"	
 			//攻击前摇
@@ -494,7 +501,9 @@
 		"Ability5"				"ability_thdots_sakuya04" 
 		"Ability6"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/sakuya/sakuya.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
+		"ProjectileModel"		"particles/units/heroes/hero_queenofpain/queen_base_attack.vpcf"
+		"ProjectileSpeed"		"1500"
 			
 		"AttackAnimationPoint"		"0.54"	
 			//攻击前摇
@@ -551,7 +560,7 @@
 		"Ability5"				"ability_thdots_flandre04"
 		"Ability6"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/flandre/flandre.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 				
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -605,7 +614,7 @@
 		"Ability4"             	 	"ability_thdots_mokou04"
 		"Ability5"					"attribute_bonus"
 			
-		"Model"                 	"models/thd2/mokou/mokou.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -659,7 +668,7 @@
 		"Ability4"             	 	"ability_thdots_yugi04"
 		"Ability5"					"attribute_bonus"
 			
-		"Model"                 	"models/thd2/yuugi/yuugi.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -713,7 +722,7 @@
 		"Ability4"             	 	"ability_thdots_suika04"
 		"Ability5"					"attribute_bonus"
 			
-		"Model"                 	"models/thd2/suika/suika.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -767,7 +776,7 @@
 		"Ability4"				"ability_thdots_rumia04"
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/rumia/rumia.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 
 		"ArmorPhysical"				"1"
 			//物理护甲
@@ -817,7 +826,7 @@
 		"Ability3"					"ability_thdots_iku03"
 		"Ability4"					"ability_thdots_iku04"
 		"Ability5"					"attribute_bonus"
-		"Model"                 	"models/thd2/iku/iku.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 
 		"ArmorPhysical"				"0"
 			//物理护甲
@@ -870,7 +879,7 @@
 		"Ability3"					"ability_thdots_Utsuho03"
 		"Ability4"					"ability_thdots_Utsuho04"
 		"Ability5"					"attribute_bonus"
-		"Model"                 	"models/thd2/utsuho/utsuho.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 
 		"ArmorPhysical"				"0"
@@ -925,7 +934,7 @@
 		"Ability4"				"ability_thdots_eirin04"
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/eirin/eirin.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 		"ProjectileModel"		"particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
 			
 		"AttackAnimationPoint"		"0.25"	
@@ -981,7 +990,7 @@
 		"Ability4"				""
 		"Ability5"				"attribute_bonus"
 		
-		"Model"                 "models/thd2/kaguya/kaguya.vmdl"
+		"Model"                 "models/development/invisiblebox.vmdl"
 			
 		"AttackAnimationPoint"		"0.55"	
 			//攻击前摇
@@ -1018,6 +1027,67 @@
 		"StatusHealthRegen"			"0.5"
 			//基础生命恢复
 		"StatusMana"				"60"
+			//基础魔法值
+		"StatusManaRegen"			"0.0"
+			//基础魔法恢复
+
+		"VisionDaytimeRange"		"1050"
+			//白天视野大小
+		"VisionNighttimeRange"		"700"
+			//晚上视野大小
+    }
+
+    "npc_dota_hero_reisen"
+	{
+		"override_hero"			"npc_dota_hero_mirana"
+		"AbilityLayout" 		"5"
+		"Ability1"				"ability_thdots_reisen01" 
+		"Ability2"				"ability_thdots_reisen02"
+		"Ability3"				"ability_thdots_reisen03"
+		"Ability4"				"ability_thdots_reisenEx"
+		"Ability5"				"ability_thdots_reisen04"
+		"Ability6"				"attribute_bonus"
+
+		
+		"Model"                 "models/development/invisiblebox.vmdl"
+		"ProjectileModel"		"particles/heroes/reisen/ability_reisen_base_attack.vpcf"
+		"ProjectileSpeed"		"3000"
+			
+		"AttackAnimationPoint"		"0.17"	
+			//攻击前摇
+		"AttackRate"				"1.75"			
+			//攻击速度
+		"AttackRange"				"575"
+			//攻击范围
+		"ArmorPhysical"				"0"
+			//物理护甲
+		"AttackDamageMin"			"26"
+			//最大攻击力
+		"AttackDamageMax"			"35"
+			//最小攻击力
+			
+		"AttributeBaseStrength"		"19"
+			//基础力量
+		"AttributeStrengthGain"		"1.6"
+			//每级增加的力量，力量成长
+		"AttributeBaseAgility"		"24"
+			//基础敏捷
+		"AttributeAgilityGain"		"2.5"
+			//每级增加的敏捷，敏捷成长
+		"AttributeBaseIntelligence"	"17"
+			//基础智力
+		"AttributeIntelligenceGain"	"1.9"
+			//每级增加的智力，智力成长
+			
+		"MovementSpeed"				"290"
+			//基础移动速度
+		"MovementTurnRate"			"3.0"
+			//转身速度
+		"StatusHealth"				"80"
+			//基础生命值
+		"StatusHealthRegen"			"0.5"
+			//基础生命恢复
+		"StatusMana"				"10"
 			//基础魔法值
 		"StatusManaRegen"			"0.0"
 			//基础魔法恢复

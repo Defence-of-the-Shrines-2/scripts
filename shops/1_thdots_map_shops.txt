@@ -1,21 +1,21 @@
 "dota_shops"
 {
-	"consumables"	//消耗品
+	"consumables"
 	{
 		"item"		"item_flask"
 		"item"		"item_clarity"
 		"item"		"item_tpscroll"
+		"item"		"item_jinkela"
 		"item"		"item_card_good_man"
 		"item"		"item_card_bad_man"
 		"item"		"item_card_worse_man"
 		"item"		"item_card_love_man"
-		"item"		"item_jinkela"
 		"item"		"item_gem"
-		"item"      "item_courier"
-		"item"      "item_flying_courier"	
+		"item"		"item_courier"
+		"item"		"item_flying_courier"	
 	}
 
-	"attributes"	//属性
+	"attributes"
 	{
 		"item"		"item_cucumber"
 		"item"		"item_cherry_branch"
@@ -31,7 +31,7 @@
 		"item"		"item_ice_block"
 	}
 
-	"weapons_armor"	//军备
+	"weapons_armor"
 	{
 		"item"		"item_knife"
 		"item"		"item_scissors"
@@ -44,10 +44,9 @@
 		"item"		"item_swimming_suit"
 		"item"		"item_pant"
 		"item"		"item_hunting_cap"
-		//"item"		"item_bra"
 	}
 	
-	"misc"		//杂项
+	"misc"
 	{
 		"item"		"item_cake"
 		"item"		"item_baozi"
@@ -63,8 +62,7 @@
 		"item"		"item_frog"
 	}	
 	
-	// Level 1 - Green Recipes	//绿色道具
-	"basics"	//基础
+	"basics"
 	{
 		"item"		"item_mushroom_kebab"
 		"item"		"item_mushroom_pie"
@@ -72,17 +70,15 @@
 		"item"		"item_banana"
 		"item"		"item_good_lunchbox"
 		"item"		"item_better_lunchbox"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_picnic_basket"
+		"item"		"item_best_lunchbox"
+		"item"		"item_picnic_basket"
 		"item"		"item_horse_red"
 		"item"		"item_horse_green"
 		"item"		"item_horse_blue"
 		"item"		"item_horse_king"
-		"item"		"item_best_lunchbox"
 	}
 
-	// Level 2 - Blue Recipes	//蓝色道具
-	"support"	//辅助
+	"support"
 	{
 		"item"		"item_bone_flute"
 		"item"	    "item_fox_mask"
@@ -92,25 +88,22 @@
 		"item"		"item_nuclear_stick"							
 		"item"		"item_donation_box"											
 		"item"		"item_green_dam"									
-		"item"		"item_travel_boots"									
-		"item"		"item_9ball"	
+		"item"		"item_9ball"									
+		"item"		"item_travel_boots"	
 		"item"      "item_ward_observer"
 		"item"      "item_ward_sentry"								
 	}
 	
-	"magics"	//法器
+	"magics"
 	{			
-		"item"		"item_pocket_watch"
-		//"item"		"item_sheepstick"				
+		"item"		"item_pocket_watch"				
 		"item"		"item_cyclone"			
 		"item"		"item_mr_yang"									
 		"item"		"item_three_dimension"											
 		"item"		"item_doctor_doll"							
-		//"item"		"item_dummy_doll"						
 	}
 	
-	// Level 3 - Purple Recipes	//紫色道具
-	"weapons"	//武器
+	"weapons"
 	{
 		"item"		"item_wind_gun"								
 		"item"		"item_teeth"									
@@ -124,78 +117,58 @@
 		"item"		"item_rapier"
 	}
 	
-	"defense"	//防具
+	"defense"
 	{
-　　　	"item"		"item_flask"								
-		"item"		"item_flask"									
-		"item"		"item_flask"							
-		"item"		"item_flask"								
-		"item"		"item_flask"							
-		"item"		"item_flask"							
-		"item"		"item_flask"								
-		"item"		"item_flask"								
-　　　	"item"		"item_tsundere"	
+		"item"		"item_tsundere"	
 		"item"		"item_sphere"								
 		"item"		"item_phoenix_wing"									
-		"item"		"item_frock"					
-		//"item"		"item_peach"								
+		"item"		"item_frock"								
 		"item"		"item_ghost_balloon"							
 		"item"		"item_zun_glasses"							
 		"item"		"item_guilty_mask"								
 		"item"		"item_hj_bug"		
 	}
 	
-	// Level 4 - Orange / Orb / Artifacts
-	"artifacts"	//圣器
+	
+	"artifacts"
 	{
-　　　	"item"		"item_flask"
-　　　	"item"		"item_frozen_frog"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_tentacle"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_kafziel"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_loneliness"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_watermelon"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_cirno_claymore"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_god_hand"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_tengu_fan"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_gran_grimoire"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_camera"
-　　　	"item"		"item_flask"
-　　　	"item"		"item_verity"
+		"item"		"item_frozen_frog"
+		"item"		"item_tentacle"
+		"item"		"item_kafziel"
+		"item"		"item_loneliness"
+		"item"		"item_watermelon"
+		"item"		"item_cirno_claymore"
+		"item"		"item_god_hand"
+		"item"		"item_tengu_fan"
+		"item"		"item_gran_grimoire"
+		"item"		"item_camera"
+		"item"		"item_verity"
 	}
 
-	"sideshop1"	//边路商店1
+	"sideshop1"
 	{
 		"item"		"item_tpscroll"
 		"item"		"item_cake"
 		"item"		"item_baozi"
 		"item"		"item_juice"
 		"item"		"item_sake"
-		"item"		"item_broom"
 		"item"		"item_sailor_suit"
+		"item"		"item_broom"
+		"item"		"item_wind_amulet"
 		"item"		"item_cherry_leaf"
 		"item"		"item_cat_ear"
 		"item"		"item_magic_guide_book"
-		"item"		"item_wind_amulet"
-		"item"		"item_horse_red"
 
 	}
 
-	"sideshop2"	//边路商店2
+	"sideshop2"
 	{
+		"item"		"item_horse_red"
 		"item"		"item_horse_green"
 		"item"		"item_horse_blue"
 	}
 	
-	"secretshop"	//野外商店
+	"secretshop"
 	{
 
 	}

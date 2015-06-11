@@ -46,8 +46,15 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
-				{}
+				"OnCreated"
+				{
+					//"RunScript"//DEBUG
+					//{
+					//	"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+					//	"Function"			"ItemAbility_Debug_GetGold"
+					//	"bonus_gold"		"999999"
+					//}
+				}
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
@@ -102,7 +109,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -153,7 +160,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -203,7 +210,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -250,10 +257,10 @@
 		{
 			"modifier_item_broom"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -302,7 +309,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -355,7 +362,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -404,7 +411,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -452,7 +459,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -498,10 +505,10 @@
 		{
 			"modifier_item_candle"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -518,7 +525,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1016"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1011"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cucumber"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -550,7 +557,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -569,7 +576,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1017"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1012"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_mushroom"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -601,7 +608,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -620,7 +627,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1018"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1013"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_ice_block"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -652,7 +659,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -671,7 +678,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1019"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1014"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cherry_branch"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -702,7 +709,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -720,7 +727,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1020"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1015"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cherry_leaf"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -752,7 +759,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -769,7 +776,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1021"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1016"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_paper_mask"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -800,7 +807,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -817,7 +824,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1022"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1017"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_catnip"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -848,7 +855,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -865,7 +872,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1023"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1018"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cat_ear"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -897,7 +904,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -914,7 +921,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1024"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1019"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cat_foot"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -945,7 +952,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -962,7 +969,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1025"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1020"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cookbook"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -993,7 +1000,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1010,7 +1017,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1026"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1021"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_magic_guide_book"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1042,7 +1049,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1059,7 +1066,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1027"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1022"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_rocket_diagram"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1090,7 +1097,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1107,7 +1114,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1028"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1023"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_knife"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1138,7 +1145,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1155,7 +1162,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1029"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1024"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_scissors"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1186,7 +1193,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1203,7 +1210,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1030"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1025"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_hammer"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1234,7 +1241,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1251,7 +1258,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1031"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1026"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_screw_driver"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1298,7 +1305,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1032"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1027"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_wrench"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1329,7 +1336,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1346,7 +1353,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1033"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1028"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_silver_knife"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1377,7 +1384,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1394,7 +1401,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1034"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1029"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_aunt_clothes"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1436,7 +1443,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1454,7 +1461,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1035"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1030"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_sailor_suit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1492,7 +1499,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1509,7 +1516,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1036"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1031"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_swimming_suit"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1546,7 +1553,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1563,7 +1570,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1037"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1032"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_pant"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1596,10 +1603,10 @@
 		{
 			"modifier_item_pant"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1616,7 +1623,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1038"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1033"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_hunting_cap"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1669,9 +1676,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1039"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"						"item_stout_shield"
-		"AbilityTextureName"			"item_stout_shield"
+		"ID"							"1034"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sample_item"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/stout_shield.mdl"
 
@@ -1690,17 +1697,70 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"30"
+				"damage_block"			"30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_ranged"	"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"block_chance"			"40"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_bra"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				
+				"OnAttacked"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_bra_block"
+						"Target"   		"CASTER"    
+					}
+					
+					"Random"
+					{
+						"Chance" 	"%block_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"  "modifier_item_bra_block"
+								"Target"   		"CASTER"    
+							}
+						}
+					}
+				}
+			}
+			
+			"modifier_item_bra_block"
+			{
+				"IsHidden"  "1"
+				"Properties"
+				{
+					//"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"  "%damage_block"
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"		"ItemAbility_Physical_Block"
+						"DamageBlock"	"%damage_block"
+						"DamageTaken"	"%attack_damage"
+					}
+					
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_bra_block"
+						"Target"   		"CASTER"    
+					}
+				}
 			}
 		}
 	}
@@ -1712,7 +1772,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1040"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1035"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_god_hand"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1743,7 +1803,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1760,7 +1820,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1041"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1036"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tengu_fan"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1791,7 +1851,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1808,7 +1868,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1042"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1037"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_gran_grimoire"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1839,7 +1899,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1856,7 +1916,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1044"			
+		"ID"							"1038"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -1881,7 +1941,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1045"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1039"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_camara"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1930,7 +1990,7 @@
 		{
 			"modifier_item_camera_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -1964,7 +2024,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -1981,7 +2041,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1046"			
+		"ID"							"1040"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -2006,7 +2066,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1047"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1041"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_mushroom_kebab"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2086,7 +2146,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1048"			
+		"ID"							"1042"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -2111,7 +2171,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1049"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1043"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_mushroom_pie"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -2162,7 +2222,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -2192,7 +2252,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1050"			
+		"ID"							"1044"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -2217,7 +2277,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1045"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_mushroom_soup"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -2268,7 +2328,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -2298,7 +2358,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1093"			
+		"ID"							"1046"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -2323,7 +2383,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1094"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1047"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_banana"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2374,7 +2434,7 @@
 			}
 			"modifier_item_banana_bonus_movespeed"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -2393,7 +2453,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1095"			
+		"ID"							"1048"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -2401,7 +2461,6 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_picnic_basket"
@@ -2418,7 +2477,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1096"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1049"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_picnic_basket"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2426,7 +2485,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"825"
-		"ItemShopTags"					"regen_health;regen_mana"
+		"ItemShopTags"					"regen_health"
 		"ItemQuality"					"component"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 		"ItemSellable"					"1"
@@ -2461,8 +2520,6 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
-				{}
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
@@ -2479,7 +2536,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1052"			
+		"ID"							"1050"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -2504,7 +2561,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1053"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_wind_gun"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2548,7 +2605,7 @@
 		{
 			"modifier_item_wind_gun_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -2584,7 +2641,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1054"			
+		"ID"							"1052"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -2609,7 +2666,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1055"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1053"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_luna_chip"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2645,7 +2702,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -2663,7 +2720,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1056"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1054"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_frog"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2699,7 +2756,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -2717,7 +2774,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1057"			
+		"ID"							"1055"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -2742,7 +2799,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1058"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1056"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_donation_box"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE "
@@ -2821,7 +2878,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1059"			
+		"ID"							"1057"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -2848,7 +2905,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1060"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1058"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_donation_gem"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2905,7 +2962,7 @@
 			}
 			"modifier_item_donation_gem_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				"IsHidden"	"1"
 				
@@ -2927,11 +2984,11 @@
 			}
 			"modifier_item_donation_gem_add_gold_bounty"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsHidden"		"1"
 				"Duration"		"0.01"
 				
-				"OnCreated"
+				"OnCreatedd"
 				{
 					"RunScript"
 					{
@@ -2974,7 +3031,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1061"			
+		"ID"							"1059"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -2999,7 +3056,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1062"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1060"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_watermelon"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3040,7 +3097,7 @@
 		{
 			"modifier_item_watermelon_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -3056,8 +3113,9 @@
 			}
 			"modifier_item_watermelon_debuff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"Duration" 		"%corruption_duration"
 				"Properties"
 				{
@@ -3086,7 +3144,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1063"			
+		"ID"							"1061"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -3111,7 +3169,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1064"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1062"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_cirno_claymore"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3153,7 +3211,7 @@
 		{
 			"modifier_item_cirno_claymore_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -3169,8 +3227,9 @@
 			}
 			"modifier_item_cirno_claymore_debuff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"Duration" 		"%corruption_duration"
 				"Properties"
 				{
@@ -3198,7 +3257,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1065"			
+		"ID"							"1063"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -3223,7 +3282,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1066"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1064"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_smash_stick"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3274,7 +3333,7 @@
 		{
 			"modifier_item_smash_stick_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -3317,7 +3376,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1067"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1065"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -3341,7 +3400,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1068"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1066"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -3365,7 +3424,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1069"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1067"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -3389,7 +3448,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1070"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1068"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -3413,7 +3472,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1071"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1069"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -3440,7 +3499,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1072"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1070"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_rocket"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -3557,7 +3616,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1172"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1071"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_rocket_2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -3673,7 +3732,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1173"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1072"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_rocket_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -3789,7 +3848,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1174"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1073"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_rocket_4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -3905,7 +3964,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1175"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1074"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_rocket_5"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -4023,7 +4082,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1073"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1075"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -4050,7 +4109,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1074"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1076"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"item_teeth"
@@ -4093,13 +4152,32 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_extra_damage"	"30.0"
+				"var_type"				"FIELD_INTEGER"
+				"berserk_extra_damage"	"30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"berserk_duration"		"7.0"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"DOTA_Item.MaskOfMadness.Activate"
+				"Target"			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_item_teeth_berserk_buff"
+			}
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_item_teeth_berserk_debuff"
 			}
 		}
 	
@@ -4119,9 +4197,13 @@
 			}
 			"modifier_item_teeth_berserk_buff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsBuff"	"1"
 				"Duration" 		"%berserk_duration"
+				
+				"EffectName"			"particles/items2_fx/mask_of_madness.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%berserk_bonus_attackspeed"
@@ -4131,40 +4213,13 @@
 			}
 			"modifier_item_teeth_berserk_debuff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsBuff"	"1"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsDebuff"		"1"
 				"Duration" 		"%berserk_duration"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%berserk_extra_damage"
 				}
-			
-				//"OnTakeDamage"
-				//{
-					//"RunScript"
-					//{
-					//	"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
-					//	"Function"          "ItemAbility_teeth_berserk_OnTakeDamage"
-					//	"attacker"			"ATTACKER"
-					//	"unit"            	"UNIT"
-					//	"BerserkExtraDamage"	"%berserk_extra_damage"
-					//}
-				//}
-			}
-		}
-	
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_item_teeth_berserk_buff"
-			}
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_item_teeth_berserk_debuff"
 			}
 		}
 	}
@@ -4176,7 +4231,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1075"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1077"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -4203,7 +4258,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1076"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1078"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_horse_red"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4246,7 +4301,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -4265,7 +4320,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1077"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1079"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -4293,7 +4348,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1078"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1080"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_horse_green"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4336,7 +4391,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -4355,7 +4410,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1079"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1081"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -4383,7 +4438,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1080"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1082"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_horse_blue"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4426,7 +4481,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -4445,7 +4500,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1081"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1083"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -4473,7 +4528,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1082"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1084"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_horse_king"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -4583,7 +4638,7 @@
 			}
 			"modifier_item_horse_king_open"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				//"Passive" 	"1"
 				//"IsHidden"	"1"
 				
@@ -4627,7 +4682,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1083"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1085"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -4655,7 +4710,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1084"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1086"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_9ball"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -4839,7 +4894,7 @@
 			}
 			"modifier_item_ghost_balloon_shield"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsBuff"	"1"
 				"EffectName" 				"particles/thd2/items/item_ballon.vpcf"
 				"EffectAttachType" 			"follow_origin"
@@ -4864,8 +4919,9 @@
 			}
 			"modifier_item_ghost_balloon_shield_debuff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsDebuff"	"1"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"Duration"	"%cold_duration"
 				//"IsHidden"	"1"
 				"Properties"
@@ -4988,7 +5044,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5000,7 +5056,7 @@
 			}
 			"modifier_item_fox_mask_foxwalk"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%foxwalk_duration"
 				//"Passive" 	"1"
 				"IsBuff"	"1"
@@ -5026,7 +5082,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1101"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1091"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_wing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5057,7 +5113,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5074,7 +5130,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1102"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1092"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -5101,7 +5157,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1103"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1093"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_frozen_frog"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5111,7 +5167,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"900"
-		"ItemShopTags"					"attack_speed;damage;str;agi;int"
+		"ItemShopTags"					"attack_speed"
 		"ItemQuality"					"component"
 		"ItemSellable"					"1"
 		"ItemDroppable"					"1"
@@ -5177,7 +5233,7 @@
 			}
 			"modifier_item_frozen_frog_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsHidden"	"1"
 				"Passive" 	"1"
 				
@@ -5193,8 +5249,9 @@
 			}
 			"modifier_item_frozen_frog_cold_debuff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsDebuff"	"1"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"Duration"	"%cold_duration"
 				"EffectName" 				"particles/units/heroes/hero_lich/lich_ambient_frost_legs.vpcf"
 				"EffectAttachType" 			"follow_origin"
@@ -5216,7 +5273,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1105"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1094"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -5243,7 +5300,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1106"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1095"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_guilty_mask"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5284,7 +5341,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5293,10 +5350,10 @@
 			}
 			"modifier_item_guilty_mask_magical_resist"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5313,7 +5370,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1107"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1096"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -5340,7 +5397,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1108"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1097"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_zun_glasses"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5391,7 +5448,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5402,10 +5459,10 @@
 			}
 			"modifier_item_zun_glasses_magical_resist"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5422,7 +5479,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1109"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1098"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -5449,7 +5506,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1110"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1099"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_hj_bug"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5515,7 +5572,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1111"			
+		"ID"							"1100"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -5540,7 +5597,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1112"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1101"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_brother_sharp"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5597,7 +5654,7 @@
 			}
 			"modifier_item_brother_sharp_bonus_movespeed"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -5616,7 +5673,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1113"			
+		"ID"							"1102"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -5641,7 +5698,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1114"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1103"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_loneliness"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5716,7 +5773,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1115"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1104"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -5743,7 +5800,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1116"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1105"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_phoenix_wing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5791,7 +5848,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5802,11 +5859,11 @@
 			
 			"modifier_item_phoenix_wing_burn"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 	"1"
 				//"IsHidden"	"1"
 				
-				"OnCreated"
+				"OnCreatedd"
 				{
 					"AttachEffect"
 					{
@@ -5845,7 +5902,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1117"			
+		"ID"							"1106"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -5870,7 +5927,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1118"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1107"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_kafziel"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5935,7 +5992,7 @@
 		{
 			"modifier_item_kafziel_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -5976,7 +6033,7 @@
 				"Passive" 		"1"
 				"IsHidden"		"1"
 			
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -5995,7 +6052,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1119"			
+		"ID"							"1108"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -6020,7 +6077,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1120"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1109"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_verity"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -6053,7 +6110,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_atack_speed"		"12"
+				"bonus_attack_speed"	"12"
 			}
 			"04"
 			{
@@ -6072,10 +6129,10 @@
 		{
 			"modifier_item_verity_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"OnAttackLanded"
 				{
@@ -6102,7 +6159,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 		"1"
 				"IsHidden"		"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -6121,7 +6178,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1121"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1110"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -6148,7 +6205,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1122"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1111"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_darkred_umbrella"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -6199,7 +6256,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -6247,7 +6304,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1123"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1112"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -6274,7 +6331,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1124"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1113"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_nuclear_stick"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -6339,7 +6396,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1125"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1114"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -6368,7 +6425,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1126"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1115"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_frock"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -6434,10 +6491,10 @@
 		{
 			"modifier_item_frock_onattacked"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"OnAttacked"
 				{
@@ -6458,7 +6515,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -6478,7 +6535,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1127"			
+		"ID"							"1116"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -6503,7 +6560,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1128"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1117"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_good_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -6623,7 +6680,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1129"			
+		"ID"							"1118"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -6648,7 +6705,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1130"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1119"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_better_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -6776,7 +6833,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1131"			
+		"ID"							"1120"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -6801,7 +6858,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1132"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1121"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_best_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -6923,7 +6980,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1133"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1122"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -6950,7 +7007,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1134"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1123"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_hakurei_ticket"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7047,7 +7104,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -7081,7 +7138,7 @@
 			
 			"modifier_item_hakurei_ticket_feast_buff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%feast_buff_duration"
 				"IsBuff"		"1"
 				
@@ -7100,7 +7157,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1135"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1124"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -7127,7 +7184,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1136"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1125"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_yatagarasu"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7209,7 +7266,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -7222,7 +7279,7 @@
 			
 			"modifier_item_yatagarasu_radiate_regen_mana"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"1.0"
 				"IsBuff"		"1"
 				
@@ -7241,7 +7298,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1137"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1126"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -7268,7 +7325,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1138"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1127"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_doctor_doll"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7353,12 +7410,13 @@
 			
 			"modifier_item_doctor_doll_aid_decline_health_delay"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsHidden"		"0"
-				"ThinkInterval"	"%aid_decline_health_delay"
 				"Duration"		"15"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				
+				"ThinkInterval"	"%aid_decline_health_delay"
 				"OnIntervalThink"
 				{
 					"ApplyModifier"
@@ -7377,13 +7435,13 @@
 			
 			"modifier_item_doctor_doll_aid_decline_health"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"IsHidden"		"0"
-				"ThinkInterval"	"1.0"
 				"Duration"		"%aid_decline_health_duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				
-				
+				"ThinkInterval"	"1.0"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -7400,14 +7458,14 @@
 	//=================================================================================================================
 	// Recipe: Dummy Doll
 	//=================================================================================================================
-	"item_recipe_dummy_doll"
+	"item_recipe_dummy_doll1"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1139"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1128"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
-		//"AbilityTextureName"			"item_sample_item"
+		"AbilityTextureName"			"item_sample_item"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7417,7 +7475,7 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_dummy_doll"
+		"ItemResult"					"item_dummy_doll1"
 		"ItemRequirements"
 		{
 			"01"						"item_doctor_doll;item_cat_foot;item_frog"
@@ -7427,11 +7485,11 @@
 	//=================================================================================================================
 	// Dummy Doll
 	//=================================================================================================================
-	"item_dummy_doll"
+	"item_dummy_doll1"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1140"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1129"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_dummy_doll"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7483,6 +7541,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"illusions_duration"	"7"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_percent_incoming_melee"			"80"
+			}
 		}
 		
 		"OnSpellStart"
@@ -7496,6 +7559,8 @@
 			{
 				"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
 				"Function"          "ItemAbility_DummyDoll_OnSpellStart"
+				"illusions_duration"	"%illusions_duration"
+				"illusion_damage_percent_incoming_melee" "%illusion_damage_percent_incoming_melee"
 			}
 		}
 	
@@ -7516,7 +7581,7 @@
 			
 			"modifier_item_dummy_doll_invisible"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%invisible_duration"
 				"IsBuff"		"1"
 				
@@ -7536,7 +7601,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1141"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1130"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -7563,7 +7628,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1142"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1131"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_bone_flute"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7644,7 +7709,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive" 	"1"
 				"IsHidden"	"1"
-				"OnCreate"
+				"OnCreated"
 				{}
 				"Properties"
 				{
@@ -7657,7 +7722,7 @@
 			
 			"modifier_item_bone_flute_play_buff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%buff_duration"
 				"IsBuff"		"1"
 				"EffectName" 				"particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf"
@@ -7678,7 +7743,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1143"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1132"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -7705,7 +7770,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1144"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1133"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_jiao_shou"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7797,136 +7862,14 @@
 			
 			"modifier_item_jiao_shou_play_debuff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%debuff_duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_speed_percent_reduction"
-				}
-			}
-		}
-	}
-	
-	//=================================================================================================================
-	// Recipe: Green Dam
-	//=================================================================================================================
-	"item_recipe_green_dam"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1145"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_sample_item"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1600"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_green_dam"
-		"ItemRequirements"
-		{
-			"01"						"item_zun_hat;item_zun_hat"
-		}
-	}
-	
-	//=================================================================================================================
-	// Green Dam
-	//=================================================================================================================
-	"item_green_dam"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1146"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_green_dam"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"30"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4000"
-		"ItemShopTags"					"health_pool;mana_poll"
-		"ItemQuality"					""
-		"ItemSellable"					"1"
-		"ItemDroppable"					"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"170"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"150"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier_radius"		"600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier_duration"		"6"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"Target"
-				{
-					"Center"    "CASTER"
-					"Teams"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
-					"Radius"    "%barrier_radius"
-				}
-				"ModifierName"	"modifier_item_green_dam_barrier"
-			}
-		}
-	
-		"Modifiers"
-		{
-			"modifier_item_green_dam"
-			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Passive" 	"1"
-				"IsHidden"	"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_BONUS" 	"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS" 		"%bonus_mana"
-				}
-			}
-			
-			"modifier_item_green_dam_barrier"
-			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"Duration"		"%barrier_duration"
-				"IsBuff"		"1"
-				"EffectName" 				"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
-				"EffectAttachType" 			"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
 				}
 			}
 		}
@@ -7939,7 +7882,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1147"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1134"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_card_good_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7958,8 +7901,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"70"
-		"ItemShopTags"					""
-		"ItemQuality"					""
+		"ItemShopTags"					"consumables"
+		"ItemQuality"					"consumables"
 		"ItemSellable"					"1"
 		"ItemDroppable"					"1"
 		"ItemPermanent"					"0"
@@ -8012,9 +7955,10 @@
 		{
 			"modifier_item_card_good_man_slowdown"
 			{
-				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"				"%slowdown_duration"
 				"IsDebuff"				"1"
+				"IsPurgable"			"1"
 				"EffectName" 			"particles/thd2/items/item_good_man_card.vpcf"
 				"EffectAttachType" 		"follow_origin"
 				
@@ -8034,7 +7978,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1148"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1135"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_card_bad_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -8050,8 +7994,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"70"
-		"ItemShopTags"					""
-		"ItemQuality"					""
+		"ItemShopTags"					"consumables"
+		"ItemQuality"					"consumables"
 		"ItemSellable"					"1"
 		"ItemDroppable"					"1"
 		"ItemInitialCharges"			"1"
@@ -8099,7 +8043,7 @@
 		{
 			"modifier_item_card_bad_man_speedup"
 			{
-				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"				"%speedup_duration"
 				"EffectName" 			"particles/thd2/items/item_bad_man_card.vpcf"
 				"EffectAttachType" 		"follow_origin"
@@ -8120,7 +8064,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1149"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1136"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_card_worse_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -8139,8 +8083,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"70"
-		"ItemShopTags"					""
-		"ItemQuality"					""
+		"ItemShopTags"					"consumables"
+		"ItemQuality"					"consumables"
 		"ItemSellable"					"1"
 		"ItemDroppable"					"1"
 		"ItemPermanent"					"0"
@@ -8210,7 +8154,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1137"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_card_love_man"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -8229,8 +8173,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"70"
-		"ItemShopTags"					""
-		"ItemQuality"					""
+		"ItemShopTags"					"consumables"
+		"ItemQuality"					"consumables"
 		"ItemSellable"					"1"
 		"ItemDroppable"					"1"
 		"ItemPermanent"					"0"
@@ -8281,11 +8225,11 @@
 	//=================================================================================================================
 	// Jinkela
 	//=================================================================================================================
-	"item_jinkela"
+	"item_jinkela1"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1151"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1138"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_jinkela"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -8300,16 +8244,16 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"600"
-		"ItemShopTags"					""
-		"ItemQuality"					""
+		"ItemShopTags"					"consumables"
+		"ItemQuality"					"consumables"
 		"ItemSellable"					"1"
 		"ItemDroppable"					"1"
 		"ItemPermanent"					"0"
 		"ItemStackable"					"1"
 		"ItemInitialCharges"			"2"
-		//"ItemStockMax"					"2"
-		//"ItemStockInitial"				"2"
-		//"ItemStockTime"					"120"
+		"ItemStockMax"					"2"
+		"ItemStockInitial"				"2"
+		"ItemStockTime"					"120"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8377,7 +8321,7 @@
 		{
 			"modifier_item_jinkela_buff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%buff_duration"
 				"IsBuff"		"1"
 				
@@ -8391,13 +8335,136 @@
 	}
 	
 	//=================================================================================================================
+	// Recipe: Green Dam
+	//=================================================================================================================
+	"item_recipe_green_dam"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1139"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_green_dam"
+		"ItemRequirements"
+		{
+			"01"						"item_zun_hat;item_zun_hat"
+		}
+	}
+	
+	//=================================================================================================================
+	// Green Dam
+	//=================================================================================================================
+	"item_green_dam"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1140"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_green_dam"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"30"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4000"
+		"ItemShopTags"					"health_pool;mana_pool"
+		"ItemQuality"					""
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"170"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_radius"		"600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_duration"		"6"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"
+				{
+					"Center"    "CASTER"
+					"Teams"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+					"Radius"    "%barrier_radius"
+				}
+				"ModifierName"	"modifier_item_green_dam_barrier"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_green_dam"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 	"%bonus_health"
+					"MODIFIER_PROPERTY_MANA_BONUS" 		"%bonus_mana"
+				}
+			}
+			
+			"modifier_item_green_dam_barrier"
+			{
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"		"%barrier_duration"
+				"IsBuff"		"1"
+				"EffectName" 				"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+				"EffectAttachType" 			"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
 	// Recipe: Tsundere
 	//=================================================================================================================
 	"item_recipe_tsundere"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1152"			
+		"ID"							"1141"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -8422,7 +8489,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1153"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1142"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tsundere"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -8435,7 +8502,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"5500"
-		"ItemShopTags"					"health_pool;mana_poll;regen_health;regen_mana"
+		"ItemShopTags"					"health_pool;mana_pool;regen_health;regen_mana"
 		"ItemQuality"					"component"
 		"ItemSellable"					"1"
 		"ItemDroppable"					"1"
@@ -8490,15 +8557,15 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_HEALTH_BONUS" "%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS" "%bonus_mana"
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%bonus_health"
+					"MODIFIER_PROPERTY_MANA_BONUS" 				"%bonus_mana"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%bonus_mana_regen"
 				}
 			}
 			"modifier_item_tsundere_invulnerable"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%invulnerable_duration"
 				"IsBuff"	"1"
 				"EffectName"		"particles/thd2/items/item_tsundere.vpcf"
@@ -8520,7 +8587,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1154"			
+		"ID"							"1143"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		//"AbilityTextureName"			"item_sample_item"
@@ -8545,7 +8612,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1155"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1144"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_god_lunchbox"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -8606,9 +8673,10 @@
 			"RunScript"
 			{
 				"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
-				"Function"          "ItemAbility_Lunchbox_OnSpellStart"
+				"Function"          "ItemAbility_God_Lunchbox_OnSpellStart"
 				"Caster"			"CASTER"
 				"RestorePerCharge"	"%restore_per_charge"
+				"MaxCharges"		"%max_charges"
 			}
 		}
 	
@@ -8667,7 +8735,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1156"			
+		"ID"							"1145"			
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -8692,7 +8760,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1157"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1146"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_dragon_star"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -8733,7 +8801,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"5.0"
+				"buff_duration"			"50.0"
 			}
 		}
 		
@@ -8763,20 +8831,19 @@
 			}
 			"modifier_item_dragon_star_buff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%buff_duration"
 				"IsBuff"		"1"
 				//"IsHidden"	"1"
-				"States"
+				
+				"ThinkInterval"	"0.3"
+				"OnIntervalThink"
 				{
-					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_NIGHTMARED"		"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_HEXED"			"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_ROOTED"			"MODIFIER_STATE_VALUE_DISABLED"
-					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_DISABLED"
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"          "ItemAbility_DragonStar_Purge"
+					}
 				}
 			}
 		}
@@ -8789,7 +8856,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1158"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1147"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -8816,7 +8883,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1159"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1148"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_present_box"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -8886,7 +8953,7 @@
 			}
 			"modifier_item_present_box_give_gold"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				//"IsHidden"	"1"
 				
@@ -8914,7 +8981,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1160"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1149"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -8941,7 +9008,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1161"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_pocket_watch"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -9021,9 +9088,10 @@
 			
 			"modifier_item_pocket_watch_pause"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%pause_duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				
 				"EffectName"			"particles/thd2/items/item_pocket_watch.vpcf"
 				"EffectAttachType"		"follow_origin"
@@ -9044,7 +9112,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1162"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1151"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -9071,7 +9139,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1163"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1152"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tentacle"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -9141,7 +9209,7 @@
 			
 			"modifier_item_tentacle_attack"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
 				"IsHidden"		"1"
 				
@@ -9164,9 +9232,10 @@
 			
 			"modifier_item_tentacle_root"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%root_duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				
 				"States"
 				{
@@ -9183,7 +9252,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1164"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1153"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -9210,7 +9279,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1165"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1154"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_mr_yang"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -9322,10 +9391,11 @@
 			
 			"modifier_item_mr_yang_decline_intellect"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				//"IsHidden"		"1"
 				"Duration"		"%decline_intellect_duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				
 				"Properties"
 				{
@@ -9337,6 +9407,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"IsHidden"		"1"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				//"Duration"		"%slowdown_duration"
 				"EffectName"			"particles/thd2/items/item_mr_yang.vpcf"
 				"EffectAttachType"		"follow_origin"
@@ -9356,7 +9427,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1166"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1155"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -9383,7 +9454,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1167"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1156"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_three_dimension"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -9466,20 +9537,21 @@
 			
 			"modifier_item_three_dimension_debuff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%debuff_duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"			"1"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE"	"%debuff_mgical_resistance_decrepify"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"			"%debuff_slowdown_movespeed_percent"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT" 					"100"
 				}
 				"States"
 				{
-					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" 			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -9492,7 +9564,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1168"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1157"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -9519,7 +9591,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1169"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1158"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_peach"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -9574,12 +9646,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speedup_extra_modifier_stack_count"	"1"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speedup_max_modifier_stack_count"	"9"
+				"speedup_max_modifier_stack"	"9"
 			}
 		}
 	
@@ -9601,9 +9668,9 @@
 			
 			"modifier_item_peach_speedup"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Passive" 		"1"
-				//"IsHidden"		"1"
+				"IsHidden"		"1"
 				"IsBuff"		"1"
 				
 				
@@ -9613,12 +9680,11 @@
 					{
 						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
 						"Function"          "ItemAbility_Peach_OnTakeDamage"
-						"Target"			"TARGET"
+						"DamageTaken"		"%attack_damage"
 						"SpeedupModifierName"			"modifier_item_peach_speedup_buff"
 						"TakeDamageTrigger"				"%take_damage_trigger"
 						"SpeedupDuration"				"%speedup_duration"
-						"SpeedupMaxModifierStackCount"	"%speedup_max_modifier_stack_count"
-						"SpeedupExtraModifierStackCount""%speedup_extra_modifier_stack_count"
+						"SpeedupMaxModifierStack"		"%speedup_max_modifier_stack"
 					}
 				}
 			}
@@ -9644,7 +9710,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1170"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1159"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_sample_item"
@@ -9671,7 +9737,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1171"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1160"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_yuri"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -9769,7 +9835,7 @@
 			
 			"modifier_item_yuri_buff"
 			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
 				"Duration"		"%buff_duration"
 				"IsBuff"		"1"
 				
@@ -9780,4 +9846,1068 @@
 			}
 		}
 	}
+	
+	//=================================================================================================================
+	// Recipe: Moon Bow
+	//=================================================================================================================
+	"item_recipe_moon_bow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1161"			
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_moon_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_knife;item_luna_chip;item_rocket_diagram;item_doctor_doll"
+		}
+	}
+	
+	//=================================================================================================================
+	// Moon Bow
+	//=================================================================================================================
+	"item_moon_bow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1162"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_moon_bow"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20.0"
+		"AbilityManaCost"				"120.0"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4000"
+		"ItemShopTags"					"damage;int;attack_speed"
+		"ItemQuality"					""
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+			//定义物品是否可以被丢弃，1表示可以丢弃
+
+		"precache"
+		{
+			"particle_folder"			"particles/thd2/items"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"13"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"16"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"42"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_speed"			"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_range"			"2000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_radius"			"150"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_damage_const"	"140"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"arrow_damage_int_mult"	"4.0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"Target" "POINT"
+				"EffectName" "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+				"MoveSpeed" "%arrow_speed"
+				"StartRadius" "%arrow_radius"
+				"EndRadius" "%arrow_radius"
+				"StartPosition" "attach_origin"
+				"FixedDistance" "%arrow_range"
+				"TargetTeams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes" "DOTA_UNIT_TARGET_HERO"
+				"TargetFlags" "DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone" "1"
+				"ProvidesVision" "0"
+			}
+			"FireSound"
+			{
+				"EffectName" "Hero_DragonKnight.BreathFire"
+				"Target" "CASTER"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			"RunScript"
+			{
+				"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+				"Function"          "ItemAbility_Moon_Bow_OnHit"
+				"arrow_damage_const" "%arrow_damage_const"
+				"arrow_damage_int_mult" "%arrow_damage_int_mult"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_moon_bow"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				"OnCreated"
+				{}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_BONUS"	"%bonus_intellect"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: Quant
+	//=================================================================================================================
+	"item_recipe_quant"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1163"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_quant"
+		"ItemRequirements"
+		{
+			"01"						"item_knife;item_scissors"
+		}
+	}
+	
+	//=================================================================================================================
+	// Quant
+	//=================================================================================================================
+	"item_quant"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1164"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_quant"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					""
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_mult"					"150"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"20"
+			}
+		}
+		
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_quant"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+			
+			"modifier_item_quant_crit_chance"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive"   "1"
+				"IsHidden"  "1"
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_item_quant_crit"
+						"Target" 		"CASTER"
+					}
+
+					"Random"
+					{
+						"Chance" "%crit_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" 	"modifier_item_quant_crit"
+								"Target"    	"CASTER"    
+							}        
+						}
+					}
+				}
+			}
+
+			"modifier_item_quant_crit"
+			{
+				"IsHidden"  "1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_mult"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_quant_crit"
+						"Target"   		"CASTER"    
+					}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: Sampan
+	//=================================================================================================================
+	"item_recipe_sampan"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1165"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sampan"
+		"ItemRequirements"
+		{
+			"01"						"item_quant;item_wrench"
+		}
+	}
+	
+	//=================================================================================================================
+	// Sampan
+	//=================================================================================================================
+	"item_sampan"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1166"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sampan"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6000"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					""
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"85"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_mult"					"300"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"20"
+			}
+		}
+		
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_sampan"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+			
+			"modifier_item_sampan_crit_chance"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive"   "1"
+				"IsHidden"  "1"
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_item_sampan_crit"
+						"Target" 		"CASTER"
+					}
+
+					"Random"
+					{
+						"Chance" "%crit_chance"
+						"OnSuccess"
+						{
+							"FireSound"
+							{
+								"EffectName"	"Hero_SkeletonKing.CriticalStrike"
+								"Target"		"CASTER"
+							}
+
+							"FireEffect"
+							{
+								"EffectName" 		"particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+								"EffectAttachType"  "follow_origin"
+								"Target"    		"CASTER"
+							}
+
+							"ApplyModifier"
+							{
+								"ModifierName" 	"modifier_item_sampan_crit"
+								"Target"    	"CASTER"    
+							}        
+						}
+					}
+				}
+			}
+
+			"modifier_item_sampan_crit"
+			{
+				"IsHidden"  "1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_mult"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_sampan_crit"
+						"Target"   		"CASTER"    
+					}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: Anchor
+	//=================================================================================================================
+	"item_recipe_anchor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1167"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"850"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_anchor"
+		"ItemRequirements"
+		{
+			"01"						"item_quant;item_banana"
+		}
+	}
+	
+	//=================================================================================================================
+	// Anchor
+	//=================================================================================================================
+	"item_anchor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1168"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_anchor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4000"
+		"ItemShopTags"					"str;agi;int;move_speed;damage"
+		"ItemQuality"					""
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_percent_bonus"			"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_mult"				"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance_const"		"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_take_damage_trigger"		"200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_crit_chance"		"5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"12"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_max_stack"		"16"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_anchor"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_speed_percent_bonus"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+			
+			"modifier_item_anchor_crit_chance_icon"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				//"IsHidden"		"1"
+				"IsBuff"		"1"
+				"Duration"		"%buff_duration"
+				
+			}
+			
+			"modifier_item_anchor_crit_chance"
+			{
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Passive"   "1"
+				"IsHidden"  "1"
+				
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"          "ItemAbility_Anchor_OnTakeDamage"
+						"DamageTaken"		"%attack_damage"
+						"IconModifierName"	"modifier_item_anchor_crit_chance_icon"
+						"TakeDamageTrigger"	"%buff_take_damage_trigger"
+						"BuffDuration"		"%buff_duration"
+						"BuffMaxStack"		"%buff_max_stack"
+					}
+				}
+				
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_item_anchor_crit"
+						"Target" 		"CASTER"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"          "ItemAbility_Anchor_OnAttackStart"
+						"IconModifierName"	"modifier_item_anchor_crit_chance_icon"
+						"CritModifierName"	"modifier_item_anchor_crit"
+						"CritChanceConst" 	"%crit_chance_const"
+						"BuffCritChance"	"%buff_crit_chance"
+					}
+				}
+			}
+			"modifier_item_anchor_crit"
+			{
+				"IsHidden"  "1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_mult"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_anchor_crit"
+						"Target"   		"CASTER"
+					}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: Hakurei Amulet
+	//=================================================================================================================
+	"item_recipe_hakurei_amulet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1169"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"850"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_anchor"
+		"ItemRequirements"
+		{
+			"01"						"item_quant;item_banana"
+		}
+	}
+	
+	//=================================================================================================================
+	// Hakurei Amulet
+	//=================================================================================================================
+	"item_hakurei_amulet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1170"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_hakurei_amulet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4000"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"block_cooldown"		"20.0"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_hakurei_amulet"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%bonus_mana_regen"
+				}
+				
+				"OnCreated"
+				{			
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"			"ItemAbility_HakureiAmulet_OnCreated"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"			"ItemAbility_HakureiAmulet_OnDestroy"
+					}
+				}
+			
+				"ThinkInterval" 		".03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"			"ItemAbility_HakureiAmulet_OnIntervalThink"
+						"IconModifyName"	"modifier_item_hakurei_amulet_icon"
+					}
+				}
+			}
+			
+			
+			"modifier_item_hakurei_amulet_icon"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				
+				"ThinkInterval" 		".03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"			"ItemAbility_HakureiAmulet_DisplayIcon_OnIntervalThink"
+						"IconModifyName"	"modifier_item_hakurei_amulet_icon"
+					}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: Yukkuri Stick
+	//=================================================================================================================
+	"item_recipe_yukkuri_stick"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1171"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1075"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_yukkuri_stick"
+		"ItemRequirements"
+		{
+			"01"						"item_sake;item_magic_guide_book;item_gran_grimoire"
+		}
+	}
+	
+	//=================================================================================================================
+	// Yukkuri Stick
+	//=================================================================================================================
+	"item_yukkuri_stick"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1172"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_sample_item"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"60"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemShopTags"					"int;regen_mana"
+		"ItemQuality"					""
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"120"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_movespeed"		"100"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"		"TARGET"
+				"ModifierName"	"modifier_item_yukkuri_stick_debuff"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_yukkuri_stick"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 		"%bonus_intellect"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+				}
+			}
+			
+			"modifier_item_yukkuri_stick_debuff"
+			{
+				//"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"		"%debuff_duration"
+				"IsDebuff"		"1"
+				"IsPurgable"	"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE"		"%debuff_movespeed"
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_HEXED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MUTED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_EVADE_DISABLED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_BLOCK_DISABLED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				"_OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"			"voodoo_start"
+						"model"				"models/props_gameplay/frog.vmdl"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"        "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"			"HideWearables"
+					}
+				}
+
+				"_OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"		"voodoo_end"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"    "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"		"ShowWearables"
+					}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: Pad
+	//=================================================================================================================
+	"item_recipe_pad"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1173"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"											// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_sample_item"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pad"
+		"ItemRequirements"
+		{
+			"01"						"item_bra;item_baozi;item_glue"
+		}
+	}
+
+	//=================================================================================================================
+	// Pad
+	//=================================================================================================================
+	"item_pad"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1174"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_pad"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/stout_shield.mdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2225"
+		"ItemShopTags"					"block;health_pool;regen_health"
+		"ItemQuality"					"component"
+		"ItemSellable"					"1"
+		"ItemDroppable"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"230"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_bra"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive" 	"1"
+				"IsHidden"	"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
+					"MODIFIER_PROPERTY_HEALTH_BONUS" "%bonus_health"
+				}
+				
+				"OnAttacked"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_bra_block"
+						"Target"   		"CASTER"    
+					}
+					
+					"Random"
+					{
+						"Chance" 	"%block_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"  "modifier_item_pad_block"
+								"Target"   		"CASTER"    
+							}
+						}
+					}
+				}
+			}
+			
+			"modifier_item_pad_block"
+			{
+				"IsHidden"  "1"
+				"Properties"
+				{
+					//"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"  "%damage_block"
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "scripts/vscripts/abilities/abilityItem.lua"
+						"Function"		"ItemAbility_Physical_Block"
+						"DamageBlock"	"%damage_block"
+						"DamageTaken"	"%attack_damage"
+					}
+					
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_item_pad_block"
+						"Target"   		"CASTER"    
+					}
+				}
+			}
+		}
+	}
 }
+	

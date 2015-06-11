@@ -30,7 +30,13 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf",context )--永琳弹道
 	PrecacheResource( "particle", "particles/items2_fx/hand_of_midas.vpcf",context )--真の点数
 	PrecacheResource( "particle_folder", "particles/thd2/heroes/reimu", context )--灵梦and跳台
+	PrecacheResource( "particle", "particles/thd2/environment/death/act_hero_die.vpcf",context )--死亡
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context )--灵梦and跳台
+	PrecacheResource( "soundfile", "soundevents/game_sounds_custom.vsndevts", context )--背景音乐
+	
+	PrecacheResource( "model", "models/thd2/alice/alice_mmd.vmdl", context )
+	--PrecacheResource( "particle", "particles/thd2/chen_cast_4.vpcf", context )--激光
+	
 
 	PrecacheResource( "model", "models/thd2/yyy.vmdl", context )--灵梦D
 	PrecacheResource( "model", "models/thd2/fantasy_seal.vmdl", context )--灵梦F
@@ -70,6 +76,10 @@ function Precache( context )
 
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_night_stalker", context )--NEET
 
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_doom_bringer", context )--flandre04
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_phantom_assassin", context )--flandre04
+
+
 	PrecacheResource( "particle", "particles/thd2/items/item_ballon.vpcf", context )--幽灵气球
 	PrecacheResource( "particle", "particles/thd2/items/item_bad_man_card.vpcf", context )--坏人卡
 	PrecacheResource( "particle", "particles/thd2/items/item_good_man_card.vpcf", context )--好人卡
@@ -83,6 +93,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/thd2/items/item_camera.vpcf", context )--相机
 	PrecacheResource( "particle", "particles/thd2/items/item_tsundere.vpcf", context )--无敌
 	PrecacheResource( "particle", "particles/thd2/items/item_rocket.vpcf",context )--火箭
+	PrecacheResource( "particle", "particles/thd2/items/item_mr_yang.vpcf",context )--火箭
 	PrecacheResource( "particle", "particles/thd2/items/item_donation_gem.vpcf",context )--钱玉
 	PrecacheResource( "particle", "particles/thd2/items/item_donation_box.vpcf",context )--钱箱
 	PrecacheResource( "particle", "particles/thd2/items/item_phoenix_wing.vpcf",context )--火凤凰之翼
@@ -92,6 +103,55 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/thd2/items/item_yatagarasu.vpcf",context )--八尺乌
 	PrecacheResource( "particle", "particles/items2_fx/phase_boots.vpcf",context )--狐狸面具
 	PrecacheResource( "particle", "particles/thd2/items/item_pocket_watch.vpcf",context )--秒表
+
+
+	PrecacheResource( "model", "models/thd2/kaguya/kaguya.vmdl",context )
+
+	--MMD
+
+	PrecacheResource( "model", "models/thd2/reisen/reisen.vmdl",context )
+	PrecacheResource( "model", "models/thd2/reisen/reisenUnit.vmdl",context )
+
+	PrecacheResource( "model", "models/thd2/hakurei_reimu/hakurei_reimu_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/marisa/marisa_mmd.vmdl",context )
+	PrecacheResource( "model", "models/aya/aya_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/tenshi/tenshi_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/flandre/flandre_mmd.vmdl",context )
+
+	PrecacheResource( "model", "models/thd2/hiziri_byakuren/hiziri_byakuren_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/mokou/mokou_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/yuugi/yuugi_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/suika/suika_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/rumia/rumia_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/iku/iku_mmd.vmdl",context )
+
+	PrecacheResource( "model", "models/thd2/youmu/youmu_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/eirin/eirin_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/yuyuko/yuyuko_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/utsuho/utsuho_mmd.vmdl",context )
+	PrecacheResource( "model", "models/thd2/sakuya/sakuya_mmd.vmdl",context )
+
+	--new
+
+	--[[PrecacheResource( "model","models/heroes/lina/lina.vmdl",context )
+	PrecacheResource( "model","models/heroes/crystal_maiden/crystal_maiden.vmdl",context )
+	PrecacheResource( "model","models/heroes/juggernaut/juggernaut.vmdl",context )
+	PrecacheResource( "model","models/heroes/slark/slark.vmdl",context )
+	PrecacheResource( "model","models/heroes/earthshaker/earthshaker.vmdl",context )
+	PrecacheResource( "model","models/heroes/dark_seer/dark_seer.vmdl",context )
+	PrecacheResource( "model","models/heroes/necrolyte/necrolyte.vmdl",context )
+	PrecacheResource( "model","models/heroes/lanaya/lanaya.vmdl",context )
+	PrecacheResource( "model","models/heroes/siren/siren.vmdl",context )
+	PrecacheResource( "model","models/heroes/chaos_knight/chaos_knight.vmdl",context )
+	PrecacheResource( "model","models/heroes/centaur/centaur.vmdl",context )
+	PrecacheResource( "model","models/heroes/tiny_01/tiny_01.vmdl",context )
+	PrecacheResource( "model","models/heroes/life_stealer/life_stealer.vmdl",context )
+	PrecacheResource( "model","models/heroes/razor/razor.vmdl",context )
+	PrecacheResource( "model","models/heroes/sniper/sniper.vmdl",context )
+	PrecacheResource( "model","models/heroes/silencer/silencer.vmdl",context )
+	PrecacheResource( "model","models/heroes/furion/furion.vmdl",context )
+	PrecacheResource( "model","models/heroes/mirana/mirana.vmdl",context )]]--
+
 	
 	
 end

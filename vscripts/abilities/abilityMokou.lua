@@ -7,8 +7,8 @@ function OnMokou01SpellStart(keys)
 	local targetPoint = keys.target_points[1]
 	local Mokou01rad = GetRadBetweenTwoVec2D(caster:GetOrigin(),targetPoint)
 	local Mokou01Distance = GetDistanceBetweenTwoVec2D(caster:GetOrigin(),targetPoint)
-	caster:SetContextNum("ability_Mokou01_Rad",Mokou01rad,0)
-	caster:SetContextNum("ability_Mokou01_Distance",Mokou01Distance,0)
+	keys.ability.ability_Mokou01_Rad = Mokou01rad
+	keys.ability.ability_Mokou01_Distance = Mokou01Distance
 end
 
 function OnMokou01SpellMove(keys)
@@ -16,7 +16,7 @@ function OnMokou01SpellMove(keys)
 	local vecCaster = caster:GetOrigin()
 	local targets = keys.target_entities
 
-	if(caster:GetContext("ability_Mokou01_Distance")<30)then
+	if(keys.ability.ability_Mokou01_Distance<30)then
 		for _,v in pairs(targets) do
 			local damage_table = {
 				victim = v,
@@ -36,23 +36,23 @@ function OnMokou01SpellMove(keys)
 		}
 		UnitDamageTarget(damage_table)
 		local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/mouko/ability_mokou_01_boom.vpcf", PATTACH_CUSTOMORIGIN, caster)
-		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin() + Vector(0,0,256))
+		ParticleManager:SetParticleControl(effectIndex, 0, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 1, caster:GetOrigin())
 		ParticleManager:SetParticleControl(effectIndex, 3, caster:GetOrigin())
-		ParticleManager:ReleaseParticleIndex(effectIndex)
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 		
 		SetTargetToTraversable(caster)
 		vecCaster = caster:GetOrigin()
 
 		caster:RemoveModifierByName("modifier_thdots_Mokou01_think_interval")
-		caster:SetContextNum("ability_Mokou01_Distance",120,0)
+		keys.ability.ability_Mokou01_Distance = 120
 		caster:EmitSound("Hero_Phoenix.SuperNova.Explode") 
 	else
-		local distance = caster:GetContext("ability_Mokou01_Distance")
+		local distance = keys.ability.ability_Mokou01_Distance
 		distance = distance - keys.MoveSpeed/50
-		caster:SetContextNum("ability_Mokou01_Distance",distance,0)
+		keys.ability.ability_Mokou01_Distance = distance
 	end
-	local Mokou01rad = caster:GetContext("ability_Mokou01_Rad")
+	local Mokou01rad = keys.ability.ability_Mokou01_Rad
 	local vec = Vector(vecCaster.x+math.cos(Mokou01rad)*keys.MoveSpeed/50,vecCaster.y+math.sin(Mokou01rad)*keys.MoveSpeed/50,GetGroundPosition(vecCaster, nil).z)
 	caster:SetOrigin(vec)
 end
@@ -62,20 +62,20 @@ function OnMokou02SpellStartUnit(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local target = keys.target
 
-	if(target:GetContext("ability_Mokou02_speed_increase")==nil)then
-		target:SetContextNum("ability_Mokou02_speed_increase",0,0)
+	if(target.ability_Mokou02_speed_increase==nil)then
+		target.ability_Mokou02_speed_increase = 0
 	end
-	local increaseSpeedCount = target:GetContext("ability_Mokou02_speed_increase")
+	local increaseSpeedCount = target.ability_Mokou02_speed_increase
 	increaseSpeedCount = increaseSpeedCount + keys.IncreaseSpeed
 	if(increaseSpeedCount>keys.IncreaseMaxSpeed)then
 		target:RemoveModifierByName("modifier_mokou02_speed_up")
 	else
-		target:SetContextNum("ability_Mokou02_speed_increase",increaseSpeedCount,0)
+		target.ability_Mokou02_speed_increase = increaseSpeedCount
 		target:SetThink(
 			function()
 				target:RemoveModifierByName("modifier_flandre02_slow")
-				local decreaseSpeedNow = target:GetContext("ability_Mokou02_speed_increase") - keys.IncreaseSpeed
-				target:SetContextNum("ability_Mokou02_speed_increase",decreaseSpeedNow,0)	
+				local decreaseSpeedNow = target.ability_Mokou02_speed_increase - keys.IncreaseSpeed
+				target.ability_Mokou02_speed_increase = decreaseSpeedNow	
 			end, 
 			DoUniqueString("ability_flandre02_speed_increase_duration"), 
 			keys.Duration
@@ -88,12 +88,19 @@ function OnMokou02DamageStart(keys)
 	local vecCaster = caster:GetOrigin()
 	local targets = keys.target_entities
 
-	if(caster:GetContext("ability_Mokou02_damage_bouns")==nil)then
-		caster:SetContextNum("ability_Mokou02_damage_bouns",0,0)
+	if(caster.ability_Mokou02_damage_bouns==nil)then
+		caster.ability_Mokou02_damage_bouns = 0
+	end
+
+	local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/mouko/ability_mokou_02_boom.vpcf", PATTACH_CUSTOMORIGIN, caster)
+	if(targets[1]~=nil)then
+		ParticleManager:SetParticleControl(effectIndex, 0, targets[1]:GetOrigin())
+		ParticleManager:SetParticleControl(effectIndex, 1, Vector(300,0,0))
+		ParticleManager:DestroyParticleSystem(effectIndex,false)
 	end
 
 	for _,v in pairs(targets) do
-		local dealdamage = keys.BounsDamage + caster:GetContext("ability_Mokou02_damage_bouns")
+		local dealdamage = keys.BounsDamage + caster.ability_Mokou02_damage_bouns
 		local damage_table = {
 			    victim = v,
 			    attacker = caster,
@@ -127,12 +134,22 @@ function OnMokou04SpellStart(keys)
 	)
 	unit:SetForwardVector(caster:GetForwardVector())]]
 
-	caster:SetContextNum("ability_Mokou02_damage_bouns",keys.BounsDamage,0)
+	caster.ability_Mokou02_damage_bouns = keys.BounsDamage
 	Timer.Wait 'ability_Mokou02_damage_bouns_timer' (20,
 		function()
-			caster:SetContextNum("ability_Mokou02_damage_bouns",0,0)
+			caster.ability_Mokou02_damage_bouns = 0
 		end
 	)
+
+	local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/mouko/ability_mokou_04_wing.vpcf", PATTACH_CUSTOMORIGIN, caster) 
+	ParticleManager:SetParticleControlEnt(effectIndex , 0, caster, 5, "follow_origin", Vector(0,0,0), true)
+
+	Timer.Wait 'ability_mokou_04_wing_destory' (20,
+			function()
+				ParticleManager:DestroyParticle(effectIndex,true)
+			end
+		)
+
 
 	--[[Timer.Loop 'ability_Mokou04_wing_timer' (0.1, 200,
 		function(i)

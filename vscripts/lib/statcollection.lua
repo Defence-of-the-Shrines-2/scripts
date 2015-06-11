@@ -38,9 +38,13 @@ Readers beware: You are REQUIRED to set AT LEAST modID to your mods unique ID
 -- Begin statcollection module
 module('statcollection', package.seeall)
 
+-- This is the version of stat collection -- do not touch!
+local STAT_COLLECTION_VERSION = '4'
+
 -- Require libs
-local JSON = require('lib.json')
-local md5 = require('lib.md5')
+local libpath = (...):match('(.-)[^%.]+$')
+local JSON = require(libpath .. 'json')
+local md5 = require(libpath .. 'md5')
 
 -- Max number of players
 local maxPlayers = 10
@@ -54,24 +58,72 @@ local alreadySubmitted = false
 -- Should we auto send stats?
 local autoSendStats = true
 
+-- A store of player names
+local storedNames = {}
+
+-- For the following functions, setting safe to true will STOP the function from override old stats
+-- If you leave safe out, or set it to false, it will override old stats (if any exist)
+
 -- This function should be called with a table of stats to add
-function addStats(toSearch)
+function addStats(stats, safe)
     -- Ensure args were passed
-    toSearch = toSearch or {}
+    local toAdd = stats or {}
 
     -- Store the fields
-    for k, v in pairs(toSearch) do
-        collectedStats[k] = v
+    for k, v in pairs(toAdd) do
+        if not safe or collectedStats[k] == nil then
+            collectedStats[k] = v
+        end
     end
 end
 
--- This function adds a single stat, but wont override existing stats
-function addStatsSafe(name, value)
-    -- Ensure the stat doesn't exist
-    if collectedStats[name] == nil then
-        -- Store the new value
-        collectedStats[name] = value
+-- This function should be called with a table of flags to add
+function addFlags(flags, safe)
+    -- Ensure args were passed
+    local toAdd = flags or {}
+
+    -- Ensure flags exist
+    collectedStats.flags = collectedStats.flags or {}
+
+    -- Store the fields
+    for k, v in pairs(toAdd) do
+        if not safe or collectedStats.flags[k] == nil then
+            collectedStats.flags[k] = v
+        end
     end
+end
+
+-- This function sets the stats adds the stats for a given module
+function addModuleStats(module, stats, safe)
+    -- Ensure args were passed
+    local toAdd = stats or {}
+
+    -- Ensure flags exist
+    collectedStats.modules = collectedStats.modules or {}
+    collectedStats.modules[module] = collectedStats.modules[module] or {}
+
+    -- Store the fields
+    for k, v in pairs(toAdd) do
+        if not safe or collectedStats.modules[module][k] == nil then
+            collectedStats.modules[module][k] = v
+        end
+    end
+end
+
+-- This function RELIABLY gets a player's name
+-- Note: PlayerResource needs to be loaded (aka, after Activated has been called)
+--       This method is safe for all of our internal uses
+function GetPlayerNameReliable(playerID)
+    -- Ensure player resource is ready
+    if not PlayerResource then
+        return 'PlayerResource not loaded!'
+    end
+
+    -- Grab their steamID
+    local steamID = tostring(PlayerResource:GetSteamAccountID(playerID) or -1)
+
+    -- Return the name we have set, or call the normal function
+    return storedNames[steamID] or PlayerResource:GetPlayerName(playerID)
 end
 
 -- This function returns a snapshop of a given player
@@ -91,11 +143,20 @@ function getPlayerSnapshot(playerID)
 
                 -- Check if it is valid
                 if IsValidEntity(ab) then
+                    -- Check if the ability is hidden
+                    -- We do it this way, so if it is not hidden
+                    -- It wont appear in the schema at all
+                    local hidden
+                    if ab:IsHidden() then
+                        hidden = true
+                    end
+
                     -- Store ability
                     table.insert(abilityData, {
                         index = ab:GetAbilityIndex(),
                         abilityName = ab:GetAbilityName(),
-                        level = ab:GetLevel()
+                        level = ab:GetLevel(),
+                        hidden = hidden
                     })
                 end
 
@@ -155,8 +216,8 @@ function getPlayerSnapshot(playerID)
 
                 -- The total last hits this player has
                 lastHits = PlayerResource:GetLastHits(playerID),
-				
-				
+
+
 
 				stunAmount = PlayerResource:GetStuns(playerID),
 
@@ -187,12 +248,12 @@ function getPlayerSnapshot(playerID)
         return {
             teamID = teamID,
             slotID = slotID,
-            playerName = PlayerResource:GetPlayerName(playerID),
+            playerName = GetPlayerNameReliable(playerID),
             steamID32 = PlayerResource:GetSteamAccountID(playerID),
             hero = heroData,
             items = itemData,
             abilities = abilityData,
-            leaverStatus = PlayerResource:GetConnectionState(playerID),
+            connectionStatus = PlayerResource:GetConnectionState(playerID),
         }
     end
 
@@ -225,12 +286,6 @@ function sendStats(extraFields)
         return
     end
 
-    -- Build common stats
-    addStatsSafe('duration', GameRules:GetGameTime())
-
-    -- Attempt to add the winner
-    addStatsSafe('winner', findWinnerUsingForts())
-
     -- Build player array
     local playersData = {}
     for i = 0, maxPlayers - 1 do
@@ -241,14 +296,6 @@ function sendStats(extraFields)
             table.insert(playersData, data)
         end
     end
-
-    -- Add round data
-    addStatsSafe('rounds', {
-        players = playersData
-    })
-
-    -- Store if this is a dedi server or not
-    addStatsSafe('dedicated', IsDedicatedServer())
 
     -- Tell the user the stats are being sent
     print('Sending stats...')
@@ -262,8 +309,34 @@ function sendStats(extraFields)
     local port = Convars:GetStr('hostport')
     local randomness = RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1)
 
-    -- Add server address
-    addStatsSafe('serverAddress', ip..':'..port)
+    -- Add common stats if they aren't already added
+    addStats({
+        -- The version of the module
+        version = STAT_COLLECTION_VERSION,
+
+        -- The local address of this server
+        serverAddress = ip..':'..port,
+
+        -- The round data
+        rounds = {
+            players = playersData
+        },
+
+        -- The current map
+        map = GetMapName(),
+
+        -- The winner (if they are using forts)
+        winner = findWinnerUsingForts(),
+
+        -- The duration of the match
+        duration = GameRules:GetGameTime()
+    }, true)
+
+    -- Add flags if they aren't already added
+    addFlags({
+        -- Is this a dedi server or not?
+        dedicated = IsDedicatedServer()
+    }, true)
 
     -- Setup the string to be hashed
     local toHash = ip .. ':' .. port .. ' @ ' .. currentTime .. ' + ' .. randomness .. ' + '
@@ -324,6 +397,11 @@ function disableAutoSend()
     autoSendStats = false
 end
 
+-- Returns the current version of stat collection
+function getVersion()
+    return STAT_COLLECTION_VERSION
+end
+
 -- This function attempts to detect the winner based on the status for forts
 -- If no forts are found, 0 is returned, if more than one fort is found, -1 is returned
 function findWinnerUsingForts()
@@ -374,11 +452,25 @@ ListenToGameEvent('game_rules_state_change', function(keys)
     end
 end, nil)
 
+-- Store player names
+ListenToGameEvent('player_connect', function(keys)
+    -- Grab their steamID
+    local steamID64 = tostring(keys.xuid)
+    local steamIDPart = tonumber(steamID64:sub(4))
+    if not steamIDPart then return end
+    local steamID = tostring(steamIDPart - 61197960265728)
+
+    -- Store their name
+    storedNames[steamID] = keys.name
+end, nil)
+
 -- Hook winner function
 local oldSetGameWinner = GameRules.SetGameWinner
 GameRules.SetGameWinner = function(gameRules, team)
     -- Store the stats
-    addStatsSafe('winner', team)
+    addStats({
+        winner = team
+    }, true)
 
     -- Run the rael setGameWinner function
     oldSetGameWinner(gameRules, team)

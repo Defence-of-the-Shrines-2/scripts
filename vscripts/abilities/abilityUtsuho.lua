@@ -65,22 +65,22 @@ end
 function OnUtsuho04SpellStart(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targetPoint = keys.target_points[1]
-	caster:SetContextNum("ability_utsuho04_point_x",targetPoint.x,0)
-	caster:SetContextNum("ability_utsuho04_point_y",targetPoint.y,0)
-	caster:SetContextNum("ability_utsuho04_point_z",targetPoint.z,0)
-	caster:SetContextNum("ability_utsuho04_timer_count",0,0)
+	keys.ability.ability_utsuho04_point_x = targetPoint.x
+	keys.ability.ability_utsuho04_point_y = targetPoint.y
+	keys.ability.ability_utsuho04_point_z = targetPoint.z
+	keys.ability.ability_utsuho04_timer_count = 0
 	local effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/utsuho/ability_utsuho04_effect.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, targetPoint)
 	ParticleManager:SetParticleControl(effectIndex, 1, targetPoint)
 	ParticleManager:SetParticleControl(effectIndex, 3, targetPoint)
-	caster:SetContextNum("ability_utsuho04_effect_index",effectIndex,0)
+	keys.ability.ability_utsuho04_effect_index = effectIndex
 end
 
 function OnUtsuho04SpellThink(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	local tx = caster:GetContext("ability_utsuho04_point_x")
-	local ty = caster:GetContext("ability_utsuho04_point_y")
-	local tz = caster:GetContext("ability_utsuho04_point_z")
+	local tx = keys.ability.ability_utsuho04_point_x
+	local ty = keys.ability.ability_utsuho04_point_y
+	local tz = keys.ability.ability_utsuho04_point_z
 	local targetPoint = Vector(tx,ty,tz)
 	local targets = FindUnitsInRadius(
 		   caster:GetTeam(),		--caster team
@@ -92,8 +92,8 @@ function OnUtsuho04SpellThink(keys)
 		   0, FIND_CLOSEST,
 		   false
 	)
-	local count = caster:GetContext("ability_utsuho04_timer_count")
-	caster:SetContextNum("ability_utsuho04_timer_count",count+0.1,0)
+	local count = keys.ability.ability_utsuho04_timer_count
+	keys.ability.ability_utsuho04_timer_count = count+0.1
 
 	for _,v in pairs(targets) do
 		local dis = GetDistanceBetweenTwoVec2D(targetPoint,v:GetOrigin())
@@ -118,18 +118,18 @@ end
 function OnUtsuho04SpellRemove(keys)
 	local caster = EntIndexToHScript(keys.caster_entindex)
 	local targets = keys.target_entities
-	local count = caster:GetContext("ability_utsuho04_timer_count")
-	local effectIndex = caster:GetContext("ability_utsuho04_effect_index") 
-	local tx = caster:GetContext("ability_utsuho04_point_x")
-	local ty = caster:GetContext("ability_utsuho04_point_y")
-	local tz = caster:GetContext("ability_utsuho04_point_z")
+	local count = keys.ability.ability_utsuho04_timer_count
+	local effectIndex = keys.ability.ability_utsuho04_effect_index 
+	local tx = keys.ability.ability_utsuho04_point_x
+	local ty = keys.ability.ability_utsuho04_point_y
+	local tz = keys.ability.ability_utsuho04_point_z
 	local targetPoint = Vector(tx,ty,tz)
-	ParticleManager:DestroyParticle(effectIndex,true)
-	effectIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_CUSTOMORIGIN, caster)
+	ParticleManager:DestroyParticleSystem(effectIndex,true)
+	effectIndex = ParticleManager:CreateParticle("particles/thd2/heroes/utsuho/ability_utsuho04_end.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(effectIndex, 0, targetPoint)
 	ParticleManager:SetParticleControl(effectIndex, 1, targetPoint)
 	ParticleManager:SetParticleControl(effectIndex, 3, targetPoint)
-	ParticleManager:ReleaseParticleIndex(effectIndex)
+	ParticleManager:DestroyParticleSystem(effectIndex,false)
 	for _,v in pairs(targets) do
 		local damage_table = {
 			    victim = v,

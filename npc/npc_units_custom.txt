@@ -44,8 +44,9 @@
     "npc_dota2x_unit_reimu01_ball"
   	{
   		"model"					"models/thd2/yyy.vmdl"
+  		//"model"					"models/thd2/alice/alice_mmd.vmdl"
   		"BaseClass"				"npc_dota_creep_neutral"
-		"ModelScale" 			"2.0"
+		"ModelScale" 			"4.0"
 		"Ability1"				"ability_dummy_unit"
   		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
   		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
@@ -71,13 +72,14 @@
 	
 	"npc_thdots_unit_marisa03_star"
   	{
-		"model"						"models/props_gameplay/rune_haste01.vmdl"
+		"model"						"models/development/invisiblebox.vmdl"
   		"BaseClass"					"npc_dota_creep_neutral"
 		"Ability1"					"ability_dummy_unit"
+		"Ability2"					"ability_thdots_marisa03_dealdamage"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"1"		// Damage range min.
 		"AttackDamageMax"			"2"		// Damage range max.
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorMagical"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
   		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 		"AttackRate"				"1.35"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
@@ -106,7 +108,7 @@
 	
 	"npc_thdots_unit_youmu03_unit"
   	{
-		"model"						"models/thd2/youmu/youmu.vmdl"
+		"model"						"models/thd2/youmu/youmu_mmd.vmdl"
   		"BaseClass"					"npc_dota_creature"
 		"Ability1"					"ability_dummy_unit"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -122,6 +124,30 @@
 		"AttackRange"				"128"		// Range within a target can be attacked.
 		"ProjectileModel"			""		// Particle system model for projectile.
 		"ProjectileSpeed"			""		// Speed of projectile.
+  		"VisionDaytimeRange"		"100"
+  		"VisionNighttimeRange"		"100"
+  		"HasInventory"				"0"
+  		"WakesNeutrals"				"0"
+  	}
+
+  	"npc_thdots_unit_reisenEx_unit"
+  	{
+		"model"						"models/thd2/reisen/reisenunit.vmdl"
+  		"BaseClass"					"npc_dota_creature"
+		"Ability1"					"ability_dummy_unit"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"9"		// Damage range min.
+		"AttackDamageMax"			"10"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"100"		// Speed
+		"MovementTurnRate"			"1.0"		// Turning rate.
+		"AttackRate"				"0.2"		// Speed of attack.
+		"AttackAnimationPoint"		"0.17"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"800"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_templar_assassin/templar_assassin_meld_attack.vpcf"		// Particle system model for projectile.
+		"ProjectileSpeed"			"300"		// Speed of projectile.
   		"VisionDaytimeRange"		"100"
   		"VisionNighttimeRange"		"100"
   		"HasInventory"				"0"
@@ -192,6 +218,7 @@
 		"UnitLabel"					"healing_ward"
 		
 		"Ability1"					"ability_reimu04_dummy_unit"
+		"Ability2"					"ability_dota2x_reimu04_unit"
 
 		"StatusHealth"				"100000"		// Base health.
 
@@ -232,7 +259,7 @@
 	"npc_dota_suika_03_smallsuika"
 	{
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/thd2/suika/suika.vmdl"	// Model.
+		"Model"						"models/thd2/suika/suika_mmd.vmdl"	// Model.
 		"SoundSet"					"0"					// Name of sound set.
 		"ModelScale"				".3"								// old 1.0
 		"Level"						"1"

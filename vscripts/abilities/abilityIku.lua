@@ -156,8 +156,8 @@ function OnIku03AttackLight( keys,caster,unit,lastUnit,caster_abs,time )
 		function( )
 			--创建特效
 			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning_head.vpcf",PATTACH_CUSTOMORIGIN_FOLLOW,lastUnit)
-			ParticleManager:SetParticleControl(particle,0,lastUnit:GetAbsOrigin() + lastUnit:GetUpVector()*150)
-			ParticleManager:SetParticleControl(particle,1,unit:GetAbsOrigin() + unit:GetUpVector()*150)
+			ParticleManager:SetParticleControlEnt(particle , 0, lastUnit, 5, "attach_attack1", Vector(0,0,0), true)
+			ParticleManager:SetParticleControl(particle,1,unit:GetAbsOrigin() + Vector(0,0,150))
 			ParticleManager:ReleaseParticleIndex(particle)
 
 			--造成伤害
